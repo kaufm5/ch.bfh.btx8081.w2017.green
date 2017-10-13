@@ -6,4 +6,5 @@ Es hat bisher alles funktioniert, testen jetzt den merch konflikt
 Tag 1: GitHub wurde bei allen installiert sowie SVN Connecter und Subversive. Anwesend: Alle
 Es hat bisher alles funktioniert, testen jetzt den merch konflikt
 test
+Viele Köche verderben den Brei
 ======================== VERSION 6 =================
