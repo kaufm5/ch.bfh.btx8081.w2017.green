@@ -1,12 +1,4 @@
-joo 
-Tag 1: GitHub wurde bei allen installiert sowie SVN Connecter und Subversive. Anwesend: Alle
-Es hat bisher alles funktioniert, testen jetzt den merch konflikt
-Tag 1: GitHub wurde bei allen installiert sowie SVN Connecter und Subversive. Anwesend: Alle
-Es hat bisher alles funktioniert, testen jetzt den merch konflikt
-Tag 1: GitHub wurde bei allen installiert sowie SVN Connecter und Subversive. Anwesend: Alle
-Es hat bisher alles funktioniert, testen jetzt den merch konflikt
-test
-Viele Köche verderben den Brei
-======================== VERSION 6 =================
-19.10.2017: Projekt 1: Task 1 und 2 fertiggemacht.
-20.10.2017: Projekt 1: Task 3 im Unterricht fertig gemacht
+13.10.2017: CS1:  GitHub wurde bei allen installiert sowie SVN Connecter und Subversive.
+                  Es hat bisher alles funktioniert, testen jetzt den merch konflikt.
+19.10.2017: CS1:  Task 1 und 2 fertiggemacht.
+20.10.2017: CS1:  Task 3 im Unterricht fertig gemacht.
