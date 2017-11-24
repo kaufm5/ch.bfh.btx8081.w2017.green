@@ -3,6 +3,7 @@ package ch.bfh.btx8081.w2017.green.Spero.view;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.TextArea;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.icons.*;
@@ -19,7 +20,7 @@ public class MainViewImpl extends CustomComponent{
 	private Button smileGut;
 	
 	private TextField title;
-	private TextField text;
+	private TextArea text;
 	private TextField tags;
 	
 	
@@ -52,7 +53,7 @@ public class MainViewImpl extends CustomComponent{
 		//Textfelder initialisieren
 		title = new TextField();
 		title.setPlaceholder("Titel");
-		text = new TextField();
+		text = new TextArea();
 		text.setPlaceholder("Text");
 		tags = new TextField();
 		tags.setPlaceholder("Tags");
