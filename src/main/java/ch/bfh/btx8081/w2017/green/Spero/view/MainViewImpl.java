@@ -27,6 +27,7 @@ public class MainViewImpl extends CustomComponent{
 		GridLayout layout = new GridLayout(6,12);
 		layout.addStyleName("example-gridlayout");
 		
+		//Buttons initialisieren mit Icons
 		menuButton = new Button(VaadinIcons.MENU);
 		sosButton = new Button("SOS");
 		chatButton = new Button("Chat");
@@ -36,8 +37,33 @@ public class MainViewImpl extends CustomComponent{
 		smileEherGut = new Button("Eher Gut");
 		smileGut = new Button("Gut");
 		
-		layout.addComponents(menuButton, sosButton, chatButton, 
-				confirmButton, smileSchlecht, smileEherSchlecht, smileEherGut, smileGut);
+		//Buttons plazieren
+		layout.addComponent(menuButton, 1,1);
+		layout.addComponent(sosButton, 2,11);
+		layout.addComponent(chatButton, 5, 11);
+		layout.addComponent(smileGut, 2, 3);
+		layout.addComponent(smileEherGut, 3,3);
+		layout.addComponent(smileEherSchlecht, 4,3);
+		layout.addComponent(smileSchlecht, 5,3);
+		layout.addComponent(confirmButton, 4, 9);
+		//layout.addComponents(menuButton, sosButton, chatButton, 
+//				confirmButton, smileSchlecht, smileEherSchlecht, smileEherGut, smileGut);
+		
+		//Textfelder initialisieren
+		title = new TextField();
+		title.setPlaceholder("Titel");
+		text = new TextField();
+		text.setPlaceholder("Text");
+		tags = new TextField();
+		tags.setPlaceholder("Tags");
+		
+		//Textfleder zum Layout hinzufügen
+		layout.addComponent(title, 2,5);
+		layout.addComponent(text, 2, 7);
+		layout.addComponent(tags, 2, 9);
+		
+		
+		//layout als root setzen
 		setCompositionRoot(layout);
 		
 		
