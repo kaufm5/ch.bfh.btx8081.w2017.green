@@ -11,6 +11,7 @@ import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.icons.*;
+import com.vaadin.server.Sizeable;
 
 public class MainViewImpl extends CustomComponent{
 	
@@ -33,7 +34,6 @@ public class MainViewImpl extends CustomComponent{
 	public MainViewImpl() {
 
 		Layout layout = new VerticalLayout();
-		layout.setSizeFull();
 		setCompositionRoot(layout);
 		
 		Layout titleBarBox = new HorizontalLayout ();
@@ -41,28 +41,51 @@ public class MainViewImpl extends CustomComponent{
 		speroTitle = new Label("Spero");
 		titleBarBox.addComponent(speroTitle);
 		
-		Layout event = new HorizontalLayout();
-		Layout menuColumn = new VerticalLayout();
-		Layout restColumn = new VerticalLayout();
-		event.addComponents(menuColumn, restColumn);
-	
+		Layout menuBarBox = new HorizontalLayout ();
+		layout.addComponent(menuBarBox);
 		menuButton = new Button(VaadinIcons.MENU);
-		menuColumn.addComponent(menuButton);
+		menuBarBox.addComponent(menuButton);
 		
+		Layout event = new HorizontalLayout();
+		layout.addComponent(event);
+
+		Layout moods = new HorizontalLayout();
+		layout.addComponent(moods);
 		smileSchlecht = new Button(VaadinIcons.SMILEY_O);
 		smileEherSchlecht = new Button(VaadinIcons.SMILEY_O);
 		smileEherGut = new Button(VaadinIcons.SMILEY_O);
 		smileGut = new Button(VaadinIcons.SMILEY_O);
-		Layout moods = new HorizontalLayout();
+		moods.setSizeFull();
 		moods.addComponents(smileSchlecht, smileEherSchlecht, smileEherGut, smileGut);
-		restColumn.addComponent(moods);
 	
-		//Buttons mit der dazugehörigen Initialisierung
+		Layout diaryTitleBox = new HorizontalLayout ();
+		layout.addComponent(diaryTitleBox);
+		title = new TextField();
+		title.setPlaceholder("Titel");
+		diaryTitleBox.addComponent(title);
 		
+		Layout diaryTextBox = new HorizontalLayout ();
+		layout.addComponent(diaryTextBox);
+		text = new TextArea();
+		text.setPlaceholder("Text");
+		diaryTextBox.addComponent(text);
+		
+		Layout tagsBox = new HorizontalLayout ();
+		layout.addComponent(tagsBox);
+		tags = new TextField();
+		tags.setPlaceholder("Tags");
+		tagsBox.addComponent(tags);
+		
+		Layout superButtonBox = new HorizontalLayout ();
+		layout.addComponent(superButtonBox);
 		sosButton = new Button("SOS");
 		chatButton = new Button("Chat");
-		confirmButton = new Button(VaadinIcons.CHECK);
+		superButtonBox.addComponents(sosButton, chatButton);
 		
+		Layout confirmButtonBox = new HorizontalLayout ();
+		layout.addComponent(confirmButtonBox);
+		confirmButton = new Button(VaadinIcons.CHECK);
+		confirmButtonBox.addComponent(confirmButton);
 		
 	}
 
