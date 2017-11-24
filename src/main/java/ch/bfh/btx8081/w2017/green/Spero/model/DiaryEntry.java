@@ -95,7 +95,7 @@ public class DiaryEntry {
 	}
 	
 	//other methods
-	public void save() {
+	public void confirm() {
 		//speichern in die Datenbank
 		
 	}

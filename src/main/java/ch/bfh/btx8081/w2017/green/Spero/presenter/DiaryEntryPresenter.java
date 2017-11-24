@@ -17,7 +17,7 @@ public class DiaryEntryPresenter implements MainViewImpl.MainViewImplListener {
 		view.addListener(this);
 	}
 		
-	public void buttonClick(Listener ButtonClickListener) {
+	public void confirmEvent(Listener ButtonClickListener) {
 		
 	}
 	
