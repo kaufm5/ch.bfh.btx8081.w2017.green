@@ -16,61 +16,86 @@ public class DiaryEntry {
 	private Mood moodParam;
 	private Object attachment;
 	
-	
-	public DiaryEntry(int diaryEntryNumber,String diaryTitle, String diaryText, Mood moodParam, String tag) {
+	//constructor
+	public DiaryEntry(int diaryEntryNumber,String diaryTitle, String diaryText,
+			Mood moodParam, String tag, Object attachment) {
 		this.diaryEntryNumber = diaryEntryNumber;
 		this.diaryTitle = diaryTitle;
 		this.diaryText = diaryText;
 		this.moodParam = moodParam;
 		this.tag = tag;
 		this.date = LocalDate.now();
-		
-		
+		this.attachment = attachment;
+	}	
+	
+	//setter methods
+	public void setAttachment(Object attachment) {
+		this.attachment = attachment;
+	}
+	
+	public void setDate(LocalDate date) {
+		this.date = date;
+	}
+	
+	public void setDiaryEntryNumber(int diaryEntryNumber) {
+		this.diaryEntryNumber = diaryEntryNumber;
+	}
+	
+	public void setMoodparam(Mood mood) {
+		this.moodParam = mood;
+	}
+	
+	public void setTag(String tag) {
+		this.tag = tag;
+	}
+	
+	public void setTagList(List<String> tagList) {
+		this.tagList = tagList;
+	}
+	
+	public void setText(String text) {
+		this.diaryText = text;
+	}
+	
+	public void setTitle(String title) {
+		this.diaryTitle = title;
+	}
+
+	//getter methods
+	public Object getAttachment() {
+		return this.attachment;
+	}
+	
+	public LocalDate getDate() {
+		return this.date;
 	}
 	
 	public int getDiaryEntryNumber() {
 		return this.diaryEntryNumber;
 	}
-	
-	
-	public void setMoodParam(Mood mood) {
-		
-	}
-	
-	public void write() {
-		this.diaryTitle = diaryTitle;
-		this.diaryText = diaryText;
-		
-	}
-	
-	public void setTag(String tag) {
-		
-	}
-	
-	public void setAttachment(Object attachment) {
-		
-	}
-	
-	public void save() {
-	}
-
-	public Object getAttachment() {
-		return null;
-	}
 
 	public Mood getMoodparam() {
-		
-		return null;
+		return this.moodParam;
+	}
+	
+	public String getTag() {
+		return this.tag;
 	}
 
-	public List<String> getTags() {
-		
-		return null;
+	public List<String> getTagList() {
+		return this.tagList;
 	}
 
 	public String getText() {
-		
-		return null;
+		return this.diaryText;
+	}
+	
+	public String getTitle() {
+		return this.diaryTitle;
+	}
+	
+	//other methods
+	public void save() {
 	}
 
 }
