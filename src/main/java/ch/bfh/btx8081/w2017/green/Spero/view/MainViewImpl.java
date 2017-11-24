@@ -27,6 +27,7 @@ public class MainViewImpl extends CustomComponent{
 	public MainViewImpl() {
 		GridLayout layout = new GridLayout(6,12);
 		layout.addStyleName("example-gridlayout");
+		layout.setSpacing(true);
 		
 		//Buttons initialisieren mit Icons
 		menuButton = new Button(VaadinIcons.MENU);
@@ -40,13 +41,13 @@ public class MainViewImpl extends CustomComponent{
 		
 		//Buttons plazieren
 		layout.addComponent(menuButton, 1,1);
-		layout.addComponent(sosButton, 2,11);
-		layout.addComponent(chatButton, 5, 11);
 		layout.addComponent(smileGut, 2, 3);
+		layout.addComponent(sosButton, 2,11);
 		layout.addComponent(smileEherGut, 3,3);
 		layout.addComponent(smileEherSchlecht, 4,3);
-		layout.addComponent(smileSchlecht, 5,3);
 		layout.addComponent(confirmButton, 4, 9);
+		layout.addComponent(smileSchlecht, 5,3);
+		layout.addComponent(chatButton, 5, 11);
 		//layout.addComponents(menuButton, sosButton, chatButton, 
 //				confirmButton, smileSchlecht, smileEherSchlecht, smileEherGut, smileGut);
 		
