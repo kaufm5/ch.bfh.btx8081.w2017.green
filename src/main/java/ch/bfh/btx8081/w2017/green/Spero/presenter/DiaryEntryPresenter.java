@@ -4,24 +4,19 @@ import com.vaadin.event.Action.Listener;
 import com.vaadin.navigator.View;
 
 import ch.bfh.btx8081.w2017.green.Spero.model.DiaryEntry;
+import ch.bfh.btx8081.w2017.green.Spero.view.MainViewImpl;
 
-public class DiaryEntryPresenter {
+public class DiaryEntryPresenter implements MainViewImpl.MainViewImplListener {
 
-	private View diaryEntryView;
-	private DiaryEntry diaryEntry;
-	private Listener ButtonClickListener;
+	private MainViewImpl view;
+	private DiaryEntry model;
 	
-	public DiaryEntryPresenter(View diaryEntryView, DiaryEntry diaryEntry) {
-		this.diaryEntryView = diaryEntryView;
-		this.diaryEntry = diaryEntry;
-		
+	public DiaryEntryPresenter(MainViewImpl view, DiaryEntry model) {
+		this.view = view;
+		this.model = model;
+		view.addListener(this);
 	}
-	
-	public void presenter(View diaryEntryView, DiaryEntry diaryEntry) {
 		
-		
-	}
-	
 	public void buttonClick(Listener ButtonClickListener) {
 		
 	}

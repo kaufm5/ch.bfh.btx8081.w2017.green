@@ -96,6 +96,8 @@ public class DiaryEntry {
 	
 	//other methods
 	public void save() {
+		//speichern in die Datenbank
+		
 	}
 
 }
