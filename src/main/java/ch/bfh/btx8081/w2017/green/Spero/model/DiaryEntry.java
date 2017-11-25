@@ -1,5 +1,9 @@
 package ch.bfh.btx8081.w2017.green.Spero.model;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -97,7 +101,19 @@ public class DiaryEntry {
 	//other methods
 	public void confirm() {
 		//speichern in die Datenbank
-		
+		//speichern in ein txt File zu erst.
+			 PrintWriter pWriter;
+			try {
+				 pWriter = new PrintWriter(new BufferedWriter(new FileWriter("diaryEntry.txt")));
+				 pWriter.println(date);
+				 pWriter.println(getTitle());
+				 pWriter.println(getText());
+			     pWriter.println(getTag());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			   
 	}
 
 }
