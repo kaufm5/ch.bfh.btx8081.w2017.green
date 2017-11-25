@@ -2,6 +2,8 @@ package ch.bfh.btx8081.w2017.green.Spero.view;
 
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
@@ -9,11 +11,19 @@ import com.vaadin.ui.Layout;
 import com.vaadin.ui.TextArea;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
+
+import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.ButtonView;
+
 import com.vaadin.ui.CustomComponent;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import com.vaadin.icons.*;
 import com.vaadin.server.Sizeable;
 
-public class MainViewImpl extends CustomComponent{
+public class MainViewImpl extends CustomComponent
+implements ButtonView, ClickListener {
 	
 
 	private Button menuButton;
@@ -30,6 +40,8 @@ public class MainViewImpl extends CustomComponent{
 	private TextArea text;
 	
 	private Label speroTitle;
+	
+	private List<ButtonClickListener> listeners = new ArrayList<ButtonClickListener>();
 	
 	public MainViewImpl() {
 
@@ -87,6 +99,22 @@ public class MainViewImpl extends CustomComponent{
 		confirmButton = new Button(VaadinIcons.CHECK);
 		confirmButtonBox.addComponent(confirmButton);
 		
+	}
+
+	@Override
+	public void buttonClick(ClickEvent event) {
+		for (ButtonClickListener listener: listeners)
+			listener.buttonClick(event.getButton().getCaption().toString());
+	}
+
+	@Override
+	public void setDisplay(double disp) {
+		
+	}
+
+	@Override
+	public void addListener(ButtonClickListener listener) {
+		listeners.add(listener);		
 	}
 
 }
