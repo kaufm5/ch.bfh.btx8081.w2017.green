@@ -19,7 +19,7 @@ public class MainViewImpl extends CustomComponent{
 	private Button menuButton;
 	private Button sosButton;
 	private Button chatButton;
-	private Button confirmButton;
+	public static Button confirmButton;
 	private Button smileSchlecht;
 	private Button smileEherSchlecht;
 	private Button smileEherGut;
