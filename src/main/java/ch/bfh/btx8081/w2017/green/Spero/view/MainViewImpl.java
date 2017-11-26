@@ -47,26 +47,28 @@ implements ButtonView, ClickListener {
 	
 	public MainViewImpl() {
 
-		Layout layout = new VerticalLayout();
+		VerticalLayout layout = new VerticalLayout();
 		setCompositionRoot(layout);
+//		layout.setComponentAlignment(layout, Alignment.MIDDLE_CENTER);
 		
-		HorizontalLayout titleBarBox = new HorizontalLayout();
-		titleBarBox.setSizeFull();
-		titleBarBox.setComponentAlignment(title, Alignment.MIDDLE_CENTER);
+		VerticalLayout titleBarBox = new VerticalLayout();
 		titleBarBox.addStyleName("titleBarBox");
 		Label title = new Label("Spero");
 		title.addStyleName("title");
 		titleBarBox.addComponent(title);
 		layout.addComponent(titleBarBox);
-	
+		titleBarBox.setSizeFull();
+		titleBarBox.setComponentAlignment(title, Alignment.MIDDLE_CENTER);
 		
 		
 		HorizontalLayout menuAndContent = new HorizontalLayout();
 		menuAndContent.setSizeFull();
 		layout.addComponent(menuAndContent);
 		
-		CssLayout menu = new CssLayout();
+		VerticalLayout menu = new VerticalLayout();
 		menu.setWidth("100%");
+		menuButton = new Button(VaadinIcons.MENU);
+		menu.addComponent(menuButton);
 		menu.addStyleName("menu");
 		menuAndContent.addComponent(menu);
 		
@@ -80,8 +82,6 @@ implements ButtonView, ClickListener {
 		
 		HorizontalLayout moodButtonsBox = new HorizontalLayout();
 		moodButtonsBox.setSpacing(true);
-		moodButtonsBox.setSizeFull();
-		moodButtonsBox.setComponentAlignment(moodButtonsBox, Alignment.MIDDLE_CENTER);
 		content.addComponent(moodButtonsBox);
 		smileSchlecht = new Button(VaadinIcons.SMILEY_O);
 		smileEherSchlecht = new Button(VaadinIcons.SMILEY_O);
