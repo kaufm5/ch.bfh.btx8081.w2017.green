@@ -58,26 +58,31 @@ implements ButtonView, ClickListener {
 		titleBarBox.addComponent(title);
 		layout.addComponent(titleBarBox);
 		titleBarBox.setSizeFull();
-		titleBarBox.setComponentAlignment(title, Alignment.MIDDLE_CENTER);
+		titleBarBox.setComponentAlignment(title, Alignment.MIDDLE_LEFT);
 		
 		
 		HorizontalLayout menuAndContent = new HorizontalLayout();
 		menuAndContent.setSizeFull();
+		menuAndContent.setSpacing(true);
 		layout.addComponent(menuAndContent);
 		
-		VerticalLayout menu = new VerticalLayout();
-		menu.setWidth("100%");
+		VerticalLayout menuBox = new VerticalLayout();
+		menuBox.setWidth("100%");
+		menuBox.setSpacing(true);
+		menuBox.setMargin(true);
 		menuButton = new Button(VaadinIcons.MENU);
-		menu.addComponent(menuButton);
-		menu.addStyleName("menu");
-		menuAndContent.addComponent(menu);
+		menuBox.addComponent(menuButton);
+		menuBox.setComponentAlignment(menuButton, Alignment.MIDDLE_LEFT);
+		menuBox.addStyleName("menu");
+		menuAndContent.addComponent(menuBox);
+		
 		
 		VerticalLayout content = new VerticalLayout();
 		content.setSpacing(true);
 		content.setMargin(true);
 		menuAndContent.addComponent(content);
 		
-		menuAndContent.setExpandRatio(menu, 2);
+		menuAndContent.setExpandRatio(menuBox, 2);
 		menuAndContent.setExpandRatio(content, 8);
 		
 		HorizontalLayout moodButtonsBox = new HorizontalLayout();
@@ -88,6 +93,7 @@ implements ButtonView, ClickListener {
 		smileEherGut = new Button(VaadinIcons.SMILEY_O);
 		smileGut = new Button(VaadinIcons.SMILEY_O);
 		moodButtonsBox.addComponents(smileSchlecht, smileEherSchlecht, smileEherGut, smileGut);
+		content.setComponentAlignment(moodButtonsBox, Alignment.MIDDLE_LEFT);
 		
 		TextField diaryTitleLabel = new TextField();
 		diaryTitleLabel.setPlaceholder("Titel");
