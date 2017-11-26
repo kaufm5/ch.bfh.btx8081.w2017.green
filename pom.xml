@@ -67,7 +67,7 @@
 			<artifactId>vaadin-themes</artifactId>
 		</dependency>
 	</dependencies>
-
+	
 	<build>
 		<plugins>
 			<plugin>
