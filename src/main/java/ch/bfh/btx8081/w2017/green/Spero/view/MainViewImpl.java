@@ -2,6 +2,7 @@ package ch.bfh.btx8081.w2017.green.Spero.view;
 
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.CssLayout;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.GridLayout;
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.vaadin.icons.*;
+import com.vaadin.server.Responsive;
 import com.vaadin.server.Sizeable;
 
 public class MainViewImpl extends CustomComponent
@@ -40,7 +42,7 @@ implements ButtonView, ClickListener {
 	private TextArea text;
 	
 	private Label speroTitle;
-	
+		
 	private List<ButtonClickListener> listeners = new ArrayList<ButtonClickListener>();
 	
 	public MainViewImpl() {
@@ -48,56 +50,120 @@ implements ButtonView, ClickListener {
 		Layout layout = new VerticalLayout();
 		setCompositionRoot(layout);
 		
-		Layout titleBarBox = new HorizontalLayout ();
+		CssLayout titleBarBox = new CssLayout();
+		titleBarBox.addStyleName("titleBarBox");
+		Label title = new Label("Spero");
+		title.addStyleName("title");
+		titleBarBox.addComponent(title);
 		layout.addComponent(titleBarBox);
-		speroTitle = new Label("Spero");
-		titleBarBox.addComponent(speroTitle);
 		
-		Layout menuBarBox = new HorizontalLayout ();
-		layout.addComponent(menuBarBox);
-		menuButton = new Button(VaadinIcons.MENU);
-		menuBarBox.addComponent(menuButton);
 		
-		Layout event = new HorizontalLayout();
-		layout.addComponent(event);
-
-		Layout moods = new HorizontalLayout();
-		layout.addComponent(moods);
+		HorizontalLayout menuAndContent = new HorizontalLayout();
+		menuAndContent.setSizeFull();
+		layout.addComponent(menuAndContent);
+		
+		CssLayout menu = new CssLayout();
+		menu.setWidth("100%");
+		menu.addStyleName("menu");
+		menuAndContent.addComponent(menu);
+		
+		VerticalLayout content = new VerticalLayout();
+		content.setSpacing(true);
+		content.setMargin(true);
+		menuAndContent.addComponent(content);
+		
+		menuAndContent.setExpandRatio(menu, 2);
+		menuAndContent.setExpandRatio(content, 8);
+		
+		HorizontalLayout moodButtonsBox = new HorizontalLayout();
+		moodButtonsBox.setSpacing(true);
+		content.addComponent(moodButtonsBox);
 		smileSchlecht = new Button(VaadinIcons.SMILEY_O);
 		smileEherSchlecht = new Button(VaadinIcons.SMILEY_O);
 		smileEherGut = new Button(VaadinIcons.SMILEY_O);
 		smileGut = new Button(VaadinIcons.SMILEY_O);
-		moods.setSizeFull();
-		moods.addComponents(smileSchlecht, smileEherSchlecht, smileEherGut, smileGut);
-	
-		Layout diaryTitleBox = new HorizontalLayout ();
-		layout.addComponent(diaryTitleBox);
-		title = new TextField();
-		title.setPlaceholder("Titel");
-		diaryTitleBox.addComponent(title);
+		moodButtonsBox.addComponents(smileSchlecht, smileEherSchlecht, smileEherGut, smileGut);
 		
-		Layout diaryTextBox = new HorizontalLayout ();
-		layout.addComponent(diaryTextBox);
-		text = new TextArea();
-		text.setPlaceholder("Text");
-		diaryTextBox.addComponent(text);
+		Label diaryTitlelabel = new Label("Tagebuchtitel");
+		diaryTitlelabel.addStyleName("diaryTitlelabel");
+		content.addComponent(diaryTitlelabel);
 		
-		Layout tagsBox = new HorizontalLayout ();
-		layout.addComponent(tagsBox);
-		tags = new TextField();
-		tags.setPlaceholder("Tags");
-		tagsBox.addComponent(tags);
+		TextArea diaryText = new TextArea();
+		diaryText.setPlaceholder("Text");
+		diaryText.addStyleName("diaryText");
+		content.addComponent(diaryText);
 		
-		Layout superButtonBox = new HorizontalLayout ();
-		layout.addComponent(superButtonBox);
-		sosButton = new Button("SOS");
-		chatButton = new Button("Chat");
-		superButtonBox.addComponents(sosButton, chatButton);
-		
-		Layout confirmButtonBox = new HorizontalLayout ();
-		layout.addComponent(confirmButtonBox);
 		confirmButton = new Button(VaadinIcons.CHECK);
-		confirmButtonBox.addComponent(confirmButton);
+		content.addComponent(confirmButton);
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		//--------altes Design-----------------------------------------------------//
+	//	Button menuButton = new Button(VaadinIcons.MENU);
+		
+		
+		
+		
+//		Layout titleBarBox = new HorizontalLayout ();
+//		titleBarBox.setSizeFull();
+//		layout.addComponent(titleBarBox);
+//		speroTitle = new Label("Spero");
+//		titleBarBox.addComponent(speroTitle);
+		
+//		Layout menuBarBox = new HorizontalLayout ();
+//		layout.addComponent(menuBarBox);
+//		menuButton = new Button(VaadinIcons.MENU);
+//		menuBarBox.addComponent(menuButton);
+		
+//		Layout event = new HorizontalLayout();
+//		layout.addComponent(event);
+//
+//		Layout moods = new HorizontalLayout();
+//		layout.addComponent(moods);
+//		smileSchlecht = new Button(VaadinIcons.SMILEY_O);
+//		smileEherSchlecht = new Button(VaadinIcons.SMILEY_O);
+//		smileEherGut = new Button(VaadinIcons.SMILEY_O);
+//		smileGut = new Button(VaadinIcons.SMILEY_O);
+//		moods.setSizeFull();
+//		moods.addComponents(smileSchlecht, smileEherSchlecht, smileEherGut, smileGut);
+//	
+//		Layout diaryTitleBox = new HorizontalLayout ();
+//		layout.addComponent(diaryTitleBox);
+//		title = new TextField();
+////		Responsive.makeResponsive(title);
+////		title.setSizeFull();
+//		title.setPlaceholder("Titel");
+//		diaryTitleBox.addComponent(title);
+//		
+//		Layout diaryTextBox = new HorizontalLayout ();
+//		layout.addComponent(diaryTextBox);
+//		text = new TextArea();
+//		text.setPlaceholder("Text");
+//		diaryTextBox.addComponent(text);
+//		
+//		Layout tagsBox = new HorizontalLayout ();
+//		layout.addComponent(tagsBox);
+//		tags = new TextField();
+//		tags.setPlaceholder("Tags");
+//		tagsBox.addComponent(tags);
+//		
+//		Layout superButtonBox = new HorizontalLayout ();
+//		layout.addComponent(superButtonBox);
+//		sosButton = new Button("SOS");
+//		chatButton = new Button("Chat");
+//		superButtonBox.addComponents(sosButton, chatButton);
+//		
+//		Layout confirmButtonBox = new HorizontalLayout ();
+//		layout.addComponent(confirmButtonBox);
+//		confirmButton = new Button(VaadinIcons.CHECK);
+//		confirmButtonBox.addComponent(confirmButton);
 		
 	}
 
@@ -116,5 +182,7 @@ implements ButtonView, ClickListener {
 	public void addListener(ButtonClickListener listener) {
 		listeners.add(listener);		
 	}
+
+
 
 }
