@@ -31,7 +31,7 @@ implements ButtonView, ClickListener {
 	private Button menuButton;
 	private Button sosButton;
 	private Button chatButton;
-	public static Button confirmButton;
+	private Button confirmButton;
 	private Button smileSchlecht;
 	private Button smileEherSchlecht;
 	private Button smileEherGut;
@@ -50,12 +50,15 @@ implements ButtonView, ClickListener {
 		Layout layout = new VerticalLayout();
 		setCompositionRoot(layout);
 		
-		CssLayout titleBarBox = new CssLayout();
+		HorizontalLayout titleBarBox = new HorizontalLayout();
+		titleBarBox.setSizeFull();
+		titleBarBox.setComponentAlignment(title, Alignment.MIDDLE_CENTER);
 		titleBarBox.addStyleName("titleBarBox");
 		Label title = new Label("Spero");
 		title.addStyleName("title");
 		titleBarBox.addComponent(title);
 		layout.addComponent(titleBarBox);
+	
 		
 		
 		HorizontalLayout menuAndContent = new HorizontalLayout();
@@ -77,6 +80,8 @@ implements ButtonView, ClickListener {
 		
 		HorizontalLayout moodButtonsBox = new HorizontalLayout();
 		moodButtonsBox.setSpacing(true);
+		moodButtonsBox.setSizeFull();
+		moodButtonsBox.setComponentAlignment(moodButtonsBox, Alignment.MIDDLE_CENTER);
 		content.addComponent(moodButtonsBox);
 		smileSchlecht = new Button(VaadinIcons.SMILEY_O);
 		smileEherSchlecht = new Button(VaadinIcons.SMILEY_O);
@@ -84,9 +89,11 @@ implements ButtonView, ClickListener {
 		smileGut = new Button(VaadinIcons.SMILEY_O);
 		moodButtonsBox.addComponents(smileSchlecht, smileEherSchlecht, smileEherGut, smileGut);
 		
-		Label diaryTitlelabel = new Label("Tagebuchtitel");
-		diaryTitlelabel.addStyleName("diaryTitlelabel");
-		content.addComponent(diaryTitlelabel);
+		TextField diaryTitleLabel = new TextField();
+		diaryTitleLabel.setPlaceholder("Titel");
+		diaryTitleLabel.addStyleName("diaryTitlelabel");
+		content.addComponent(diaryTitleLabel);
+		
 		
 		TextArea diaryText = new TextArea();
 		diaryText.setPlaceholder("Text");
@@ -95,6 +102,13 @@ implements ButtonView, ClickListener {
 		
 		confirmButton = new Button(VaadinIcons.CHECK);
 		content.addComponent(confirmButton);
+		
+		HorizontalLayout superButtonBox = new HorizontalLayout();
+		content.addComponent(superButtonBox);
+		sosButton = new Button(VaadinIcons.PHONE);
+		chatButton = new Button(VaadinIcons.CHAT);
+		superButtonBox.addComponents(sosButton, chatButton);
+		
 
 		
 		
