@@ -37,11 +37,10 @@ implements ButtonView, ClickListener {
 	private Button smileEherGut;
 	private Button smileGut;
 	
-	private TextField title;
+	private Label title;
 	private TextField tags;
-	private TextArea text;
-	
-	private Label speroTitle;
+	private TextArea diaryText;
+
 		
 	private List<ButtonClickListener> listeners = new ArrayList<ButtonClickListener>();
 	
@@ -53,21 +52,19 @@ implements ButtonView, ClickListener {
 		
 		VerticalLayout titleBarBox = new VerticalLayout();
 		titleBarBox.addStyleName("titleBarBox");
-		Label title = new Label("Spero");
+		title = new Label("Spero");
 		title.addStyleName("title");
 		titleBarBox.addComponent(title);
 		layout.addComponent(titleBarBox);
-		titleBarBox.setSizeFull();
-		titleBarBox.setComponentAlignment(title, Alignment.MIDDLE_LEFT);
 		
 		
 		HorizontalLayout menuAndContent = new HorizontalLayout();
 		menuAndContent.setSizeFull();
+		menuAndContent.setMargin(true);
 		menuAndContent.setSpacing(true);
 		layout.addComponent(menuAndContent);
 		
 		VerticalLayout menuBox = new VerticalLayout();
-		menuBox.setWidth("100%");
 		menuBox.setSpacing(true);
 		menuBox.setMargin(true);
 		menuButton = new Button(VaadinIcons.MENU);
@@ -78,14 +75,17 @@ implements ButtonView, ClickListener {
 		
 		
 		VerticalLayout content = new VerticalLayout();
-		content.setSpacing(true);
+		content.setSizeFull();
 		content.setMargin(true);
+		content.setSpacing(true);
 		menuAndContent.addComponent(content);
 		
-		menuAndContent.setExpandRatio(menuBox, 2);
-		menuAndContent.setExpandRatio(content, 8);
+		menuAndContent.setExpandRatio(menuBox, 1);
+		menuAndContent.setExpandRatio(content, 9);
 		
 		HorizontalLayout moodButtonsBox = new HorizontalLayout();
+		moodButtonsBox.setSizeFull();
+		moodButtonsBox.setMargin(true);
 		moodButtonsBox.setSpacing(true);
 		content.addComponent(moodButtonsBox);
 		smileSchlecht = new Button(VaadinIcons.SMILEY_O);
@@ -94,27 +94,46 @@ implements ButtonView, ClickListener {
 		smileGut = new Button(VaadinIcons.SMILEY_O);
 		moodButtonsBox.addComponents(smileSchlecht, smileEherSchlecht, smileEherGut, smileGut);
 		content.setComponentAlignment(moodButtonsBox, Alignment.MIDDLE_LEFT);
+		content.addComponent(moodButtonsBox);
 		
+		HorizontalLayout diaryTitleBox = new HorizontalLayout();
+		diaryTitleBox.setSizeFull();
+		diaryTitleBox.setMargin(true);
+		diaryTitleBox.setSpacing(true);
 		TextField diaryTitleLabel = new TextField();
 		diaryTitleLabel.setPlaceholder("Titel");
 		diaryTitleLabel.addStyleName("diaryTitlelabel");
-		content.addComponent(diaryTitleLabel);
+		diaryTitleBox.addComponent(diaryTitleLabel);
+		content.addComponent(diaryTitleBox);
 		
-		
-		TextArea diaryText = new TextArea();
+		HorizontalLayout diaryTextBox = new HorizontalLayout();
+		diaryTextBox.setSizeFull();
+		diaryTextBox.setMargin(true);
+		diaryTextBox.setSpacing(true);
+		diaryText = new TextArea();
 		diaryText.setPlaceholder("Text");
 		diaryText.addStyleName("diaryText");
-		content.addComponent(diaryText);
+		diaryTextBox.addComponent(diaryText);
+		content.addComponent(diaryTextBox);
 		
+		HorizontalLayout confirmButtonBox = new HorizontalLayout();
+		confirmButtonBox.setSizeFull();
+		confirmButtonBox.setMargin(true);
+		confirmButtonBox.setSpacing(true);
 		confirmButton = new Button(VaadinIcons.CHECK);
-		content.addComponent(confirmButton);
+		confirmButtonBox.addComponent(confirmButton);
+		content.addComponent(confirmButtonBox);
 		
 		HorizontalLayout superButtonBox = new HorizontalLayout();
+		superButtonBox.setSizeFull();
+		superButtonBox.setMargin(true);
+		superButtonBox.setSpacing(true);
 		content.addComponent(superButtonBox);
 		sosButton = new Button(VaadinIcons.PHONE);
 		chatButton = new Button(VaadinIcons.CHAT);
 		superButtonBox.addComponents(sosButton, chatButton);
-		
+		superButtonBox.setComponentAlignment(sosButton, Alignment.MIDDLE_LEFT);
+		superButtonBox.setComponentAlignment(chatButton, Alignment.MIDDLE_LEFT);
 
 		
 		
