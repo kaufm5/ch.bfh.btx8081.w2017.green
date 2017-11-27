@@ -45,14 +45,4 @@ public class MainPresenter implements SperoView {
 		// TODO Auto-generated method stub
 
 	}
-
-
-
-
-
-
-
-
-
-
 }
