@@ -91,7 +91,7 @@ implements SperoView, ClickListener {
 		moodButtonsBox.setSpacing(true);
 		content.addComponent(moodButtonsBox);
 		smileSchlecht = new Button(VaadinIcons.FROWN_O);
-		smileEherSchlecht = new Button(VaadinIcons.SMILEY_O);
+		smileEherSchlecht = new Button(VaadinIcons.MEH_O);
 		smileEherGut = new Button(VaadinIcons.SMILEY_O);
 		smileGut = new Button(VaadinIcons.SMILEY_O);
 		moodButtonsBox.addComponents(smileSchlecht, smileEherSchlecht, smileEherGut, smileGut);
