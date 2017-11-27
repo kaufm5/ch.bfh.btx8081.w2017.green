@@ -210,7 +210,7 @@ public class MainViewImpl extends CustomComponent implements MainView, ClickList
 	@Override
 	public void buttonClick(ClickEvent event) {
 		for (MainViewListener listener: listeners)
-			listener.buttonClick(event.getButton().getCaption().charAt(0));;
+			listener.buttonClick(event.getButton().getCaption().charAt(0));
 	}
 	
 
