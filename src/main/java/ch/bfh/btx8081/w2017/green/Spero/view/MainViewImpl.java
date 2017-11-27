@@ -94,7 +94,7 @@ implements SperoView, ClickListener {
 		smileEherGut = new Button(VaadinIcons.SMILEY_O);
 		smileGut = new Button(VaadinIcons.SMILEY_O);
 		moodButtonsBox.addComponents(smileSchlecht, smileEherSchlecht, smileEherGut, smileGut);
-		content.setComponentAlignment(moodButtonsBox, Alignment.MIDDLE_LEFT);
+		//content.setComponentAlignment(moodButtonsBox, Alignment.MIDDLE_LEFT);
 		content.addComponent(moodButtonsBox);
 		
 		HorizontalLayout diaryTitleBox = new HorizontalLayout();
