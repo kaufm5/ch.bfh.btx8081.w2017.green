@@ -13,4 +13,5 @@ public interface ButtonView extends ClickListener {
 	
 	public void addListener(ButtonClickListener listener);
 
+
 }

@@ -223,6 +223,8 @@ implements ButtonView, ClickListener {
 		this.listeners.add(listener);		
 	}
 
+	
+
 	@Override
 	public void click(com.vaadin.event.MouseEvents.ClickEvent event) {
 		// TODO Auto-generated method stub

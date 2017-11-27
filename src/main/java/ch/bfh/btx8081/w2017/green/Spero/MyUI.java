@@ -45,7 +45,7 @@ public class MyUI extends UI {
 //        setContent(layout);
 //    }
 
-   	 ReportView view = new ReportView();
+   	 MainViewImpl view = new MainViewImpl();
    	 layout.addComponent(view);
    	 setContent(layout);
     }
