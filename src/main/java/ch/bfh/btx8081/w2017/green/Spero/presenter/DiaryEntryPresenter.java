@@ -5,11 +5,12 @@ import com.vaadin.navigator.View;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Label;
 
-import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.ButtonView;
+
+import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.MainView;
 import ch.bfh.btx8081.w2017.green.Spero.model.DiaryEntry;
 import ch.bfh.btx8081.w2017.green.Spero.view.MainViewImpl;
 
-public class DiaryEntryPresenter implements /*ButtonView,*/ ButtonView.ButtonClickListener {
+public class DiaryEntryPresenter implements /*ButtonView,*/ MainView.MainViewListener {
 
 	private MainViewImpl view;
 	private DiaryEntry model;
@@ -45,6 +46,12 @@ public class DiaryEntryPresenter implements /*ButtonView,*/ ButtonView.ButtonCli
 
 @Override
 public void buttonClick(String operation) {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public void buttonClick(char operation) {
 	// TODO Auto-generated method stub
 	
 }}
