@@ -14,10 +14,10 @@ public class Diary {
 	public Diary() {
 	}
 
-	public void createEntry(String diaryTitle, String diaryText, Mood moodParam, String tag) {
+	public void createEntry(String diaryTitle, String diaryText, Mood moodParam, String tag, Object attachment) {
 		
 		
-		this.diaryEntryMap.put(nextDiaryEntryNumber, new DiaryEntry(nextDiaryEntryNumber, diaryTitle, diaryText, moodParam, tag));
+		this.diaryEntryMap.put(nextDiaryEntryNumber, new DiaryEntry(nextDiaryEntryNumber, diaryTitle, diaryText, moodParam, tag, attachment));
 		this.nextDiaryEntryNumber++;
 		
 	}
