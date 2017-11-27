@@ -35,7 +35,7 @@ public class ReportView extends CustomComponent implements ButtonView, ClickList
 		Layout layout = new VerticalLayout();
 		setCompositionRoot(layout);
 
-		
+
 		reportTitle = new Label("Statistik");
 		layout.addComponent(reportTitle);
 
@@ -43,10 +43,13 @@ public class ReportView extends CustomComponent implements ButtonView, ClickList
 		layout.addComponent(menuBarBox);
 		menuButton = new Button(VaadinIcons.MENU);
 		menuBarBox.addComponent(menuButton);
-		//menuButton.getUI().getPage().open("", "ReportView");
 
-		
-		
+		//		Layout dropDown = new HorizontalLayout(); 
+		//		layout.addComponent(dropDown);
+		//		dropDown.addComponent(choice);
+
+
+
 		Layout superButtonBox = new HorizontalLayout ();
 		layout.addComponent(superButtonBox);
 		sosButton = new Button("SOS");

@@ -14,6 +14,7 @@ import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
 import ch.bfh.btx8081.w2017.green.Spero.view.MainViewImpl;
+import ch.bfh.btx8081.w2017.green.Spero.view.ReportView;
 
 /**
  * This UI is the application entry point. A UI may either represent a browser window 
@@ -44,7 +45,7 @@ public class MyUI extends UI {
 //        setContent(layout);
 //    }
 
-   	 MainViewImpl view = new MainViewImpl();
+   	 ReportView view = new ReportView();
    	 layout.addComponent(view);
    	 setContent(layout);
     }

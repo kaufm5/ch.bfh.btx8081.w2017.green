@@ -14,6 +14,7 @@ import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.ButtonView;
+import ch.bfh.btx8081.w2017.green.Spero.presenter.MainPresenter;
 
 import com.vaadin.ui.CustomComponent;
 
@@ -209,7 +210,7 @@ implements ButtonView, ClickListener {
 	@Override
 	public void buttonClick(ClickEvent event) {
 		for (ButtonClickListener listener: listeners)
-			listener.buttonClick(event.getButton().getCaption().toString());
+			listener.buttonClick(event);
 	}
 
 	@Override
@@ -219,7 +220,7 @@ implements ButtonView, ClickListener {
 
 	@Override
 	public void addListener(ButtonClickListener listener) {
-		listeners.add(listener);		
+		this.listeners.add(listener);		
 	}
 
 
