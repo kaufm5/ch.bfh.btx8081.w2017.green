@@ -224,7 +224,7 @@ public class MainViewImpl extends CustomComponent implements MainView, ClickList
 
 	@Override
 	public void addListener(MainViewListener listener) {
-		// TODO Auto-generated method stub
+		listeners.add(listener);
 		
 	}
 

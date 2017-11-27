@@ -13,7 +13,7 @@ public class MainPresenter implements SperoView {
 
 	public MainPresenter(MainViewImpl mainView) {
 		this.mainView = mainView; 
-		mainView.addListener(this);
+		//mainView.addListener(this);
 	}
 
 	@Override
