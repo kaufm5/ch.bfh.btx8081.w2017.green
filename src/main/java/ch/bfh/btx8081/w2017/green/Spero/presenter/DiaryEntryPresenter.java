@@ -24,31 +24,6 @@ public class DiaryEntryPresenter implements /*ButtonView,*/ MainView.MainViewLis
 		view.addListener(this);
 	}
 		
-//	public static void confirmEvent() {
-//		MainViewImpl.confirmButton.setCaption("test");
-//	}
-
-	/*@Override
-	public void addListener(ButtonClickListener listener) {
-		// TODO Auto-generated method stub
-		
-	}*/
-
-	@Override
-	public void buttonClick(this.confirmButton) {
-//		if(operation.equals("confirmButton")){
-//		 MainViewImpl.confirmButton.setCaption("test");
-//		}else{}
-		MainViewImpl.confirmButton.setCaption("test");
-	}
-	
-
-
-@Override
-public void buttonClick(String operation) {
-	// TODO Auto-generated method stub
-	
-}
 
 @Override
 public void buttonClick(char operation) {
