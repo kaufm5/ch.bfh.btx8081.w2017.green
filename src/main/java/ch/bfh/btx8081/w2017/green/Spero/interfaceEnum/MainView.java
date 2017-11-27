@@ -4,13 +4,11 @@ import com.vaadin.event.MouseEvents.ClickEvent;
 
 public interface MainView {
 	public void setDisplay(String testText);
-	
-	interface MainViewListener {
-		  void buttonClick(char operation);
-	}
-	
-	public void addListener(MainViewListener listener);
 
-	//void buttonClick(ClickEvent event);
+	interface MainViewListener {
+		void buttonClick(char operation);
+	}
+
+	public void addListener(MainViewListener listener);
 
 }
