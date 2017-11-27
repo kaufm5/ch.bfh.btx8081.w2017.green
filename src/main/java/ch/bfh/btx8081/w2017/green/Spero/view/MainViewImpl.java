@@ -44,7 +44,7 @@ public class MainViewImpl extends CustomComponent implements MainView, ClickList
 	private TextArea diaryText;
 
 		
-	private List<MainViewListener> listeners = new ArrayList<>();
+	private List<MainViewListener> listeners = new ArrayList<MainViewListener>();
 	
 	public MainViewImpl() {
 
