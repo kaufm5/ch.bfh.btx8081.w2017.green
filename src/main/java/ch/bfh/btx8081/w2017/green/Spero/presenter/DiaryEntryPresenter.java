@@ -12,13 +12,13 @@ import ch.bfh.btx8081.w2017.green.Spero.view.MainViewImpl;
 
 public class DiaryEntryPresenter implements /*ButtonView,*/ MainView.MainViewListener {
 
-	private MainViewImpl view;
+	private MainView view;
 	private DiaryEntry model;
 	
 	private String confirmButton;
 	
 	// constructor
-	public DiaryEntryPresenter(MainViewImpl view, DiaryEntry model) {
+	public DiaryEntryPresenter(MainView view, DiaryEntry model) {
 		this.view = view;
 		this.model = model;
 		view.addListener(this);
