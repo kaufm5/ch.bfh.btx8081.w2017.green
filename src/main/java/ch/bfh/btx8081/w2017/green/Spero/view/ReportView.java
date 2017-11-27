@@ -10,15 +10,17 @@ import com.vaadin.ui.VerticalLayout;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoView;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 import javafx.scene.chart.Chart;
+import javafx.scene.chart.ChartBuilder;
 
 import com.vaadin.ui.CustomComponent;
+import com.sun.javafx.charts.ChartLayoutAnimator;
 import com.vaadin.event.MouseEvents.ClickEvent;
 import com.vaadin.event.MouseEvents.ClickListener;
 
 import com.vaadin.icons.*;
 
 
-public class ReportView extends CustomComponent implements SperoView, ClickListener {
+public class ReportView extends CustomComponent implements SperoView {
 
 	private Button menuButton; 
 	private Button chatButton; 
@@ -26,6 +28,7 @@ public class ReportView extends CustomComponent implements SperoView, ClickListe
 	private Label reportTitle; 
 	private ComboBox choice; 
 	
+	private ChartLayoutAnimator chart; 
 
 	public ReportView() { 
 		VerticalLayout layout = new VerticalLayout();
@@ -78,11 +81,6 @@ public class ReportView extends CustomComponent implements SperoView, ClickListe
 
 	}
 
-	@Override
-	public void click(ClickEvent event) {
-		// TODO Auto-generated method stub
-
-	}
 
 	@Override
 	public void addListener(SperoViewListener listener) {

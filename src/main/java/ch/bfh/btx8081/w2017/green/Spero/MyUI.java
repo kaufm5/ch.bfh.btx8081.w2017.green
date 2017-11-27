@@ -4,6 +4,8 @@ import javax.servlet.annotation.WebServlet;
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
+import com.vaadin.navigator.Navigator;
+import com.vaadin.navigator.Navigator.ComponentContainerViewDisplay;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.Button;
@@ -15,6 +17,7 @@ import com.vaadin.ui.VerticalLayout;
 
 import ch.bfh.btx8081.w2017.green.Spero.model.DiaryEntry;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.DiaryEntryPresenter;
+import ch.bfh.btx8081.w2017.green.Spero.presenter.MainPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.view.MainViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.ReportView;
 
@@ -28,18 +31,28 @@ import ch.bfh.btx8081.w2017.green.Spero.view.ReportView;
  */
 @Theme("mytheme")
 public class MyUI extends UI {
+	
+	Navigator navigator; 
+	MainViewImpl mainView; 
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
    	 final VerticalLayout layout = new VerticalLayout();
 
-   	 DiaryEntry model = new DiaryEntry();
-   	 MainViewImpl view = new MainViewImpl();
+   	 //DiaryEntry model = new DiaryEntry();
    	 
-   	 new DiaryEntryPresenter(view, model);
-   	 
-   	 layout.addComponent(view);
+   	// new DiaryEntryPresenter(view, model);
+  
    	 setContent(layout);
+   	 
+
+   	 ComponentContainerViewDisplay viewDisplay = new ComponentContainerViewDisplay(layout); 
+   	 navigator = new Navigator(UI.getCurrent(), viewDisplay); 
+   	 mainView = new MainViewImpl(); 
+   	 navigator.addView("", mainView);
+   	 navigator.addView("report", new ReportView() );
+   	 new MainPresenter(mainView); 
+   	 
    	 
     }
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
