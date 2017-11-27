@@ -13,7 +13,8 @@ import com.vaadin.ui.TextArea;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
-import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.ButtonView;
+import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoView;
+import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.MainPresenter;
 
 import com.vaadin.ui.CustomComponent;
@@ -26,7 +27,7 @@ import com.vaadin.server.Responsive;
 import com.vaadin.server.Sizeable;
 
 public class MainViewImpl extends CustomComponent
-implements ButtonView, ClickListener {
+implements SperoView, ClickListener {
 	
 
 	private Button menuButton;
@@ -43,7 +44,7 @@ implements ButtonView, ClickListener {
 	private TextArea diaryText;
 
 		
-	private List<ButtonClickListener> listeners = new ArrayList<ButtonClickListener>();
+	private List<SperoViewListener> listeners = new ArrayList<SperoViewListener>();
 	
 	public MainViewImpl() {
 
@@ -209,25 +210,20 @@ implements ButtonView, ClickListener {
 
 	@Override
 	public void buttonClick(ClickEvent event) {
-		for (ButtonClickListener listener: listeners)
+		for (SperoViewListener listener: listeners)
 			listener.buttonClick(event);
 	}
-
-	//@Override
-	//public void setDisplay(double disp) {
-		
-	//}
-
-	@Override
-	public void addListener(ButtonClickListener listener) {
-		this.listeners.add(listener);		
-	}
-
 	
 
 	@Override
 	public void click(com.vaadin.event.MouseEvents.ClickEvent event) {
 		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void addListener(SperoViewListener listener) {
+		this.listeners.add(listener); 
 		
 	}
 

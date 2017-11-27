@@ -2,6 +2,7 @@ package ch.bfh.btx8081.w2017.green.Spero.view;
 
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.CheckBox;
 import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
@@ -9,7 +10,8 @@ import com.vaadin.ui.Layout;
 import com.vaadin.ui.NativeSelect;
 import com.vaadin.ui.VerticalLayout;
 
-import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.ButtonView;
+import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoView;
+import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 import javafx.scene.chart.Chart;
 
 import com.vaadin.ui.CustomComponent;
@@ -22,7 +24,7 @@ import com.vaadin.icons.*;
 import com.vaadin.server.Sizeable;
 
 
-public class ReportView extends CustomComponent implements ButtonView, ClickListener {
+public class ReportView extends CustomComponent implements SperoView, ClickListener {
 
 	private Button menuButton;
 	private NativeSelect<String> choice; //Combobox 
@@ -95,15 +97,24 @@ public class ReportView extends CustomComponent implements ButtonView, ClickList
 	//		
 
 	@Override
-	public void click(ClickEvent event) {
+	public void buttonClick(com.vaadin.ui.Button.ClickEvent event) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
-	public void addListener(ButtonClickListener listener) {
+	public void click(ClickEvent event) {
 		// TODO Auto-generated method stub
-
+		
 	}
+
+	@Override
+	public void addListener(SperoViewListener listener) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
 }
 

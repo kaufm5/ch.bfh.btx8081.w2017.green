@@ -4,14 +4,10 @@ import com.vaadin.event.MouseEvents.ClickListener;
 import com.vaadin.navigator.View;
 import com.vaadin.ui.Button.ClickEvent;
 
-public interface ButtonView extends ClickListener {
+public interface SperoView extends View, SperoViewListener {
 //	public void setDisplay(double disp);
 	
-	interface ButtonClickListener extends View, ButtonView {
-		void buttonClick(ClickEvent event);
-	}
-	
-	public void addListener(ButtonClickListener listener);
+	public void addListener(SperoViewListener listener);
 
 
 }
