@@ -213,14 +213,20 @@ implements ButtonView, ClickListener {
 			listener.buttonClick(event);
 	}
 
-	@Override
-	public void setDisplay(double disp) {
+	//@Override
+	//public void setDisplay(double disp) {
 		
-	}
+	//}
 
 	@Override
 	public void addListener(ButtonClickListener listener) {
 		this.listeners.add(listener);		
+	}
+
+	@Override
+	public void click(com.vaadin.event.MouseEvents.ClickEvent event) {
+		// TODO Auto-generated method stub
+		
 	}
 
 
