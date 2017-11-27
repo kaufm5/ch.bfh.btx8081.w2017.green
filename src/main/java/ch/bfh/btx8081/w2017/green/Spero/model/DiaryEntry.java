@@ -21,6 +21,11 @@ public class DiaryEntry {
 	private Object attachment;
 	
 	//constructor
+	public DiaryEntry() {
+		
+	}
+	
+	//constructor
 	public DiaryEntry(int diaryEntryNumber,String diaryTitle, String diaryText,
 			Mood moodParam, String tag, Object attachment) {
 		this.diaryEntryNumber = diaryEntryNumber;

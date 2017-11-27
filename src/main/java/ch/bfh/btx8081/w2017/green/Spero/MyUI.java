@@ -13,6 +13,8 @@ import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
+import ch.bfh.btx8081.w2017.green.Spero.model.DiaryEntry;
+import ch.bfh.btx8081.w2017.green.Spero.presenter.DiaryEntryPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.view.MainViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.ReportView;
 
@@ -30,23 +32,12 @@ public class MyUI extends UI {
     @Override
     protected void init(VaadinRequest vaadinRequest) {
    	 final VerticalLayout layout = new VerticalLayout();
-//        
-//        final TextField name = new TextField();
-//        name.setCaption("Type your name here:");
-//
-//        Button button = new Button("Click Me");
-//        button.addClickListener(e -> {
-//            layout.addComponent(new Label("Thanks " + name.getValue() 
-//                    + ", it works!"));
-//        });
-//        
-//        layout.addComponents(name, button);
-//        
-//        setContent(layout);
-//    }
 
-   	 
+   	 DiaryEntry model = new DiaryEntry();
    	 MainViewImpl view = new MainViewImpl();
+   	 
+   	 new DiaryEntryPresenter(view, model);
+   	 
    	 layout.addComponent(view);
    	 setContent(layout);
    	 
