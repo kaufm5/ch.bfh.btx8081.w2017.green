@@ -3,6 +3,7 @@ package ch.bfh.btx8081.w2017.green.Spero.view;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
@@ -19,13 +20,12 @@ import com.vaadin.icons.*;
 
 public class ReportView extends CustomComponent implements SperoView, ClickListener {
 
-	private Button menuButton;
-	private ComboBox choice;  
+	private Button menuButton; 
 	private Button chatButton; 
 	private Button sosButton;
 	private Label reportTitle; 
+	private ComboBox choice; 
 	
-	//private Chart reportDiagram;
 
 	public ReportView() { 
 		VerticalLayout layout = new VerticalLayout();
@@ -61,16 +61,6 @@ public class ReportView extends CustomComponent implements SperoView, ClickListe
 		choice.setItems("Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember");
 		
 		
-//		HorizontalLayout diagram = new HorizontalLayout(); 
-//		reportDiagram = new Chart() {
-//			
-//			
-//			@Override
-//			protected void layoutChartChildren(double top, double left, double width, double height) {
-//				// TODO Auto-generated method stub
-//				
-//			}
-//		};
 
 
 
