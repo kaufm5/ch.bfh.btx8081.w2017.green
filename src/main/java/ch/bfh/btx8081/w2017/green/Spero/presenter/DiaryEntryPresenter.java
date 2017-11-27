@@ -25,7 +25,7 @@ public class DiaryEntryPresenter implements /* ButtonView, */ MainView.MainViewL
 
 	@Override
 	public void buttonClick(char operation) {
-		// TODO Auto-generated method stub
+		view.setDisplay("" + operation);
 
 	}
 }

@@ -10,5 +10,5 @@ public interface MainView {
 	}
 
 	public void addListener(MainViewListener listener);
-
+	
 }
