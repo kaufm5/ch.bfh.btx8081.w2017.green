@@ -83,10 +83,23 @@ public class MainViewImpl extends CustomComponent implements SperoView {
 		moodButtonsBox.setSizeFull();
 		moodButtonsBox.setMargin(true);
 		moodButtonsBox.setSpacing(true);
+		
 		smileSchlecht = new Button(VaadinIcons.FROWN_O);
+		smileSchlecht.addClickListener(this);
+		smileSchlecht.setId("smileSchlecht");
+		
 		smileEherSchlecht = new Button(VaadinIcons.MEH_O);
+		smileEherSchlecht.addClickListener(this);
+		smileEherSchlecht.setId("smileEherSchlecht");
+		
 		smileEherGut = new Button(VaadinIcons.SMILEY_O);
+		smileEherGut.addClickListener(this);
+		smileEherGut.setId("smileEherGut");
+		
 		smileGut = new Button(VaadinIcons.SMILEY_O);
+		smileGut.addClickListener(this);
+		smileGut.setId("smileGut");
+		
 		moodButtonsBox.addComponents(smileSchlecht, smileEherSchlecht, smileEherGut, smileGut);
 		//content.setComponentAlignment(moodButtonsBox, Alignment.MIDDLE_LEFT);
 		content.addComponent(moodButtonsBox);
