@@ -21,7 +21,7 @@ public class MenuPresenter implements SperoViewListener {
 		
 		switch(buttonId) {
 		case "gefuehlslage":
-			menuView.getUI().getNavigator().navigateTo("");
+			menuView.getUI().getNavigator().navigateTo(Views.MAIN_VIEW);
 		    break;
 		case "report":
 			menuView.getUI().getNavigator().navigateTo(Views.REPORT_VIEW);
