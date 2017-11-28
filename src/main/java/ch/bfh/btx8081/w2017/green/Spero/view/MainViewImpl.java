@@ -60,8 +60,10 @@ public class MainViewImpl extends CustomComponent implements SperoView {
 		menuBox.setSpacing(true);
 		menuBox.setMargin(true);
 		menuButton = new Button(VaadinIcons.MENU);
+		//id für button
 		menuButton.addClickListener(this);
 		menuButton.setId("menuButton");
+		
 		menuBox.addComponent(menuButton);
 		menuBox.setComponentAlignment(menuButton, Alignment.MIDDLE_LEFT);
 		menuBox.addStyleName("menu");

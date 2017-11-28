@@ -63,7 +63,7 @@ public class ReportView extends CustomComponent implements SperoView {
 		content.addComponent(comboBox);
 		choice.setItems("Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember");
 		
-		
+	
 
 
 
