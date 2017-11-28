@@ -1,6 +1,10 @@
 package ch.bfh.btx8081.w2017.green.Spero.view;
 
 import com.vaadin.ui.Button.ClickEvent;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.CustomComponent;
@@ -20,6 +24,8 @@ public class MenuView extends CustomComponent implements SperoView {
 	private Button chatButton; 
 	private Button sosButton;
 	
+	private List<SperoViewListener> listeners = new ArrayList<SperoViewListener>();
+	
 	public MenuView() {
 		VerticalLayout layout = new VerticalLayout();
 		setCompositionRoot(layout);
@@ -38,6 +44,17 @@ public class MenuView extends CustomComponent implements SperoView {
 		contentLayout.setExpandRatio(content, 9);
 		
 		VerticalLayout menuItems = new VerticalLayout();
+		
+		gefuehlslage = new Button("Gefühlslage");
+		gefuehlslage.addClickListener(this);
+		gefuehlslage.setId("gefuehlslage");
+		menuItems.addComponent(gefuehlslage);
+		
+		report = new Button("Statistik");
+		report.addClickListener(this);
+		report.setId("report");
+		menuItems.addComponent(report);
+		
 		content.addComponent(menuItems);
 		
 		HorizontalLayout superButtonBox = new HorizontalLayout ();
@@ -48,15 +65,16 @@ public class MenuView extends CustomComponent implements SperoView {
 	}
 
 	@Override
-	public void buttonClick(ClickEvent event) {
-		// TODO Auto-generated method stub
-		
+	public void addListener(SperoViewListener listener) {
+		listeners.add(listener);	
 	}
 
+
 	@Override
-	public void addListener(SperoViewListener listener) {
-		// TODO Auto-generated method stub
-		
+	public void buttonClick(ClickEvent event) {
+		for (SperoViewListener listener : this.listeners) {
+			listener.buttonClick(event);
+		}
 	}
 
 }
