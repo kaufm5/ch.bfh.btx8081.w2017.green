@@ -12,11 +12,16 @@ public class Views {
 		/*
 		 * The information view
 		 */
-		public static final String SETTINGS_VIEW = "settings";
+		public static final String MENU_VIEW = "menu";
 		
 		/*
 		 * The tips view
 		 */
 		public static final String REPORT_VIEW = "report";
+		
+		/*
+		 * The setting view
+		 */
+		public static final String SETTINGS_VIEW = "settings";
 	}
 
