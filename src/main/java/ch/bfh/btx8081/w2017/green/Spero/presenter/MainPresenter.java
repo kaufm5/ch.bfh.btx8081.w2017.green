@@ -3,15 +3,18 @@ package ch.bfh.btx8081.w2017.green.Spero.presenter;
 import com.vaadin.ui.Button.ClickEvent;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
+import ch.bfh.btx8081.w2017.green.Spero.model.Diary;
 import ch.bfh.btx8081.w2017.green.Spero.view.MainViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.Views;
 
 public class MainPresenter implements SperoViewListener {
 
 	private MainViewImpl mainView;
+	private Diary model;
 
-	public MainPresenter(MainViewImpl mainView) {
-		this.mainView = mainView; 
+	public MainPresenter(MainViewImpl mainView, Diary model) {
+		this.mainView = mainView;
+		this.model = model;
 		mainView.addListener(this);
 	}
 
@@ -31,6 +34,12 @@ public class MainPresenter implements SperoViewListener {
 			break;
 		case "smileGut":
 			break; 
+		case "smileEherGut":
+			break;
+		case "smileEherSchlecht":
+			break;
+		case "smileSchlecht":
+			break;
 		}
 	}
 }
