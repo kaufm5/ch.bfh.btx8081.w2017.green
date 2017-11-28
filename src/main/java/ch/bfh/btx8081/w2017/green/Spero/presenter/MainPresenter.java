@@ -2,6 +2,7 @@ package ch.bfh.btx8081.w2017.green.Spero.presenter;
 
 import com.vaadin.ui.Button.ClickEvent;
 
+import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.Mood;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 import ch.bfh.btx8081.w2017.green.Spero.model.Diary;
 import ch.bfh.btx8081.w2017.green.Spero.view.MainViewImpl;
@@ -11,6 +12,8 @@ public class MainPresenter implements SperoViewListener {
 
 	private MainViewImpl mainView;
 	private Diary model;
+	
+	private Mood moodParam;
 
 	public MainPresenter(MainViewImpl mainView, Diary model) {
 		this.mainView = mainView;
@@ -33,12 +36,16 @@ public class MainPresenter implements SperoViewListener {
 		case "sosButton":
 			break;
 		case "smileGut":
+			moodParam = Mood.gut;
 			break; 
 		case "smileEherGut":
+			moodParam = Mood.eherGut;
 			break;
 		case "smileEherSchlecht":
+			moodParam = Mood.eherSchlecht;
 			break;
 		case "smileSchlecht":
+			moodParam = Mood.schlecht;
 			break;
 		}
 	}
