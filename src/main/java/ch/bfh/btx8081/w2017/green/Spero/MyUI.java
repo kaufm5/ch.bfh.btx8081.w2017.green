@@ -51,7 +51,7 @@ public class MyUI extends UI {
    	 model = new Diary();
    	 navigator.addView("", mainView);
    	 navigator.addView("report", new ReportView() );
-   	 navigator.addView("settings", new MenuView());
+   	 navigator.addView("menu", new MenuView());
    	 new MainPresenter(mainView, model); 
    	 
    	 

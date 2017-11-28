@@ -29,7 +29,7 @@ public class MainPresenter implements SperoViewListener {
 		//TODO add links to other views
 		switch(buttonId) {
 		case "menuButton":
-			mainView.getUI().getNavigator().navigateTo(Views.SETTINGS_VIEW);
+			mainView.getUI().getNavigator().navigateTo(Views.MENU_VIEW);
 			break;
 		case "chatButton":
 			break;

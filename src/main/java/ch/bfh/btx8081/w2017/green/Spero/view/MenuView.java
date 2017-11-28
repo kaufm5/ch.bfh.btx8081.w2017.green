@@ -21,6 +21,8 @@ public class MenuView extends CustomComponent implements SperoView {
 	private Button gefuehlslage;
 	private Button diary;
 	private Button report;
+	private Button reminder;
+	private Button settings;
 	private Button chatButton; 
 	private Button sosButton;
 	
@@ -39,6 +41,9 @@ public class MenuView extends CustomComponent implements SperoView {
 		layout.addComponent(contentLayout);		
 		
 		VerticalLayout content = new VerticalLayout();
+		content.setSizeFull();
+		content.setMargin(true);
+		content.setSpacing(true);
 		contentLayout.addComponent(content);
 		
 		contentLayout.setExpandRatio(content, 9);
@@ -50,10 +55,25 @@ public class MenuView extends CustomComponent implements SperoView {
 		gefuehlslage.setId("gefuehlslage");
 		menuItems.addComponent(gefuehlslage);
 		
+		diary = new Button("Tagebuch");
+		diary.addClickListener(this);
+		diary.setId("diary");
+		menuItems.addComponent(diary);
+		
 		report = new Button("Statistik");
 		report.addClickListener(this);
 		report.setId("report");
 		menuItems.addComponent(report);
+		
+		reminder = new Button("Erinnerung der Medikamenteneinnahme/Reminder");
+		reminder.addClickListener(this);
+		reminder.setId("reminder");
+		menuItems.addComponent(reminder);
+		
+		settings = new Button("Einstellungen");
+		settings.addClickListener(this);
+		settings.setId("settings");
+		menuItems.addComponent(settings);
 		
 		content.addComponent(menuItems);
 		
