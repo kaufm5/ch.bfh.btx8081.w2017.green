@@ -14,6 +14,9 @@ import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 public class MenuView extends CustomComponent implements SperoView {
 	
 	private Label menu;
+	private Button gefuehlslage;
+	private Button diary;
+	private Button report;
 	private Button chatButton; 
 	private Button sosButton;
 	
@@ -27,15 +30,15 @@ public class MenuView extends CustomComponent implements SperoView {
 		layout.addComponent(titleBarBox);
 		
 		HorizontalLayout contentLayout = new HorizontalLayout ();
-		layout.addComponent(contentLayout);
-		
-		
-		
+		layout.addComponent(contentLayout);		
 		
 		VerticalLayout content = new VerticalLayout();
 		contentLayout.addComponent(content);
 		
 		contentLayout.setExpandRatio(content, 9);
+		
+		VerticalLayout menuItems = new VerticalLayout();
+		content.addComponent(menuItems);
 		
 		HorizontalLayout superButtonBox = new HorizontalLayout ();
 		content.addComponent(superButtonBox);
