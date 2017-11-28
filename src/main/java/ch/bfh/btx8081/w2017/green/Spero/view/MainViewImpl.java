@@ -101,7 +101,6 @@ public class MainViewImpl extends CustomComponent implements SperoView {
 		smileGut.setId("smileGut");
 		
 		moodButtonsBox.addComponents(smileSchlecht, smileEherSchlecht, smileEherGut, smileGut);
-		//content.setComponentAlignment(moodButtonsBox, Alignment.MIDDLE_LEFT);
 		content.addComponent(moodButtonsBox);
 
 		HorizontalLayout diaryTitleBox = new HorizontalLayout();
