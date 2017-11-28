@@ -28,7 +28,7 @@ public class ReportView extends CustomComponent implements SperoView {
 	private Label reportTitle; 
 	private ComboBox choice; 
 	
-	private ChartLayoutAnimator chart; 
+	private Chart chart; 
 
 	public ReportView() { 
 		VerticalLayout layout = new VerticalLayout();

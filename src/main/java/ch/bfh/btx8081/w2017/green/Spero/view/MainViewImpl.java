@@ -7,6 +7,8 @@ import com.vaadin.icons.VaadinIcons;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Component;
+import com.vaadin.ui.CssLayout;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
@@ -16,6 +18,7 @@ import com.vaadin.ui.VerticalLayout;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoView;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
+
 
 public class MainViewImpl extends CustomComponent implements SperoView {
 
@@ -38,17 +41,17 @@ public class MainViewImpl extends CustomComponent implements SperoView {
 
 	public MainViewImpl() {
 
+		
 		VerticalLayout layout = new VerticalLayout();
 		setCompositionRoot(layout);
 		//		layout.setComponentAlignment(layout, Alignment.MIDDLE_CENTER);
 
 		VerticalLayout titleBarBox = new VerticalLayout();
-		titleBarBox.addStyleName("titleBarBox");
+		titleBarBox.setStyleName("titleBarBox");
 		title = new Label("Spero");
 		title.addStyleName("title");
 		titleBarBox.addComponent(title);
 		layout.addComponent(titleBarBox);
-
 
 		HorizontalLayout menuAndContent = new HorizontalLayout();
 		menuAndContent.setSizeFull();
