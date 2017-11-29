@@ -94,7 +94,6 @@ public class ChatView extends CustomComponent implements SperoView {
 		attachment = new Button(VaadinIcons.PAPERCLIP);
 		attachment.addClickListener(this);
 		attachment.setId("attachment");
-		
 		sendBox.addComponents(send, attachment);
 		content.addComponent(sendBox);
 		
@@ -104,8 +103,8 @@ public class ChatView extends CustomComponent implements SperoView {
 		superButtonBox.setSpacing(true);
 		content.addComponent(superButtonBox);
 		sosButton = new Button(VaadinIcons.PHONE);
-		sosButton.setId("sos");
 		superButtonBox.addComponent(sosButton);
+		sosButton.setId("sos");
 		superButtonBox.setComponentAlignment(sosButton, Alignment.MIDDLE_LEFT);
 	}
 	@Override
