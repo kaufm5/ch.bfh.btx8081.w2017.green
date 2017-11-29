@@ -38,7 +38,7 @@ public class MyUI extends UI {
 	
 	Navigator navigator; 
 	MainViewImpl mainView;
-	Diary model;
+	DiaryEntry modelDiaryEntry;
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
@@ -50,13 +50,14 @@ public class MyUI extends UI {
    	 
    	 
    	 mainView = new MainViewImpl();
-   	 model = new Diary();
+   	modelDiaryEntry = new DiaryEntry();
    	 navigator.addView("", mainView);
    	 navigator.addView("report", new ReportView() );
    	 navigator.addView("menu", new MenuView());
-   	 navigator.addView("sos", new SosView());
+   	// navigator.addView("sos", new SosView());
    	 navigator.addView("chat", new ChatView());
-   	 new MainPresenter(mainView, model); 
+   	 new MainPresenter(mainView, modelDiaryEntry);
+  
    	 
    	 
     }
