@@ -16,11 +16,15 @@ public class DiaryViewImpl extends CustomComponent implements SperoView {
 	
 	private List<SperoViewListener> listeners = new ArrayList<>();
 	
+	private Label title;
 	private Panel panel;
 	
 	public DiaryViewImpl() {
 		VerticalLayout layout = new VerticalLayout();
 		setCompositionRoot(layout);
+		
+		title = new Label("Diary");
+		layout.addComponent(title);
 		
 		panel = new Panel("PanelTest");
 		panel.setHeight(100.0f, Unit.PERCENTAGE);
@@ -31,10 +35,12 @@ public class DiaryViewImpl extends CustomComponent implements SperoView {
 		contentLayout.addComponent(new Label("PanelTestLabel"));
 		
 		panel.setContent(contentLayout);
+		layout.addComponent(panel);
 		
 		
 	}
 	
+
 	
 	
 

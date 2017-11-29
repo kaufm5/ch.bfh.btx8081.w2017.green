@@ -63,6 +63,7 @@ public class MyUI extends UI {
      sosView = new SosView();
      chatView = new ChatView();
      diaryView = new DiaryViewImpl();
+     
    	 navigator.addView("", mainView);
    	 navigator.addView("report", new ReportView() );
    	 navigator.addView("menu", menuView);
