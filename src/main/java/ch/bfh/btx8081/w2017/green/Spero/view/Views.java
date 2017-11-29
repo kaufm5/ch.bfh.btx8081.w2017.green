@@ -23,5 +23,15 @@ public class Views {
 		 * The setting view
 		 */
 		public static final String SETTINGS_VIEW = "settings";
+		
+		/*
+		 * The sos view
+		 */
+		public static final String SOS_VIEW = "sos";
+		
+		/*
+		 * The chat view
+		 */
+		public static final String CHAT_VIEW = "chat";
 	}
 
