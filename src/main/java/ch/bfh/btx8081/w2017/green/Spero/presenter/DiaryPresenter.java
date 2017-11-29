@@ -17,25 +17,27 @@ public class DiaryPresenter implements SperoViewListener {
 		this.model = model;
 		this.view = view;
 		view.addListener(this);
-		
-		if (model.getNumberOfDiaryEntry() > 0)
-		view.setDisplay();
-
-		if (model.getNumberOfDiaryEntry() > 0) {
-			DiaryEntry diaryEntry = model.searchEntry(1);
-			String title = diaryEntry.getTitle();
-			String text = diaryEntry.getText();
-			Mood moodParam = diaryEntry.getMoodparam();
-
-			view.addEntryToView(title, text, moodParam);
-
-		}
 
 	}
 
 	@Override
 	public void buttonClick(ClickEvent event) {
-		// TODO Auto-generated method stub
+		String buttonId = event.getButton().getId();
+
+		switch (buttonId) {
+		case "refreshButton":
+
+			if (model.getNumberOfDiaryEntry() > 0) {
+				DiaryEntry diaryEntry = model.searchEntry(1);
+				String title = diaryEntry.getTitle();
+				String text = diaryEntry.getText();
+				Mood moodParam = diaryEntry.getMoodparam();
+
+				view.addEntryToView(title, text, moodParam);
+
+			}
+			break;
+		}
 
 	}
 

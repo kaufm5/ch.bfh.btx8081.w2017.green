@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.icons.VaadinIcons;
+import com.vaadin.ui.Button;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Panel;
@@ -21,6 +23,7 @@ public class DiaryViewImpl extends CustomComponent implements SperoView {
 	private Panel panel;
 	VerticalLayout layout;
 	private VerticalLayout contentLayout;
+	private Button refreshButton;
 	
 	// TESTING
 	private Label display;
@@ -31,6 +34,11 @@ public class DiaryViewImpl extends CustomComponent implements SperoView {
 		
 		title = new Label("Diary");
 		layout.addComponent(title);
+		
+		refreshButton = new Button(VaadinIcons.REFRESH);
+		refreshButton.addClickListener(this);
+		refreshButton.setId("refreshButton");
+		layout.addComponent(refreshButton);
 		
 		
 		

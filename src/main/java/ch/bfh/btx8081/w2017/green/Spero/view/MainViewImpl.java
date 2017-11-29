@@ -151,7 +151,7 @@ public class MainViewImpl extends CustomComponent implements SperoView {
 		superButtonBox.setComponentAlignment(chatButton, Alignment.MIDDLE_LEFT);
 
 	}
-
+	
 	
 	@Override
 	public void addListener(SperoViewListener listener) {
