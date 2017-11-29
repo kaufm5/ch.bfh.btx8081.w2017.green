@@ -27,14 +27,13 @@ public class DiaryEntry {
 	
 	//constructor
 	public DiaryEntry(int diaryEntryNumber,String diaryTitle, String diaryText,
-			Mood moodParam, String tag, Object attachment) {
+			Mood moodParam) {
 		this.diaryEntryNumber = diaryEntryNumber;
 		this.diaryTitle = diaryTitle;
 		this.diaryText = diaryText;
 		this.moodParam = moodParam;
-		this.tag = tag;
+
 		this.date = LocalDate.now();
-		this.attachment = attachment;
 	}	
 	
 	//setter methods

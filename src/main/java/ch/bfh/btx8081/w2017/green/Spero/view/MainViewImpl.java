@@ -128,6 +128,8 @@ public class MainViewImpl extends CustomComponent implements SperoView {
 		confirmButtonBox.setMargin(true);
 		confirmButtonBox.setSpacing(true);
 		confirmButton = new Button(VaadinIcons.CHECK);
+		confirmButton.addClickListener(this);
+		confirmButton.setId("confirmButton");
 		confirmButtonBox.addComponent(confirmButton);
 		content.addComponent(confirmButtonBox);
 
