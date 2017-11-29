@@ -64,7 +64,7 @@ public class MyUI extends UI {
    	 navigator.addView("report", new ReportView() );
    	 navigator.addView("menu", menuView);
    	 navigator.addView("sos", sosView);
-   	 navigator.addView("chat", new ChatView());
+   	 navigator.addView("chat", chatView);
    	 new MainPresenter(mainView, modelDiaryEntry);
    	 new MenuPresenter(menuView);
    	 new SosPresenter(sosView);

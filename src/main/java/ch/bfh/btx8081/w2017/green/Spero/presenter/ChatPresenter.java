@@ -21,10 +21,10 @@ private ChatView chatView;
 		
 		switch(buttonId) {
 		case "menuButton":
-			chatView.getUI().getNavigator().navigateTo(Views.MAIN_VIEW);
+			chatView.getUI().getNavigator().navigateTo(Views.MENU_VIEW);
 		    break;
 		case "sosButton":
-			chatView.getUI().getNavigator().navigateTo(Views.CHAT_VIEW);
+			chatView.getUI().getNavigator().navigateTo(Views.SOS_VIEW);
 		    break;
 		case "attachment":
 			//

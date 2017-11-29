@@ -137,8 +137,10 @@ public class MainViewImpl extends CustomComponent implements SperoView {
 		superButtonBox.setSpacing(true);
 		content.addComponent(superButtonBox);
 		sosButton = new Button(VaadinIcons.PHONE);
+		sosButton.addClickListener(this);
 		sosButton.setId("sosButton");
 		chatButton = new Button(VaadinIcons.CHAT);
+		chatButton.addClickListener(this);
 		chatButton.setId("chatButton");
 		superButtonBox.addComponents(sosButton, chatButton);
 		superButtonBox.setComponentAlignment(sosButton, Alignment.MIDDLE_LEFT);

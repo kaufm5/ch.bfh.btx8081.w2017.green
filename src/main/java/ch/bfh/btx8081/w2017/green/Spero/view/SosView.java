@@ -70,7 +70,8 @@ public class SosView extends CustomComponent implements SperoView{
 		superButtonBox.setSpacing(true);
 		content.addComponent(superButtonBox);
 		chatButton = new Button(VaadinIcons.CHAT);
-		chatButton.setId("chat");
+		chatButton.addClickListener(this);
+		chatButton.setId("chatButton");
 		superButtonBox.addComponents(chatButton);
 		superButtonBox.setComponentAlignment(chatButton, Alignment.MIDDLE_LEFT);
 	}
