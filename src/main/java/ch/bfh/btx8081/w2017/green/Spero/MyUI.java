@@ -19,9 +19,11 @@ import ch.bfh.btx8081.w2017.green.Spero.model.Diary;
 import ch.bfh.btx8081.w2017.green.Spero.model.DiaryEntry;
 //import ch.bfh.btx8081.w2017.green.Spero.presenter.DiaryEntryPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.MainPresenter;
+import ch.bfh.btx8081.w2017.green.Spero.view.ChatView;
 import ch.bfh.btx8081.w2017.green.Spero.view.MainViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.MenuView;
 import ch.bfh.btx8081.w2017.green.Spero.view.ReportView;
+import ch.bfh.btx8081.w2017.green.Spero.view.SosView;
 
 /**
  * This UI is the application entry point. A UI may either represent a browser window 
@@ -52,6 +54,8 @@ public class MyUI extends UI {
    	 navigator.addView("", mainView);
    	 navigator.addView("report", new ReportView() );
    	 navigator.addView("menu", new MenuView());
+   	 navigator.addView("sos", new SosView());
+   	 navigator.addView("chat", new ChatView());
    	 new MainPresenter(mainView, model); 
    	 
    	 
