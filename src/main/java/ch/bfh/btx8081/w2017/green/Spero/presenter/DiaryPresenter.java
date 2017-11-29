@@ -17,8 +17,11 @@ public class DiaryPresenter implements SperoViewListener {
 		this.model = model;
 		this.view = view;
 		view.addListener(this);
+		
+		if (model.getNumberOfDiaryEntry() > 0)
+		view.setDisplay();
 
-		if (model.getNumberOfDiaryEntry() != 0) {
+		if (model.getNumberOfDiaryEntry() > 0) {
 			DiaryEntry diaryEntry = model.searchEntry(1);
 			String title = diaryEntry.getTitle();
 			String text = diaryEntry.getText();
