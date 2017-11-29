@@ -33,5 +33,10 @@ public class Views {
 		 * The chat view
 		 */
 		public static final String CHAT_VIEW = "chat";
+		
+		/*
+		 * The DiaryViewImpl
+		 */
+		public static final String DIARY_VIEW = "diary";
 	}
 
