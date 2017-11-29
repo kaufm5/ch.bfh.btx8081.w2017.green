@@ -8,7 +8,7 @@ import java.util.Map;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.Mood;
 
 public class Diary {
-	private int nextDiaryEntryNumber = 1;
+	private int numberOfDiaryEntry = 0;
 	private Map<Integer, DiaryEntry> diaryEntryMap;
 	
 	
@@ -19,8 +19,8 @@ public class Diary {
 	public void createEntry(String diaryTitle, String diaryText, Mood moodParam) {
 		
 		
-		this.diaryEntryMap.put(nextDiaryEntryNumber, new DiaryEntry(nextDiaryEntryNumber, diaryTitle, diaryText, moodParam));
-		this.nextDiaryEntryNumber++;
+		this.diaryEntryMap.put(numberOfDiaryEntry + 1, new DiaryEntry(numberOfDiaryEntry + 1, diaryTitle, diaryText, moodParam));
+		this.numberOfDiaryEntry++;
 		
 	}
 
@@ -31,9 +31,13 @@ public class Diary {
 		
 	}
 
-	public DiaryEntry searchEntry() {
+	public DiaryEntry searchEntry(int DiaryEntryNumber) {
 		
-		return null;
+		return diaryEntryMap.get(DiaryEntryNumber);
+	}
+	
+	public int getNumberOfDiaryEntry() {
+		return numberOfDiaryEntry;
 	}
 
 	public List<DiaryEntry> searchTag() {

@@ -9,6 +9,7 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.VerticalLayout;
 
+import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.Mood;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoView;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 
@@ -40,6 +41,10 @@ public class DiaryViewImpl extends CustomComponent implements SperoView {
 		
 	}
 	
+	
+	public void addEntryToView(String title, String text, Mood moodParam) {
+		
+	}
 
 	
 	
