@@ -80,7 +80,11 @@ public class MenuView extends CustomComponent implements SperoView {
 		HorizontalLayout superButtonBox = new HorizontalLayout ();
 		content.addComponent(superButtonBox);
 		sosButton = new Button(VaadinIcons.PHONE);
+		sosButton.addClickListener(this);
+		sosButton.setId("sos");
 		chatButton = new Button(VaadinIcons.CHAT);
+		chatButton.addClickListener(this);
+		chatButton.setId("chat");
 		superButtonBox.addComponents(sosButton, chatButton);
 	}
 
