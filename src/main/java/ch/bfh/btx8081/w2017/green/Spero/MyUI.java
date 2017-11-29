@@ -17,6 +17,7 @@ import com.vaadin.ui.VerticalLayout;
 
 import ch.bfh.btx8081.w2017.green.Spero.model.Diary;
 import ch.bfh.btx8081.w2017.green.Spero.model.DiaryEntry;
+import ch.bfh.btx8081.w2017.green.Spero.presenter.ChatPresenter;
 //import ch.bfh.btx8081.w2017.green.Spero.presenter.DiaryEntryPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.MainPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.MenuPresenter;
@@ -43,6 +44,7 @@ public class MyUI extends UI {
 	DiaryEntry modelDiaryEntry;
 	MenuView menuView;
 	SosView sosView;
+	ChatView chatView;
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
@@ -57,6 +59,7 @@ public class MyUI extends UI {
      modelDiaryEntry = new DiaryEntry();
      menuView = new MenuView();
      sosView = new SosView();
+     chatView = new ChatView();
    	 navigator.addView("", mainView);
    	 navigator.addView("report", new ReportView() );
    	 navigator.addView("menu", menuView);
@@ -65,6 +68,7 @@ public class MyUI extends UI {
    	 new MainPresenter(mainView, modelDiaryEntry);
    	 new MenuPresenter(menuView);
    	 new SosPresenter(sosView);
+   	 new ChatPresenter(chatView);
   
    	 
    	 
