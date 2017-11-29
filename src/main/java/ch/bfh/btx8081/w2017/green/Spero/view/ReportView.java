@@ -7,10 +7,11 @@ import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
+import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.Mood;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoView;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 import javafx.scene.chart.Chart;
-import javafx.scene.chart.ChartBuilder;
+import javafx.scene.chart.XYChart;
 
 import com.vaadin.ui.CustomComponent;
 import com.sun.javafx.charts.ChartLayoutAnimator;
@@ -28,7 +29,7 @@ public class ReportView extends CustomComponent implements SperoView {
 	private Label reportTitle; 
 	private ComboBox choice; 
 	
-	private ChartLayoutAnimator chart; 
+	private XYChart<Mood, String> chart; 
 
 	public ReportView() { 
 		VerticalLayout layout = new VerticalLayout();
