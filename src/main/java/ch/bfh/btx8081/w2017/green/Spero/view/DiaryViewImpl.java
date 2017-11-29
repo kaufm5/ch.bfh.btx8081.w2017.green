@@ -58,7 +58,10 @@ public class DiaryViewImpl extends CustomComponent implements SperoView {
 		contentLayout = new VerticalLayout();
 		contentLayout.setWidth(500, Unit.PIXELS);
 		contentLayout.setSpacing(false);
-		contentLayout.addComponent(new Label(text));
+		Label tx = new Label(text);
+		Label str = new Label(moodParam.toString());
+		contentLayout.addComponent(tx);
+		contentLayout.addComponent(str);
 		
 		panel.setContent(contentLayout);
 		layout.addComponent(panel);
