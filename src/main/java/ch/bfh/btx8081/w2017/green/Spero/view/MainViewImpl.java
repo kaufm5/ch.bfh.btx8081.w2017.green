@@ -17,8 +17,11 @@ import com.vaadin.ui.VerticalLayout;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoView;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 
+/**
+ * The class MainViewImpl shows the main view of the Spero-application
+ * @author besio1
+ */
 public class MainViewImpl extends CustomComponent implements SperoView {
-
 
 	private Button menuButton;
 	private Button sosButton;
@@ -33,22 +36,22 @@ public class MainViewImpl extends CustomComponent implements SperoView {
 	private TextField tags;
 	private TextArea diaryText;
 
-
 	private List<SperoViewListener> listeners = new ArrayList<SperoViewListener>();
 
+	/**
+	 * Constructs the main view
+	 */
 	public MainViewImpl() {
 
 		VerticalLayout layout = new VerticalLayout();
 		setCompositionRoot(layout);
-		//		layout.setComponentAlignment(layout, Alignment.MIDDLE_CENTER);
-
+		
 		VerticalLayout titleBarBox = new VerticalLayout();
 		titleBarBox.addStyleName("titleBarBox");
 		title = new Label("Spero");
 		title.addStyleName("title");
 		titleBarBox.addComponent(title);
 		layout.addComponent(titleBarBox);
-
 
 		HorizontalLayout menuAndContent = new HorizontalLayout();
 		menuAndContent.setSizeFull();
@@ -60,15 +63,16 @@ public class MainViewImpl extends CustomComponent implements SperoView {
 		menuBox.setSpacing(true);
 		menuBox.setMargin(true);
 		menuButton = new Button(VaadinIcons.MENU);
-		//id für button
-		menuButton.addClickListener(this);
-		menuButton.setId("menuButton");
 		
+		
+		menuButton.addClickListener(this);
+		//
+		menuButton.setId("menuButton");
+
 		menuBox.addComponent(menuButton);
 		menuBox.setComponentAlignment(menuButton, Alignment.MIDDLE_LEFT);
 		menuBox.addStyleName("menu");
 		menuAndContent.addComponent(menuBox);
-
 
 		VerticalLayout content = new VerticalLayout();
 		content.setSizeFull();
@@ -83,23 +87,23 @@ public class MainViewImpl extends CustomComponent implements SperoView {
 		moodButtonsBox.setSizeFull();
 		moodButtonsBox.setMargin(true);
 		moodButtonsBox.setSpacing(true);
-		
+
 		smileSchlecht = new Button(VaadinIcons.FROWN_O);
 		smileSchlecht.addClickListener(this);
 		smileSchlecht.setId("smileSchlecht");
-		
+
 		smileEherSchlecht = new Button(VaadinIcons.MEH_O);
 		smileEherSchlecht.addClickListener(this);
 		smileEherSchlecht.setId("smileEherSchlecht");
-		
+
 		smileEherGut = new Button(VaadinIcons.SMILEY_O);
 		smileEherGut.addClickListener(this);
 		smileEherGut.setId("smileEherGut");
-		
+
 		smileGut = new Button(VaadinIcons.SMILEY_O);
 		smileGut.addClickListener(this);
 		smileGut.setId("smileGut");
-		
+
 		moodButtonsBox.addComponents(smileSchlecht, smileEherSchlecht, smileEherGut, smileGut);
 		content.addComponent(moodButtonsBox);
 
@@ -148,82 +152,13 @@ public class MainViewImpl extends CustomComponent implements SperoView {
 		superButtonBox.setComponentAlignment(sosButton, Alignment.MIDDLE_LEFT);
 		superButtonBox.setComponentAlignment(chatButton, Alignment.MIDDLE_LEFT);
 
-
-
-
-
-
-
-
-
-
-		//--------altes Design-----------------------------------------------------//
-		//	Button menuButton = new Button(VaadinIcons.MENU);
-
-
-
-
-		//		Layout titleBarBox = new HorizontalLayout ();
-		//		titleBarBox.setSizeFull();
-		//		layout.addComponent(titleBarBox);
-		//		speroTitle = new Label("Spero");
-		//		titleBarBox.addComponent(speroTitle);
-
-		//		Layout menuBarBox = new HorizontalLayout ();
-		//		layout.addComponent(menuBarBox);
-		//		menuButton = new Button(VaadinIcons.MENU);
-		//		menuBarBox.addComponent(menuButton);
-
-		//		Layout event = new HorizontalLayout();
-		//		layout.addComponent(event);
-		//
-		//		Layout moods = new HorizontalLayout();
-		//		layout.addComponent(moods);
-		//		smileSchlecht = new Button(VaadinIcons.SMILEY_O);
-		//		smileEherSchlecht = new Button(VaadinIcons.SMILEY_O);
-		//		smileEherGut = new Button(VaadinIcons.SMILEY_O);
-		//		smileGut = new Button(VaadinIcons.SMILEY_O);
-		//		moods.setSizeFull();
-		//		moods.addComponents(smileSchlecht, smileEherSchlecht, smileEherGut, smileGut);
-		//	
-		//		Layout diaryTitleBox = new HorizontalLayout ();
-		//		layout.addComponent(diaryTitleBox);
-		//		title = new TextField();
-		////		Responsive.makeResponsive(title);
-		////		title.setSizeFull();
-		//		title.setPlaceholder("Titel");
-		//		diaryTitleBox.addComponent(title);
-		//		
-		//		Layout diaryTextBox = new HorizontalLayout ();
-		//		layout.addComponent(diaryTextBox);
-		//		text = new TextArea();
-		//		text.setPlaceholder("Text");
-		//		diaryTextBox.addComponent(text);
-		//		
-		//		Layout tagsBox = new HorizontalLayout ();
-		//		layout.addComponent(tagsBox);
-		//		tags = new TextField();
-		//		tags.setPlaceholder("Tags");
-		//		tagsBox.addComponent(tags);
-		//		
-		//		Layout superButtonBox = new HorizontalLayout ();
-		//		layout.addComponent(superButtonBox);
-		//		sosButton = new Button("SOS");
-		//		chatButton = new Button("Chat");
-		//		superButtonBox.addComponents(sosButton, chatButton);
-		//		
-		//		Layout confirmButtonBox = new HorizontalLayout ();
-		//		layout.addComponent(confirmButtonBox);
-		//		confirmButton = new Button(VaadinIcons.CHECK);
-		//		confirmButtonBox.addComponent(confirmButton);
-
 	}
 
+	
 	@Override
 	public void addListener(SperoViewListener listener) {
-		listeners.add(listener);	
+		listeners.add(listener);
 	}
-
 
 	@Override
 	public void buttonClick(ClickEvent event) {
@@ -231,7 +166,5 @@ public class MainViewImpl extends CustomComponent implements SperoView {
 			listener.buttonClick(event);
 		}
 	}
-
-
 
 }
