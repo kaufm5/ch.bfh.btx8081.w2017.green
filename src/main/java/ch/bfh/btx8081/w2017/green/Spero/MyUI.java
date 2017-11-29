@@ -19,6 +19,7 @@ import ch.bfh.btx8081.w2017.green.Spero.model.Diary;
 import ch.bfh.btx8081.w2017.green.Spero.model.DiaryEntry;
 //import ch.bfh.btx8081.w2017.green.Spero.presenter.DiaryEntryPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.MainPresenter;
+import ch.bfh.btx8081.w2017.green.Spero.presenter.MenuPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.view.ChatView;
 import ch.bfh.btx8081.w2017.green.Spero.view.MainViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.MenuView;
@@ -39,6 +40,7 @@ public class MyUI extends UI {
 	Navigator navigator; 
 	MainViewImpl mainView;
 	DiaryEntry modelDiaryEntry;
+	MenuView menuView;
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
@@ -50,13 +52,15 @@ public class MyUI extends UI {
    	 
    	 
    	 mainView = new MainViewImpl();
-   	modelDiaryEntry = new DiaryEntry();
+    modelDiaryEntry = new DiaryEntry();
+    menuView = new MenuView();
    	 navigator.addView("", mainView);
    	 navigator.addView("report", new ReportView() );
-   	 navigator.addView("menu", new MenuView());
-   	// navigator.addView("sos", new SosView());
+   	 navigator.addView("menu", menuView);
+   	 navigator.addView("sos", new SosView());
    	 navigator.addView("chat", new ChatView());
    	 new MainPresenter(mainView, modelDiaryEntry);
+   	 new MenuPresenter(menuView);
   
    	 
    	 
