@@ -119,5 +119,14 @@ public class DiaryEntry {
 			}
 			   
 	}
+	
+	@Override
+	public String toString() {
+		String str = "Title: " + this.getTitle() + ", Nb. " + this.getDiaryEntryNumber();
+		return str;
+		
+	}
+
+	
 
 }

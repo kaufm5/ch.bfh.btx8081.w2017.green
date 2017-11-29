@@ -38,4 +38,16 @@ public class Diary {
 		
 		return null;
 	}
+	
+	public String printDiaryEntry() {
+		List<DiaryEntry> list = new ArrayList<DiaryEntry>();
+		list.addAll(diaryEntryMap.values());
+		String str = "";
+		
+		for(DiaryEntry diaryEntry : list) {
+			str = str + diaryEntry.toString() + " /n";
+		}
+		
+		return str;
+	}
 }
