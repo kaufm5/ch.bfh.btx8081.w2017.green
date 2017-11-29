@@ -1,6 +1,7 @@
 package ch.bfh.btx8081.w2017.green.Spero.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -12,6 +13,7 @@ public class Diary {
 	
 	
 	public Diary() {
+		diaryEntryMap = new HashMap<>();
 	}
 
 	public void createEntry(String diaryTitle, String diaryText, Mood moodParam) {
