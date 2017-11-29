@@ -104,7 +104,7 @@ public class ChatView extends CustomComponent implements SperoView {
 		content.addComponent(superButtonBox);
 		sosButton = new Button(VaadinIcons.PHONE);
 		superButtonBox.addComponent(sosButton);
-		sosButton.setId("sos");
+		sosButton.setId("sosButton");
 		superButtonBox.setComponentAlignment(sosButton, Alignment.MIDDLE_LEFT);
 	}
 	@Override
