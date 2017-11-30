@@ -48,6 +48,8 @@ public class ReportView extends CustomComponent implements SperoView {
 
 		VerticalLayout menuBox = new VerticalLayout(); 
 		menuButton = new Button(VaadinIcons.MENU); 
+		menuButton.addClickListener(this);
+		menuButton.setId("menuButton");
 		menuBox.addComponent(menuButton);
 		menuAndContent.addComponent(menuBox);
 
