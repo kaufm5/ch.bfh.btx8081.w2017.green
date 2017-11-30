@@ -55,12 +55,9 @@ public class ChatView extends CustomComponent implements SperoView {
 		menuButton.addClickListener(this);
 		menuButton.setId("menuButton");
 		
-		username = new Label("Username");
-		
 		menuBox.addComponent(menuButton);
 		menuBox.setComponentAlignment(menuButton, Alignment.MIDDLE_LEFT);
-		menuBox.addComponent(username);
-		menuBox.setComponentAlignment(username, Alignment.MIDDLE_RIGHT);
+		
 		menuBox.addStyleName("menu");
 		menuAndContent.addComponent(menuBox);
 
@@ -74,19 +71,18 @@ public class ChatView extends CustomComponent implements SperoView {
 		menuAndContent.setExpandRatio(menuBox, 1);
 		menuAndContent.setExpandRatio(content, 9);
 		
-		HorizontalLayout textBox = new HorizontalLayout();
-		textBox.setSizeFull();
-		textBox.setMargin(true);
-		textBox.setSpacing(true);
-		chat = new TextField();
-		chat.setPlaceholder("Titel");
-		chat.addStyleName("chat");
-		content.addComponent(textBox);
+		HorizontalLayout userBox = new HorizontalLayout();
+		userBox.setMargin(true);
+		userBox.setSpacing(true);
+		username = new Label("Username");
+		content.addComponent(userBox);
+		userBox.addComponent(username);
 		
 		HorizontalLayout sendBox = new HorizontalLayout();
-		sendBox.setSizeFull();
 		sendBox.setMargin(true);
 		sendBox.setSpacing(true);
+		chat = new TextField();
+		chat.setPlaceholder("Enter your Text here!");
 		send = new Button(VaadinIcons.PAPERPLANE_O);
 		send.addClickListener(this);
 		send.setId("send");
@@ -94,7 +90,7 @@ public class ChatView extends CustomComponent implements SperoView {
 		attachment = new Button(VaadinIcons.PAPERCLIP);
 		attachment.addClickListener(this);
 		attachment.setId("attachment");
-		sendBox.addComponents(send, attachment);
+		sendBox.addComponents(chat, send, attachment);
 		content.addComponent(sendBox);
 		
 		HorizontalLayout superButtonBox = new HorizontalLayout();
