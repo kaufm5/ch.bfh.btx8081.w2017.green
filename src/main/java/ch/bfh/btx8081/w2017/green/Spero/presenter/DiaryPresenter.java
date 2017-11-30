@@ -7,16 +7,17 @@ import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 import ch.bfh.btx8081.w2017.green.Spero.model.Diary;
 import ch.bfh.btx8081.w2017.green.Spero.model.DiaryEntry;
 import ch.bfh.btx8081.w2017.green.Spero.view.DiaryViewImpl;
+import ch.bfh.btx8081.w2017.green.Spero.view.Views;
 
 public class DiaryPresenter implements SperoViewListener {
 
-	Diary model;
-	DiaryViewImpl view;
+	Diary diaryModel;
+	DiaryViewImpl diaryView;
 
-	public DiaryPresenter(Diary model, DiaryViewImpl view) {
-		this.model = model;
-		this.view = view;
-		view.addListener(this);
+	public DiaryPresenter(Diary diaryModel, DiaryViewImpl diaryView) {
+		this.diaryModel = diaryModel;
+		this.diaryView = diaryView;
+		diaryView.addListener(this);
 
 	}
 
@@ -27,15 +28,29 @@ public class DiaryPresenter implements SperoViewListener {
 		switch (buttonId) {
 		case "refreshButton":
 
-			if (model.getNumberOfDiaryEntry() > 0) {
-				DiaryEntry diaryEntry = model.searchEntry(1);
+			if (diaryModel.getNumberOfDiaryEntry() > 0) {
+				DiaryEntry diaryEntry = diaryModel.searchEntry(1);
 				String title = diaryEntry.getTitle();
 				String text = diaryEntry.getText();
 				Mood moodParam = diaryEntry.getMoodparam();
 
-				view.addEntryToView(title, text, moodParam);
+				diaryView.addEntryToView(title, text, moodParam);
 
 			}
+			break;
+		case "menuButton":
+			diaryView.getUI().getNavigator().navigateTo(Views.MENU_VIEW);
+			break;
+			
+		case "sosButton":
+			diaryView.getUI().getNavigator().navigateTo(Views.SOS_VIEW);
+			break;
+	
+		case "chatButton":
+			diaryView.getUI().getNavigator().navigateTo(Views.CHAT_VIEW);
+			break;
+		case "newButton":
+			diaryView.getUI().getNavigator().navigateTo(Views.MAIN_VIEW);
 			break;
 		}
 
