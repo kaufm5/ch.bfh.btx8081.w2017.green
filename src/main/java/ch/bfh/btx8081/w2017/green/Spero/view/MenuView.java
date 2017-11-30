@@ -22,6 +22,8 @@ public class MenuView extends CustomComponent implements SperoView {
 	private Button diary;
 	private Button report;
 	private Button reminder;
+	private Button medInfo;
+	private Button depErk;
 	private Button settings;
 	private Button chatButton; 
 	private Button sosButton;
@@ -65,10 +67,20 @@ public class MenuView extends CustomComponent implements SperoView {
 		report.setId("report");
 		menuItems.addComponent(report);
 		
-		reminder = new Button("Erinnerung der Medikamenteneinnahme/Reminder");
+		reminder = new Button("Reminder");
 		reminder.addClickListener(this);
 		reminder.setId("reminder");
 		menuItems.addComponent(reminder);
+		
+		medInfo = new Button("Informationen zu der Medikation");
+		medInfo.addClickListener(this);
+		medInfo.setId("medInfo");
+		menuItems.addComponent(medInfo);
+		
+		depErk = new Button("Erläuterung der Depression");
+		depErk.addClickListener(this);
+		depErk.setId("depErk");
+		menuItems.addComponent(depErk);
 		
 		settings = new Button("Einstellungen");
 		settings.addClickListener(this);

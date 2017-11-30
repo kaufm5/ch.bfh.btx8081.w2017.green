@@ -32,6 +32,15 @@ public class MenuPresenter implements SperoViewListener {
 		case "reminder":
 			//menuView.getUI().getNavigator().navigateTo(Views.MAIN_VIEW);
 		    break;
+		case "medInfo":
+			//menuView.getUI().getNavigator().navigateTo(Views.MAIN_VIEW);
+		    break;
+		case "depErk":
+			//menuView.getUI().getNavigator().navigateTo(Views.MAIN_VIEW);
+		    break;
+		case "settings":
+			menuView.getUI().getNavigator().navigateTo(Views.SETTINGS_VIEW);
+		    break;
 		case "sos":
 			menuView.getUI().getNavigator().navigateTo(Views.SOS_VIEW);
 		    break;
