@@ -51,29 +51,18 @@ public class SosView extends CustomComponent implements SperoView{
 		menuButton.addClickListener(this);
 		menuButton.setId("menuButton");
 		
-		menuBox.addComponent(menuButton);
-		menuBox.addComponent(call);
-		menuBox.setComponentAlignment(menuButton, Alignment.MIDDLE_LEFT);
-		menuBox.setComponentAlignment(call, Alignment.MIDDLE_RIGHT);
-		menuBox.addStyleName("menu");
-		menuAndContent.addComponent(menuBox);
-		
-		VerticalLayout content = new VerticalLayout();
-		content.setSizeFull();
-		content.setMargin(true);
-		content.setSpacing(true);
-		menuAndContent.addComponent(content);
-
-		HorizontalLayout superButtonBox = new HorizontalLayout();
-		superButtonBox.setSizeFull();
-		superButtonBox.setMargin(true);
-		superButtonBox.setSpacing(true);
-		content.addComponent(superButtonBox);
 		chatButton = new Button(VaadinIcons.CHAT);
 		chatButton.addClickListener(this);
 		chatButton.setId("chatButton");
-		superButtonBox.addComponents(chatButton);
-		superButtonBox.setComponentAlignment(chatButton, Alignment.MIDDLE_LEFT);
+		
+		menuBox.addComponent(menuButton);
+		menuBox.addComponent(call);
+		menuBox.addComponent(chatButton);
+		menuBox.setComponentAlignment(menuButton, Alignment.MIDDLE_LEFT);
+		menuBox.addStyleName("menu");
+		menuAndContent.addComponent(menuBox);
+		
+		
 	}
 	
 	@Override
