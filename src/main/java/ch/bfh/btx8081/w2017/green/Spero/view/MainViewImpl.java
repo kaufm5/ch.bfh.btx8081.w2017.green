@@ -33,8 +33,9 @@ public class MainViewImpl extends CustomComponent implements SperoView {
 	private Button smileGut;
 
 	private Label title;
-	private TextField tags;
-	private TextArea diaryText;
+	public TextField tags;
+	public TextArea diaryText;
+	public TextField diaryTitle;
 
 	private List<SperoViewListener> listeners = new ArrayList<SperoViewListener>();
 
@@ -109,10 +110,10 @@ public class MainViewImpl extends CustomComponent implements SperoView {
 		diaryTitleBox.setSizeFull();
 		diaryTitleBox.setMargin(true);
 		diaryTitleBox.setSpacing(true);
-		TextField diaryTitleLabel = new TextField();
-		diaryTitleLabel.setPlaceholder("Titel");
-		diaryTitleLabel.addStyleName("diaryTitlelabel");
-		diaryTitleBox.addComponent(diaryTitleLabel);
+		diaryTitle = new TextField();
+		diaryTitle.setPlaceholder("Titel");
+		//diaryTitle.addStyleName("diaryTitlelabel");
+		diaryTitleBox.addComponent(diaryTitle);
 		content.addComponent(diaryTitleBox);
 
 		HorizontalLayout diaryTextBox = new HorizontalLayout();
@@ -129,10 +130,12 @@ public class MainViewImpl extends CustomComponent implements SperoView {
 		confirmButtonBox.setSizeFull();
 		confirmButtonBox.setMargin(true);
 		confirmButtonBox.setSpacing(true);
+		tags = new TextField();
+		tags.setPlaceholder("Tag");
 		confirmButton = new Button(VaadinIcons.CHECK);
 		confirmButton.addClickListener(this);
 		confirmButton.setId("confirmButton");
-		confirmButtonBox.addComponent(confirmButton);
+		confirmButtonBox.addComponents(tags, confirmButton);
 		content.addComponent(confirmButtonBox);
 
 		HorizontalLayout superButtonBox = new HorizontalLayout();
