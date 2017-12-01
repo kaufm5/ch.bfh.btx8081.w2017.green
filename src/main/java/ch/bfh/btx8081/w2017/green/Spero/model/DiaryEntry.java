@@ -111,6 +111,7 @@ public class DiaryEntry {
 				 pWriter = new PrintWriter(new BufferedWriter(new FileWriter("diaryEntry.txt")));
 				// pWriter.println("test");
 				 pWriter.println(date);
+				 pWriter.println(getMoodparam());
 				 pWriter.println(getTitle());
 				 pWriter.println(getText());
 			     pWriter.println(getTag());
