@@ -12,11 +12,11 @@ import ch.bfh.btx8081.w2017.green.Spero.view.Views;
 public class MainPresenter implements SperoViewListener {
 
 	private MainViewImpl mainView;
-	private Diary model;
+	private DiaryEntry model;
 	
 	private Mood moodParam;
 
-	public MainPresenter(MainViewImpl mainView, Diary model) {
+	public MainPresenter(MainViewImpl mainView, DiaryEntry model) {
 		this.mainView = mainView;
 		this.model = model;
 		mainView.addListener(this);
@@ -51,7 +51,11 @@ public class MainPresenter implements SperoViewListener {
 			moodParam = Mood.schlecht;
 			break;
 		case "confirmButton":
-			model.createEntry("Title", "Text", moodParam);
+			model.setTitle(mainView.diaryTitle.getValue());
+			model.setText(mainView.diaryText.getValue());
+			model.setTag(mainView.tags.getValue());
+			model.confirm();
+			//model.createEntry("Title", "Text", moodParam);
 			break;
 		}
 	}
