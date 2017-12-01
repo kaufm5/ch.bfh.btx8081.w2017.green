@@ -7,6 +7,7 @@ import com.vaadin.icons.VaadinIcons;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
@@ -15,157 +16,145 @@ import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoView;
-import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 
 /**
  * The class MainViewImpl shows the main view of the Spero-application
+ *
  * @author besio1
  */
 public class MainViewImpl extends CustomComponent implements SperoView {
+    private final Button menuButton, sosButton, chatButton, confirmButton, smileSchlecht, smileEherSchlecht,
+	    smileEherGut, smileGut;
 
-	private Button menuButton;
-	private Button sosButton;
-	private Button chatButton;
-	private Button confirmButton;
-	private Button smileSchlecht;
-	private Button smileEherSchlecht;
-	private Button smileEherGut;
-	private Button smileGut;
+    private final Label title;
+    public final TextField tags, diaryTitle;
+    public final TextArea diaryText;
 
-	private Label title;
-	public TextField tags;
-	public TextArea diaryText;
-	public TextField diaryTitle;
+    private final List<ClickListener> listeners = new ArrayList<ClickListener>();
 
-	private List<SperoViewListener> listeners = new ArrayList<SperoViewListener>();
+    /**
+     * Constructs the main view
+     */
+    public MainViewImpl() {
+	final VerticalLayout layout = new VerticalLayout();
+	setCompositionRoot(layout);
 
-	/**
-	 * Constructs the main view
-	 */
-	public MainViewImpl() {
+	final VerticalLayout titleBarBox = new VerticalLayout();
+	titleBarBox.addStyleName("titleBarBox");
+	this.title = new Label("Spero");
+	this.title.addStyleName("title");
+	titleBarBox.addComponent(this.title);
+	layout.addComponent(titleBarBox);
 
-		VerticalLayout layout = new VerticalLayout();
-		setCompositionRoot(layout);
-		
-		VerticalLayout titleBarBox = new VerticalLayout();
-		titleBarBox.addStyleName("titleBarBox");
-		title = new Label("Spero");
-		title.addStyleName("title");
-		titleBarBox.addComponent(title);
-		layout.addComponent(titleBarBox);
+	final HorizontalLayout menuAndContent = new HorizontalLayout();
+	menuAndContent.setSizeFull();
+	menuAndContent.setMargin(true);
+	menuAndContent.setSpacing(true);
+	layout.addComponent(menuAndContent);
 
-		HorizontalLayout menuAndContent = new HorizontalLayout();
-		menuAndContent.setSizeFull();
-		menuAndContent.setMargin(true);
-		menuAndContent.setSpacing(true);
-		layout.addComponent(menuAndContent);
+	final VerticalLayout menuBox = new VerticalLayout();
+	menuBox.setSpacing(true);
+	menuBox.setMargin(true);
+	this.menuButton = new Button(VaadinIcons.MENU);
+	// set id für Button
+	this.menuButton.addClickListener(this);
+	this.menuButton.setId("menuButton");
 
-		VerticalLayout menuBox = new VerticalLayout();
-		menuBox.setSpacing(true);
-		menuBox.setMargin(true);
-		menuButton = new Button(VaadinIcons.MENU);
-		//set id für Button 
-		menuButton.addClickListener(this);
-		menuButton.setId("menuButton");
+	menuBox.addComponent(this.menuButton);
+	menuBox.setComponentAlignment(this.menuButton, Alignment.MIDDLE_LEFT);
+	menuBox.addStyleName("menu");
+	menuAndContent.addComponent(menuBox);
 
-		menuBox.addComponent(menuButton);
-		menuBox.setComponentAlignment(menuButton, Alignment.MIDDLE_LEFT);
-		menuBox.addStyleName("menu");
-		menuAndContent.addComponent(menuBox);
+	final VerticalLayout content = new VerticalLayout();
+	content.setSizeFull();
+	content.setMargin(true);
+	content.setSpacing(true);
+	menuAndContent.addComponent(content);
 
-		VerticalLayout content = new VerticalLayout();
-		content.setSizeFull();
-		content.setMargin(true);
-		content.setSpacing(true);
-		menuAndContent.addComponent(content);
+	menuAndContent.setExpandRatio(menuBox, 1);
+	menuAndContent.setExpandRatio(content, 9);
 
-		menuAndContent.setExpandRatio(menuBox, 1);
-		menuAndContent.setExpandRatio(content, 9);
+	final HorizontalLayout moodButtonsBox = new HorizontalLayout();
+	moodButtonsBox.setSizeFull();
+	moodButtonsBox.setMargin(true);
+	moodButtonsBox.setSpacing(true);
 
-		HorizontalLayout moodButtonsBox = new HorizontalLayout();
-		moodButtonsBox.setSizeFull();
-		moodButtonsBox.setMargin(true);
-		moodButtonsBox.setSpacing(true);
+	this.smileSchlecht = new Button(VaadinIcons.FROWN_O);
+	this.smileSchlecht.addClickListener(this);
+	this.smileSchlecht.setId("smileSchlecht");
 
-		smileSchlecht = new Button(VaadinIcons.FROWN_O);
-		smileSchlecht.addClickListener(this);
-		smileSchlecht.setId("smileSchlecht");
+	this.smileEherSchlecht = new Button(VaadinIcons.MEH_O);
+	this.smileEherSchlecht.addClickListener(this);
+	this.smileEherSchlecht.setId("smileEherSchlecht");
 
-		smileEherSchlecht = new Button(VaadinIcons.MEH_O);
-		smileEherSchlecht.addClickListener(this);
-		smileEherSchlecht.setId("smileEherSchlecht");
+	this.smileEherGut = new Button(VaadinIcons.SMILEY_O);
+	this.smileEherGut.addClickListener(this);
+	this.smileEherGut.setId("smileEherGut");
 
-		smileEherGut = new Button(VaadinIcons.SMILEY_O);
-		smileEherGut.addClickListener(this);
-		smileEherGut.setId("smileEherGut");
+	this.smileGut = new Button(VaadinIcons.SMILEY_O);
+	this.smileGut.addClickListener(this);
+	this.smileGut.setId("smileGut");
 
-		smileGut = new Button(VaadinIcons.SMILEY_O);
-		smileGut.addClickListener(this);
-		smileGut.setId("smileGut");
+	moodButtonsBox.addComponents(this.smileSchlecht, this.smileEherSchlecht, this.smileEherGut, this.smileGut);
+	content.addComponent(moodButtonsBox);
 
-		moodButtonsBox.addComponents(smileSchlecht, smileEherSchlecht, smileEherGut, smileGut);
-		content.addComponent(moodButtonsBox);
+	final HorizontalLayout diaryTitleBox = new HorizontalLayout();
+	diaryTitleBox.setSizeFull();
+	diaryTitleBox.setMargin(true);
+	diaryTitleBox.setSpacing(true);
+	this.diaryTitle = new TextField();
+	this.diaryTitle.setPlaceholder("Titel");
+	// diaryTitle.addStyleName("diaryTitlelabel");
+	diaryTitleBox.addComponent(this.diaryTitle);
+	content.addComponent(diaryTitleBox);
 
-		HorizontalLayout diaryTitleBox = new HorizontalLayout();
-		diaryTitleBox.setSizeFull();
-		diaryTitleBox.setMargin(true);
-		diaryTitleBox.setSpacing(true);
-		diaryTitle = new TextField();
-		diaryTitle.setPlaceholder("Titel");
-		//diaryTitle.addStyleName("diaryTitlelabel");
-		diaryTitleBox.addComponent(diaryTitle);
-		content.addComponent(diaryTitleBox);
+	final HorizontalLayout diaryTextBox = new HorizontalLayout();
+	diaryTextBox.setSizeFull();
+	diaryTextBox.setMargin(true);
+	diaryTextBox.setSpacing(true);
+	this.diaryText = new TextArea();
+	this.diaryText.setPlaceholder("Text");
+	this.diaryText.addStyleName("diaryText");
+	diaryTextBox.addComponent(this.diaryText);
+	content.addComponent(diaryTextBox);
 
-		HorizontalLayout diaryTextBox = new HorizontalLayout();
-		diaryTextBox.setSizeFull();
-		diaryTextBox.setMargin(true);
-		diaryTextBox.setSpacing(true);
-		diaryText = new TextArea();
-		diaryText.setPlaceholder("Text");
-		diaryText.addStyleName("diaryText");
-		diaryTextBox.addComponent(diaryText);
-		content.addComponent(diaryTextBox);
+	final HorizontalLayout confirmButtonBox = new HorizontalLayout();
+	confirmButtonBox.setSizeFull();
+	confirmButtonBox.setMargin(true);
+	confirmButtonBox.setSpacing(true);
+	this.tags = new TextField();
+	this.tags.setPlaceholder("Tag");
+	this.confirmButton = new Button(VaadinIcons.CHECK);
+	this.confirmButton.addClickListener(this);
+	this.confirmButton.setId("confirmButton");
+	confirmButtonBox.addComponents(this.tags, this.confirmButton);
+	content.addComponent(confirmButtonBox);
 
-		HorizontalLayout confirmButtonBox = new HorizontalLayout();
-		confirmButtonBox.setSizeFull();
-		confirmButtonBox.setMargin(true);
-		confirmButtonBox.setSpacing(true);
-		tags = new TextField();
-		tags.setPlaceholder("Tag");
-		confirmButton = new Button(VaadinIcons.CHECK);
-		confirmButton.addClickListener(this);
-		confirmButton.setId("confirmButton");
-		confirmButtonBox.addComponents(tags, confirmButton);
-		content.addComponent(confirmButtonBox);
+	final HorizontalLayout superButtonBox = new HorizontalLayout();
+	superButtonBox.setSizeFull();
+	superButtonBox.setMargin(true);
+	superButtonBox.setSpacing(true);
+	content.addComponent(superButtonBox);
+	this.sosButton = new Button(VaadinIcons.PHONE);
+	this.sosButton.addClickListener(this);
+	this.sosButton.setId("sosButton");
+	this.chatButton = new Button(VaadinIcons.CHAT);
+	this.chatButton.addClickListener(this);
+	this.chatButton.setId("chatButton");
+	superButtonBox.addComponents(this.sosButton, this.chatButton);
+	superButtonBox.setComponentAlignment(this.sosButton, Alignment.MIDDLE_LEFT);
+	superButtonBox.setComponentAlignment(this.chatButton, Alignment.MIDDLE_LEFT);
+    }
 
-		HorizontalLayout superButtonBox = new HorizontalLayout();
-		superButtonBox.setSizeFull();
-		superButtonBox.setMargin(true);
-		superButtonBox.setSpacing(true);
-		content.addComponent(superButtonBox);
-		sosButton = new Button(VaadinIcons.PHONE);
-		sosButton.addClickListener(this);
-		sosButton.setId("sosButton");
-		chatButton = new Button(VaadinIcons.CHAT);
-		chatButton.addClickListener(this);
-		chatButton.setId("chatButton");
-		superButtonBox.addComponents(sosButton, chatButton);
-		superButtonBox.setComponentAlignment(sosButton, Alignment.MIDDLE_LEFT);
-		superButtonBox.setComponentAlignment(chatButton, Alignment.MIDDLE_LEFT);
+    @Override
+    public void addListener(ClickListener listener) {
+	this.listeners.add(listener);
+    }
 
+    @Override
+    public void buttonClick(ClickEvent event) {
+	for (final ClickListener listener : this.listeners) {
+	    listener.buttonClick(event);
 	}
-	
-	
-	@Override
-	public void addListener(SperoViewListener listener) {
-		listeners.add(listener);
-	}
-
-	@Override
-	public void buttonClick(ClickEvent event) {
-		for (SperoViewListener listener : this.listeners) {
-			listener.buttonClick(event);
-		}
-	}
-
+    }
 }

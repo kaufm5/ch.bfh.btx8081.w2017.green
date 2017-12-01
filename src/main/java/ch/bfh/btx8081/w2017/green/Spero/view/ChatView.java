@@ -8,6 +8,7 @@ import com.vaadin.icons.VaadinIcons;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
@@ -17,7 +18,6 @@ import com.vaadin.ui.VerticalLayout;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.Broadcaster;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.Broadcaster.BroadcastListener;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoView;
-import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 
 /**
  * The class ChatView shows the chat view of the Spero-application
@@ -29,36 +29,30 @@ import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 public class ChatView extends CustomComponent implements SperoView, BroadcastListener {
     private final VerticalLayout layout = new VerticalLayout();
 
-    private final Button menuButton;
-    private final Button send;
-    private final Button sosButton;
-    private final Button attachment;
-
-    private final Label title;
-    private final Label username;
+    private final Button menuButton, send, sosButton, attachment;
+    private final Label title, username;
     private final TextField chat;
 
-    private final List<SperoViewListener> listeners = new ArrayList<SperoViewListener>();
+    private final List<ClickListener> listeners = new ArrayList<ClickListener>();
 
     /**
      * Constructs the chat view
      */
     public ChatView() {
-	final VerticalLayout layout = new VerticalLayout();
-	setCompositionRoot(layout);
+	setCompositionRoot(this.layout);
 
 	final VerticalLayout titleBarBox = new VerticalLayout();
 	titleBarBox.addStyleName("titleBarBox");
 	this.title = new Label("Spero");
 	this.title.addStyleName("title");
 	titleBarBox.addComponent(this.title);
-	layout.addComponent(titleBarBox);
+	this.layout.addComponent(titleBarBox);
 
 	final HorizontalLayout menuAndContent = new HorizontalLayout();
 	menuAndContent.setSizeFull();
 	menuAndContent.setMargin(true);
 	menuAndContent.setSpacing(true);
-	layout.addComponent(menuAndContent);
+	this.layout.addComponent(menuAndContent);
 
 	final VerticalLayout menuBox = new VerticalLayout();
 	menuBox.setSpacing(true);
@@ -119,13 +113,13 @@ public class ChatView extends CustomComponent implements SperoView, BroadcastLis
     }
 
     @Override
-    public void addListener(SperoViewListener listener) {
+    public void addListener(ClickListener listener) {
 	this.listeners.add(listener);
     }
 
     @Override
     public void buttonClick(ClickEvent event) {
-	for (final SperoViewListener listener : this.listeners) {
+	for (final ClickListener listener : this.listeners) {
 	    listener.buttonClick(event);
 	}
     }
