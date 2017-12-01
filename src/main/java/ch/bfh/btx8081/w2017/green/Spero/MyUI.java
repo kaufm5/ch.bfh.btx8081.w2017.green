@@ -44,6 +44,7 @@ public class MyUI extends UI {
 	Navigator navigator; 
 	MainViewImpl mainView;
 	Diary modelDiary;
+	DiaryEntry modelDiaryEntry;
 	MenuView menuView;
 	SosView sosView;
 	ChatView chatView;
@@ -60,6 +61,7 @@ public class MyUI extends UI {
    	 
    	 mainView = new MainViewImpl();
      modelDiary = new Diary();
+     modelDiaryEntry = new DiaryEntry();
      menuView = new MenuView();
      sosView = new SosView();
      chatView = new ChatView();
@@ -72,7 +74,7 @@ public class MyUI extends UI {
    	 navigator.addView("chat", chatView);
    	 navigator.addView("diary", diaryView);
    	 
-   	 new MainPresenter(mainView, modelDiary);
+   	 new MainPresenter(mainView, modelDiaryEntry);
    	 new MenuPresenter(menuView);
    	 new SosPresenter(sosView);
    	 new ChatPresenter(chatView);
