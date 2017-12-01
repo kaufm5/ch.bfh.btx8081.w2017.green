@@ -11,11 +11,11 @@ public class PinModel {
     	this.pin = pin;
     }
     
-//    public void checkPin(String pin)
-//    		throws IncorrectException {
-//    	if (!pin.equals(this.pin)) {
-//    		throw new IncorrectException("PIN ist ungültig");
-//    	}
-//    }
+    public void checkPin(String pin)
+    		throws IncorrectException {
+    	if (!pin.equals(this.pin)) {
+    		throw new IncorrectException("PIN ist ungültig");
+    	}
+    }
     
 }

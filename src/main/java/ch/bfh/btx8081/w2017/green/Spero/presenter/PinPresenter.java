@@ -9,7 +9,7 @@ import ch.bfh.btx8081.w2017.green.Spero.view.PinView;
 import ch.bfh.btx8081.w2017.green.Spero.view.Views;
 
 public class PinPresenter implements ClickListener {
-    // TODO: implement pinView and pinModel interactions
+    
     private final PinView pinView;
     private final PinModel pinModel;
 
@@ -25,14 +25,14 @@ public class PinPresenter implements ClickListener {
 
 	switch (buttonId) {
 	case "ok":
-//		String code = pinView.getPin();
-//		try {
-//			pinModel.checkPin(code);
-//		} catch (IncorrectException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//	    pinView.getUI().getNavigator().navigateTo(Views.MAIN_VIEW);
+		String code = pinView.getPin();
+		try {
+			pinModel.checkPin(code);
+		} catch (IncorrectException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    pinView.getUI().getNavigator().navigateTo(Views.MAIN_VIEW);
 	    break;
 	default:
 	    //

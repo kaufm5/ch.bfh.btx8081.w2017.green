@@ -43,16 +43,18 @@ public class PinView extends CustomComponent implements SperoView {
 
     	contentLayout.setExpandRatio(content, 9);
 
-    	final VerticalLayout menuItems = new VerticalLayout();
+    	final VerticalLayout pinItems = new VerticalLayout();
 
     	this.pin = new PasswordField("PIN");
     	//this.pin.setId("pin");
-    	menuItems.addComponent(this.pin);
+    	pinItems.addComponent(this.pin);
     	
     	this.ok = new Button("OK");
     	this.ok.addClickListener(this);
     	this.ok.setId("ok");
-    	menuItems.addComponent(this.ok);
+    	pinItems.addComponent(this.ok);
+    	
+    	content.addComponent(pinItems);
     	
     }
     
