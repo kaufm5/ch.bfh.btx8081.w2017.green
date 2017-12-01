@@ -7,7 +7,7 @@ public class PinModel {
 	private String pin = "1234";
 	
     // constructor
-    public PinModel(/*String pin*/) {
+    public PinModel(String pin) {
     	this.pin = pin;
     }
     

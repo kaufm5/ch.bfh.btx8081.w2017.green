@@ -45,6 +45,9 @@ public class MyUI extends UI {
     private final VerticalLayout layout = new VerticalLayout();
 
     private Navigator navigator;
+    
+    private String code;
+    
     private final MainViewImpl mainView = new MainViewImpl();
     private final Diary modelDiary = new Diary();
     private final DiaryEntry modelDiaryEntry = new DiaryEntry();
@@ -55,7 +58,7 @@ public class MyUI extends UI {
     private final SettingsView settingsView = new SettingsView();
     private final SettingsModel settingsModel = new SettingsModel();
     private final PinView pinView = new PinView();
-    private final PinModel pinModel = new PinModel();
+    private final PinModel pinModel = new PinModel(code);
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
