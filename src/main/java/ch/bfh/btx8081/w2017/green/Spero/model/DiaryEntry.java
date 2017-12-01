@@ -109,10 +109,12 @@ public class DiaryEntry {
 			 PrintWriter pWriter;
 			try {
 				 pWriter = new PrintWriter(new BufferedWriter(new FileWriter("diaryEntry.txt")));
+				// pWriter.println("test");
 				 pWriter.println(date);
 				 pWriter.println(getTitle());
 				 pWriter.println(getText());
 			     pWriter.println(getTag());
+			     pWriter.close();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
