@@ -13,12 +13,14 @@ public class MainPresenter implements SperoViewListener {
 
 	private MainViewImpl mainView;
 	private DiaryEntry model;
+	private Diary diarymodel;
 	
 	private Mood moodParam;
 
-	public MainPresenter(MainViewImpl mainView, DiaryEntry model) {
+	public MainPresenter(MainViewImpl mainView, DiaryEntry model, Diary diarymodel) {
 		this.mainView = mainView;
 		this.model = model;
+		this.diarymodel = diarymodel;
 		mainView.addListener(this);
 	}
 
@@ -54,8 +56,9 @@ public class MainPresenter implements SperoViewListener {
 			model.setTitle(mainView.diaryTitle.getValue());
 			model.setText(mainView.diaryText.getValue());
 			model.setTag(mainView.tags.getValue());
+			model.setMoodparam(moodParam);
 			model.confirm();
-			//model.createEntry("Title", "Text", moodParam);
+			diarymodel.createEntry("Title", "Text", moodParam);
 			break;
 		}
 	}
