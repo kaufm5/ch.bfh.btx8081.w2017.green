@@ -15,6 +15,11 @@ import com.vaadin.ui.VerticalLayout;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoView;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 
+/**
+ * The class ChatView shows the chat view of the Spero-application
+ * @author stahm2
+ */
+
 public class SosView extends CustomComponent implements SperoView{
 	
 	private Button menuButton;
@@ -25,6 +30,9 @@ public class SosView extends CustomComponent implements SperoView{
 	
 	private List<SperoViewListener> listeners = new ArrayList<SperoViewListener>();
 	
+	/**
+	 * Constructs the chat view
+	 */
 	public SosView() {
 		VerticalLayout layout = new VerticalLayout();
 		setCompositionRoot(layout);
