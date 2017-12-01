@@ -17,17 +17,23 @@ import com.vaadin.ui.VerticalLayout;
 
 import ch.bfh.btx8081.w2017.green.Spero.model.Diary;
 import ch.bfh.btx8081.w2017.green.Spero.model.DiaryEntry;
+import ch.bfh.btx8081.w2017.green.Spero.model.PinModel;
+import ch.bfh.btx8081.w2017.green.Spero.model.SettingsModel;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.ChatPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.DiaryPresenter;
 //import ch.bfh.btx8081.w2017.green.Spero.presenter.DiaryEntryPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.MainPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.MenuPresenter;
+import ch.bfh.btx8081.w2017.green.Spero.presenter.PinPresenter;
+import ch.bfh.btx8081.w2017.green.Spero.presenter.SettingsPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.SosPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.view.ChatView;
 import ch.bfh.btx8081.w2017.green.Spero.view.DiaryViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.MainViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.MenuView;
+import ch.bfh.btx8081.w2017.green.Spero.view.PinView;
 import ch.bfh.btx8081.w2017.green.Spero.view.ReportView;
+import ch.bfh.btx8081.w2017.green.Spero.view.SettingsView;
 import ch.bfh.btx8081.w2017.green.Spero.view.SosView;
 
 /**
@@ -49,6 +55,10 @@ public class MyUI extends UI {
 	SosView sosView;
 	ChatView chatView;
 	DiaryViewImpl diaryView;
+	SettingsView settingsView;
+	SettingsModel settingsModel;
+	PinView pinView;
+	PinModel pinModel;
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
@@ -66,6 +76,8 @@ public class MyUI extends UI {
      sosView = new SosView();
      chatView = new ChatView();
      diaryView = new DiaryViewImpl();
+     settingsView = new SettingsView();
+     pinView = new PinView();
      
    	 navigator.addView("", mainView);
    	 navigator.addView("report", new ReportView() );
@@ -73,14 +85,16 @@ public class MyUI extends UI {
    	 navigator.addView("sos", sosView);
    	 navigator.addView("chat", chatView);
    	 navigator.addView("diary", diaryView);
+   	 navigator.addView("settings", settingsView);
+   	 navigator.addView("pin", pinView);
    	 
    	 new MainPresenter(mainView, modelDiaryEntry, modelDiary);
    	 new MenuPresenter(menuView);
    	 new SosPresenter(sosView);
    	 new ChatPresenter(chatView);
    	 new DiaryPresenter(modelDiary, diaryView);
-  
-   	 
+   	 new SettingsPresenter(settingsView, settingsModel);
+   	 new PinPresenter(pinView, pinModel);
    	 
     }
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
