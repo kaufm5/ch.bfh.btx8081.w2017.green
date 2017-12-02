@@ -31,7 +31,6 @@ public class MainViewImpl extends CustomComponent implements SperoView {
 	private Button smileEherSchlecht;
 	private Button smileEherGut;
 	private Button smileGut;
-// test
 	private Label title;
 	public TextField tags;
 	public TextArea diaryText;
