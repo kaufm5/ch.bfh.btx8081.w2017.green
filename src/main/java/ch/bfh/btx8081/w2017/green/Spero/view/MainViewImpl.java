@@ -125,17 +125,26 @@ public class MainViewImpl extends CustomComponent implements SperoView {
 		diaryText.addStyleName("diaryText");
 		diaryTextBox.addComponent(diaryText);
 		content.addComponent(diaryTextBox);
+		
+		HorizontalLayout tagsBox = new HorizontalLayout();
+		tagsBox.setSizeFull();
+		tagsBox.setMargin(true);
+		tagsBox.setSpacing(true);
+		tags = new TextField();
+		tags.setPlaceholder("tags");
+		tags.addStyleName("tags");
+		tagsBox.addComponent(tags);
+		content.addComponent(tagsBox);
+		
 
 		HorizontalLayout confirmButtonBox = new HorizontalLayout();
 		confirmButtonBox.setSizeFull();
 		confirmButtonBox.setMargin(true);
 		confirmButtonBox.setSpacing(true);
-		tags = new TextField();
-		tags.setPlaceholder("Tag");
 		confirmButton = new Button(VaadinIcons.CHECK);
 		confirmButton.addClickListener(this);
 		confirmButton.setId("confirmButton");
-		confirmButtonBox.addComponents(tags, confirmButton);
+		confirmButtonBox.addComponents(confirmButton);
 		content.addComponent(confirmButtonBox);
 
 		HorizontalLayout superButtonBox = new HorizontalLayout();
