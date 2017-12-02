@@ -38,5 +38,15 @@ public class Views {
 		 * The DiaryViewImpl
 		 */
 		public static final String DIARY_VIEW = "diary";
+		
+		/*
+		 * The PIN view
+		 */
+		public static final String PIN_VIEW = "pin";
+		
+		/*
+		 * The changePinView
+		 */
+		public static final String CHANGE_PIN_VIEW = "changePin";
 	}
 
