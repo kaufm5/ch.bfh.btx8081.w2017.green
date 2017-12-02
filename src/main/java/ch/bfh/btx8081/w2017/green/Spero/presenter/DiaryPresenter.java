@@ -13,11 +13,17 @@ public class DiaryPresenter implements SperoViewListener {
 
 	Diary diaryModel;
 	DiaryViewImpl diaryView;
+	
+	int numberOfAddedEntry;
 //test
 	public DiaryPresenter(Diary diaryModel, DiaryViewImpl diaryView) {
 		this.diaryModel = diaryModel;
 		this.diaryView = diaryView;
 		diaryView.addListener(this);
+		
+		numberOfAddedEntry = 0;
+		
+		
 
 	}
 
@@ -27,15 +33,16 @@ public class DiaryPresenter implements SperoViewListener {
 
 		switch (buttonId) {
 		case "refreshButton":
-
-			if (diaryModel.getNumberOfDiaryEntry() > 0) {
-				DiaryEntry diaryEntry = diaryModel.searchEntry(1);
+		
+			int numberOfDiaryEntry = diaryModel.getNumberOfDiaryEntry();
+			while(numberOfDiaryEntry > numberOfAddedEntry) {
+				DiaryEntry diaryEntry = diaryModel.searchEntry(numberOfDiaryEntry);
 				String title = diaryEntry.getTitle();
 				String text = diaryEntry.getText();
 				Mood moodParam = diaryEntry.getMoodparam();
-
+				
 				diaryView.addEntryToView(title, text, moodParam);
-
+				numberOfAddedEntry = numberOfDiaryEntry;
 			}
 			break;
 		case "menuButton":
