@@ -6,6 +6,7 @@ import com.vaadin.ui.Button.ClickListener;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 import ch.bfh.btx8081.w2017.green.Spero.model.SettingsModel;
 import ch.bfh.btx8081.w2017.green.Spero.view.SettingsView;
+import ch.bfh.btx8081.w2017.green.Spero.view.Views;
 
 public class SettingsPresenter implements ClickListener, SperoViewListener {
     
@@ -24,10 +25,10 @@ public class SettingsPresenter implements ClickListener, SperoViewListener {
 
 	switch (buttonId) {
 	case "change":
-	    // menuView.getUI().getNavigator().navigateTo(Views.CHANGE_PIN_VIEW);
+	    settingsView.getUI().getNavigator().navigateTo(Views.CHANGE_PIN_VIEW);
 	    break;
 	case "ok":
-	    //
+		settingsView.getUI().getNavigator().navigateTo(Views.MENU_VIEW);
 	    break;
 	}
     }

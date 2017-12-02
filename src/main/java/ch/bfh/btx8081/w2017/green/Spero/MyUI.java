@@ -92,14 +92,14 @@ public class MyUI extends UI {
      changePinView = new ChangePinView();
      changePinModel = new ChangePinModel(code, code2, code3);
      
-   	 navigator.addView("", mainView);
+   	 navigator.addView("main", mainView);
    	 navigator.addView("report", new ReportView() );
    	 navigator.addView("menu", menuView);
    	 navigator.addView("sos", sosView);
    	 navigator.addView("chat", chatView);
    	 navigator.addView("diary", diaryView);
    	 navigator.addView("settings", settingsView);
-   	 navigator.addView("pin", pinView);
+   	 navigator.addView("", pinView);
    	 navigator.addView("changePin", changePinView);
    	 
    	 new MainPresenter(mainView, modelDiaryEntry, modelDiary);

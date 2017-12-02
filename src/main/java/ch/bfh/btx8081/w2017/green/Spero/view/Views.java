@@ -7,7 +7,7 @@ public class Views {
 		/*
 		 * The main view
 		 */
-		public static final String MAIN_VIEW = "";
+		public static final String MAIN_VIEW = "main";
 		
 		/*
 		 * The menu view
@@ -42,7 +42,7 @@ public class Views {
 		/*
 		 * The PIN view
 		 */
-		public static final String PIN_VIEW = "pin";
+		public static final String PIN_VIEW = "";
 		
 		/*
 		 * The changePinView

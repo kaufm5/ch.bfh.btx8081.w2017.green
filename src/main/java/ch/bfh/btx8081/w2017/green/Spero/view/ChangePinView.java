@@ -95,6 +95,8 @@ public ChangePinView() {
     	this.ok.setId("ok");
     	changePinItems.addComponent(this.ok);
     	
+    	content.addComponent(changePinItems);
+    	
 }
 
 		public String getOldPin() {
