@@ -9,7 +9,7 @@ import ch.bfh.btx8081.w2017.green.Spero.model.DiaryEntry;
 import ch.bfh.btx8081.w2017.green.Spero.view.MainViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.Views;
 
-public class MainPresenter implements SperoViewListener {
+public class MainPresenter implements SperoViewListener  {
 
 	private MainViewImpl mainView;
 	private DiaryEntry model;
@@ -58,7 +58,7 @@ public class MainPresenter implements SperoViewListener {
 			model.setTag(mainView.tags.getValue());
 			model.setMoodparam(moodParam);
 			model.confirm();
-			diarymodel.createEntry("Title", "Text", moodParam);
+			diarymodel.createEntry(mainView.diaryTitle.getValue(), mainView.diaryText.getValue(), moodParam);
 			mainView.getUI().getNavigator().navigateTo(Views.DIARY_VIEW);
 			break;
 		}
