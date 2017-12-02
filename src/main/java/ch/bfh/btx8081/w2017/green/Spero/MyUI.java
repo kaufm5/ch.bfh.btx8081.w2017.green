@@ -77,7 +77,7 @@ public class MyUI extends UI {
    	 ComponentContainerViewDisplay viewDisplay = new ComponentContainerViewDisplay(layout); 
    	 navigator = new Navigator(UI.getCurrent(), viewDisplay);
    	 
-   	 
+   	 pinView = new PinView();
    	 mainView = new MainViewImpl();
      modelDiary = new Diary();
      modelDiaryEntry = new DiaryEntry();
@@ -87,7 +87,6 @@ public class MyUI extends UI {
      diaryView = new DiaryViewImpl();
      settingsView = new SettingsView();
      settingsModel = new SettingsModel();
-     pinView = new PinView();
      pinModel = new PinModel(code);
      changePinView = new ChangePinView();
      changePinModel = new ChangePinModel(code, code2, code3);
