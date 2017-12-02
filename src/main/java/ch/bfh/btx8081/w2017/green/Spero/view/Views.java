@@ -10,12 +10,12 @@ public class Views {
 		public static final String MAIN_VIEW = "";
 		
 		/*
-		 * The menu view
+		 * The information view
 		 */
 		public static final String MENU_VIEW = "menu";
 		
 		/*
-		 * The report view
+		 * The tips view
 		 */
 		public static final String REPORT_VIEW = "report";
 		
