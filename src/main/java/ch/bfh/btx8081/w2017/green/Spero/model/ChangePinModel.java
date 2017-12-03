@@ -13,7 +13,7 @@ public class ChangePinModel {
 	private String newPin1;
 	private String newPin2;
 	
-	 // constructor
+
     public ChangePinModel(String oldPin, String newPin1, String newPin2) {
     	this.oldPin = oldPin;
     	this.newPin1 = newPin1;
