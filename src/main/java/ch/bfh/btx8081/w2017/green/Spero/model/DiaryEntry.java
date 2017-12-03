@@ -8,9 +8,18 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.Mood;
 
+@Entity
 public class DiaryEntry {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int diaryEntryNumber;
 	private String diaryTitle ="";
 	private String diaryText = "";

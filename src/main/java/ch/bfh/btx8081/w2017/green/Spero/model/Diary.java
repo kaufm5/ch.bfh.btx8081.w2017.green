@@ -5,12 +5,20 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.Mood;
 
+@Entity
 public class Diary {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int numberOfDiaryEntry = 0;
 	private Map<Integer, DiaryEntry> diaryEntryMap;
-	//test
 	
 	public Diary() {
 		diaryEntryMap = new HashMap<>();

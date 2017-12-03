@@ -1,5 +1,10 @@
 package ch.bfh.btx8081.w2017.green.Spero.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.IncorrectException;
 
 public class ChangePinModel {
