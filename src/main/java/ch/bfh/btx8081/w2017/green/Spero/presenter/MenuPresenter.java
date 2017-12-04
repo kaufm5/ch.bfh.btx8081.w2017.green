@@ -1,6 +1,8 @@
 package ch.bfh.btx8081.w2017.green.Spero.presenter;
 
+import com.vaadin.server.ExternalResource;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Link;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 import ch.bfh.btx8081.w2017.green.Spero.view.MenuView;
@@ -9,6 +11,8 @@ import ch.bfh.btx8081.w2017.green.Spero.view.Views;
 public class MenuPresenter implements SperoViewListener {
 	
 	private MenuView menuView;
+	
+	private Link link = new Link("link", new ExternalResource("https://compendium.ch/home/de"));
 	
 	public MenuPresenter(MenuView menuView) {
 		this.menuView = menuView;
@@ -33,7 +37,7 @@ public class MenuPresenter implements SperoViewListener {
 			//menuView.getUI().getNavigator().navigateTo(Views.MAIN_VIEW);
 		    break;
 		case "medInfo":
-			//menuView.getUI().getNavigator().navigateTo(Views.MAIN_VIEW);
+			menuView.getUI().getPage().setLocation("https://compendium.ch/home/de");
 		    break;
 		case "depErk":
 			//menuView.getUI().getNavigator().navigateTo(Views.MAIN_VIEW);
