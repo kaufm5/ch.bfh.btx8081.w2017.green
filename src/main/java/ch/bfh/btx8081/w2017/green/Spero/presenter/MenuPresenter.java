@@ -12,8 +12,6 @@ public class MenuPresenter implements SperoViewListener {
 	
 	private MenuView menuView;
 	
-	private Link link = new Link("link", new ExternalResource("https://compendium.ch/home/de"));
-	
 	public MenuPresenter(MenuView menuView) {
 		this.menuView = menuView;
 		menuView.addListener(this);
