@@ -14,7 +14,7 @@ public class Entry implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="\"diaryEntryNumber\"")
+	@Column(name="diaryEntryNumber")
 	private Integer diaryEntryNumber;
 
 	private String tags;
