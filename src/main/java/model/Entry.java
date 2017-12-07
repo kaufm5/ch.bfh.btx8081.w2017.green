@@ -24,6 +24,8 @@ public class Entry implements Serializable {
 	private String title;
 
 	public Entry() {
+		
+		
 	}
 
 	public Integer getDiaryEntryNumber() {
