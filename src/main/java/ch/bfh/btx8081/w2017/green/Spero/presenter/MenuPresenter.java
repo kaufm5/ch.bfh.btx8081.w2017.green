@@ -32,7 +32,7 @@ public class MenuPresenter implements SperoViewListener {
 			menuView.getUI().getNavigator().navigateTo(Views.REPORT_VIEW);
 			break;
 		case "reminder":
-			//menuView.getUI().getNavigator().navigateTo(Views.MAIN_VIEW);
+			menuView.getUI().getNavigator().navigateTo(Views.REMINDER_VIEW);
 		    break;
 		case "medInfo":
 			menuView.getUI().getPage().setLocation("https://compendium.ch/home/de");
