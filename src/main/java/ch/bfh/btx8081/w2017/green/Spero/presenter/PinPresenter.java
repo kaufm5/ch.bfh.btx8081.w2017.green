@@ -41,6 +41,8 @@ public class PinPresenter implements ClickListener, SperoViewListener {
 			//pinView.getUI().getNavigator().navigateTo(Views.MAIN_VIEW);
 		} catch (IncorrectException e) {
 			e.printStackTrace();
+			//String exceptionMessage = e.getMessage();
+			pinView.pinValue.setValue(e.getMessage());
 //			System.out.println("Der Pin ist: " + code);
 			break;
 		}

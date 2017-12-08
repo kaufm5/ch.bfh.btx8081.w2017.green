@@ -22,7 +22,7 @@ public class PinModel {
     		throws IncorrectException {
     	String str = "1234";
     	if (!pin.equals(str)) {
-    		throw new IncorrectException("PIN ist ungültig");
+    		throw new IncorrectException("PIN ist nicht korrekt!");
     	} else {
     		System.out.println("test");
     	}
