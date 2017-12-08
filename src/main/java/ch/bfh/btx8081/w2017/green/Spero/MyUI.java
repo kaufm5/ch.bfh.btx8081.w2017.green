@@ -63,6 +63,7 @@ public class MyUI extends UI {
 	ChatView chatView;
 	DiaryViewImpl diaryView;
 	SettingsView settingsView;
+	SettingsPresenter settingsPresenter;
 	SettingsModel settingsModel;
 	PinView pinView;
 	PinModel pinModel;
@@ -85,7 +86,7 @@ public class MyUI extends UI {
      sosView = new SosView();
      chatView = new ChatView();
      diaryView = new DiaryViewImpl();
-     settingsView = new SettingsView();
+     settingsView = new SettingsView(settingsPresenter);
      settingsModel = new SettingsModel();
      pinModel = new PinModel(code);
      changePinView = new ChangePinView();
@@ -106,7 +107,7 @@ public class MyUI extends UI {
    	 new SosPresenter(sosView);
    	 new ChatPresenter(chatView);
    	 new DiaryPresenter(modelDiary, diaryView);
-   	 new SettingsPresenter(settingsView, settingsModel);
+   	 settingsPresenter = new SettingsPresenter(settingsView, settingsModel);
    	 new PinPresenter(pinView, pinModel);
    	 new ChangePinPresenter(changePinView, changePinModel);
    	 

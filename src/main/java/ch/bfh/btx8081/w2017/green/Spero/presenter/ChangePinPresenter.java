@@ -38,8 +38,11 @@ public class ChangePinPresenter implements ClickListener, SperoViewListener {
 			}
 		    changePinView.getUI().getNavigator().navigateTo(Views.SETTINGS_VIEW);
 		    break;
-		default:
-		    //
+		case "sos":
+			changePinView.getUI().getNavigator().navigateTo(Views.SOS_VIEW);
+		    break;
+		case "chat":
+			changePinView.getUI().getNavigator().navigateTo(Views.CHAT_VIEW);
 		    break;
 		}
 	}

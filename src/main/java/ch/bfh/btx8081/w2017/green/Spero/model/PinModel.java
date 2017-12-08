@@ -20,8 +20,11 @@ public class PinModel {
     
     public void checkPin(String pin)
     		throws IncorrectException {
-    	if (!pin.equals(this.pin)) {
+    	String str = "1234";
+    	if (!pin.equals(str)) {
     		throw new IncorrectException("PIN ist ungültig");
+    	} else {
+    		System.out.println("test");
     	}
     }
     

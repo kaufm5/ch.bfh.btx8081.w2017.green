@@ -21,6 +21,8 @@ public class PinView extends CustomComponent implements SperoView {
 	private final PasswordField pin;
 	private final Button ok;
 	
+	private final Label pinValue;
+	
     private final List<ClickListener> listeners = new ArrayList<ClickListener>();
 
     public PinView() {
@@ -54,6 +56,10 @@ public class PinView extends CustomComponent implements SperoView {
     	this.ok.addClickListener(this);
     	this.ok.setId("ok");
     	pinItems.addComponent(this.ok);
+    	
+    	this.pinValue = new Label("Try!");
+    	pinValue.setId("pinValue");
+    	pinItems.addComponent(this.pinValue);
     	
     	content.addComponent(pinItems);
     	

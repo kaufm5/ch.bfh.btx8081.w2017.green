@@ -1,5 +1,6 @@
 package ch.bfh.btx8081.w2017.green.Spero.view;
 
+import com.vaadin.icons.VaadinIcons;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
@@ -25,9 +26,11 @@ public class ChangePinView extends CustomComponent implements SperoView {
 	private Label newPin1Label;
 	private PasswordField newPin1PasswordField;
 	private Label newPin2Label;
-	private PasswordField newPin2PasswordField;
-	
+	private PasswordField newPin2PasswordField;	
 	private Button ok;
+	private Button sosButton;
+	private Button chatButton;
+	private HorizontalLayout superButtonBox;
 	
 	private final List<ClickListener> listeners = new ArrayList<ClickListener>();
 	
@@ -98,6 +101,16 @@ public ChangePinView() {
     	
     	content.addComponent(changePinItems);
     	
+    	superButtonBox = new HorizontalLayout ();
+		content.addComponent(superButtonBox);
+		sosButton = new Button(VaadinIcons.PHONE);
+		sosButton.addClickListener(this);
+		sosButton.setId("sos");
+//		chatButton = new Button(VaadinIcons.CHAT);
+//		chatButton.addClickListener(this);
+//		chatButton.setId("chat");
+		superButtonBox.addComponent(sosButton);
+    	//addChatButton();
 }
 
 		public String getOldPin() {
@@ -110,6 +123,13 @@ public ChangePinView() {
 		
 		public String getNewPin2() {
 			return newPin2PasswordField.getValue();
+		}
+		
+		public void addChatButton(){
+			chatButton = new Button(VaadinIcons.CHAT);
+			chatButton.addClickListener(this);
+			chatButton.setId("chat");
+			superButtonBox.addComponent(chatButton);
 		}
 
 	@Override

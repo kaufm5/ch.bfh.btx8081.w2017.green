@@ -2,9 +2,12 @@ package ch.bfh.btx8081.w2017.green.Spero.view;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
+import com.vaadin.icons.VaadinIcons;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.HorizontalLayout;
@@ -16,8 +19,9 @@ import com.vaadin.ui.VerticalLayout;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoView;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
+import ch.bfh.btx8081.w2017.green.Spero.presenter.SettingsPresenter;
 
-public class SettingsView extends CustomComponent implements SperoView {
+public class SettingsView extends CustomComponent implements SperoView, Observer {
 	
 	private final Label settings;
 	private final Label username;
@@ -26,12 +30,20 @@ public class SettingsView extends CustomComponent implements SperoView {
 	private final Label pinCode;
 	private final Button change;
 	private final Label chatLabel;
+	private Button chatButton;
+	private Button sosButton;
+	private HorizontalLayout superButtonBox;
+	RadioButtonGroup<String> einAusChat;
 	
 	private final Button ok;
 
     private final List<ClickListener> listeners = new ArrayList<ClickListener>();
 
-    public SettingsView() {
+    private final SettingsPresenter settingsPresenter;
+    
+    public SettingsView(final SettingsPresenter settingsPresenter) {
+    	this.settingsPresenter = settingsPresenter;
+    	//this.settingsPresenter.addObserver(this);
 	
     	final VerticalLayout layout = new VerticalLayout();
     	setCompositionRoot(layout);
@@ -100,8 +112,10 @@ public class SettingsView extends CustomComponent implements SperoView {
 //    	ToggleButton einAusChat = new ToggleButton();
 //    	chat.addComponent(einAusChat);
    	
-    	RadioButtonGroup<String> einAusChat = new RadioButtonGroup();
+    	einAusChat = new RadioButtonGroup<>();
     	einAusChat.setItems("Ein", "Aus");
+    	//einAusChat.
+    	einAusChat.setId("chat");
     	chat.addComponent(einAusChat);
     	
     	settingsItems.addComponent(chat);
@@ -114,7 +128,25 @@ public class SettingsView extends CustomComponent implements SperoView {
     	
     	content.addComponent(settingsItems);
     	
+    	superButtonBox = new HorizontalLayout ();
+		content.addComponent(superButtonBox);
+		sosButton = new Button(VaadinIcons.PHONE);
+		sosButton.addClickListener(this);
+		sosButton.setId("sos");
+		superButtonBox.addComponent(sosButton);
+    	//addChatButton();
     }
+    
+    public String getChatValue() {
+    	return einAusChat.getValue();
+    }
+    
+    public void buildChatButton(){
+		chatButton = new Button(VaadinIcons.CHAT);
+		chatButton.addClickListener(this);
+		chatButton.setId("chat");
+		superButtonBox.addComponent(chatButton);
+	}
 
     @Override
     public void buttonClick(ClickEvent event) {
@@ -126,6 +158,12 @@ public class SettingsView extends CustomComponent implements SperoView {
 	@Override
 	public void addListener(SperoViewListener listener) {
 		this.listeners.add(listener);
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+		buildChatButton();
+		//superButtonBox.addComponent(buildChatButton());
 	}
 
 }
