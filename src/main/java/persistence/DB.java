@@ -4,7 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 
 public class DB {
-	private static String PERSISTENCE_UNIT_NAME = "spero2";
+	private static String PERSISTENCE_UNIT_NAME = "spero";
 	private static EntityManager em;
 	
 	static {
