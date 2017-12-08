@@ -8,6 +8,7 @@ import java.util.Observer;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.icons.VaadinIcons;
+import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.HorizontalLayout;
@@ -24,6 +25,7 @@ import ch.bfh.btx8081.w2017.green.Spero.presenter.SettingsPresenter;
 public class SettingsView extends CustomComponent implements SperoView, Observer {
 	
 	private final Label settings;
+	private Button menuButton;
 	private final Label username;
 	private final TextField name;
 	private final Label remind;
@@ -53,16 +55,33 @@ public class SettingsView extends CustomComponent implements SperoView, Observer
     	titleBarBox.addComponent(this.settings);
     	layout.addComponent(titleBarBox);
     	
-    	final HorizontalLayout contentLayout = new HorizontalLayout();
-    	layout.addComponent(contentLayout);
+    	HorizontalLayout menuAndContent = new HorizontalLayout();
+		menuAndContent.setSizeFull();
+		menuAndContent.setMargin(true);
+		menuAndContent.setSpacing(true);
+		layout.addComponent(menuAndContent);
 
-    	final VerticalLayout content = new VerticalLayout();
-    	content.setSizeFull();
-    	content.setMargin(true);
-    	content.setSpacing(true);
-    	contentLayout.addComponent(content);
+		VerticalLayout menuBox = new VerticalLayout();
+		menuBox.setSpacing(true);
+		menuBox.setMargin(true);
+		menuButton = new Button(VaadinIcons.MENU);
+		//set id für Button 
+		menuButton.addClickListener(this);
+		menuButton.setId("menuButton");
 
-    	contentLayout.setExpandRatio(content, 9);
+		menuBox.addComponent(menuButton);
+		menuBox.setComponentAlignment(menuButton, Alignment.MIDDLE_LEFT);
+		menuBox.addStyleName("menu");
+		menuAndContent.addComponent(menuBox);
+
+		VerticalLayout content = new VerticalLayout();
+		content.setSizeFull();
+		content.setMargin(true);
+		content.setSpacing(true);
+		menuAndContent.addComponent(content);
+
+		menuAndContent.setExpandRatio(menuBox, 1);
+		menuAndContent.setExpandRatio(content, 9);
 
     	final VerticalLayout settingsItems = new VerticalLayout();
     	
