@@ -24,7 +24,7 @@ public class PinModel {
     	if (!pin.equals(str)) {
     		throw new IncorrectException("PIN ist nicht korrekt!");
     	} else {
-    		System.out.println("test");
+    		System.out.println("PIN ist korrekt");
     	}
     }
     
