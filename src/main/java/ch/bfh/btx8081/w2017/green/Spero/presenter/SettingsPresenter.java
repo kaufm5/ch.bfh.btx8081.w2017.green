@@ -26,6 +26,9 @@ public class SettingsPresenter extends Observable implements ClickListener, Sper
 	final String buttonId = event.getButton().getId();
 
 	switch (buttonId) {
+	case "menuButton":
+		settingsView.getUI().getNavigator().navigateTo(Views.MENU_VIEW);
+	    break;
 	case "change":
 	    settingsView.getUI().getNavigator().navigateTo(Views.CHANGE_PIN_VIEW);
 	    break;
