@@ -61,7 +61,7 @@ public class SettingsView extends CustomComponent implements SperoView {
     	user.addComponent(this.username);
     	
     	this.name = new TextField();
-    	name.setValue("Username");
+    	name.setPlaceholder("Username");
     	user.addComponent(this.name);
     	
     	settingsItems.addComponent(user);
@@ -97,6 +97,9 @@ public class SettingsView extends CustomComponent implements SperoView {
     	this.chatLabel = new Label("Chat:");
     	chat.addComponent(chatLabel);
     	
+//    	ToggleButton einAusChat = new ToggleButton();
+//    	chat.addComponent(einAusChat);
+   	
     	RadioButtonGroup<String> einAusChat = new RadioButtonGroup();
     	einAusChat.setItems("Ein", "Aus");
     	chat.addComponent(einAusChat);

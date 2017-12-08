@@ -21,7 +21,7 @@ public class PinPresenter implements ClickListener, SperoViewListener {
     }
 
     @Override
-    public void buttonClick(ClickEvent event) {
+    public void buttonClick(ClickEvent event) /*throws IncorrectException*/ {
 	final String buttonId = event.getButton().getId();
 
 	switch (buttonId) {
@@ -30,7 +30,6 @@ public class PinPresenter implements ClickListener, SperoViewListener {
 		try {
 			pinModel.checkPin(code);
 		} catch (IncorrectException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	    pinView.getUI().getNavigator().navigateTo(Views.MAIN_VIEW);

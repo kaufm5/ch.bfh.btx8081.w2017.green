@@ -10,6 +10,7 @@ import java.util.List;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
@@ -20,11 +21,11 @@ public class ChangePinView extends CustomComponent implements SperoView {
 	
 	private Label changePin;
 	private Label oldPinLabel;
-	private TextField oldPinTextField;
+	private PasswordField oldPinPasswordField;
 	private Label newPin1Label;
-	private TextField newPin1TextField;
+	private PasswordField newPin1PasswordField;
 	private Label newPin2Label;
-	private TextField newPin2TextField;
+	private PasswordField newPin2PasswordField;
 	
 	private Button ok;
 	
@@ -59,9 +60,9 @@ public ChangePinView() {
     	this.oldPinLabel = new Label("Alter PIN:");
     	oldPin.addComponent(this.oldPinLabel);
     	
-    	this.oldPinTextField = new TextField();
-    	oldPinTextField.setValue("Alter PIN");
-    	oldPin.addComponent(this.oldPinTextField);
+    	this.oldPinPasswordField = new PasswordField();
+    	//oldPinPasswordField.setPlaceholder("Alter PIN");
+    	oldPin.addComponent(this.oldPinPasswordField);
     	
     	changePinItems.addComponent(oldPin);
     	
@@ -71,9 +72,9 @@ public ChangePinView() {
     	this.newPin1Label = new Label("Neuer PIN:");
     	newPin1.addComponent(this.newPin1Label);
     	
-    	this.newPin1TextField = new TextField();
-    	newPin1TextField.setValue("Neuer PIN");
-    	newPin1.addComponent(this.newPin1TextField);
+    	this.newPin1PasswordField = new PasswordField();
+    	//newPin1PasswordField.setPlaceholder("Neuer PIN");
+    	newPin1.addComponent(this.newPin1PasswordField);
     	
     	changePinItems.addComponent(newPin1);
     	
@@ -83,9 +84,9 @@ public ChangePinView() {
     	this.newPin2Label = new Label("Bestätigung des neuen PIN:");
     	newPin2.addComponent(this.newPin2Label);
     	
-    	this.newPin2TextField = new TextField();
-    	newPin2TextField.setValue("PIN Bestätigung");
-    	newPin2.addComponent(this.newPin2TextField);
+    	this.newPin2PasswordField = new PasswordField();
+    	//newPin2PasswordField.setPlaceholder("PIN Bestätigung");
+    	newPin2.addComponent(this.newPin2PasswordField);
     	
     	changePinItems.addComponent(newPin2);
     	
@@ -100,15 +101,15 @@ public ChangePinView() {
 }
 
 		public String getOldPin() {
-			return oldPinTextField.getValue();
+			return oldPinPasswordField.getValue();
 		}
 		
 		public String getNewPin1() {
-			return newPin1TextField.getValue();
+			return newPin1PasswordField.getValue();
 		}
 		
 		public String getNewPin2() {
-			return newPin2TextField.getValue();
+			return newPin2PasswordField.getValue();
 		}
 
 	@Override
