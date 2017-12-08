@@ -22,9 +22,13 @@ public class ChangePinPresenter implements ClickListener, SperoViewListener {
 
 	@Override
 	public void buttonClick(ClickEvent event) {
+		
 		final String buttonId = event.getButton().getId();
 
 		switch (buttonId) {
+		case "menuButton":
+			changePinView.getUI().getNavigator().navigateTo(Views.MENU_VIEW);
+		    break;
 		case "ok":
 			String oldPin = changePinView.getOldPin();
 			String newPin1 = changePinView.getNewPin1();
@@ -32,10 +36,21 @@ public class ChangePinPresenter implements ClickListener, SperoViewListener {
 			try {
 				changePinModel.checkOldPin(oldPin);
 				changePinModel.checkNewPin(newPin1, newPin2);
+				try {
+		    		Integer.parseInt(newPin1.substring(0));
+		    	}
+		    	catch (Exception e) {
+		    		System.out.println("nur Zahlen");
+		    		changePinView.pinException.setValue("nur Zahlen");
+		    		break;
+		    	}
 			} catch (IncorrectException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
+				changePinView.pinException.setValue(e.getMessage());
+				break;
 			}
+			changePinView.pinException.setValue("Der PIN wurde erfolgreich geändert.");
+			System.out.println("Der neue PIN ist: " + newPin1 + " und " + newPin2);
 		    changePinView.getUI().getNavigator().navigateTo(Views.SETTINGS_VIEW);
 		    break;
 		case "sos":
