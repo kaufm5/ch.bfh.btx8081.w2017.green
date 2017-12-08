@@ -1,6 +1,7 @@
 package ch.bfh.btx8081.w2017.green.Spero.view;
 
 import com.vaadin.icons.VaadinIcons;
+import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
@@ -20,6 +21,7 @@ import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 
 public class ChangePinView extends CustomComponent implements SperoView {
 	
+	private Button menuButton;
 	private Label changePin;
 	private Label oldPinLabel;
 	private PasswordField oldPinPasswordField;
@@ -32,29 +34,48 @@ public class ChangePinView extends CustomComponent implements SperoView {
 	private Button chatButton;
 	private HorizontalLayout superButtonBox;
 	
+	public Label pinException;
+	
 	private final List<ClickListener> listeners = new ArrayList<ClickListener>();
 	
 public ChangePinView() {
     	
     	final VerticalLayout layout = new VerticalLayout();
     	setCompositionRoot(layout);
-
-    	final VerticalLayout titleBarBox = new VerticalLayout();
+    
+		final VerticalLayout titleBarBox = new VerticalLayout();
     	this.changePin = new Label("PIN ändern");
     	titleBarBox.addComponent(this.changePin);
     	layout.addComponent(titleBarBox);
-    	
-    	final HorizontalLayout contentLayout = new HorizontalLayout();
-    	layout.addComponent(contentLayout);
 
-    	final VerticalLayout content = new VerticalLayout();
-    	content.setSizeFull();
-    	content.setMargin(true);
-    	content.setSpacing(true);
-    	contentLayout.addComponent(content);
+    	HorizontalLayout menuAndContent = new HorizontalLayout();
+		menuAndContent.setSizeFull();
+		menuAndContent.setMargin(true);
+		menuAndContent.setSpacing(true);
+		layout.addComponent(menuAndContent);
 
-    	contentLayout.setExpandRatio(content, 9);
+		VerticalLayout menuBox = new VerticalLayout();
+		menuBox.setSpacing(true);
+		menuBox.setMargin(true);
+		menuButton = new Button(VaadinIcons.MENU);
+		//set id für Button 
+		menuButton.addClickListener(this);
+		menuButton.setId("menuButton");
 
+		menuBox.addComponent(menuButton);
+		menuBox.setComponentAlignment(menuButton, Alignment.MIDDLE_LEFT);
+		menuBox.addStyleName("menu");
+		menuAndContent.addComponent(menuBox);
+
+		VerticalLayout content = new VerticalLayout();
+		content.setSizeFull();
+		content.setMargin(true);
+		content.setSpacing(true);
+		menuAndContent.addComponent(content);
+
+		menuAndContent.setExpandRatio(menuBox, 1);
+		menuAndContent.setExpandRatio(content, 9);
+		
     	final VerticalLayout changePinItems = new VerticalLayout();
     	
     	//old PIN
@@ -92,6 +113,10 @@ public ChangePinView() {
     	newPin2.addComponent(this.newPin2PasswordField);
     	
     	changePinItems.addComponent(newPin2);
+    	
+    	this.pinException = new Label("hello");
+    	pinException.setId("pinValue");
+    	changePinItems.addComponent(this.pinException);
     	
     	//confirm changes
     	this.ok = new Button("OK");
