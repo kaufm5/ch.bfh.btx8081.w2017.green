@@ -28,7 +28,7 @@ import ch.bfh.btx8081.w2017.green.Spero.presenter.DiaryPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.MainPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.MenuPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.PinPresenter;
-import ch.bfh.btx8081.w2017.green.Spero.presenter.ReminderPresenter;
+//import ch.bfh.btx8081.w2017.green.Spero.presenter.ReminderPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.SettingsPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.SosPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.view.ChangePinView;
@@ -37,7 +37,7 @@ import ch.bfh.btx8081.w2017.green.Spero.view.DiaryViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.MainViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.MenuView;
 import ch.bfh.btx8081.w2017.green.Spero.view.PinView;
-import ch.bfh.btx8081.w2017.green.Spero.view.ReminderView;
+//import ch.bfh.btx8081.w2017.green.Spero.view.ReminderView;
 import ch.bfh.btx8081.w2017.green.Spero.view.ReportView;
 import ch.bfh.btx8081.w2017.green.Spero.view.SettingsView;
 import ch.bfh.btx8081.w2017.green.Spero.view.SosView;
@@ -72,7 +72,7 @@ public class MyUI extends UI {
 	PinModel pinModel;
 	ChangePinView changePinView;
 	ChangePinModel changePinModel;
-	ReminderView reminderView;
+//	ReminderView reminderView;
 	ReminderModel reminderModel;
 
     @Override
@@ -96,7 +96,7 @@ public class MyUI extends UI {
      pinModel = new PinModel(code);
      changePinView = new ChangePinView();
      changePinModel = new ChangePinModel(code, code2, code3);
-     reminderView = new ReminderView();
+   //  reminderView = new ReminderView();
      reminderModel = new ReminderModel();
      
    	 navigator.addView("main", mainView);
@@ -108,7 +108,7 @@ public class MyUI extends UI {
    	 navigator.addView("settings", settingsView);
    	 navigator.addView("", pinView);
    	 navigator.addView("changePin", changePinView);
-   	 navigator.addView("reminder", reminderView);
+   //	 navigator.addView("reminder", reminderView);
    	 
    	 new MainPresenter(mainView, modelDiaryEntry, modelDiary);
    	 new MenuPresenter(menuView);
@@ -118,7 +118,7 @@ public class MyUI extends UI {
    	 settingsPresenter = new SettingsPresenter(settingsView, settingsModel);
    	 new PinPresenter(pinView, pinModel);
    	 new ChangePinPresenter(changePinView, changePinModel);
-   	 new ReminderPresenter(reminderView);
+  // 	 new ReminderPresenter(reminderView);
    	 
     }
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
