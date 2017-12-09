@@ -98,14 +98,15 @@ public class DefDepressionView extends CustomComponent implements SperoView {
 
 	@Override
 	public void buttonClick(ClickEvent event) {
-		// TODO Auto-generated method stub
+		for (SperoViewListener listener : this.listeners) {
+			listener.buttonClick(event);
+		}
 		
 	}
 
 	@Override
 	public void addListener(SperoViewListener listener) {
-		// TODO Auto-generated method stub
-		
+		listeners.add(listener);		
 	}
 
 }
