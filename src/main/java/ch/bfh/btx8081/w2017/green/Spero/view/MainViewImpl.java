@@ -111,6 +111,7 @@ public class MainViewImpl extends CustomComponent implements SperoView {
 		diaryTitleBox.setSpacing(true);
 		diaryTitle = new TextField();
 		diaryTitle.setPlaceholder("Titel");
+		diaryTitle.setSizeFull();
 		//diaryTitle.addStyleName("diaryTitlelabel");
 		diaryTitleBox.addComponent(diaryTitle);
 		content.addComponent(diaryTitleBox);
@@ -121,6 +122,7 @@ public class MainViewImpl extends CustomComponent implements SperoView {
 		diaryTextBox.setSpacing(true);
 		diaryText = new TextArea();
 		diaryText.setPlaceholder("Text");
+		diaryText.setSizeFull();
 		diaryText.addStyleName("diaryText");
 		diaryTextBox.addComponent(diaryText);
 		content.addComponent(diaryTextBox);
@@ -131,6 +133,7 @@ public class MainViewImpl extends CustomComponent implements SperoView {
 		tagsBox.setSpacing(true);
 		tags = new TextField();
 		tags.setPlaceholder("tags");
+		tags.setSizeFull();
 		tags.addStyleName("tags");
 		tagsBox.addComponent(tags);
 		content.addComponent(tagsBox);

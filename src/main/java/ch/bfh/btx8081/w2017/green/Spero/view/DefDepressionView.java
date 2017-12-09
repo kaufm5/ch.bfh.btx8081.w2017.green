@@ -72,7 +72,10 @@ public class DefDepressionView extends CustomComponent implements SperoView {
 		defintionTextBox.setMargin(true);
 		defintionTextBox.setSpacing(true);
 		definition = new TextArea();
-		definition.setPlaceholder("Depression: \n ist eine Krankheit die schwankend auf dem Person autretet \n Es gibt zwei arten von Depression: \n 1)bla bla  \n 2) bla ldd");
+		definition.setPlaceholder("Depression: \n ist eine Krankheit die schwankend auf dem Person autretet \n Es gibt zwei arten von Depression: \n 1)bla bla  \n 2) bla ldd \n Depression: \n ist eine Krankheit die schwankend auf dem Person autretet \n Es gibt zwei arten von Depression: \n 1)bla bla  \n 2) bla ldd");
+		definition.setEnabled(false);
+		definition.setRows(20);
+		definition.setSizeFull();
 		definition.addStyleName("defitionText");
 		defintionTextBox.addComponent(definition);
 		content.addComponent(defintionTextBox);
