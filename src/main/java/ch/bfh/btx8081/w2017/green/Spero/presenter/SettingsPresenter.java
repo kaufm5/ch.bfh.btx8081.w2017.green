@@ -5,6 +5,7 @@ import java.util.Observable;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
 
+import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.IncorrectException;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 import ch.bfh.btx8081.w2017.green.Spero.model.SettingsModel;
 import ch.bfh.btx8081.w2017.green.Spero.view.SettingsView;
@@ -33,13 +34,22 @@ public class SettingsPresenter extends Observable implements ClickListener, Sper
 	    settingsView.getUI().getNavigator().navigateTo(Views.CHANGE_PIN_VIEW);
 	    break;
 	case "ok":
-		String chatValue = settingsView.getChatValue();
-			if (chatValue.equals("Ein")){
-				this.setChanged();
-				this.notifyObservers();
-			}
+		String snoozeValue = settingsView.getSnooze();
+		try {
+			settingsModel.checkSnooze(snoozeValue);
+		}
+		catch (IncorrectException e) {
+			settingsView.settingsException.setValue(e.getMessage());
+			break;
+		}
+		
+//		String chatValue = settingsView.getChatValue();
+//			if (chatValue.equals("Ein")){
+//				this.setChanged();
+//				this.notifyObservers();
+//			}
 			
-		//settingsView.getUI().getNavigator().navigateTo(Views.MENU_VIEW);
+		settingsView.getUI().getNavigator().navigateTo(Views.MENU_VIEW);
 	    break;
 	case "sos":
 		settingsView.getUI().getNavigator().navigateTo(Views.SOS_VIEW);

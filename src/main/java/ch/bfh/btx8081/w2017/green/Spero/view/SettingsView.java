@@ -34,6 +34,7 @@ public class SettingsView extends CustomComponent implements SperoView, Observer
 	private final Label pinCode;
 	private final Button change;
 	private final Label chatLabel;
+	public Label settingsException;
 	private Button chatButton;
 	private Button sosButton;
 	private HorizontalLayout superButtonBox;
@@ -153,6 +154,10 @@ public class SettingsView extends CustomComponent implements SperoView, Observer
     	
     	settingsItems.addComponent(chat);
     	
+    	//settings Exception
+    	this.settingsException = new Label("");
+    	settingsItems.addComponent(settingsException);
+    	
     	//confirm changes
     	this.ok = new Button("OK");
     	this.ok.addClickListener(this);
@@ -172,6 +177,10 @@ public class SettingsView extends CustomComponent implements SperoView, Observer
     
     public String getChatValue() {
     	return einAusChat.getValue();
+    }
+    
+    public String getSnooze() {
+    	return time.getValue();
     }
     
     public void buildChatButton(){
