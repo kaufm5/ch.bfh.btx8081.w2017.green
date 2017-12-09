@@ -24,6 +24,7 @@ import ch.bfh.btx8081.w2017.green.Spero.model.ReminderModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.SettingsModel;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.ChangePinPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.ChatPresenter;
+import ch.bfh.btx8081.w2017.green.Spero.presenter.DefDepressionPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.DiaryPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.ForgetPasswordPresenter;
 //import ch.bfh.btx8081.w2017.green.Spero.presenter.DiaryEntryPresenter;
@@ -36,6 +37,7 @@ import ch.bfh.btx8081.w2017.green.Spero.presenter.SettingsPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.SosPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.view.ChangePinView;
 import ch.bfh.btx8081.w2017.green.Spero.view.ChatView;
+import ch.bfh.btx8081.w2017.green.Spero.view.DefDepressionView;
 import ch.bfh.btx8081.w2017.green.Spero.view.DiaryViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.ForgetPasswordView;
 import ch.bfh.btx8081.w2017.green.Spero.view.MainViewImpl;
@@ -81,6 +83,7 @@ public class MyUI extends UI {
 	ForgetPasswordView forgetPasswordView;
 	ForgetPasswordModel forgetPasswordModel;
 	ReportView reportView; 
+	DefDepressionView defDepressionView;
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
@@ -108,6 +111,7 @@ public class MyUI extends UI {
      forgetPasswordView = new ForgetPasswordView();
      forgetPasswordModel = new ForgetPasswordModel();
      reportView = new ReportView(); 
+     defDepressionView = new DefDepressionView(); 
      
    	 navigator.addView("main", mainView);
    	 navigator.addView("report", new ReportView() );
@@ -121,6 +125,7 @@ public class MyUI extends UI {
    //	 navigator.addView("reminder", reminderView);
    	 navigator.addView("forgetPassword", forgetPasswordView);
    	 navigator.addView("report", reportView);
+   	 navigator.addView("defDepression", defDepressionView);
    	 
    	 new MainPresenter(mainView, modelDiaryEntry, modelDiary);
    	 new MenuPresenter(menuView);
@@ -133,6 +138,7 @@ public class MyUI extends UI {
   // 	 new ReminderPresenter(reminderView);
    	 new ForgetPasswordPresenter(forgetPasswordView, forgetPasswordModel);
    	 new ReportPresenter(reportView); 
+   	 new DefDepressionPresenter(defDepressionView); 
    	 
     }
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)

@@ -58,5 +58,10 @@ public class Views {
 		 * The ForgetPasswordView
 		 */
 		public static final String FORGET_PASSWORD_VIEW = "forgetPassword";
+		
+		/*
+		 * The DefDepressionView
+		 */
+		public static final String DEFINITION_DEPRESSION_VIEW = "defDepression";
 	}
 

@@ -38,7 +38,7 @@ public class MenuPresenter implements SperoViewListener {
 			menuView.getUI().getPage().setLocation("https://compendium.ch/home/de");
 		    break;
 		case "depErk":
-			//menuView.getUI().getNavigator().navigateTo(Views.MAIN_VIEW);
+			menuView.getUI().getNavigator().navigateTo(Views.DEFINITION_DEPRESSION_VIEW);
 		    break;
 		case "settings":
 			menuView.getUI().getNavigator().navigateTo(Views.SETTINGS_VIEW);
