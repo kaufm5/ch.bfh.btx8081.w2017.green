@@ -23,7 +23,7 @@ public class DefDepressionView extends CustomComponent implements SperoView {
 	private Button sosButton;
 	private Button chatButton;
 	private Label title;
-	public TextArea definition;
+	private TextArea definition;
 	
 	private List<SperoViewListener> listeners = new ArrayList<SperoViewListener>();
 	
