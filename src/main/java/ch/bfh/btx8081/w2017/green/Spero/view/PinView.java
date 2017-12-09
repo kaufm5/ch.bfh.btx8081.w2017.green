@@ -20,6 +20,7 @@ public class PinView extends CustomComponent implements SperoView {
 	private final Label hallo;
 	private final PasswordField pin;
 	private final Button ok;
+	private Button forgotten;
 	
 	public final Label pinException;
 	
@@ -60,6 +61,11 @@ public class PinView extends CustomComponent implements SperoView {
     	this.ok.addClickListener(this);
     	this.ok.setId("ok");
     	pinItems.addComponent(this.ok);
+    	
+    	this.forgotten = new Button("Passwort vergessen?");
+    	this.forgotten.addClickListener(this);
+    	this.forgotten.setId("forgotten");
+    	pinItems.addComponent(this.forgotten);
     	
     	content.addComponent(pinItems);
     	

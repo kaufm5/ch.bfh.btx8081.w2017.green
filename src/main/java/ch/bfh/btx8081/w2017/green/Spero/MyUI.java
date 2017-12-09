@@ -18,12 +18,14 @@ import com.vaadin.ui.VerticalLayout;
 import ch.bfh.btx8081.w2017.green.Spero.model.ChangePinModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.Diary;
 import ch.bfh.btx8081.w2017.green.Spero.model.DiaryEntry;
+import ch.bfh.btx8081.w2017.green.Spero.model.ForgetPasswordModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.PinModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.ReminderModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.SettingsModel;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.ChangePinPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.ChatPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.DiaryPresenter;
+import ch.bfh.btx8081.w2017.green.Spero.presenter.ForgetPasswordPresenter;
 //import ch.bfh.btx8081.w2017.green.Spero.presenter.DiaryEntryPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.MainPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.MenuPresenter;
@@ -34,6 +36,7 @@ import ch.bfh.btx8081.w2017.green.Spero.presenter.SosPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.view.ChangePinView;
 import ch.bfh.btx8081.w2017.green.Spero.view.ChatView;
 import ch.bfh.btx8081.w2017.green.Spero.view.DiaryViewImpl;
+import ch.bfh.btx8081.w2017.green.Spero.view.ForgetPasswordView;
 import ch.bfh.btx8081.w2017.green.Spero.view.MainViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.MenuView;
 import ch.bfh.btx8081.w2017.green.Spero.view.PinView;
@@ -74,6 +77,8 @@ public class MyUI extends UI {
 	ChangePinModel changePinModel;
 //	ReminderView reminderView;
 	ReminderModel reminderModel;
+	ForgetPasswordView forgetPasswordView;
+	ForgetPasswordModel forgetPasswordModel;
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
@@ -98,6 +103,8 @@ public class MyUI extends UI {
      changePinModel = new ChangePinModel(code, code2, code3);
    //  reminderView = new ReminderView();
      reminderModel = new ReminderModel();
+     forgetPasswordView = new ForgetPasswordView();
+     forgetPasswordModel = new ForgetPasswordModel();
      
    	 navigator.addView("main", mainView);
    	 navigator.addView("report", new ReportView() );
@@ -109,6 +116,7 @@ public class MyUI extends UI {
    	 navigator.addView("", pinView);
    	 navigator.addView("changePin", changePinView);
    //	 navigator.addView("reminder", reminderView);
+   	 navigator.addView("forgetPassword", forgetPasswordView);
    	 
    	 new MainPresenter(mainView, modelDiaryEntry, modelDiary);
    	 new MenuPresenter(menuView);
@@ -119,6 +127,7 @@ public class MyUI extends UI {
    	 new PinPresenter(pinView, pinModel);
    	 new ChangePinPresenter(changePinView, changePinModel);
   // 	 new ReminderPresenter(reminderView);
+   	 new ForgetPasswordPresenter(forgetPasswordView, forgetPasswordModel);
    	 
     }
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)

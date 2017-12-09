@@ -48,9 +48,15 @@ public class Views {
 		 * The changePinView
 		 */
 		public static final String CHANGE_PIN_VIEW = "changePin";
+		
 		/*
 		 * The ReminderView
 		 */
 		public static final String REMINDER_VIEW = "reminder";
+		
+		/*
+		 * The ForgetPasswordView
+		 */
+		public static final String Forget_Password_VIEW = "forgetPassword";
 	}
 

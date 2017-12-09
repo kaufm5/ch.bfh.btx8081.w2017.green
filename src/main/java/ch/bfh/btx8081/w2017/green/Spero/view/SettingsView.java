@@ -29,6 +29,8 @@ public class SettingsView extends CustomComponent implements SperoView, Observer
 	private final Label username;
 	private final TextField name;
 	private final Label remind;
+	private Label snoozeTime;
+	private TextField time;
 	private final Label pinCode;
 	private final Button change;
 	private final Label chatLabel;
@@ -108,6 +110,18 @@ public class SettingsView extends CustomComponent implements SperoView, Observer
     	reminder.addComponent(einAusReminder);
     	
     	settingsItems.addComponent(reminder);
+    	
+    	//snooze time reminder
+    	final HorizontalLayout snooze = new HorizontalLayout();
+    	
+    	this.snoozeTime = new Label("Snooze time in min:");
+    	snooze.addComponent(snoozeTime);
+    	
+    	this.time = new TextField();
+    	time.setPlaceholder("Zeit in Minuten");
+    	snooze.addComponent(time);
+    	
+    	settingsItems.addComponent(snooze);
     	
     	//change pin
     	final HorizontalLayout pin = new HorizontalLayout();

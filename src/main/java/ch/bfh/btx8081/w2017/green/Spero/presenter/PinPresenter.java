@@ -48,7 +48,7 @@ public class PinPresenter implements ClickListener, SperoViewListener {
 		}
 		pinView.getUI().getNavigator().navigateTo(Views.MAIN_VIEW);
 	    break;
-	default:
+	case "forgotten":
 	    //
 	    break;
 	}
