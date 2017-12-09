@@ -29,6 +29,7 @@ import ch.bfh.btx8081.w2017.green.Spero.presenter.DiaryPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.ForgetPasswordPresenter;
 //import ch.bfh.btx8081.w2017.green.Spero.presenter.DiaryEntryPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.MainPresenter;
+import ch.bfh.btx8081.w2017.green.Spero.presenter.MedInfoPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.MenuPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.PinPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.ReportPresenter;
@@ -41,6 +42,7 @@ import ch.bfh.btx8081.w2017.green.Spero.view.DefDepressionView;
 import ch.bfh.btx8081.w2017.green.Spero.view.DiaryViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.ForgetPasswordView;
 import ch.bfh.btx8081.w2017.green.Spero.view.MainViewImpl;
+import ch.bfh.btx8081.w2017.green.Spero.view.MedInfoView;
 import ch.bfh.btx8081.w2017.green.Spero.view.MenuView;
 import ch.bfh.btx8081.w2017.green.Spero.view.PinView;
 //import ch.bfh.btx8081.w2017.green.Spero.view.ReminderView;
@@ -88,6 +90,7 @@ public class MyUI extends UI {
 	ForgetPasswordModel forgetPasswordModel;
 	ReportView reportView; 
 	DefDepressionView defDepressionView;
+	MedInfoView medInfoView; 
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
@@ -116,6 +119,7 @@ public class MyUI extends UI {
      forgetPasswordModel = new ForgetPasswordModel();
      reportView = new ReportView(); 
      defDepressionView = new DefDepressionView(); 
+     medInfoView = new MedInfoView(); 
      
    	 navigator.addView("main", mainView);
    	 navigator.addView("report", new ReportView() );
@@ -130,6 +134,7 @@ public class MyUI extends UI {
    	 navigator.addView("forgetPassword", forgetPasswordView);
    	 navigator.addView("report", reportView);
    	 navigator.addView("defDepression", defDepressionView);
+   	 navigator.addView("medInfoView", medInfoView);
    	 
    	 new MainPresenter(mainView, modelDiaryEntry, modelDiary);
    	 new MenuPresenter(menuView);
@@ -143,6 +148,7 @@ public class MyUI extends UI {
    	 new ForgetPasswordPresenter(forgetPasswordView, forgetPasswordModel);
    	 new ReportPresenter(reportView); 
    	 new DefDepressionPresenter(defDepressionView); 
+   	 new MedInfoPresenter(medInfoView); 
    	 
     }
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)

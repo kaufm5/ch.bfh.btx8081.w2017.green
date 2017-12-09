@@ -63,5 +63,10 @@ public class Views {
 		 * The DefDepressionView
 		 */
 		public static final String DEFINITION_DEPRESSION_VIEW = "defDepression";
+		
+		/*
+		 * The MedInfoView
+		 */
+		public static final String MEDICATION_INFORMATION_VIEW = "medInfoView";
 	}
 
