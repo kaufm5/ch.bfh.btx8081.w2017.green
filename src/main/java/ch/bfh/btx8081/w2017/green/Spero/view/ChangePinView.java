@@ -114,7 +114,7 @@ public ChangePinView() {
     	
     	changePinItems.addComponent(newPin2);
     	
-    	this.pinException = new Label("hello");
+    	this.pinException = new Label("");
     	pinException.setId("pinValue");
     	changePinItems.addComponent(this.pinException);
     	

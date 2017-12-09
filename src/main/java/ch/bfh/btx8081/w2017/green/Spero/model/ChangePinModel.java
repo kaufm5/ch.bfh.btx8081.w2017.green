@@ -39,18 +39,36 @@ public class ChangePinModel {
 //    	}
 //    	catch (Exception e) {
 //    		System.out.println("nur Zahlen");
+//    		throw new IncorrectException("Zahl");
 //    	}
     	
     	//boolean check = onlyNumbers(newPin1);
     	
     	if (!newPin2.equals(newPin1)) {
     		throw new IncorrectException("Die beiden neuen PINs stimmen nicht überein.");
+    	} else if (newPin1.isEmpty()==true){
+    		throw new IncorrectException("Der PIN darf nicht leer sein.");
     	} else if (newPin1.length() !=4) {
     		throw new IncorrectException("Der PIN hat mehr oder weniger als 4 Ziffern.");
+    //	} else if (Integer.parseInt(newPin1.substring(0));) {
+    		
 //    	} else if (check=false) {
 //    		throw new IncorrectException("Der PIN darf nur Zahlen enthalten.");
+    	
     	} else {
     		System.out.println("newPin korrekt");
+    	}
+    	//switch (newPin1) {
+    	//case():
+    	try {
+    		Integer.parseInt(newPin1.substring(0));
+    	}
+    	catch (Exception e) {
+    		System.out.println("nur Zahlen");
+    		//changePinView.pinException.setValue("nur Zahlen");
+    		throw new IncorrectException("Der PIN darf nur aus Zahlen bestehen.");
+    		//break;
+    	}
     	}
     }
     
@@ -99,4 +117,4 @@ public class ChangePinModel {
 //    	}
 //    }
 
-}
+//}
