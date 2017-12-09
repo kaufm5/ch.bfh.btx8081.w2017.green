@@ -30,6 +30,7 @@ import ch.bfh.btx8081.w2017.green.Spero.presenter.ForgetPasswordPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.MainPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.MenuPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.PinPresenter;
+import ch.bfh.btx8081.w2017.green.Spero.presenter.ReportPresenter;
 //import ch.bfh.btx8081.w2017.green.Spero.presenter.ReminderPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.SettingsPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.SosPresenter;
@@ -79,6 +80,7 @@ public class MyUI extends UI {
 	ReminderModel reminderModel;
 	ForgetPasswordView forgetPasswordView;
 	ForgetPasswordModel forgetPasswordModel;
+	ReportView reportView; 
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
@@ -105,6 +107,7 @@ public class MyUI extends UI {
      reminderModel = new ReminderModel();
      forgetPasswordView = new ForgetPasswordView();
      forgetPasswordModel = new ForgetPasswordModel();
+     reportView = new ReportView(); 
      
    	 navigator.addView("main", mainView);
    	 navigator.addView("report", new ReportView() );
@@ -117,6 +120,7 @@ public class MyUI extends UI {
    	 navigator.addView("changePin", changePinView);
    //	 navigator.addView("reminder", reminderView);
    	 navigator.addView("forgetPassword", forgetPasswordView);
+   	 navigator.addView("report", reportView);
    	 
    	 new MainPresenter(mainView, modelDiaryEntry, modelDiary);
    	 new MenuPresenter(menuView);
@@ -128,6 +132,7 @@ public class MyUI extends UI {
    	 new ChangePinPresenter(changePinView, changePinModel);
   // 	 new ReminderPresenter(reminderView);
    	 new ForgetPasswordPresenter(forgetPasswordView, forgetPasswordModel);
+   	 new ReportPresenter(reportView); 
    	 
     }
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)

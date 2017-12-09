@@ -1,5 +1,6 @@
 package ch.bfh.btx8081.w2017.green.Spero.view;
 
+import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.HorizontalLayout;
@@ -75,12 +76,20 @@ public class ReportView extends CustomComponent implements SperoView {
 	
 
 
-
-		HorizontalLayout superButtonBox = new HorizontalLayout ();
+		HorizontalLayout superButtonBox = new HorizontalLayout();
+		superButtonBox.setSizeFull();
+		superButtonBox.setMargin(true);
+		superButtonBox.setSpacing(true);
 		content.addComponent(superButtonBox);
 		sosButton = new Button(VaadinIcons.PHONE);
+		sosButton.addClickListener(this);
+		sosButton.setId("sosButton");
 		chatButton = new Button(VaadinIcons.CHAT);
+		chatButton.addClickListener(this);
+		chatButton.setId("chatButton");
 		superButtonBox.addComponents(sosButton, chatButton);
+		superButtonBox.setComponentAlignment(sosButton, Alignment.MIDDLE_LEFT);
+		superButtonBox.setComponentAlignment(chatButton, Alignment.MIDDLE_LEFT);
 		
 	}
 
