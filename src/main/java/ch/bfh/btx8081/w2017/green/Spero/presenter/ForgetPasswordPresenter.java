@@ -6,6 +6,7 @@ import com.vaadin.ui.Button.ClickListener;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 import ch.bfh.btx8081.w2017.green.Spero.model.ForgetPasswordModel;
 import ch.bfh.btx8081.w2017.green.Spero.view.ForgetPasswordView;
+import ch.bfh.btx8081.w2017.green.Spero.view.Views;
 
 public class ForgetPasswordPresenter implements ClickListener, SperoViewListener {
 	
@@ -21,8 +22,16 @@ public class ForgetPasswordPresenter implements ClickListener, SperoViewListener
 
 	@Override
 	public void buttonClick(ClickEvent event) {
-		// TODO Auto-generated method stub
-		
+		final String buttonId = event.getButton().getId();
+
+		switch (buttonId) {
+		case "ok":
+			forgetPasswordView.getUI().getNavigator().navigateTo(Views.PIN_VIEW);
+		    break;
+//		case "change":
+//		    settingsView.getUI().getNavigator().navigateTo(Views.CHANGE_PIN_VIEW);
+//		    break;
+	}
 	}
 
 }

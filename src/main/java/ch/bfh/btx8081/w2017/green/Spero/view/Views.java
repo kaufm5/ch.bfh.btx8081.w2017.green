@@ -57,6 +57,6 @@ public class Views {
 		/*
 		 * The ForgetPasswordView
 		 */
-		public static final String Forget_Password_VIEW = "forgetPassword";
+		public static final String FORGET_PASSWORD_VIEW = "forgetPassword";
 	}
 

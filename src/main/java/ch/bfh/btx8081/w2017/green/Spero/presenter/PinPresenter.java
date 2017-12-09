@@ -49,7 +49,7 @@ public class PinPresenter implements ClickListener, SperoViewListener {
 		pinView.getUI().getNavigator().navigateTo(Views.MAIN_VIEW);
 	    break;
 	case "forgotten":
-	    //
+		pinView.getUI().getNavigator().navigateTo(Views.FORGET_PASSWORD_VIEW);
 	    break;
 	}
     }
