@@ -67,9 +67,6 @@ public class MedInfoView extends CustomComponent implements SperoView {
 		menuAndContent.setExpandRatio(content, 9);
 
 		HorizontalLayout searchBox = new HorizontalLayout(); 
-		searchBox.setSizeFull();
-		searchBox.setMargin(true);
-		searchBox.setSpacing(true);
 		search = new SearchBox("Search Medication", SearchBox.ButtonPosition.RIGHT);
 		content.addComponent(searchBox);
 
