@@ -14,6 +14,10 @@ import javafx.scene.chart.Chart;
 import javafx.scene.chart.XYChart;
 
 import com.vaadin.ui.CustomComponent;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import com.sun.javafx.charts.ChartLayoutAnimator;
 import com.vaadin.event.MouseEvents.ClickEvent;
 import com.vaadin.event.MouseEvents.ClickListener;
@@ -30,6 +34,8 @@ public class ReportView extends CustomComponent implements SperoView {
 	private ComboBox choice; 
 	
 	private XYChart<Mood, String> chart; 
+	
+	private List<SperoViewListener> listeners = new ArrayList<SperoViewListener>();
 
 	public ReportView() { 
 		VerticalLayout layout = new VerticalLayout();
@@ -78,20 +84,22 @@ public class ReportView extends CustomComponent implements SperoView {
 		
 	}
 
-	@Override
-	public void buttonClick(com.vaadin.ui.Button.ClickEvent event) {
-		// TODO Auto-generated method stub
 
-	}
 
 
 	@Override
 	public void addListener(SperoViewListener listener) {
-		// TODO Auto-generated method stub
-
+		listeners.add(listener);
 	}
 
 
 
-}
+
+	@Override
+	public void buttonClick(com.vaadin.ui.Button.ClickEvent event) {
+		for (SperoViewListener listener : this.listeners) {
+			listener.buttonClick(event);
+		}
+
+	}}
 
