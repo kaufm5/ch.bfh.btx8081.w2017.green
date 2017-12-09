@@ -36,7 +36,7 @@ public class ReportView extends CustomComponent implements SperoView {
 		setCompositionRoot(layout);
 
 		// gnuplot 
-		//graphviz test
+		//graphviz
 		
 		VerticalLayout titleBarBox = new VerticalLayout(); 
 		reportTitle = new Label("Statistik");
