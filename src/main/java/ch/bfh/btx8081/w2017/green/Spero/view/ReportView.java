@@ -2,6 +2,7 @@ package ch.bfh.btx8081.w2017.green.Spero.view;
 
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Image;
@@ -18,10 +19,6 @@ import com.vaadin.ui.CustomComponent;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import com.sun.javafx.charts.ChartLayoutAnimator;
-import com.vaadin.event.MouseEvents.ClickEvent;
-import com.vaadin.event.MouseEvents.ClickListener;
 
 import com.vaadin.icons.*;
 
@@ -105,7 +102,7 @@ public class ReportView extends CustomComponent implements SperoView {
 
 
 	@Override
-	public void buttonClick(com.vaadin.ui.Button.ClickEvent event) {
+	public void buttonClick(ClickEvent event) {
 		for (SperoViewListener listener : this.listeners) {
 			listener.buttonClick(event);
 		}
