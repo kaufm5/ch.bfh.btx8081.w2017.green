@@ -63,6 +63,10 @@ public class MyUI extends UI {
 	String code;
 	String code2;
 	String code3;
+	String username;
+	String reminder;
+	String snooze;
+	String chat;
 	
 	MainViewImpl mainView;
 	Diary modelDiary;
@@ -102,7 +106,7 @@ public class MyUI extends UI {
      chatView = new ChatView();
      diaryView = new DiaryViewImpl();
      settingsView = new SettingsView(settingsPresenter);
-     settingsModel = new SettingsModel();
+     settingsModel = new SettingsModel(username, reminder, snooze, chat);
      pinModel = new PinModel(code);
      changePinView = new ChangePinView();
      changePinModel = new ChangePinModel(code, code2, code3);
