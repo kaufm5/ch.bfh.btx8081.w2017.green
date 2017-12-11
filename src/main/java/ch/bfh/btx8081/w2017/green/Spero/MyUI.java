@@ -69,6 +69,7 @@ public class MyUI extends UI {
 	String reminder;
 	String snooze;
 	String chat;
+	String time;
 	
 	MainViewImpl mainView;
 	Diary modelDiary;
@@ -114,7 +115,7 @@ public class MyUI extends UI {
      changePinView = new ChangePinView();
      changePinModel = new ChangePinModel(code, code2, code3);
      reminderView = new ReminderView();
-     reminderModel = new ReminderModel();
+     reminderModel = new ReminderModel(time);
      forgetPasswordView = new ForgetPasswordView();
      forgetPasswordModel = new ForgetPasswordModel();
      reportView = new ReportView(); 
