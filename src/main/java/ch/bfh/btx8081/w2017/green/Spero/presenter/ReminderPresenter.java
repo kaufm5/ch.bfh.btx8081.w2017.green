@@ -3,6 +3,7 @@ package ch.bfh.btx8081.w2017.green.Spero.presenter;
 import com.vaadin.ui.Button.ClickEvent;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
+import ch.bfh.btx8081.w2017.green.Spero.model.ReminderModel;
 import ch.bfh.btx8081.w2017.green.Spero.view.MenuView;
 import ch.bfh.btx8081.w2017.green.Spero.view.ReminderView;
 import ch.bfh.btx8081.w2017.green.Spero.view.Views;
@@ -10,9 +11,11 @@ import ch.bfh.btx8081.w2017.green.Spero.view.Views;
 public class ReminderPresenter implements SperoViewListener{
 	
 private ReminderView view;
+private ReminderModel model;
 	
-	public ReminderPresenter(ReminderView view) {
+	public ReminderPresenter(ReminderView view, ReminderModel model) {
 		this.view = view;
+		this.model = model;
 		view.addListener(this);
 	}
 // test
@@ -23,6 +26,8 @@ private ReminderView view;
 		switch(buttonId) {
 		case "menuButton":
 			view.getUI().getNavigator().navigateTo(Views.MENU_VIEW);
+		case "moreMedi":
+			view.chooseTime();
 		case "sos":
 			view.getUI().getNavigator().navigateTo(Views.SOS_VIEW);
 		    break;
