@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence version="2.0"
-	xmlns="http://java.sun.com/xml/ns/persistence"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+		http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="spero2" transaction-type="RESOURCE_LOCAL">
 		
 		<class>ch.bfh.btx8081.w2017.green.Spero.model.Diary</class>
 		<class>ch.bfh.btx8081.w2017.green.Spero.model.DiaryEntry</class>
-		<class>ch.bfh.btx8081.w2017.green.Spero.model.PinModel</class>
 		<properties>
-			<property name="javax.persistence.jdbc.url"
-				value="jdbc:postgresql://147.87.116.213:5432/spero2" />
-			<property name="javax.persistence.jdbc.user" value="postgres" />
-			<property name="javax.persistence.jdbc.password" value="postgres" />
-			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://147.87.116.213:5432/spero2"/>
+			<property name="javax.persistence.jdbc.user" value="postgres"/>
+			<property name="javax.persistence.jdbc.password" value="postgres"/>
+			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
 
 			<property name="eclipselink.ddl-generation" value="create-tables" />
-			
-			<property name="eclipselink.logging.level" value="FINE" />
-			
-			<!-- <property name="eclipselink.ddl-generation.output-mode" value="both" 
-				/> -->
-			<!-- <property name="eclipselink.jdbc.bind-parameters" value="true"/> -->
+			<property name="eclipselink.ddl-generation.output-mode"	value="both" />
+			<property name="eclipselink.logging.level" value="ALL" />
+			<property name="eclipselink.jdbc.bind-parameters" value="true"/>
 		</properties>
 	</persistence-unit>
 </persistence>

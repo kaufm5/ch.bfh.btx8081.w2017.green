@@ -8,10 +8,6 @@ import com.vaadin.navigator.Navigator;
 import com.vaadin.navigator.Navigator.ComponentContainerViewDisplay;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
-import com.vaadin.ui.Button;
-import com.vaadin.ui.Component;
-import com.vaadin.ui.Label;
-import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
@@ -104,7 +100,7 @@ public class MyUI extends UI {
    	 pinView = new PinView();
    	 mainView = new MainViewImpl();
      modelDiary = new Diary();
-     modelDiaryEntry = new DiaryEntry();
+     modelDiaryEntry = new DiaryEntry("", "", null);
      menuView = new MenuView();
      sosView = new SosView();
      chatView = new ChatView();

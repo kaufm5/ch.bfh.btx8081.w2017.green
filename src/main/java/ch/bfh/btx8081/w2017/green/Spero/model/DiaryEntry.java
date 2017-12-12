@@ -6,41 +6,44 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.Mood;
-import persistence.DB;
 
 @Entity
-@NamedQuery(name = "DiaryEntry.findAll", query = "SELECT d FROM DiaryEntry d")
 public class DiaryEntry implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int diaryEntryNumber;
-	private String diaryTitle = "";
-	private String diaryText = "";
-	private String tag = "";
+	private String diaryTitle;
+	private String diaryText;
+	private String tag;
+	
+	@OneToOne(cascade=CascadeType.PERSIST, fetch=FetchType.EAGER)
 	private List<String> tagList = new ArrayList<String>();
+	
+	@Temporal(TemporalType.DATE)
 	private LocalDate date;
+	
+	//TODO: Map these Objects asap
+	@Transient
 	private Mood moodParam;
+	@Transient
 	private Object attachment;
 
-	// constructor test
-	public DiaryEntry() {
-
-	}
-
 	// constructor
-	public DiaryEntry(int diaryEntryNumber, String diaryTitle, String diaryText, Mood moodParam) {
-		this.diaryEntryNumber = diaryEntryNumber;
+	public DiaryEntry(String diaryTitle, String diaryText, Mood moodParam) {
 		this.diaryTitle = diaryTitle;
 		this.diaryText = diaryText;
 		this.moodParam = moodParam;
@@ -114,12 +117,12 @@ public class DiaryEntry implements Serializable {
 		return this.diaryTitle;
 	}
 
-	public void persist() {
-		EntityManager em = DB.getEntityManager();
-		EntityTransaction trans = em.getTransaction();
-		trans.begin();
-		em.persist(this);
-		trans.commit();
+//	public void persist() {
+//		EntityManager em = DB.getEntityManager();
+//		EntityTransaction trans = em.getTransaction();
+//		trans.begin();
+//		em.persist(this);
+//		trans.commit();
 
 		// other methods
 		// public void confirm() {
@@ -151,5 +154,5 @@ public class DiaryEntry implements Serializable {
 		//
 		// }
 
-	}
+	
 }
