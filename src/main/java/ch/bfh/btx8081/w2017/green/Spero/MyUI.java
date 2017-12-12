@@ -115,7 +115,7 @@ public class MyUI extends UI {
      changePinView = new ChangePinView();
      changePinModel = new ChangePinModel(code, code2, code3);
      reminderView = new ReminderView();
-     reminderModel = new ReminderModel(time);
+   //  reminderModel = new ReminderModel(time);
      forgetPasswordView = new ForgetPasswordView();
      forgetPasswordModel = new ForgetPasswordModel();
      reportView = new ReportView(); 
@@ -131,7 +131,7 @@ public class MyUI extends UI {
    	 navigator.addView("settings", settingsView);
    	 navigator.addView("", pinView);
    	 navigator.addView("changePin", changePinView);
-   	 navigator.addView("reminder", reminderView);
+   	 //navigator.addView("reminder", reminderView);
    	 navigator.addView("forgetPassword", forgetPasswordView);
    	 navigator.addView("report", reportView);
    	 navigator.addView("defDepression", defDepressionView);
@@ -145,7 +145,7 @@ public class MyUI extends UI {
    	 settingsPresenter = new SettingsPresenter(settingsView, settingsModel);
    	 new PinPresenter(pinView, pinModel);
    	 new ChangePinPresenter(changePinView, changePinModel);
-  	 new ReminderPresenter(reminderView, reminderModel);
+  	 //new ReminderPresenter(reminderView, reminderModel);
    	 new ForgetPasswordPresenter(forgetPasswordView, forgetPasswordModel);
    	 new ReportPresenter(reportView); 
    	 new DefDepressionPresenter(defDepressionView); 
