@@ -57,7 +57,7 @@ import persistence.DB;
  */
 @Theme("mytheme")
 public class MyUI extends UI {
-	DB db = new DB(); 
+	
 	Navigator navigator; 
 	String code;
 	String code2;
@@ -94,15 +94,13 @@ public class MyUI extends UI {
     protected void init(VaadinRequest vaadinRequest) {
    	 final VerticalLayout layout = new VerticalLayout();
    	 setContent(layout);
-   	 db.persistObject(modelDiary);
-   	 db.persistObject(modelDiaryEntry);
    	 ComponentContainerViewDisplay viewDisplay = new ComponentContainerViewDisplay(layout); 
    	 navigator = new Navigator(UI.getCurrent(), viewDisplay);
    	 
    	 pinView = new PinView();
    	 mainView = new MainViewImpl();
      modelDiary = new Diary();
-     modelDiaryEntry = new DiaryEntry("", "", null);
+     modelDiaryEntry = new DiaryEntry();
      menuView = new MenuView();
      sosView = new SosView();
      chatView = new ChatView();
