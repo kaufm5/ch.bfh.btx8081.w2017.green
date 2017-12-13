@@ -2,20 +2,11 @@ package ch.bfh.btx8081.w2017.green.Spero.model;
 
 
 import java.io.Serializable;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.Mood;
 
@@ -30,35 +21,36 @@ public class DiaryEntry implements Serializable {
 	private String diaryText;
 	private String tag;
 	
-	@OneToOne(cascade=CascadeType.PERSIST, fetch=FetchType.EAGER)
-	private List<String> tagList = new ArrayList<String>();
+//	@OneToOne(cascade=CascadeType.PERSIST, fetch=FetchType.EAGER)
+//	private List<String> tagList = new ArrayList<String>();
 	
-	@Temporal(TemporalType.DATE)
-	private LocalDate date;
+//	@Temporal(TemporalType.DATE)
+//	private LocalDate date;
 	
 	//TODO: Map these Objects asap
-	@Transient
+	
 	private Mood moodParam;
-	@Transient
-	private Object attachment;
+	
+	//private Object attachment;
 
+	public DiaryEntry() { 
+		
+	}
 	// constructor
 	public DiaryEntry(String diaryTitle, String diaryText, Mood moodParam) {
 		this.diaryTitle = diaryTitle;
 		this.diaryText = diaryText;
 		this.moodParam = moodParam;
 
-		this.date = LocalDate.now();
+//		this.date = LocalDate.now();
 	}
 
 	// setter methods
-	public void setAttachment(Object attachment) {
-		this.attachment = attachment;
-	}
 
-	public void setDate(LocalDate date) {
-		this.date = date;
-	}
+
+//	public void setDate(LocalDate date) {
+//		this.date = date;
+//	}
 
 	public void setDiaryEntryNumber(int diaryEntryNumber) {
 		this.diaryEntryNumber = diaryEntryNumber;
@@ -72,9 +64,9 @@ public class DiaryEntry implements Serializable {
 		this.tag = tag;
 	}
 
-	public void setTagList(List<String> tagList) {
-		this.tagList = tagList;
-	}
+//	public void setTagList(List<String> tagList) {
+//		this.tagList = tagList;
+//	}
 
 	public void setText(String text) {
 		this.diaryText = text;
@@ -85,13 +77,11 @@ public class DiaryEntry implements Serializable {
 	}
 
 	// getter methods
-	public Object getAttachment() {
-		return this.attachment;
-	}
 
-	public LocalDate getDate() {
-		return this.date;
-	}
+
+//	public LocalDate getDate() {
+//		return this.date;
+//	}
 
 	public int getDiaryEntryNumber() {
 		return this.diaryEntryNumber;
@@ -105,9 +95,9 @@ public class DiaryEntry implements Serializable {
 		return this.tag;
 	}
 
-	public List<String> getTagList() {
-		return this.tagList;
-	}
+//	public List<String> getTagList() {
+//		return this.tagList;
+//	}
 
 	public String getText() {
 		return this.diaryText;
@@ -117,12 +107,6 @@ public class DiaryEntry implements Serializable {
 		return this.diaryTitle;
 	}
 
-//	public void persist() {
-//		EntityManager em = DB.getEntityManager();
-//		EntityTransaction trans = em.getTransaction();
-//		trans.begin();
-//		em.persist(this);
-//		trans.commit();
 
 		// other methods
 		// public void confirm() {

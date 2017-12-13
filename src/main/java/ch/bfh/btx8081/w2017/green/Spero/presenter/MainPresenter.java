@@ -58,7 +58,7 @@ public class MainPresenter implements SperoViewListener  {
 			model.setTag(mainView.tags.getValue());
 			model.setMoodparam(moodParam);
 		//	model.confirm();
-			diarymodel.createEntry(mainView.diaryTitle.getValue(), mainView.diaryText.getValue(), moodParam);
+//			diarymodel.createEntry(mainView.diaryTitle.getValue(), mainView.diaryText.getValue(), moodParam);
 			mainView.getUI().getNavigator().navigateTo(Views.DIARY_VIEW);
 			break;
 		}
