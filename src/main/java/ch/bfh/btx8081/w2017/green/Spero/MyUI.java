@@ -45,6 +45,7 @@ import ch.bfh.btx8081.w2017.green.Spero.view.ReminderView;
 import ch.bfh.btx8081.w2017.green.Spero.view.ReportView;
 import ch.bfh.btx8081.w2017.green.Spero.view.SettingsView;
 import ch.bfh.btx8081.w2017.green.Spero.view.SosView;
+import persistence.DB;
 
 /**
  * This UI is the application entry point. A UI may either represent a browser window 
@@ -56,7 +57,7 @@ import ch.bfh.btx8081.w2017.green.Spero.view.SosView;
  */
 @Theme("mytheme")
 public class MyUI extends UI {
-	
+	DB db = new DB(); 
 	Navigator navigator; 
 	String code;
 	String code2;
@@ -93,7 +94,8 @@ public class MyUI extends UI {
     protected void init(VaadinRequest vaadinRequest) {
    	 final VerticalLayout layout = new VerticalLayout();
    	 setContent(layout);
-   	 
+   	 db.persistObject(modelDiary);
+   	 db.persistObject(modelDiaryEntry);
    	 ComponentContainerViewDisplay viewDisplay = new ComponentContainerViewDisplay(layout); 
    	 navigator = new Navigator(UI.getCurrent(), viewDisplay);
    	 

@@ -10,8 +10,8 @@
 		<class>ch.bfh.btx8081.w2017.green.Spero.model.DiaryEntry</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://147.87.116.213:5432/spero2"/>
-			<property name="javax.persistence.jdbc.user" value="postgres"/>
-			<property name="javax.persistence.jdbc.password" value="postgres"/>
+			<property name="javax.persistence.jdbc.user" value="Studierende"/>
+			<property name="javax.persistence.jdbc.password" value="db-2017"/>
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
 
 			<property name="eclipselink.ddl-generation" value="create-tables" />
