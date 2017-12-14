@@ -35,12 +35,7 @@ private EntityManager em;
 		entityTransaction.commit();
 	}
 	
-	/**
-	 * Returns a list of the Entity
-	 * @param
-	 * 
-	 * @return a list of AnorexieInf
-	 */
+	
 	public List<?> getSperoLists(String entity) {
 		return this.em.createNamedQuery(entity).getResultList();
 	}

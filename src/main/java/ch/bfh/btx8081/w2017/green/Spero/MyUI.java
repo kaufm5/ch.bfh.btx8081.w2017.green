@@ -13,7 +13,6 @@ import com.vaadin.ui.VerticalLayout;
 
 import ch.bfh.btx8081.w2017.green.Spero.model.ChangePinModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.Diary;
-import ch.bfh.btx8081.w2017.green.Spero.model.DiaryEntry;
 import ch.bfh.btx8081.w2017.green.Spero.model.ForgetPasswordModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.PinModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.ReminderModel;
@@ -46,6 +45,8 @@ import ch.bfh.btx8081.w2017.green.Spero.view.ReportView;
 import ch.bfh.btx8081.w2017.green.Spero.view.SettingsView;
 import ch.bfh.btx8081.w2017.green.Spero.view.SosView;
 import persistence.DB;
+import persistence.DiaryEntry;
+import persistence.DiaryModel;
 
 /**
  * This UI is the application entry point. A UI may either represent a browser window 
@@ -69,8 +70,8 @@ public class MyUI extends UI {
 	String time;
 	
 	MainViewImpl mainView;
-	Diary modelDiary;
-	DiaryEntry modelDiaryEntry;
+	
+	DiaryModel modelDiaryEntry;
 	MenuView menuView;
 	SosView sosView;
 	ChatView chatView;
@@ -99,8 +100,8 @@ public class MyUI extends UI {
    	 
    	 pinView = new PinView();
    	 mainView = new MainViewImpl();
-     modelDiary = new Diary();
-     modelDiaryEntry = new DiaryEntry();
+     
+     modelDiaryEntry = new DiaryModel();
      menuView = new MenuView();
      sosView = new SosView();
      chatView = new ChatView();
@@ -133,11 +134,11 @@ public class MyUI extends UI {
    	 navigator.addView("defDepression", defDepressionView);
    	 navigator.addView("medInfoView", medInfoView);
    	 
-   	 new MainPresenter(mainView, modelDiaryEntry, modelDiary);
+   	 new MainPresenter(mainView, modelDiaryEntry);
    	 new MenuPresenter(menuView);
    	 new SosPresenter(sosView);
    	 new ChatPresenter(chatView);
-   	 new DiaryPresenter(modelDiary, diaryView);
+   	 new DiaryPresenter(modelDiaryEntry, diaryView);
    	 settingsPresenter = new SettingsPresenter(settingsView, settingsModel);
    	 new PinPresenter(pinView, pinModel);
    	 new ChangePinPresenter(changePinView, changePinModel);

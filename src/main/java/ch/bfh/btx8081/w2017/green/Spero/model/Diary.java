@@ -14,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.Mood;
+import persistence.DiaryEntry;
 
 
 

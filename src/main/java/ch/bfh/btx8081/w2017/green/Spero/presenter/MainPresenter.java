@@ -5,22 +5,23 @@ import com.vaadin.ui.Button.ClickEvent;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.Mood;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 import ch.bfh.btx8081.w2017.green.Spero.model.Diary;
-import ch.bfh.btx8081.w2017.green.Spero.model.DiaryEntry;
 import ch.bfh.btx8081.w2017.green.Spero.view.MainViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.Views;
+import persistence.DiaryEntry;
+import persistence.DiaryEntryList;
+import persistence.DiaryModel;
 
 public class MainPresenter implements SperoViewListener  {
 
 	private MainViewImpl mainView;
-	private DiaryEntry model;
-	private Diary diarymodel;
+	private DiaryEntryList mainModel;
 	
 	private Mood moodParam;
 // test
-	public MainPresenter(MainViewImpl mainView, DiaryEntry model, Diary diarymodel) {
+	public MainPresenter(MainViewImpl mainView, DiaryModel mainModel) {
 		this.mainView = mainView;
-		this.model = model;
-		this.diarymodel = diarymodel;
+		
+		
 		mainView.addListener(this);
 	}
 
@@ -53,10 +54,13 @@ public class MainPresenter implements SperoViewListener  {
 			moodParam = Mood.schlecht;
 			break;
 		case "confirmButton":
-			model.setTitle(mainView.diaryTitle.getValue());
-			model.setText(mainView.diaryText.getValue());
-			model.setTag(mainView.tags.getValue());
-			model.setMoodparam(moodParam);
+			
+			
+			
+//			model.setTitle(mainView.diaryTitle.getValue());
+//			model.setText(mainView.diaryText.getValue());
+//			model.setTag(mainView.tags.getValue());
+//			model.setMoodparam(moodParam);
 		//	model.confirm();
 //			diarymodel.createEntry(mainView.diaryTitle.getValue(), mainView.diaryText.getValue(), moodParam);
 			mainView.getUI().getNavigator().navigateTo(Views.DIARY_VIEW);
