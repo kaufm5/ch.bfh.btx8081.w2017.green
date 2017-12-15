@@ -98,6 +98,7 @@ public class MedInfoView extends CustomComponent implements SperoView {
 		}
 	}
 
+
 	@Override
 	public void addListener(SperoViewListener listener) {
 		listeners.add(listener);
