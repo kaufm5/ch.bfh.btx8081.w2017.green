@@ -4,7 +4,6 @@ import com.vaadin.ui.Button.ClickEvent;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.Mood;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
-import ch.bfh.btx8081.w2017.green.Spero.model.Diary;
 import ch.bfh.btx8081.w2017.green.Spero.model.DiaryModel;
 import ch.bfh.btx8081.w2017.green.Spero.view.MainViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.Views;
@@ -14,13 +13,13 @@ import persistence.DiaryEntryList;
 public class MainPresenter implements SperoViewListener  {
 
 	private MainViewImpl mainView;
-	private DiaryEntryList mainModel;
+	private DiaryModel mainModel;
 	
 	private Mood moodParam;
 // test
 	public MainPresenter(MainViewImpl mainView, DiaryModel mainModel) {
 		this.mainView = mainView;
-		
+		this.mainModel = mainModel;
 		
 		mainView.addListener(this);
 	}
@@ -54,7 +53,11 @@ public class MainPresenter implements SperoViewListener  {
 			moodParam = Mood.schlecht;
 			break;
 		case "confirmButton":
+			DiaryEntryList list = mainModel.getDiaryList();
+			list.createDiaryEntry(mainView.diaryTitle.getValue(), mainView.diaryText.getValue(), moodParam);
 			
+			mainView.diaryTitle.clear();
+			mainView.diaryText.clear();
 			
 			
 //			model.setTitle(mainView.diaryTitle.getValue());
