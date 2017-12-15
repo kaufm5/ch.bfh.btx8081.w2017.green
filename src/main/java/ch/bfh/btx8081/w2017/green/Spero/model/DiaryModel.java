@@ -1,4 +1,7 @@
-package persistence;
+package ch.bfh.btx8081.w2017.green.Spero.model;
+
+import persistence.DB;
+import persistence.DiaryEntryList;
 
 public class DiaryModel {
 	private DiaryEntryList diaryList;

@@ -12,7 +12,7 @@ import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
 import ch.bfh.btx8081.w2017.green.Spero.model.ChangePinModel;
-import ch.bfh.btx8081.w2017.green.Spero.model.Diary;
+import ch.bfh.btx8081.w2017.green.Spero.model.DiaryModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.ForgetPasswordModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.PinModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.ReminderModel;
@@ -46,7 +46,6 @@ import ch.bfh.btx8081.w2017.green.Spero.view.SettingsView;
 import ch.bfh.btx8081.w2017.green.Spero.view.SosView;
 import persistence.DB;
 import persistence.DiaryEntry;
-import persistence.DiaryModel;
 
 /**
  * This UI is the application entry point. A UI may either represent a browser window 
