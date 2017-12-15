@@ -11,6 +11,7 @@ import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.IncorrectException;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 import ch.bfh.btx8081.w2017.green.Spero.model.SettingsModel;
 import ch.bfh.btx8081.w2017.green.Spero.view.ChangePinView;
+import ch.bfh.btx8081.w2017.green.Spero.view.DefDepressionView;
 import ch.bfh.btx8081.w2017.green.Spero.view.MainViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.MenuView;
 import ch.bfh.btx8081.w2017.green.Spero.view.SettingsView;
@@ -23,14 +24,16 @@ public class SettingsPresenter extends Observable implements ClickListener, Sper
     private final ChangePinView changePinView;
     private final MenuView menuView;
     private final MainViewImpl mainView;
+    private final DefDepressionView defDepView;
 
     public SettingsPresenter(SettingsView settingsView, SettingsModel settingsModel, ChangePinView changePinView,
-    		MenuView menuView, MainViewImpl mainView) {
+    		MenuView menuView, MainViewImpl mainView, DefDepressionView defDepView) {
 	this.settingsView = settingsView;
 	this.settingsModel = settingsModel;
 	this.changePinView = changePinView;
 	this.menuView = menuView;
 	this.mainView = mainView;
+	this.defDepView = defDepView;
 	settingsView.addListener(this);
     }
 
@@ -62,6 +65,7 @@ public class SettingsPresenter extends Observable implements ClickListener, Sper
 				changePinView.buildChatButton();
 				menuView.buildChatButton();
 				mainView.buildChatButton();
+				defDepView.buildChatButton();
 				this.setChanged();
 				this.notifyObservers();
 			} else {

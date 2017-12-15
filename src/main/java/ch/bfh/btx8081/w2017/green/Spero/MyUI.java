@@ -139,7 +139,7 @@ public class MyUI extends UI {
    	 new ChatPresenter(chatView);
    	 new DiaryPresenter(modelDiaryEntry, diaryView);
    	 settingsPresenter = new SettingsPresenter(settingsView, settingsModel, changePinView, menuView,
-   			 mainView);
+   			 mainView, defDepressionView);
    	 new PinPresenter(pinView, pinModel);
    	 new ChangePinPresenter(changePinView, changePinModel);
   	 new ReminderPresenter(reminderView, reminderModel);

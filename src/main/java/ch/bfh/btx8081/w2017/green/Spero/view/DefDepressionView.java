@@ -24,6 +24,7 @@ public class DefDepressionView extends CustomComponent implements SperoView {
 	private Button chatButton;
 	private Label title;
 	private TextArea definition;
+	private HorizontalLayout superButtonBox;
 	
 	private List<SperoViewListener> listeners = new ArrayList<SperoViewListener>();
 	
@@ -88,16 +89,17 @@ public class DefDepressionView extends CustomComponent implements SperoView {
 		sosButton = new Button(VaadinIcons.PHONE);
 		sosButton.addClickListener(this);
 		sosButton.setId("sosButton");
-		chatButton = new Button(VaadinIcons.CHAT);
-		chatButton.addClickListener(this);
-		chatButton.setId("chatButton");
-		superButtonBox.addComponents(sosButton, chatButton);
+		superButtonBox.addComponent(sosButton);
 		superButtonBox.setComponentAlignment(sosButton, Alignment.MIDDLE_LEFT);
-		superButtonBox.setComponentAlignment(chatButton, Alignment.MIDDLE_LEFT);
-		
 	}
 	
-	
+	public void buildChatButton(){
+		chatButton = new Button(VaadinIcons.CHAT);
+		chatButton.addClickListener(this);
+		chatButton.setId("chat");
+		superButtonBox.addComponent(chatButton);
+		superButtonBox.setComponentAlignment(chatButton, Alignment.MIDDLE_LEFT);
+	}
 
 	@Override
 	public void buttonClick(ClickEvent event) {
