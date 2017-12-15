@@ -10,27 +10,25 @@ import ch.bfh.btx8081.w2017.green.Spero.view.Views;
 import persistence.DiaryEntry;
 import persistence.DiaryEntryList;
 
-public class MainPresenter implements SperoViewListener  {
+public class MainPresenter implements SperoViewListener {
 
 	private MainViewImpl mainView;
 	private DiaryModel mainModel;
-	
+
 	private Mood moodParam;
-// test
+
 	public MainPresenter(MainViewImpl mainView, DiaryModel mainModel) {
 		this.mainView = mainView;
 		this.mainModel = mainModel;
-		
+
 		mainView.addListener(this);
 	}
-
 
 	@Override
 	public void buttonClick(ClickEvent event) {
 		String buttonId = event.getButton().getId();
-		
-		//TODO add links to other views
-		switch(buttonId) {
+
+		switch (buttonId) {
 		case "menuButton":
 			mainView.getUI().getNavigator().navigateTo(Views.MENU_VIEW);
 			break;
@@ -42,7 +40,7 @@ public class MainPresenter implements SperoViewListener  {
 			break;
 		case "smileGut":
 			moodParam = Mood.gut;
-			break; 
+			break;
 		case "smileEherGut":
 			moodParam = Mood.eherGut;
 			break;
@@ -56,19 +54,11 @@ public class MainPresenter implements SperoViewListener  {
 			DiaryEntryList list = mainModel.getDiaryList();
 			System.out.println(moodParam);
 			list.createDiaryEntry(mainView.diaryTitle.getValue(), mainView.diaryText.getValue(), moodParam);
-			
 			mainModel.persist(list);
-			
+
 			mainView.diaryTitle.clear();
 			mainView.diaryText.clear();
-			
-			
-//			model.setTitle(mainView.diaryTitle.getValue());
-//			model.setText(mainView.diaryText.getValue());
-//			model.setTag(mainView.tags.getValue());
-//			model.setMoodparam(moodParam);
-		//	model.confirm();
-//			diarymodel.createEntry(mainView.diaryTitle.getValue(), mainView.diaryText.getValue(), moodParam);
+
 			mainView.getUI().getNavigator().navigateTo(Views.DIARY_VIEW);
 			break;
 		}

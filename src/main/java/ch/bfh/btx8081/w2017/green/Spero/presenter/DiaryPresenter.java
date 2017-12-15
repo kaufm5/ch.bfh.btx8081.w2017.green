@@ -18,16 +18,13 @@ public class DiaryPresenter implements SperoViewListener {
 	DiaryViewImpl diaryView;
 	
 	int numberOfAddedEntry = 0;
-//test
+	
 	public DiaryPresenter(DiaryModel diaryModel, DiaryViewImpl diaryView) {
 		this.diaryModel = diaryModel;
 		this.diaryView = diaryView;
 		diaryView.addListener(this);
 		
 		numberOfAddedEntry = 0;
-		
-		
-
 	}
 
 	@Override
@@ -36,43 +33,18 @@ public class DiaryPresenter implements SperoViewListener {
 
 		switch (buttonId) {
 		case "refreshButton":
-			
-			
-			
 			DiaryEntryList list = diaryModel.getDiaryList();
-			
-			
 			
 			while(numberOfAddedEntry < list.getDiaryList().size()) {
 				DiaryEntry diaryEntry = list.getDiaryList().get(numberOfAddedEntry);
-				
 				String title = diaryEntry.getTitle();
 				String text = diaryEntry.getText();
 				Mood moodParam = diaryEntry.getMoodparam();
 				
-				
 				diaryView.addEntryToView(title, text, moodParam);
-				
-				
 				numberOfAddedEntry++;
-				
 			}
 			
-			
-			
-			
-			
-//			
-//			int numberOfDiaryEntry = diaryModel.getNumberOfDiaryEntry();
-//			while(numberOfDiaryEntry > numberOfAddedEntry) {
-//				DiaryEntry diaryEntry = diaryModel.searchEntry(numberOfDiaryEntry);
-//				String title = diaryEntry.getTitle();
-//				String text = diaryEntry.getText();
-//				Mood moodParam = diaryEntry.getMoodparam();
-//				
-//				diaryView.addEntryToView(title, text, moodParam);
-//				numberOfAddedEntry = numberOfDiaryEntry;
-//			}
 			break;
 		case "menuButton":
 			diaryView.getUI().getNavigator().navigateTo(Views.MENU_VIEW);
@@ -89,11 +61,5 @@ public class DiaryPresenter implements SperoViewListener {
 			diaryView.getUI().getNavigator().navigateTo(Views.MAIN_VIEW);
 			break;
 		}
-
 	}
-
-//	public void addEntry(String title, String text) {
-//
-//	}
-
 }
