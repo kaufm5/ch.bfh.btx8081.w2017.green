@@ -15,6 +15,7 @@ import ch.bfh.btx8081.w2017.green.Spero.view.DefDepressionView;
 import ch.bfh.btx8081.w2017.green.Spero.view.MainViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.MedInfoView;
 import ch.bfh.btx8081.w2017.green.Spero.view.MenuView;
+import ch.bfh.btx8081.w2017.green.Spero.view.ReportView;
 import ch.bfh.btx8081.w2017.green.Spero.view.SettingsView;
 import ch.bfh.btx8081.w2017.green.Spero.view.Views;
 
@@ -27,9 +28,11 @@ public class SettingsPresenter extends Observable implements ClickListener, Sper
     private final MainViewImpl mainView;
     private final DefDepressionView defDepView;
     private final MedInfoView medInfView;
+    private final ReportView reportView;
 
     public SettingsPresenter(SettingsView settingsView, SettingsModel settingsModel, ChangePinView changePinView,
-    		MenuView menuView, MainViewImpl mainView, DefDepressionView defDepView, MedInfoView medInfView) {
+    		MenuView menuView, MainViewImpl mainView, DefDepressionView defDepView, MedInfoView medInfView,
+    		ReportView reportView) {
 	this.settingsView = settingsView;
 	this.settingsModel = settingsModel;
 	this.changePinView = changePinView;
@@ -37,6 +40,7 @@ public class SettingsPresenter extends Observable implements ClickListener, Sper
 	this.mainView = mainView;
 	this.defDepView = defDepView;
 	this.medInfView = medInfView;
+	this.reportView = reportView;
 	settingsView.addListener(this);
     }
 
@@ -70,6 +74,7 @@ public class SettingsPresenter extends Observable implements ClickListener, Sper
 				mainView.buildChatButton();
 				defDepView.buildChatButton();
 				medInfView.buildChatButton();
+				reportView.buildChatButton();
 				this.setChanged();
 				this.notifyObservers();
 			} else {

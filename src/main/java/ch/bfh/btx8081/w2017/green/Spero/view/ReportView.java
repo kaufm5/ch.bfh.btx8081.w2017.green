@@ -30,6 +30,7 @@ public class ReportView extends CustomComponent implements SperoView {
 	private Button sosButton;
 	private Label reportTitle; 
 	private ComboBox choice; 
+	private HorizontalLayout superButtonBox;
 	
 	private XYChart<Mood, String> chart; 
 	
@@ -81,17 +82,18 @@ public class ReportView extends CustomComponent implements SperoView {
 		sosButton = new Button(VaadinIcons.PHONE);
 		sosButton.addClickListener(this);
 		sosButton.setId("sosButton");
-		chatButton = new Button(VaadinIcons.CHAT);
-		chatButton.addClickListener(this);
-		chatButton.setId("chatButton");
-		superButtonBox.addComponents(sosButton, chatButton);
+		superButtonBox.addComponent(sosButton);
 		superButtonBox.setComponentAlignment(sosButton, Alignment.MIDDLE_LEFT);
-		superButtonBox.setComponentAlignment(chatButton, Alignment.MIDDLE_LEFT);
 		
 	}
 
-
-
+	public void buildChatButton(){
+		chatButton = new Button(VaadinIcons.CHAT);
+		chatButton.addClickListener(this);
+		chatButton.setId("chat");
+		superButtonBox.addComponent(chatButton);
+		superButtonBox.setComponentAlignment(chatButton, Alignment.MIDDLE_LEFT);
+	}
 
 	@Override
 	public void addListener(SperoViewListener listener) {
