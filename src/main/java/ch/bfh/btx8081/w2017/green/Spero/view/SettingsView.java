@@ -38,6 +38,7 @@ public class SettingsView extends CustomComponent implements SperoView, Observer
 	private Button chatButton;
 	private Button sosButton;
 	private HorizontalLayout superButtonBox;
+	public String chatValue;
 	RadioButtonGroup<String> einAusChat;
 	
 	private final Button ok;
@@ -172,11 +173,18 @@ public class SettingsView extends CustomComponent implements SperoView, Observer
 		sosButton.addClickListener(this);
 		sosButton.setId("sos");
 		superButtonBox.addComponent(sosButton);
-    	//addChatButton();
+    	//buildChatButton();
+		
+	//	chatValue = getChatValue();
+		
+	//	if (chatValue.equals("Ein")) {
+	//		buildChatButton();
+	//	}
     }
     
     public String getChatValue() {
-    	return einAusChat.getValue();
+    	chatValue = einAusChat.getValue();
+    	return chatValue;
     }
     
     public String getSnooze() {
