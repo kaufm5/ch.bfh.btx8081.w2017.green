@@ -138,7 +138,8 @@ public class MyUI extends UI {
    	 new SosPresenter(sosView);
    	 new ChatPresenter(chatView);
    	 new DiaryPresenter(modelDiaryEntry, diaryView);
-   	 settingsPresenter = new SettingsPresenter(settingsView, settingsModel);
+   	 settingsPresenter = new SettingsPresenter(settingsView, settingsModel, changePinView, menuView,
+   			 mainView);
    	 new PinPresenter(pinView, pinModel);
    	 new ChangePinPresenter(changePinView, changePinModel);
   	 new ReminderPresenter(reminderView, reminderModel);
