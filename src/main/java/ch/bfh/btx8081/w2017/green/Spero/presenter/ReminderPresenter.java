@@ -18,7 +18,7 @@ private ReminderModel model;
 		this.model = model;
 		view.addListener(this);
 	}
-// test
+
 	@Override
 	public void buttonClick(ClickEvent event) {
 		String buttonId = event.getButton().getId();
@@ -34,6 +34,9 @@ private ReminderModel model;
 		case "chat":
 			view.getUI().getNavigator().navigateTo(Views.CHAT_VIEW);
 		    break;
+		case "confirmButton":
+			//System.out.println(view.timeText4.getValue());
+			model.startReminder(view.timeText1.getValue(), view.timeText2.getValue(), view.timeText3.getValue(), view.timeText4.getValue());
 	}
 	}
 
