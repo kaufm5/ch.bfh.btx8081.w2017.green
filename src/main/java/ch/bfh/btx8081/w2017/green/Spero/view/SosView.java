@@ -23,7 +23,6 @@ import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 public class SosView extends CustomComponent implements SperoView{
 	
 	private Button menuButton;
-	private Button chatButton;
 	
 	private Label call;
 	private Label title;
@@ -59,13 +58,8 @@ public class SosView extends CustomComponent implements SperoView{
 		menuButton.addClickListener(this);
 		menuButton.setId("menuButton");
 		
-		chatButton = new Button(VaadinIcons.CHAT);
-		chatButton.addClickListener(this);
-		chatButton.setId("chatButton");
-		
 		menuBox.addComponent(menuButton);
 		menuBox.addComponent(call);
-		menuBox.addComponent(chatButton);
 		menuBox.setComponentAlignment(menuButton, Alignment.MIDDLE_LEFT);
 		menuBox.addStyleName("menu");
 		menuAndContent.addComponent(menuBox);
