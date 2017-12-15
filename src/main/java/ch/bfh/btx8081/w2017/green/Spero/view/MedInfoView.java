@@ -23,6 +23,7 @@ public class MedInfoView extends CustomComponent implements SperoView {
 	private SearchBox search; 
 	private Button sosButton, chatButton, menuButton; 
 	private Label title; 
+	private HorizontalLayout superButtonBox;
 
 	private List<SperoViewListener> listeners = new ArrayList<SperoViewListener>();
 
@@ -78,13 +79,16 @@ public class MedInfoView extends CustomComponent implements SperoView {
 		sosButton = new Button(VaadinIcons.PHONE);
 		sosButton.addClickListener(this);
 		sosButton.setId("sosButton");
+		superButtonBox.addComponent(sosButton);
+		superButtonBox.setComponentAlignment(sosButton, Alignment.MIDDLE_LEFT);
+	}
+	
+	public void buildChatButton(){
 		chatButton = new Button(VaadinIcons.CHAT);
 		chatButton.addClickListener(this);
-		chatButton.setId("chatButton");
-		superButtonBox.addComponents(sosButton, chatButton);
-		superButtonBox.setComponentAlignment(sosButton, Alignment.MIDDLE_LEFT);
+		chatButton.setId("chat");
+		superButtonBox.addComponent(chatButton);
 		superButtonBox.setComponentAlignment(chatButton, Alignment.MIDDLE_LEFT);
-
 	}
 
 	@Override
