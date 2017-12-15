@@ -150,7 +150,7 @@ public ChangePinView() {
 			return newPin2PasswordField.getValue();
 		}
 		
-		public void addChatButton(){
+		public void buildChatButton(){
 			chatButton = new Button(VaadinIcons.CHAT);
 			chatButton.addClickListener(this);
 			chatButton.setId("chat");
