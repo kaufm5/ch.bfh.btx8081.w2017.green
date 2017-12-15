@@ -9,11 +9,13 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.Mood;
 
 @Entity
+@NamedQuery(name = "DiaryEntryList", query = "select el from DiaryEntryList el")
 public class DiaryEntryList {
 	
 	@Id 
