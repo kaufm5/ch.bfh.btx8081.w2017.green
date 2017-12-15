@@ -22,7 +22,7 @@ public class ForgetPasswordView extends CustomComponent implements SperoView {
 	private Label forget;
 	private Label mail;
 	private TextField mailAddress;
-	private Label mailException;
+	public Label mailException;
 	private final Button ok;
 	
 	private final List<ClickListener> listeners = new ArrayList<ClickListener>();
@@ -73,17 +73,21 @@ public class ForgetPasswordView extends CustomComponent implements SperoView {
     	content.addComponent(forgetPasswordItems);
 		
 	}
+	
+	public String getEmail(){
+		return mailAddress.getValue();
+	}
 
 	@Override
 	public void buttonClick(ClickEvent event) {
-		// TODO Auto-generated method stub
-		
+		for (final ClickListener listener : this.listeners) {
+		    listener.buttonClick(event);
+		}
 	}
 
 	@Override
 	public void addListener(SperoViewListener listener) {
-		// TODO Auto-generated method stub
-		
+		this.listeners.add(listener);
 	}
 
 }
