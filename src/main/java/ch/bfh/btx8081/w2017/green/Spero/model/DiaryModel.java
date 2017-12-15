@@ -24,7 +24,7 @@ public class DiaryModel {
 		if(this.db.getSperoLists("DiaryEntryList").size() == 0) {
 			this.diaryList = new DiaryEntryList();
 		} else {
-			this.diaryList = (DiaryEntryList) this.db.getSperoLists("DiaryEntryList");
+			this.diaryList = (DiaryEntryList) this.db.getSperoLists("DiaryEntryList").get(0);
 		}
 		
 //		EntityManager em = db.getEntitiyManager();
