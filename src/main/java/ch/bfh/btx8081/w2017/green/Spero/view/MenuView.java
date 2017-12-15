@@ -27,6 +27,7 @@ public class MenuView extends CustomComponent implements SperoView {
 	private Button settings;
 	private Button chatButton; 
 	private Button sosButton;
+	private HorizontalLayout superButtonBox;
 	
 	private List<SperoViewListener> listeners = new ArrayList<SperoViewListener>();
 	
@@ -89,15 +90,19 @@ public class MenuView extends CustomComponent implements SperoView {
 		
 		content.addComponent(menuItems);
 		
-		HorizontalLayout superButtonBox = new HorizontalLayout ();
+		superButtonBox = new HorizontalLayout ();
 		content.addComponent(superButtonBox);
 		sosButton = new Button(VaadinIcons.PHONE);
 		sosButton.addClickListener(this);
 		sosButton.setId("sos");
+		superButtonBox.addComponents(sosButton);
+	}
+	
+	public void buildChatButton(){
 		chatButton = new Button(VaadinIcons.CHAT);
 		chatButton.addClickListener(this);
 		chatButton.setId("chat");
-		superButtonBox.addComponents(sosButton, chatButton);
+		superButtonBox.addComponent(chatButton);
 	}
 
 	@Override
