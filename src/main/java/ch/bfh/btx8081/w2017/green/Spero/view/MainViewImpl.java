@@ -35,6 +35,7 @@ public class MainViewImpl extends CustomComponent implements SperoView {
 	public TextField tags;
 	public TextArea diaryText;
 	public TextField diaryTitle;
+	private HorizontalLayout superButtonBox;
 
 	private List<SperoViewListener> listeners = new ArrayList<SperoViewListener>();
 
@@ -149,7 +150,7 @@ public class MainViewImpl extends CustomComponent implements SperoView {
 		confirmButtonBox.addComponents(confirmButton);
 		content.addComponent(confirmButtonBox);
 
-		HorizontalLayout superButtonBox = new HorizontalLayout();
+		superButtonBox = new HorizontalLayout();
 		superButtonBox.setSizeFull();
 		superButtonBox.setMargin(true);
 		superButtonBox.setSpacing(true);
@@ -157,15 +158,17 @@ public class MainViewImpl extends CustomComponent implements SperoView {
 		sosButton = new Button(VaadinIcons.PHONE);
 		sosButton.addClickListener(this);
 		sosButton.setId("sosButton");
+		superButtonBox.addComponents(sosButton);
+		superButtonBox.setComponentAlignment(sosButton, Alignment.MIDDLE_LEFT);
+		}
+	
+	public void buildChatButton(){
 		chatButton = new Button(VaadinIcons.CHAT);
 		chatButton.addClickListener(this);
-		chatButton.setId("chatButton");
-		superButtonBox.addComponents(sosButton, chatButton);
-		superButtonBox.setComponentAlignment(sosButton, Alignment.MIDDLE_LEFT);
+		chatButton.setId("chat");
+		superButtonBox.addComponent(chatButton);
 		superButtonBox.setComponentAlignment(chatButton, Alignment.MIDDLE_LEFT);
-
 	}
-	
 	
 	@Override
 	public void addListener(SperoViewListener listener) {
