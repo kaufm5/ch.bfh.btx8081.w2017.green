@@ -7,6 +7,9 @@
 		
 		<class>persistence.DiaryEntryList</class>
 		<class>persistence.DiaryEntry</class>
+ 		<class>persistence.Medication</class>
+		<class>persistence.MedicationList</class>
+		
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://147.87.116.213:5432/spero2"/>
 			<property name="javax.persistence.jdbc.user" value="Studierende"/>
