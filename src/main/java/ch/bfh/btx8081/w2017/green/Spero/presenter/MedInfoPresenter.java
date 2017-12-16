@@ -28,6 +28,9 @@ private MedInfoView view;
 		case "chatButton":
 			view.getUI().getNavigator().navigateTo(Views.CHAT_VIEW);
 		    break;
+		case "searchMedication":
+			// 
+		    break;
 	}
 	}
 
