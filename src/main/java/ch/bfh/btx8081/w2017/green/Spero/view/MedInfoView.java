@@ -69,6 +69,8 @@ public class MedInfoView extends CustomComponent implements SperoView {
 
 		HorizontalLayout searchBox = new HorizontalLayout(); 
 		search = new SearchBox("Search Medication", SearchBox.ButtonPosition.RIGHT);
+		search.setPlaceholder("medication name");
+		search.setId("searchMedication");
 		content.addComponent(searchBox);
 		searchBox.addComponent(search);
 
