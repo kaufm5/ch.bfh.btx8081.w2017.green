@@ -12,6 +12,7 @@ private DefDepressionView view;
 	
 	public DefDepressionPresenter(DefDepressionView view) {
 		this.view = view;
+		view.init();
 		view.addListener(this);
 	}
 // test

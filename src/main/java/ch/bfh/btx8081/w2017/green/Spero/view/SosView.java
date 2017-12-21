@@ -1,34 +1,21 @@
 package ch.bfh.btx8081.w2017.green.Spero.view;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.vaadin.icons.VaadinIcons;
 import com.vaadin.ui.Alignment;
-import com.vaadin.ui.Button;
-import com.vaadin.ui.Button.ClickEvent;
-import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
-import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoView;
-import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
+import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.ButtonProvider;
 
 /**
  * The class ChatView shows the chat view of the Spero-application
  * @author stahm2
  */
 
-public class SosView extends CustomComponent implements SperoView{
-	
-	private Button menuButton;
-	
+public class SosView extends ButtonProvider {	
 	private Label call;
 	private Label title;
 	
-	private List<SperoViewListener> listeners = new ArrayList<SperoViewListener>();
-	//test
 	/**
 	 * Constructs the chat view
 	 */
@@ -52,31 +39,12 @@ public class SosView extends CustomComponent implements SperoView{
 		VerticalLayout menuBox = new VerticalLayout();
 		menuBox.setSpacing(true);
 		menuBox.setMargin(true);
-		menuButton = new Button(VaadinIcons.MENU);
 		call = new Label("Ruft Dargebotene Hand an: 143!!");
-		//id für button
-		menuButton.addClickListener(this);
-		menuButton.setId("menuButton");
 		
 		menuBox.addComponent(menuButton);
 		menuBox.addComponent(call);
 		menuBox.setComponentAlignment(menuButton, Alignment.MIDDLE_LEFT);
 		menuBox.addStyleName("menu");
 		menuAndContent.addComponent(menuBox);
-		
-		
-	}
-	
-	@Override
-	public void addListener(SperoViewListener listener) {
-		listeners.add(listener);	
-	}
-
-
-	@Override
-	public void buttonClick(ClickEvent event) {
-		for (SperoViewListener listener : this.listeners) {
-			listener.buttonClick(event);
-		}
 	}
 }

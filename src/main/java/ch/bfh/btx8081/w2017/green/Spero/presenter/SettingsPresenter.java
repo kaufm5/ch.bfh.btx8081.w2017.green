@@ -2,11 +2,7 @@ package ch.bfh.btx8081.w2017.green.Spero.presenter;
 
 import java.util.Observable;
 
-import com.vaadin.icons.VaadinIcons;
-import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
-import com.vaadin.ui.Button.ClickListener;
-
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.IncorrectException;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 import ch.bfh.btx8081.w2017.green.Spero.model.SettingsModel;
@@ -19,7 +15,7 @@ import ch.bfh.btx8081.w2017.green.Spero.view.ReportView;
 import ch.bfh.btx8081.w2017.green.Spero.view.SettingsView;
 import ch.bfh.btx8081.w2017.green.Spero.view.Views;
 
-public class SettingsPresenter extends Observable implements ClickListener, SperoViewListener {
+public class SettingsPresenter extends Observable implements SperoViewListener {
     
     private final SettingsView settingsView;
     private final SettingsModel settingsModel;
@@ -33,15 +29,16 @@ public class SettingsPresenter extends Observable implements ClickListener, Sper
     public SettingsPresenter(SettingsView settingsView, SettingsModel settingsModel, ChangePinView changePinView,
     		MenuView menuView, MainViewImpl mainView, DefDepressionView defDepView, MedInfoView medInfView,
     		ReportView reportView) {
-	this.settingsView = settingsView;
-	this.settingsModel = settingsModel;
-	this.changePinView = changePinView;
-	this.menuView = menuView;
-	this.mainView = mainView;
-	this.defDepView = defDepView;
-	this.medInfView = medInfView;
-	this.reportView = reportView;
-	settingsView.addListener(this);
+		this.settingsView = settingsView;
+		this.settingsModel = settingsModel;
+		this.changePinView = changePinView;
+		this.menuView = menuView;
+		this.mainView = mainView;
+		this.defDepView = defDepView;
+		this.medInfView = medInfView;
+		this.reportView = reportView;
+		settingsView.init();
+		settingsView.addListener(this);
     }
 
     @Override

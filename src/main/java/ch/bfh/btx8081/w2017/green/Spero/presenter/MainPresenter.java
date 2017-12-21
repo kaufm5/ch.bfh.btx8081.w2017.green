@@ -7,7 +7,6 @@ import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 import ch.bfh.btx8081.w2017.green.Spero.model.DiaryModel;
 import ch.bfh.btx8081.w2017.green.Spero.view.MainViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.Views;
-import persistence.DiaryEntry;
 import persistence.DiaryEntryList;
 
 public class MainPresenter implements SperoViewListener {
@@ -20,7 +19,7 @@ public class MainPresenter implements SperoViewListener {
 	public MainPresenter(MainViewImpl mainView, DiaryModel mainModel) {
 		this.mainView = mainView;
 		this.mainModel = mainModel;
-
+		mainView.init();
 		mainView.addListener(this);
 	}
 

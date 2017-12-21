@@ -1,7 +1,5 @@
 package ch.bfh.btx8081.w2017.green.Spero.presenter;
 
-import java.util.ArrayList;
-
 import com.vaadin.ui.Button.ClickEvent;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.Mood;
@@ -22,9 +20,10 @@ public class DiaryPresenter implements SperoViewListener {
 	public DiaryPresenter(DiaryModel diaryModel, DiaryViewImpl diaryView) {
 		this.diaryModel = diaryModel;
 		this.diaryView = diaryView;
+		diaryView.init();
 		diaryView.addListener(this);
 		
-		numberOfAddedEntry = 0;
+		this.numberOfAddedEntry = 0;
 	}
 
 	@Override

@@ -11,6 +11,7 @@ public class SosPresenter implements SperoViewListener {
 	
 	public SosPresenter(SosView sosView) {
 		this.sosView = sosView;
+		sosView.init();
 		sosView.addListener(this);
 	}
 // test

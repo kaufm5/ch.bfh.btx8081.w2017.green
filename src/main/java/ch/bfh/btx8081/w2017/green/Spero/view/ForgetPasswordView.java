@@ -1,32 +1,18 @@
 package ch.bfh.btx8081.w2017.green.Spero.view;
 
-import com.vaadin.ui.Button.ClickEvent;
-import com.vaadin.ui.Button.ClickListener;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import com.vaadin.ui.Button;
-import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
-import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
-import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoView;
-import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
+import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.ButtonProvider;
 
-public class ForgetPasswordView extends CustomComponent implements SperoView {
-	
+public class ForgetPasswordView extends ButtonProvider {
 	private Label forget;
 	private Label mail;
 	private TextField mailAddress;
 	public Label mailException;
-	private final Button ok;
-	
-	private final List<ClickListener> listeners = new ArrayList<ClickListener>();
-	
+		
 	public ForgetPasswordView() {
 		
 		final VerticalLayout layout = new VerticalLayout();
@@ -64,30 +50,12 @@ public class ForgetPasswordView extends CustomComponent implements SperoView {
     	this.mailException = new Label("");
     	mailException.setId("pinValue");
     	forgetPasswordItems.addComponent(this.mailException);
-    	
-    	this.ok = new Button("OK");
-    	this.ok.addClickListener(this);
-    	this.ok.setId("ok");
-    	forgetPasswordItems.addComponent(this.ok);
+       	forgetPasswordItems.addComponent(this.ok);
     	
     	content.addComponent(forgetPasswordItems);
-		
 	}
 	
 	public String getEmail(){
 		return mailAddress.getValue();
 	}
-
-	@Override
-	public void buttonClick(ClickEvent event) {
-		for (final ClickListener listener : this.listeners) {
-		    listener.buttonClick(event);
-		}
-	}
-
-	@Override
-	public void addListener(SperoViewListener listener) {
-		this.listeners.add(listener);
-	}
-
 }

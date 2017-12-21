@@ -12,6 +12,7 @@ private ReportView view;
 	
 	public ReportPresenter(ReportView view) {
 		this.view = view;
+		view.init();
 		view.addListener(this);
 	}
 // test

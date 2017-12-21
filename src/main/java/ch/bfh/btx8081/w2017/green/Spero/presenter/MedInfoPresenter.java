@@ -12,6 +12,7 @@ private MedInfoView view;
 	
 	public MedInfoPresenter(MedInfoView view) {
 		this.view = view;
+		view.init();
 		view.addListener(this);
 	}
 // test

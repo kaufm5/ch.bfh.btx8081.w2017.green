@@ -1,36 +1,19 @@
 package ch.bfh.btx8081.w2017.green.Spero.view;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.vaadin.ui.Button.ClickEvent;
-import com.vaadin.icons.VaadinIcons;
 import com.vaadin.ui.Alignment;
-import com.vaadin.ui.Button;
-import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.VerticalLayout;
 
+import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.ButtonProvider;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.Mood;
-import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoView;
-import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 
-public class DiaryViewImpl extends CustomComponent implements SperoView {
-	
-	private List<SperoViewListener> listeners = new ArrayList<>();
-	
+public class DiaryViewImpl extends ButtonProvider {	
 	private Label title;
 	private Panel panel;
 	VerticalLayout layout;
-	
-	private Button menuButton;
-	private Button refreshButton;
-	private Button newButton;
-	private Button sosButton;
-	private Button chatButton;
-	
+		
 	// TESTING test
 	private Label display;
 	
@@ -54,10 +37,6 @@ public class DiaryViewImpl extends CustomComponent implements SperoView {
 		VerticalLayout menuBox = new VerticalLayout();
 		menuBox.setSpacing(true);
 		menuBox.setMargin(true);
-		menuButton = new Button(VaadinIcons.MENU);
-		//set id für Button 
-		menuButton.addClickListener(this);
-		menuButton.setId("menuButton");
 
 		menuBox.addComponent(menuButton);
 		menuBox.setComponentAlignment(menuButton, Alignment.MIDDLE_LEFT);
@@ -83,25 +62,12 @@ public class DiaryViewImpl extends CustomComponent implements SperoView {
 		
 		HorizontalLayout diaryButton = new HorizontalLayout();
 		diaryBox.addComponent(diaryButton);
-		refreshButton = new Button(VaadinIcons.REFRESH);
-		refreshButton.addClickListener(this);
-		refreshButton.setId("refreshButton");
-		
-		newButton = new Button(VaadinIcons.PLUS_CIRCLE);
-		newButton.addClickListener(this);
-		newButton.setId("newButton");
 		diaryButton.addComponents(refreshButton, newButton);
 		
 		HorizontalLayout superButtonBox = new HorizontalLayout();
 		superButtonBox.setMargin(true);
 		superButtonBox.setSpacing(true);
 		content.addComponent(superButtonBox);
-		sosButton = new Button(VaadinIcons.PHONE);
-		sosButton.addClickListener(this);
-		sosButton.setId("sosButton");
-		chatButton = new Button(VaadinIcons.CHAT);
-		chatButton.addClickListener(this);
-		chatButton.setId("chatButton");
 		superButtonBox.addComponents(sosButton, chatButton);
 		
 	}
@@ -128,26 +94,5 @@ public class DiaryViewImpl extends CustomComponent implements SperoView {
 		
 		panel.setContent(contentLayout);
 		layout.addComponent(panel);
-		
-		
-		
 	}
-
-	
-	
-
-	@Override
-	public void buttonClick(ClickEvent event) {
-		for(SperoViewListener listener : this.listeners) {
-			listener.buttonClick(event);
-		}
-		
-	}
-
-	@Override
-	public void addListener(SperoViewListener listener) {
-		listeners.add(listener);
-		
-	}
-
 }

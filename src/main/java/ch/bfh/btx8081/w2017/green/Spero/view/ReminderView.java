@@ -1,42 +1,15 @@
 package ch.bfh.btx8081.w2017.green.Spero.view;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-
-import com.vaadin.icons.VaadinIcons;
-import com.vaadin.shared.ui.datefield.DateTimeResolution;
 import com.vaadin.ui.Alignment;
-import com.vaadin.ui.Button;
-import com.vaadin.ui.ComboBox;
-import com.vaadin.ui.Button.ClickEvent;
-import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.InlineDateTimeField;
 import com.vaadin.ui.Label;
-import com.vaadin.ui.TextArea;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
-import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoView;
-import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
+import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.ButtonProvider;
 
-public class ReminderView extends CustomComponent implements SperoView{
+public class ReminderView extends ButtonProvider {
 
-	private Button menuButton;
-	private Button sosButton;
-	private Button chatButton;
-	//private Button moreTime;
-	private Button moreMedi;
-	private Button monday;
-	private Button tuesday;
-	private Button wednesday;
-	private Button thursday;
-	private Button friday;
-	private Button saturday;
-	private Button sunday;
-	private Button confirmButton;
 	private Label time1;
 	private Label time2;
 	private Label time3;
@@ -51,8 +24,6 @@ public class ReminderView extends CustomComponent implements SperoView{
 	public TextField timeText4;
 	//public ComboBox timeChoice;
 	VerticalLayout content;
-
-	private List<SperoViewListener> listeners = new ArrayList<SperoViewListener>();
 	
 	public ReminderView(){
 		VerticalLayout layout = new VerticalLayout();
@@ -74,10 +45,6 @@ public class ReminderView extends CustomComponent implements SperoView{
 		VerticalLayout menuBox = new VerticalLayout();
 		menuBox.setSpacing(true);
 		menuBox.setMargin(true);
-		menuButton = new Button(VaadinIcons.MENU);
-		//set id für Button 
-		menuButton.addClickListener(this);
-		menuButton.setId("menuButton");
 
 		menuBox.addComponent(menuButton);
 		menuBox.setComponentAlignment(menuButton, Alignment.MIDDLE_LEFT);
@@ -97,13 +64,6 @@ public class ReminderView extends CustomComponent implements SperoView{
 	  //  chooseTime();
 	    
 	    HorizontalLayout confirmButtonBox = new HorizontalLayout();
-	
-		confirmButton = new Button(VaadinIcons.CHECK);
-		confirmButton.addClickListener(this);
-		confirmButton.setId("confirmButton");
-		moreMedi = new Button(VaadinIcons.PLUS);
-		moreMedi.addClickListener(this);
-		moreMedi.setId("moreMedis");
 		confirmButtonBox.addComponents(moreMedi, confirmButton);
 		content.addComponent(confirmButtonBox);
 
@@ -112,12 +72,6 @@ public class ReminderView extends CustomComponent implements SperoView{
 		superButtonBox.setMargin(true);
 		superButtonBox.setSpacing(true);
 		content.addComponent(superButtonBox);
-		sosButton = new Button(VaadinIcons.PHONE);
-		sosButton.addClickListener(this);
-		sosButton.setId("sosButton");
-		chatButton = new Button(VaadinIcons.CHAT);
-		chatButton.addClickListener(this);
-		chatButton.setId("chatButton");
 		superButtonBox.addComponents(sosButton, chatButton);
 		superButtonBox.setComponentAlignment(sosButton, Alignment.MIDDLE_LEFT);
 		superButtonBox.setComponentAlignment(chatButton, Alignment.MIDDLE_LEFT);
@@ -160,20 +114,6 @@ public class ReminderView extends CustomComponent implements SperoView{
 		timeText4.setPlaceholder("HH:MM");
 		timeBox4.addComponents(time4, timeText4);
 		content.addComponents(mediNameBox, timeBox1, timeBox2, timeBox3, timeBox4);
-		
-	}
-
-	@Override
-	public void buttonClick(ClickEvent event) {
-		for (SperoViewListener listener : this.listeners) {
-			listener.buttonClick(event);
-		}
-		
-	}
-
-	@Override
-	public void addListener(SperoViewListener listener) {
-		listeners.add(listener);
 		
 	}
 }

@@ -1,31 +1,18 @@
 package ch.bfh.btx8081.w2017.green.Spero.view;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.vaadin.ui.Button.ClickEvent;
-import com.vaadin.ui.Button.ClickListener;
-import com.vaadin.ui.Button;
-import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.VerticalLayout;
 
-import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoView;
-import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
+import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.ButtonProvider;
 
-public class PinView extends CustomComponent implements SperoView {
+public class PinView extends ButtonProvider {
 	
 	private final Label hallo;
 	private final PasswordField pin;
-	private final Button ok;
-	private Button forgotten;
-	
 	public final Label pinException;
 	
-    private final List<ClickListener> listeners = new ArrayList<ClickListener>();
-
     public PinView() {
     	
     	final VerticalLayout layout = new VerticalLayout();
@@ -56,34 +43,12 @@ public class PinView extends CustomComponent implements SperoView {
     	this.pinException = new Label("");
     	pinException.setId("pinValue");
     	pinItems.addComponent(this.pinException);
-    	
-    	this.ok = new Button("OK");
-    	this.ok.addClickListener(this);
-    	this.ok.setId("ok");
-    	pinItems.addComponent(this.ok);
-    	
-    	this.forgotten = new Button("Passwort vergessen?");
-    	this.forgotten.addClickListener(this);
-    	this.forgotten.setId("forgotten");
+       	pinItems.addComponent(this.ok);
     	pinItems.addComponent(this.forgotten);
-    	
     	content.addComponent(pinItems);
-    	
     }
     
     public String getPin() {
     	return pin.getValue();
     }
-
-    @Override
-    public void buttonClick(ClickEvent event) {
-	for (final ClickListener listener : this.listeners) {
-	    listener.buttonClick(event);
-	}
-    }
-
-	@Override
-	public void addListener(SperoViewListener listener) {
-		this.listeners.add(listener);
-	}
 }

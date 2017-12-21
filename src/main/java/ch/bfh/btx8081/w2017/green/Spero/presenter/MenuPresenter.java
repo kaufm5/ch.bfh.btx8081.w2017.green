@@ -1,8 +1,6 @@
 package ch.bfh.btx8081.w2017.green.Spero.presenter;
 
-import com.vaadin.server.ExternalResource;
 import com.vaadin.ui.Button.ClickEvent;
-import com.vaadin.ui.Link;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 import ch.bfh.btx8081.w2017.green.Spero.view.MenuView;
@@ -14,6 +12,7 @@ public class MenuPresenter implements SperoViewListener {
 	
 	public MenuPresenter(MenuView menuView) {
 		this.menuView = menuView;
+		menuView.init();
 		menuView.addListener(this);
 	}
 // test

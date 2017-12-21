@@ -1,27 +1,14 @@
 package ch.bfh.btx8081.w2017.green.Spero.view;
 
-import com.vaadin.icons.VaadinIcons;
 import com.vaadin.ui.Alignment;
-import com.vaadin.ui.Button;
-import com.vaadin.ui.Button.ClickEvent;
-import com.vaadin.ui.Button.ClickListener;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.PasswordField;
-import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
-import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoView;
-import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
+import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.ButtonProvider;
 
-public class ChangePinView extends CustomComponent implements SperoView {
-	
-	private Button menuButton;
+public class ChangePinView extends ButtonProvider {
 	private Label changePin;
 	private Label oldPinLabel;
 	private PasswordField oldPinPasswordField;
@@ -29,15 +16,10 @@ public class ChangePinView extends CustomComponent implements SperoView {
 	private PasswordField newPin1PasswordField;
 	private Label newPin2Label;
 	private PasswordField newPin2PasswordField;	
-	private Button ok;
-	private Button sosButton;
-	private Button chatButton;
 	private HorizontalLayout superButtonBox;
 	
 	public Label pinException;
-	
-	private final List<ClickListener> listeners = new ArrayList<ClickListener>();
-	
+		
 public ChangePinView() {
     	
     	final VerticalLayout layout = new VerticalLayout();
@@ -57,10 +39,7 @@ public ChangePinView() {
 		VerticalLayout menuBox = new VerticalLayout();
 		menuBox.setSpacing(true);
 		menuBox.setMargin(true);
-		menuButton = new Button(VaadinIcons.MENU);
 		//set id für Button 
-		menuButton.addClickListener(this);
-		menuButton.setId("menuButton");
 
 		menuBox.addComponent(menuButton);
 		menuBox.setComponentAlignment(menuButton, Alignment.MIDDLE_LEFT);
@@ -119,23 +98,13 @@ public ChangePinView() {
     	changePinItems.addComponent(this.pinException);
     	
     	//confirm changes
-    	this.ok = new Button("OK");
-    	this.ok.addClickListener(this);
-    	this.ok.setId("ok");
     	changePinItems.addComponent(this.ok);
     	
     	content.addComponent(changePinItems);
     	
     	superButtonBox = new HorizontalLayout ();
 		content.addComponent(superButtonBox);
-		sosButton = new Button(VaadinIcons.PHONE);
-		sosButton.addClickListener(this);
-		sosButton.setId("sos");
-//		chatButton = new Button(VaadinIcons.CHAT);
-//		chatButton.addClickListener(this);
-//		chatButton.setId("chat");
 		superButtonBox.addComponent(sosButton);
-    	//addChatButton();
 }
 
 		public String getOldPin() {
@@ -151,22 +120,6 @@ public ChangePinView() {
 		}
 		
 		public void buildChatButton(){
-			chatButton = new Button(VaadinIcons.CHAT);
-			chatButton.addClickListener(this);
-			chatButton.setId("chat");
 			superButtonBox.addComponent(chatButton);
 		}
-
-	@Override
-	public void buttonClick(ClickEvent event) {
-		for (final ClickListener listener : this.listeners) {
-		    listener.buttonClick(event);
-		}
-	}
-
-	@Override
-	public void addListener(SperoViewListener listener) {
-		this.listeners.add(listener);
-	}
-
 }

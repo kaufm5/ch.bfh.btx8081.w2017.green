@@ -4,7 +4,6 @@ import com.vaadin.ui.Button.ClickEvent;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 import ch.bfh.btx8081.w2017.green.Spero.view.ChatView;
-import ch.bfh.btx8081.w2017.green.Spero.view.MenuView;
 import ch.bfh.btx8081.w2017.green.Spero.view.Views;
 //test
 public class ChatPresenter implements SperoViewListener {
@@ -12,6 +11,7 @@ private ChatView chatView;
 	
 	public ChatPresenter(ChatView chatView) {
 		this.chatView = chatView;
+		chatView.init();
 		chatView.addListener(this);
 	}
 

@@ -1,41 +1,19 @@
 package ch.bfh.btx8081.w2017.green.Spero.view;
 
 import com.vaadin.ui.Alignment;
-import com.vaadin.ui.Button;
-import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
-import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.Mood;
-import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoView;
-import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
-import javafx.scene.chart.Chart;
-import javafx.scene.chart.XYChart;
+import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.ButtonProvider;
 
-import com.vaadin.ui.CustomComponent;
+public class ReportView extends ButtonProvider {
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.vaadin.icons.*;
-
-
-public class ReportView extends CustomComponent implements SperoView {
-
-	private Button menuButton; 
-	private Button chatButton; 
-	private Button sosButton;
 	private Label reportTitle; 
 	private ComboBox choice; 
 	private HorizontalLayout superButtonBox;
 	
-	private XYChart<Mood, String> chart; 
-	
-	private List<SperoViewListener> listeners = new ArrayList<SperoViewListener>();
-
 	public ReportView() { 
 		VerticalLayout layout = new VerticalLayout();
 		setCompositionRoot(layout);
@@ -52,9 +30,6 @@ public class ReportView extends CustomComponent implements SperoView {
 		layout.addComponent(menuAndContent);
 
 		VerticalLayout menuBox = new VerticalLayout(); 
-		menuButton = new Button(VaadinIcons.MENU); 
-		menuButton.addClickListener(this);
-		menuButton.setId("menuButton");
 		menuBox.addComponent(menuButton);
 		menuAndContent.addComponent(menuBox);
 
@@ -65,49 +40,26 @@ public class ReportView extends CustomComponent implements SperoView {
 		menuAndContent.setExpandRatio(content, 9);
 		
 		HorizontalLayout comboBox = new HorizontalLayout(); 
-		//choice = new ComboBox();
-		choice = new ComboBox<>("Month"); 
+
+		choice = new ComboBox<String>("Month"); 
 		comboBox.addComponent(choice);
 		content.addComponent(comboBox);
-		choice.setItems("Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember");
+		choice.setItems("Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August",
+				"September", "Oktober", "November", "Dezember");
 		
-	
-
-
 		superButtonBox = new HorizontalLayout();
 		superButtonBox.setSizeFull();
 		superButtonBox.setMargin(true);
 		superButtonBox.setSpacing(true);
 		content.addComponent(superButtonBox);
-		sosButton = new Button(VaadinIcons.PHONE);
-		sosButton.addClickListener(this);
-		sosButton.setId("sosButton");
 		superButtonBox.addComponent(sosButton);
 		superButtonBox.setComponentAlignment(sosButton, Alignment.MIDDLE_LEFT);
 		
 	}
 
 	public void buildChatButton(){
-		chatButton = new Button(VaadinIcons.CHAT);
-		chatButton.addClickListener(this);
-		chatButton.setId("chat");
 		superButtonBox.addComponent(chatButton);
 		superButtonBox.setComponentAlignment(chatButton, Alignment.MIDDLE_LEFT);
 	}
-
-	@Override
-	public void addListener(SperoViewListener listener) {
-		listeners.add(listener);
-	}
-
-
-
-
-	@Override
-	public void buttonClick(ClickEvent event) {
-		for (SperoViewListener listener : this.listeners) {
-			listener.buttonClick(event);
-		}
-
-	}}
+}
 

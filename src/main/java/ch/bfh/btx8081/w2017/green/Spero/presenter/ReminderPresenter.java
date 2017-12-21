@@ -4,7 +4,6 @@ import com.vaadin.ui.Button.ClickEvent;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 import ch.bfh.btx8081.w2017.green.Spero.model.ReminderModel;
-import ch.bfh.btx8081.w2017.green.Spero.view.MenuView;
 import ch.bfh.btx8081.w2017.green.Spero.view.ReminderView;
 import ch.bfh.btx8081.w2017.green.Spero.view.Views;
 
@@ -16,6 +15,7 @@ private ReminderModel model;
 	public ReminderPresenter(ReminderView view, ReminderModel model) {
 		this.view = view;
 		this.model = model;
+		view.init();
 		view.addListener(this);
 	}
 

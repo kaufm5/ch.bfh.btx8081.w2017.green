@@ -1,43 +1,24 @@
 package ch.bfh.btx8081.w2017.green.Spero.view;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.vaadin.icons.VaadinIcons;
 import com.vaadin.ui.Alignment;
-import com.vaadin.ui.Button;
-import com.vaadin.ui.Button.ClickEvent;
-import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.TextArea;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
-import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoView;
-import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
+import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.ButtonProvider;
 
 /**
  * The class MainViewImpl shows the main view of the Spero-application
  * @author besio1
  */
-public class MainViewImpl extends CustomComponent implements SperoView {
-
-	private Button menuButton;
-	private Button sosButton;
-	private Button chatButton;
-	private Button confirmButton;
-	private Button smileSchlecht;
-	private Button smileEherSchlecht;
-	private Button smileEherGut;
-	private Button smileGut;
+public class MainViewImpl extends ButtonProvider {
 	private Label title;
 	public TextField tags;
 	public TextArea diaryText;
 	public TextField diaryTitle;
 	private HorizontalLayout superButtonBox;
-
-	private List<SperoViewListener> listeners = new ArrayList<SperoViewListener>();
 
 	/**
 	 * Constructs the main view
@@ -64,10 +45,6 @@ public class MainViewImpl extends CustomComponent implements SperoView {
 		VerticalLayout menuBox = new VerticalLayout();
 		menuBox.setSpacing(true);
 		menuBox.setMargin(true);
-		menuButton = new Button(VaadinIcons.MENU);
-		//set id für Button 
-		menuButton.addClickListener(this);
-		menuButton.setId("menuButton");
 
 		menuBox.addComponent(menuButton);
 		menuBox.setComponentAlignment(menuButton, Alignment.MIDDLE_LEFT);
@@ -87,22 +64,6 @@ public class MainViewImpl extends CustomComponent implements SperoView {
 		moodButtonsBox.setSizeFull();
 		moodButtonsBox.setMargin(true);
 		moodButtonsBox.setSpacing(true);
-
-		smileSchlecht = new Button(VaadinIcons.FROWN_O);
-		smileSchlecht.addClickListener(this);
-		smileSchlecht.setId("smileSchlecht");
-
-		smileEherSchlecht = new Button(VaadinIcons.MEH_O);
-		smileEherSchlecht.addClickListener(this);
-		smileEherSchlecht.setId("smileEherSchlecht");
-
-		smileEherGut = new Button(VaadinIcons.SMILEY_O);
-		smileEherGut.addClickListener(this);
-		smileEherGut.setId("smileEherGut");
-
-		smileGut = new Button(VaadinIcons.SMILEY_O);
-		smileGut.addClickListener(this);
-		smileGut.setId("smileGut");
 
 		moodButtonsBox.addComponents(smileSchlecht, smileEherSchlecht, smileEherGut, smileGut);
 		content.addComponent(moodButtonsBox);
@@ -145,9 +106,6 @@ public class MainViewImpl extends CustomComponent implements SperoView {
 		confirmButtonBox.setSizeFull();
 		confirmButtonBox.setMargin(true);
 		confirmButtonBox.setSpacing(true);
-		confirmButton = new Button(VaadinIcons.CHECK);
-		confirmButton.addClickListener(this);
-		confirmButton.setId("confirmButton");
 		confirmButtonBox.addComponents(confirmButton);
 		content.addComponent(confirmButtonBox);
 
@@ -156,31 +114,12 @@ public class MainViewImpl extends CustomComponent implements SperoView {
 		superButtonBox.setMargin(true);
 		superButtonBox.setSpacing(true);
 		content.addComponent(superButtonBox);
-		sosButton = new Button(VaadinIcons.PHONE);
-		sosButton.addClickListener(this);
-		sosButton.setId("sosButton");
 		superButtonBox.addComponents(sosButton);
 		superButtonBox.setComponentAlignment(sosButton, Alignment.MIDDLE_LEFT);
 		}
 	
 	public void buildChatButton(){
-		chatButton = new Button(VaadinIcons.CHAT);
-		chatButton.addClickListener(this);
-		chatButton.setId("chat");
 		superButtonBox.addComponent(chatButton);
 		superButtonBox.setComponentAlignment(chatButton, Alignment.MIDDLE_LEFT);
 	}
-	
-	@Override
-	public void addListener(SperoViewListener listener) {
-		listeners.add(listener);
-	}
-
-	@Override
-	public void buttonClick(ClickEvent event) {
-		for (SperoViewListener listener : this.listeners) {
-			listener.buttonClick(event);
-		}
-	}
-
 }

@@ -1,23 +1,22 @@
 package ch.bfh.btx8081.w2017.green.Spero.presenter;
 
 import com.vaadin.ui.Button.ClickEvent;
-import com.vaadin.ui.Button.ClickListener;
-
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.IncorrectException;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 import ch.bfh.btx8081.w2017.green.Spero.model.ChangePinModel;
 import ch.bfh.btx8081.w2017.green.Spero.view.ChangePinView;
 import ch.bfh.btx8081.w2017.green.Spero.view.Views;
 
-public class ChangePinPresenter implements ClickListener, SperoViewListener {
+public class ChangePinPresenter implements SperoViewListener {
 	
 	private final ChangePinView changePinView;
     private final ChangePinModel changePinModel;
 
     public ChangePinPresenter(ChangePinView changePinView, ChangePinModel changePinModel) {
-	this.changePinView = changePinView;
-	this.changePinModel = changePinModel;
-	changePinView.addListener(this);
+		this.changePinView = changePinView;
+		this.changePinModel = changePinModel;
+		changePinView.init();
+		changePinView.addListener(this);
     }
 
 	@Override
