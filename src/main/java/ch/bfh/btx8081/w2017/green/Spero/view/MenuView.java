@@ -36,9 +36,9 @@ public class MenuView extends CustomComponent implements SperoView {
 		setCompositionRoot(layout);
 		// test
 		VerticalLayout titleBarBox = new VerticalLayout(); 
+		titleBarBox.addStyleName("titleBox");
 		menu = new Label("Menü");
 		titleBarBox.addComponent(menu);
-		layout.addComponent(titleBarBox);
 		
 		HorizontalLayout contentLayout = new HorizontalLayout ();
 		layout.addComponent(contentLayout);		

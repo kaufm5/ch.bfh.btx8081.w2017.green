@@ -53,6 +53,7 @@ public class MainViewImpl extends CustomComponent implements SperoView {
 		title.addStyleName("title");
 		titleBarBox.addComponent(title);
 		layout.addComponent(titleBarBox);
+		
 
 		HorizontalLayout menuAndContent = new HorizontalLayout();
 		menuAndContent.setSizeFull();

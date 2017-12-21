@@ -34,5 +34,8 @@
 @mixin mytheme {
   @include valo;
 
-  // Insert your own theme rules here
+.titleBox{
+p.solid {border-style: solid;
+}
+
 }
