@@ -81,7 +81,7 @@ public class DefDepressionView extends CustomComponent implements SperoView {
 		defintionTextBox.addComponent(definition);
 		content.addComponent(defintionTextBox);
 		
-		HorizontalLayout superButtonBox = new HorizontalLayout();
+		superButtonBox = new HorizontalLayout();
 		superButtonBox.setSizeFull();
 		superButtonBox.setMargin(true);
 		superButtonBox.setSpacing(true);

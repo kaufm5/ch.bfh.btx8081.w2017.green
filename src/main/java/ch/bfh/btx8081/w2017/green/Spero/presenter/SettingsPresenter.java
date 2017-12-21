@@ -56,14 +56,30 @@ public class SettingsPresenter extends Observable implements ClickListener, Sper
 	    settingsView.getUI().getNavigator().navigateTo(Views.CHANGE_PIN_VIEW);
 	    break;
 	case "ok":
-//		String snoozeValue = settingsView.getSnooze();
-//		try {
-//			settingsModel.checkSnooze(snoozeValue);
-//		}
-//		catch (IncorrectException e) {
-//			settingsView.settingsException.setValue(e.getMessage());
-//			break;
-//		}
+		
+		String reminderValue = settingsView.getReminderValue();
+		System.out.println(reminderValue);
+		
+		try {
+			settingsModel.checkReminder(reminderValue);
+		} catch (IncorrectException e1) {
+			settingsView.settingsException.setValue(e1.getMessage());
+			break;
+		}
+		
+		if (reminderValue.equals("Ein")) {
+			System.out.println("Reminder ist Ein");
+			String snoozeValue = settingsView.getSnooze();
+			try {
+				settingsModel.checkSnooze(snoozeValue);
+			}
+			catch (IncorrectException e) {
+				settingsView.settingsException.setValue(e.getMessage());
+				break;
+			}	
+		} else {
+			System.out.println("Reminder ist Aus");
+		}
 		
 		String chatValue = settingsView.getChatValue();
 			if (!chatValue.equals("Aus")){
@@ -81,11 +97,13 @@ public class SettingsPresenter extends Observable implements ClickListener, Sper
 				System.out.println("Aus");
 			}
 			
-		//settingsView.getUI().getNavigator().navigateTo(Views.MENU_VIEW);
+		settingsView.getUI().getNavigator().navigateTo(Views.MENU_VIEW);
 	    break;
+	    
 	case "sos":
 		settingsView.getUI().getNavigator().navigateTo(Views.SOS_VIEW);
 	    break;
+	    
 	case "chat":
 		settingsView.getUI().getNavigator().navigateTo(Views.CHAT_VIEW);
 	    break;

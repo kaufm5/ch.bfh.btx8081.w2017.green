@@ -39,7 +39,8 @@ public class SettingsView extends CustomComponent implements SperoView, Observer
 	private Button sosButton;
 	private HorizontalLayout superButtonBox;
 	public String chatValue;
-	RadioButtonGroup<String> einAusChat;
+	public RadioButtonGroup <String> einAusReminder;
+	public RadioButtonGroup<String> einAusChat;
 	
 	private final Button ok;
 
@@ -107,8 +108,9 @@ public class SettingsView extends CustomComponent implements SperoView, Observer
     	this.remind = new Label("Reminder:");
     	reminder.addComponent(this.remind);
     	
-    	RadioButtonGroup<String> einAusReminder = new RadioButtonGroup();
+    	einAusReminder = new RadioButtonGroup<String>();
     	einAusReminder.setItems("Ein", "Aus");
+    	einAusReminder.setId("reminder");
     	reminder.addComponent(einAusReminder);
     	
     	settingsItems.addComponent(reminder);
@@ -185,6 +187,10 @@ public class SettingsView extends CustomComponent implements SperoView, Observer
     public String getChatValue() {
     	chatValue = einAusChat.getValue();
     	return chatValue;
+    }
+    
+    public String getReminderValue() {
+    	return einAusReminder.getValue();
     }
     
     public String getSnooze() {

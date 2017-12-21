@@ -74,7 +74,7 @@ public class MedInfoView extends CustomComponent implements SperoView {
 		content.addComponent(searchBox);
 		searchBox.addComponent(search);
 
-		HorizontalLayout superButtonBox = new HorizontalLayout();
+		superButtonBox = new HorizontalLayout();
 		superButtonBox.setSizeFull();
 		superButtonBox.setMargin(true);
 		superButtonBox.setSpacing(true);

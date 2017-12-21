@@ -74,7 +74,7 @@ public class ReportView extends CustomComponent implements SperoView {
 	
 
 
-		HorizontalLayout superButtonBox = new HorizontalLayout();
+		superButtonBox = new HorizontalLayout();
 		superButtonBox.setSizeFull();
 		superButtonBox.setMargin(true);
 		superButtonBox.setSpacing(true);

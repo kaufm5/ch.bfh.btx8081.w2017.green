@@ -32,4 +32,10 @@ public class SettingsModel {
     	}
     }
     
+    public void checkReminder(String reminder) throws IncorrectException {
+    	if (reminder.equals(null)) {
+    		throw new IncorrectException("Reminder Value darf nicht leer sein.");
+    	}
+    }
+    
 }
