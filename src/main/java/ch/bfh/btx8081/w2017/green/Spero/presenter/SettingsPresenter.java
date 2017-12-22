@@ -15,6 +15,11 @@ import ch.bfh.btx8081.w2017.green.Spero.view.ReportView;
 import ch.bfh.btx8081.w2017.green.Spero.view.SettingsView;
 import ch.bfh.btx8081.w2017.green.Spero.view.Views;
 
+/**
+ * the SettingsPresenter handels the events from the Settings view
+ * @author mirjam
+ *
+ */
 public class SettingsPresenter extends Observable implements SperoViewListener {
     
     private final SettingsView settingsView;
@@ -26,7 +31,17 @@ public class SettingsPresenter extends Observable implements SperoViewListener {
     private final MedInfoView medInfView;
     private final ReportView reportView;
 
-    //constructor SettingsPresenter
+    /**
+     * 
+     * @param settingsView
+     * @param settingsModel
+     * @param changePinView
+     * @param menuView
+     * @param mainView
+     * @param defDepView
+     * @param medInfView
+     * @param reportView
+     */
     public SettingsPresenter(SettingsView settingsView, SettingsModel settingsModel, ChangePinView changePinView,
     		MenuView menuView, MainViewImpl mainView, DefDepressionView defDepView, MedInfoView medInfView,
     		ReportView reportView) {
