@@ -27,7 +27,7 @@ private ReminderModel model;
 		case "menuButton":
 			view.getUI().getNavigator().navigateTo(Views.MENU_VIEW);
 		case "moreMedi":
-			view.chooseTime();
+			//view.chooseTime();
 		case "sos":
 			view.getUI().getNavigator().navigateTo(Views.SOS_VIEW);
 		    break;
@@ -35,8 +35,12 @@ private ReminderModel model;
 			view.getUI().getNavigator().navigateTo(Views.CHAT_VIEW);
 		    break;
 		case "confirmButton":
-			//System.out.println(view.timeText4.getValue());
-			model.startReminder(view.timeText1.getValue(), view.timeText2.getValue(), view.timeText3.getValue(), view.timeText4.getValue());
+			model.time.add(view.timeText1.getValue());
+			model.time.add(view.timeText2.getValue()); 
+			model.time.add(view.timeText3.getValue()); 
+			model.time.add(view.timeText4.getValue());
+
+			model.startReminder(view.intervalRemind.getValue(), view.mediName.getValue());
 	}
 	}
 
