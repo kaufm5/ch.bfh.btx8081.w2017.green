@@ -9,7 +9,11 @@ import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.CustomComponent;
 
+import ch.bfh.btx8081.w2017.green.Spero.utils.ConfigManager;
+
 public class ButtonProvider extends CustomComponent implements SperoView {
+	private static final ConfigManager CONFIG_MANAGER = ConfigManager
+			.getInstance();
 	private final List<SperoViewListener> listeners = new ArrayList<SperoViewListener>();
 
 	public final Button menuButton = new Button(VaadinIcons.MENU);
@@ -31,88 +35,91 @@ public class ButtonProvider extends CustomComponent implements SperoView {
 	public final Button reminder = new Button("Reminder");
 	public final Button medInfo = new Button("Informationen zu der Medikation");
 	public final Button depErk = new Button("Erläuterung der Depression");
-	public final Button settings= new Button("Einstellungen");
+	public final Button settings = new Button("Einstellungen");
 	public final Button forgotten = new Button("Passwort vergessen?");
 	public final Button moreMedi = new Button(VaadinIcons.PLUS);
 	public final Button change = new Button("Ändern");
-	
-	public void init(){
-		menuButton.addClickListener(this);
-		menuButton.setId("menuButton");
-		
-		chatButton.addClickListener(this);
-		chatButton.setId("chat");
-		
-		sosButton.addClickListener(this);
-		sosButton.setId("sos");
 
-    	ok.addClickListener(this);
-    	ok.setId("ok");
+	public void init() {
+		this.menuButton.addClickListener(this);
+		this.menuButton.setId("menuButton");
 
-    	send.addClickListener(this);
-    	send.setId("send");
+		this.chatButton.addClickListener(this);
+		this.chatButton.setId("chat");
+		if (!ButtonProvider.CONFIG_MANAGER.isChatEnabled()) {
+			this.chatButton.setVisible(false);
+		}
 
-    	attachment.addClickListener(this);
-    	attachment.setId("attachment");
+		this.sosButton.addClickListener(this);
+		this.sosButton.setId("sos");
 
-		refreshButton.addClickListener(this);
-		refreshButton.setId("refreshButton");
+		this.ok.addClickListener(this);
+		this.ok.setId("ok");
 
-		newButton.addClickListener(this);
-		newButton.setId("newButton");
+		this.send.addClickListener(this);
+		this.send.setId("send");
 
-		smileSchlecht.addClickListener(this);
-		smileSchlecht.setId("smileSchlecht");
+		this.attachment.addClickListener(this);
+		this.attachment.setId("attachment");
 
-		smileEherSchlecht.addClickListener(this);
-		smileEherSchlecht.setId("smileEherSchlecht");
+		this.refreshButton.addClickListener(this);
+		this.refreshButton.setId("refreshButton");
 
-		smileEherGut.addClickListener(this);
-		smileEherGut.setId("smileEherGut");
+		this.newButton.addClickListener(this);
+		this.newButton.setId("newButton");
 
-		smileGut.addClickListener(this);
-		smileGut.setId("smileGut");
+		this.smileSchlecht.addClickListener(this);
+		this.smileSchlecht.setId("smileSchlecht");
 
-		confirmButton.addClickListener(this);
-		confirmButton.setId("confirmButton");
+		this.smileEherSchlecht.addClickListener(this);
+		this.smileEherSchlecht.setId("smileEherSchlecht");
 
-		gefuehlslage.addClickListener(this);
-		gefuehlslage.setId("gefuehlslage");
+		this.smileEherGut.addClickListener(this);
+		this.smileEherGut.setId("smileEherGut");
 
-		diary.addClickListener(this);
-		diary.setId("diary");
+		this.smileGut.addClickListener(this);
+		this.smileGut.setId("smileGut");
 
-		report.addClickListener(this);
-		report.setId("report");
+		this.confirmButton.addClickListener(this);
+		this.confirmButton.setId("confirmButton");
 
-		reminder.addClickListener(this);
-		reminder.setId("reminder");
+		this.gefuehlslage.addClickListener(this);
+		this.gefuehlslage.setId("gefuehlslage");
 
-		medInfo.addClickListener(this);
-		medInfo.setId("medInfo");
+		this.diary.addClickListener(this);
+		this.diary.setId("diary");
 
-		depErk.addClickListener(this);
-		depErk.setId("depErk");
+		this.report.addClickListener(this);
+		this.report.setId("report");
 
-		settings.addClickListener(this);
-		settings.setId("settings");
+		this.reminder.addClickListener(this);
+		this.reminder.setId("reminder");
 
-    	forgotten.addClickListener(this);
-    	forgotten.setId("forgotten");
+		this.medInfo.addClickListener(this);
+		this.medInfo.setId("medInfo");
 
-		moreMedi.addClickListener(this);
-		moreMedi.setId("moreMedis");
+		this.depErk.addClickListener(this);
+		this.depErk.setId("depErk");
 
-    	change.addClickListener(this);
-    	change.setId("change");
+		this.settings.addClickListener(this);
+		this.settings.setId("settings");
+
+		this.forgotten.addClickListener(this);
+		this.forgotten.setId("forgotten");
+
+		this.moreMedi.addClickListener(this);
+		this.moreMedi.setId("moreMedis");
+
+		this.change.addClickListener(this);
+		this.change.setId("change");
 
 	}
 
 	@Override
 	public void buttonClick(ClickEvent event) {
 		for (final ClickListener listener : this.listeners) {
-		    listener.buttonClick(event);
-		}		
+			listener.buttonClick(event);
+		}
 	}
 
 	@Override
