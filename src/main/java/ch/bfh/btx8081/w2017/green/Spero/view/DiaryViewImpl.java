@@ -1,6 +1,8 @@
 package ch.bfh.btx8081.w2017.green.Spero.view;
 
+import com.vaadin.icons.VaadinIcons;
 import com.vaadin.ui.Alignment;
+import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Panel;
@@ -79,7 +81,7 @@ public class DiaryViewImpl extends ButtonProvider {
 	}*/
 	
 	
-	public void addEntryToView(String title, String text, Mood moodParam) {
+	public void addEntryToView(int diaryID, String title, String text, Mood moodParam) {
 		panel = new Panel(title);
 		panel.setHeight(100.0f, Unit.PERCENTAGE);
 		
@@ -88,6 +90,9 @@ public class DiaryViewImpl extends ButtonProvider {
 		contentLayout.setSpacing(false);
 		Label tx = new Label(text);
 		Label strMoodParam = new Label(moodParam.toString());
+		Button buttonDelete = new Button(VaadinIcons.FILE_REMOVE);
+		buttonDelete.addClickListener(this);
+		buttonDelete.setId(Integer.toString(diaryID));
 		
 		contentLayout.addComponent(strMoodParam);
 		contentLayout.addComponent(tx);

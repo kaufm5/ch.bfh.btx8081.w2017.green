@@ -39,8 +39,9 @@ public class DiaryPresenter implements SperoViewListener {
 				String title = diaryEntry.getTitle();
 				String text = diaryEntry.getText();
 				Mood moodParam = diaryEntry.getMoodparam();
+				int diaryID = diaryEntry.getDiaryEntryNumber();
 				
-				diaryView.addEntryToView(title, text, moodParam);
+				diaryView.addEntryToView(diaryID,title, text, moodParam);
 				numberOfAddedEntry++;
 			}
 			
@@ -58,6 +59,12 @@ public class DiaryPresenter implements SperoViewListener {
 			break;
 		case "newButton":
 			diaryView.getUI().getNavigator().navigateTo(Views.MAIN_VIEW);
+			break;
+			
+		default:
+			int diaryID = Integer.parseInt(buttonId);
+			DiaryEntryList list2 = diaryModel.getDiaryList();
+			list2.getDiaryList().get(0);
 			break;
 		}
 	}
