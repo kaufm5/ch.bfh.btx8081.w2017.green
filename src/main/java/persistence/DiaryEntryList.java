@@ -32,6 +32,10 @@ public class DiaryEntryList {
 		DiaryEntry diary = new DiaryEntry(title, text, moodparam);
 		diaryList.add(diary);
 	}
+	
+	public void deleteDiaryEntry(int diaryEntryNumber) {
+		
+	}
 
 	public int getDiarID() {
 		return diarID;
