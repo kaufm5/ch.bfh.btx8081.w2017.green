@@ -96,6 +96,7 @@ public class DiaryViewImpl extends ButtonProvider {
 		
 		contentLayout.addComponent(strMoodParam);
 		contentLayout.addComponent(tx);
+		contentLayout.addComponent(buttonDelete);
 		
 		panel.setContent(contentLayout);
 		layout.addComponent(panel);

@@ -34,7 +34,22 @@ public class DiaryEntryList {
 	}
 	
 	public void deleteDiaryEntry(int diaryEntryNumber) {
+		int diaryIndex = this.searchDiaryEntryIndex(diaryEntryNumber);
+		this.getDiaryList().remove(diaryIndex);
 		
+	}
+	
+	private int searchDiaryEntryIndex(int diaryEntryNumber) {
+		int diaryEntryIndex = -1;
+		System.out.println(diaryEntryNumber);
+		
+		for(int i = 0; i < this.getDiaryList().size(); i++) {
+			if (this.getDiaryList().get(i).getDiaryEntryNumber() == diaryEntryNumber) {
+				System.out.println(i);
+				diaryEntryIndex = i;
+			}	
+		}
+		return diaryEntryIndex;
 	}
 
 	public int getDiarID() {
