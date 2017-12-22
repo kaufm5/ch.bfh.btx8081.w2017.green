@@ -1,8 +1,5 @@
 package ch.bfh.btx8081.w2017.green.Spero.view;
 
-import java.util.Observable;
-import java.util.Observer;
-
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
@@ -13,6 +10,11 @@ import com.vaadin.ui.VerticalLayout;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.ButtonProvider;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.SettingsPresenter;
 
+/**
+ * This class provieds the settings view
+ * @author mirjam
+ *
+ */
 public class SettingsView extends ButtonProvider {
 	private final Label settings;
 	private final Label username;
@@ -28,6 +30,9 @@ public class SettingsView extends ButtonProvider {
 	public RadioButtonGroup <String> einAusReminder;
 	public RadioButtonGroup<String> einAusChat;
 	
+	/**
+     * presents the Setting View
+     */
     public SettingsView() {
     	
     	final VerticalLayout layout = new VerticalLayout();
@@ -136,19 +141,34 @@ public class SettingsView extends ButtonProvider {
     	
     }
     
+    /**
+     * get the value of the radioButton chat
+     * @return the value of the chat button
+    */
     public String getChatValue() {
     	chatValue = einAusChat.getValue();
     	return chatValue;
     }
     
+    /**
+     * get the value of the radioButton reminder
+     * @return the value of the reminder button
+     */
     public String getReminderValue() {
     	return einAusReminder.getValue();
     }
     
+    /**
+     * get the value of the snooze button
+     * @return the value of the snooze button
+     */
     public String getSnooze() {
     	return time.getValue();
     }
     
+    /**
+     * builds the chat Button if the chat is on in the settings
+     */
     public void buildChatButton(){
 		superButtonBox.addComponent(chatButton);
 	}

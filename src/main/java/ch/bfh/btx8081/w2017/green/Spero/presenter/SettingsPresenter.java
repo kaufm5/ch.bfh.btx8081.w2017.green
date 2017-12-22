@@ -42,17 +42,29 @@ public class SettingsPresenter extends Observable implements SperoViewListener {
 		settingsView.addListener(this);
     }
 
+    /**
+     * handels the events, if the user clicks a button
+     */
     @Override
     public void buttonClick(ClickEvent event) {
 	final String buttonId = event.getButton().getId();
 
 	switch (buttonId) {
+	/**
+	 * if the user clicks the menu button, the menu view opens
+	 */
 	case "menuButton":
 		settingsView.getUI().getNavigator().navigateTo(Views.MENU_VIEW);
 	    break;
+	/**
+	 * if the user clicks the change button, the change PIN view opens    
+	 */
 	case "change":
 	    settingsView.getUI().getNavigator().navigateTo(Views.CHANGE_PIN_VIEW);
 	    break;
+	/**
+	 * checks if no field is empty and then goes back to the menu view    
+	 */
 	case "ok":
 		
 		String reminderValue = settingsView.getReminderValue();
@@ -97,11 +109,15 @@ public class SettingsPresenter extends Observable implements SperoViewListener {
 			
 		settingsView.getUI().getNavigator().navigateTo(Views.MENU_VIEW);
 	    break;
-	    
+	/**
+	 * if the user clicks the sos button, the sos view opens    
+	 */
 	case "sos":
 		settingsView.getUI().getNavigator().navigateTo(Views.SOS_VIEW);
 	    break;
-	    
+	/**
+	 * if the user clicks the chat button, the chat view opens    
+	 */
 	case "chat":
 		settingsView.getUI().getNavigator().navigateTo(Views.CHAT_VIEW);
 	    break;

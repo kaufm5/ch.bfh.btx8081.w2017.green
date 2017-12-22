@@ -1,6 +1,7 @@
 package ch.bfh.btx8081.w2017.green.Spero.model;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.IncorrectException;
+import persistence.DB;
 
 public class SettingsModel {
 	
@@ -9,6 +10,8 @@ public class SettingsModel {
 	private String snooze;
 	private String chat;
 	
+	private DB db;
+	
     // constructor
     public SettingsModel(String username, String reminder, String snooze, String chat) {
     	this.username = username;
@@ -16,6 +19,13 @@ public class SettingsModel {
     	this.snooze = snooze;
     	this.chat = chat;
     }
+    
+    public void persist(String username, String reminder, String snooze, String chat) {
+		db.persistObject(username);
+		db.persistObject(reminder);
+		db.persistObject(snooze);
+		;
+	}
     
     public void checkSnooze(String snooze) 
     	throws IncorrectException {
