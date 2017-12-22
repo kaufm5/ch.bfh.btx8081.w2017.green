@@ -4,25 +4,25 @@ import ch.bfh.btx8081.w2017.green.Spero.persistence.DB;
 import ch.bfh.btx8081.w2017.green.Spero.persistence.MedicationList;
 
 public class MedInfoModel {
-		
-		private MedicationList medicationList;
-		private DB db; 
-		
+	private static final DB DATABASE_MANAGER = DB.getInstance();
+
+	private MedicationList medicationList;
+
 	public MedInfoModel() {
-		this.db = new DB(); 
-		this.medicationList = (MedicationList) this.db.getSperoLists("MedicationList").get(0); 
+		this.medicationList = (MedicationList) MedInfoModel.DATABASE_MANAGER
+				.getSperoLists("MedicationList").get(0);
 	}
 
-	public void persist(MedicationList medicationList) { 
-		db.persistObject(medicationList);
+	public void persist(MedicationList medicationList) {
+		MedInfoModel.DATABASE_MANAGER.persistObject(medicationList);
 	}
 
 	public MedicationList getMedicationList() {
-		return medicationList;
+		return this.medicationList;
 	}
 
 	public void setMedicationList(MedicationList medicationList) {
 		this.medicationList = medicationList;
-	}	
-	
+	}
+
 }

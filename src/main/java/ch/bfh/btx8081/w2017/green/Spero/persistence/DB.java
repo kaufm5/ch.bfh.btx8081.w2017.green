@@ -5,15 +5,29 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import javax.persistence.Entity;
 
-public class DB {
+public final class DB {
+	private static DB INSTANCE;
 	private EntityManager em;
 
 	private static final String PERSISTENCE_UNIT_NAME = "spero2";
 
-	public DB() {
-		this.em = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME).createEntityManager();
+	/** Returns the static instance of DB (Singleton). */
+	public static synchronized DB getInstance() {
+		if (DB.INSTANCE == null) {
+			DB.INSTANCE = new DB();
+		}
+		return DB.INSTANCE;
+	}
+
+	private DB() {
+		initialize();
+	}
+
+	private void initialize() {
+		this.em = Persistence
+				.createEntityManagerFactory(DB.PERSISTENCE_UNIT_NAME)
+				.createEntityManager();
 	}
 
 	public EntityManager getEntitiyManager() {
@@ -21,7 +35,7 @@ public class DB {
 	}
 
 	public void persistObject(Object object) {
-		EntityTransaction entityTransaction = this.em.getTransaction();
+		final EntityTransaction entityTransaction = this.em.getTransaction();
 
 		entityTransaction.begin();
 		this.em.persist(object);
@@ -29,7 +43,7 @@ public class DB {
 	}
 
 	public void removeObject(Object object) {
-		EntityTransaction entityTransaction = this.em.getTransaction();
+		final EntityTransaction entityTransaction = this.em.getTransaction();
 
 		entityTransaction.begin();
 		this.em.remove(object);
