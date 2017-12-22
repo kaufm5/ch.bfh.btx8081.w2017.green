@@ -13,7 +13,7 @@ import com.vaadin.ui.VerticalLayout;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.ButtonProvider;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.SettingsPresenter;
 
-public class SettingsView extends ButtonProvider implements Observer {
+public class SettingsView extends ButtonProvider {
 	private final Label settings;
 	private final Label username;
 	private final TextField name;
@@ -28,12 +28,8 @@ public class SettingsView extends ButtonProvider implements Observer {
 	public RadioButtonGroup <String> einAusReminder;
 	public RadioButtonGroup<String> einAusChat;
 	
-    private final SettingsPresenter settingsPresenter;
-    
-    public SettingsView(final SettingsPresenter settingsPresenter) {
-    	this.settingsPresenter = settingsPresenter;
-    	//this.settingsPresenter.addObserver(this);
-	
+    public SettingsView() {
+    	
     	final VerticalLayout layout = new VerticalLayout();
     	setCompositionRoot(layout);
 
@@ -119,9 +115,6 @@ public class SettingsView extends ButtonProvider implements Observer {
     	this.chatLabel = new Label("Chat:");
     	chat.addComponent(chatLabel);
     	
-//    	ToggleButton einAusChat = new ToggleButton();
-//    	chat.addComponent(einAusChat);
-   	
     	einAusChat = new RadioButtonGroup<>();
     	einAusChat.setItems("Ein", "Aus");
     	//einAusChat.
@@ -140,13 +133,7 @@ public class SettingsView extends ButtonProvider implements Observer {
     	superButtonBox = new HorizontalLayout ();
 		content.addComponent(superButtonBox);
 		superButtonBox.addComponent(sosButton);
-    	//buildChatButton();
-		
-	//	chatValue = getChatValue();
-		
-	//	if (chatValue.equals("Ein")) {
-	//		buildChatButton();
-	//	}
+    	
     }
     
     public String getChatValue() {
@@ -166,10 +153,4 @@ public class SettingsView extends ButtonProvider implements Observer {
 		superButtonBox.addComponent(chatButton);
 	}
     
-	@Override
-	public void update(Observable o, Object arg) {
-		buildChatButton();
-		//superButtonBox.addComponent(buildChatButton());
-	}
-
 }

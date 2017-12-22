@@ -105,7 +105,7 @@ public class MyUI extends UI {
      sosView = new SosView();
      chatView = new ChatView();
      diaryView = new DiaryViewImpl();
-     settingsView = new SettingsView(settingsPresenter);
+     settingsView = new SettingsView();
      settingsModel = new SettingsModel(username, reminder, snooze, chat);
      pinModel = new PinModel(code);
      changePinView = new ChangePinView();
