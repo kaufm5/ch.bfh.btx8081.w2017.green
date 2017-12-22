@@ -30,10 +30,6 @@ public final class DB {
 				.createEntityManager();
 	}
 
-	public EntityManager getEntitiyManager() {
-		return this.em;
-	}
-
 	public void persistObject(Object object) {
 		final EntityTransaction entityTransaction = this.em.getTransaction();
 
