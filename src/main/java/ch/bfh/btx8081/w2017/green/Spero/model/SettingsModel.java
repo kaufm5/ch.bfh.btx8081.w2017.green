@@ -11,7 +11,13 @@ public class SettingsModel {
 	private String snooze;
 	private String chat;
 
-	// constructor
+	/**
+	 * the input from the settings
+	 * @param username
+	 * @param reminder
+	 * @param snooze
+	 * @param chat
+	 */
 	public SettingsModel(String username, String reminder, String snooze,
 			String chat) {
 		this.username = username;
@@ -28,6 +34,11 @@ public class SettingsModel {
 		;
 	}
 
+	/**
+     * checks that the snooze time is not empty
+     * @param snooze
+     * @throws IncorrectException
+     */
 	public void checkSnooze(String snooze) throws IncorrectException {
 		if (snooze.length() > 3) {
 			throw new IncorrectException(
@@ -44,6 +55,11 @@ public class SettingsModel {
 		}
 	}
 
+	/**
+     * checks that the reminder is not empty
+     * @param reminder
+     * @throws IncorrectException
+     */
 	public void checkReminder(String reminder) throws IncorrectException {
 		if (reminder.equals(null)) {
 			throw new IncorrectException(
