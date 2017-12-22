@@ -26,6 +26,7 @@ public class SettingsPresenter extends Observable implements SperoViewListener {
     private final MedInfoView medInfView;
     private final ReportView reportView;
 
+    //constructor SettingsPresenter
     public SettingsPresenter(SettingsView settingsView, SettingsModel settingsModel, ChangePinView changePinView,
     		MenuView menuView, MainViewImpl mainView, DefDepressionView defDepView, MedInfoView medInfView,
     		ReportView reportView) {
