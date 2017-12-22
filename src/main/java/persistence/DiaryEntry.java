@@ -1,6 +1,7 @@
 package persistence;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,6 +21,8 @@ public class DiaryEntry implements Serializable {
 	private String diaryText;
 	private String tag;
 	private Mood moodParam;
+	
+//	private LocalDate date;
 
 	public DiaryEntry() {
 
@@ -31,7 +34,7 @@ public class DiaryEntry implements Serializable {
 		this.diaryText = diaryText;
 		this.moodParam = moodParam;
 
-		// this.date = LocalDate.now();
+	//	 this.date = LocalDate.now();
 	}
 
 	public void setDiaryEntryNumber(int diaryEntryNumber) {
@@ -73,4 +76,14 @@ public class DiaryEntry implements Serializable {
 	public String getTitle() {
 		return this.diaryTitle;
 	}
+
+//	public LocalDate getDate() {
+//		return date;
+//	}
+//
+//	public void setDate(LocalDate date) {
+//		this.date = date;
+//	}
+//	
+	
 }
