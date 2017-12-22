@@ -5,6 +5,7 @@ import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.Window;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.ButtonProvider;
 
@@ -75,6 +76,7 @@ public class ReminderView extends ButtonProvider {
 		superButtonBox.addComponents(sosButton, chatButton);
 		superButtonBox.setComponentAlignment(sosButton, Alignment.MIDDLE_LEFT);
 		superButtonBox.setComponentAlignment(chatButton, Alignment.MIDDLE_LEFT);
+		
 	}
 	
 	public void chooseTime(){
