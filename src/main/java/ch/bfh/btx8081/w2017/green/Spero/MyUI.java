@@ -17,6 +17,8 @@ import ch.bfh.btx8081.w2017.green.Spero.model.ForgetPasswordModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.PinModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.ReminderModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.SettingsModel;
+import ch.bfh.btx8081.w2017.green.Spero.persistence.DB;
+import ch.bfh.btx8081.w2017.green.Spero.persistence.DiaryEntry;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.ChangePinPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.ChatPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.DefDepressionPresenter;
@@ -44,8 +46,6 @@ import ch.bfh.btx8081.w2017.green.Spero.view.ReminderView;
 import ch.bfh.btx8081.w2017.green.Spero.view.ReportView;
 import ch.bfh.btx8081.w2017.green.Spero.view.SettingsView;
 import ch.bfh.btx8081.w2017.green.Spero.view.SosView;
-import persistence.DB;
-import persistence.DiaryEntry;
 
 /**
  * This UI is the application entry point. A UI may either represent a browser window 

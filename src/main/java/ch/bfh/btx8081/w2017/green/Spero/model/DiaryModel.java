@@ -5,9 +5,9 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-import persistence.DB;
-import persistence.DiaryEntry;
-import persistence.DiaryEntryList;
+import ch.bfh.btx8081.w2017.green.Spero.persistence.DB;
+import ch.bfh.btx8081.w2017.green.Spero.persistence.DiaryEntry;
+import ch.bfh.btx8081.w2017.green.Spero.persistence.DiaryEntryList;
 
 public class DiaryModel {
 	private DiaryEntryList diaryList;

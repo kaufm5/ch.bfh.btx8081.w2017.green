@@ -5,10 +5,10 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 	<persistence-unit name="spero2" transaction-type="RESOURCE_LOCAL">
 		
-		<class>persistence.DiaryEntryList</class>
-		<class>persistence.DiaryEntry</class>
- 		<class>persistence.Medication</class>
-		<class>persistence.MedicationList</class>
+		<class>ch.bfh.btx8081.w2017.green.Spero.persistence.DiaryEntryList</class>
+		<class>ch.bfh.btx8081.w2017.green.Spero.persistence.DiaryEntry</class>
+ 		<class>ch.bfh.btx8081.w2017.green.Spero.persistence.Medication</class>
+		<class>ch.bfh.btx8081.w2017.green.Spero.persistence.MedicationList</class>
 		
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://147.87.116.213:5432/spero2"/>

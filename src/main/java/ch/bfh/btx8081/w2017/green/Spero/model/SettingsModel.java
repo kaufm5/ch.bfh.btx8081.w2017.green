@@ -1,7 +1,7 @@
 package ch.bfh.btx8081.w2017.green.Spero.model;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.IncorrectException;
-import persistence.DB;
+import ch.bfh.btx8081.w2017.green.Spero.persistence.DB;
 
 public class SettingsModel {
 	

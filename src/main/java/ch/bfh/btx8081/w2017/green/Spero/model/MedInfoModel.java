@@ -1,7 +1,7 @@
 package ch.bfh.btx8081.w2017.green.Spero.model;
 
-import persistence.DB;
-import persistence.MedicationList;
+import ch.bfh.btx8081.w2017.green.Spero.persistence.DB;
+import ch.bfh.btx8081.w2017.green.Spero.persistence.MedicationList;
 
 public class MedInfoModel {
 		

@@ -5,10 +5,10 @@ import com.vaadin.ui.Button.ClickEvent;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.Mood;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 import ch.bfh.btx8081.w2017.green.Spero.model.DiaryModel;
+import ch.bfh.btx8081.w2017.green.Spero.persistence.DiaryEntry;
+import ch.bfh.btx8081.w2017.green.Spero.persistence.DiaryEntryList;
 import ch.bfh.btx8081.w2017.green.Spero.view.DiaryViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.Views;
-import persistence.DiaryEntry;
-import persistence.DiaryEntryList;
 
 public class DiaryPresenter implements SperoViewListener {
 
