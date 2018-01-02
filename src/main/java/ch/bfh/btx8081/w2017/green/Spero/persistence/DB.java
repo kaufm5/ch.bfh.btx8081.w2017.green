@@ -20,7 +20,7 @@ public final class DB {
 		return DB.INSTANCE;
 	}
 
-	private DB() {
+	public DB() {
 		initialize();
 	}
 

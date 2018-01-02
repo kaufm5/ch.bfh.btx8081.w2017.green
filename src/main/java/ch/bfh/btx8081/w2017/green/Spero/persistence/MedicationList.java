@@ -21,7 +21,7 @@ public class MedicationList {
 	private int medID;
 	
 	@OneToMany(cascade=CascadeType.PERSIST, fetch=FetchType.EAGER)
-	private List<Medication> medicationList = new ArrayList<Medication>(); 
+	private List<Medication> medicationList = new ArrayList<>(); 
 	
 	
 	public MedicationList() {
