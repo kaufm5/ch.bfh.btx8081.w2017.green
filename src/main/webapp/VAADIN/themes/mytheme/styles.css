@@ -14783,3 +14783,8 @@ div.v-layout.v-horizontal.v-widget {
 .mytheme .title {
 	color: blue;
 }
+
+.mytheme .title {
+	color: green;
+	font-weight: bold;
+}

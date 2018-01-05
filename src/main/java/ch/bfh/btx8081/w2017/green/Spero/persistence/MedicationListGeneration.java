@@ -30,7 +30,7 @@ public class MedicationListGeneration {
 	public void insertMedicationList()	{ 
 		MedicationList medList = new MedicationList(); 
 
-		Query q = this.entityManager.createQuery("select ml from MedicationList ml ");
+		Query q = this.entityManager.createQuery("select m from MedicationList m ");
 
 		// is table empty
 		if (q.getResultList().size() == 0) {
