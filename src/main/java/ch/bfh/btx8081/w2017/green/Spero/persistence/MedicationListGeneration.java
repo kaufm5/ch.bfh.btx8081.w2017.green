@@ -16,9 +16,9 @@ public class MedicationListGeneration {
 		generateData(); 
 	}
 
-	public static void main(String[] args) {
-		MedicationListGeneration medData = new MedicationListGeneration();
-	}
+//	public static void main(String[] args) {
+//		MedicationListGeneration medData = new MedicationListGeneration();
+//	}
 
 	/**
 	 * This method generate all standard strings into DB
