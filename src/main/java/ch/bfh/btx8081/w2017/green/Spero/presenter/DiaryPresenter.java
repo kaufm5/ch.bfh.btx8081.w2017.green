@@ -65,8 +65,6 @@ public class DiaryPresenter implements SperoViewListener {
 			int diaryID = Integer.parseInt(buttonId);
 			DiaryEntryList list2 = diaryModel.getDiaryList();
 			list2.deleteDiaryEntry(diaryID);
-			
-			diaryModel.persist(list2);
 			break;
 		}
 	}

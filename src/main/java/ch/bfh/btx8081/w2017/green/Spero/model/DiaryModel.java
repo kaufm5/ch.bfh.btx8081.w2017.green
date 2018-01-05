@@ -23,9 +23,9 @@ public class DiaryModel {
 
 	}
 
-	public void persist(DiaryEntryList diaryList) {
-		DiaryModel.DATABASE_MANAGER.persistObject(diaryList);
-	}
+//	public void persist() {
+//		DiaryModel.DATABASE_MANAGER.persistObject(this.diaryList);
+//	}
 
 	public DiaryEntryList getDiaryList() {
 		return this.diaryList;

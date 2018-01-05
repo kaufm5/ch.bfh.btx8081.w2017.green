@@ -50,14 +50,11 @@ public class MainPresenter implements SperoViewListener {
 			moodParam = Mood.schlecht;
 			break;
 		case "confirmButton":
-			DiaryEntryList list = mainModel.getDiaryList();
-			System.out.println(moodParam);
+			DiaryEntryList list = mainModel.getDiaryList();			
 			list.createDiaryEntry(mainView.diaryTitle.getValue(), mainView.diaryText.getValue(), moodParam);
-			mainModel.persist(list);
 
 			mainView.diaryTitle.clear();
 			mainView.diaryText.clear();
-
 			mainView.getUI().getNavigator().navigateTo(Views.DIARY_VIEW);
 			break;
 		}

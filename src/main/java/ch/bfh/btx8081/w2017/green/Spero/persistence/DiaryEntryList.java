@@ -11,8 +11,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.Transient;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.Mood;
+import ch.bfh.btx8081.w2017.green.Spero.model.DiaryModel;
 
 @Entity
 @NamedQuery(name = "DiaryEntryList", query = "select el from DiaryEntryList el")
@@ -25,17 +27,29 @@ public class DiaryEntryList {
 	@OneToMany(cascade=CascadeType.PERSIST, fetch=FetchType.EAGER)
 	private List<DiaryEntry> diaryList = new ArrayList<DiaryEntry>();
 	
+	
 	public DiaryEntryList() { 
 		
 	}
+	
 	public void createDiaryEntry(String title, String text, Mood moodparam) {
 		DiaryEntry diary = new DiaryEntry(title, text, moodparam);
 		diaryList.add(diary);
+		
+		DB db = DB.getInstance();
+		db.persistObject(this);
+		
+		
+		
+		
 	}
 	
 	public void deleteDiaryEntry(int diaryEntryNumber) {
 		int diaryIndex = this.searchDiaryEntryIndex(diaryEntryNumber);
 		this.getDiaryList().remove(diaryIndex);
+		
+		DB db = DB.getInstance();
+		db.persistObject(this);
 		
 	}
 	
