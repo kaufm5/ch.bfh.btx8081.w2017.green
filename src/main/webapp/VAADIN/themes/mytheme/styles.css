@@ -14780,6 +14780,6 @@ div.v-layout.v-horizontal.v-widget {
 	overflow: hidden;
 }
 
-.mytheme .titleBox p.solid {
-	border-style: solid;
+.mytheme .title {
+	color: blue;
 }

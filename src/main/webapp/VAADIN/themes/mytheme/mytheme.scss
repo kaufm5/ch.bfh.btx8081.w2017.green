@@ -34,9 +34,13 @@
 @mixin mytheme {
   @include valo;
 
-.titleBox{
-p.solid {border-style: solid;
+.title{
+color: blue;
 }
 
+.title{
+color: green;
+font-weight: bold
 }
+
 }

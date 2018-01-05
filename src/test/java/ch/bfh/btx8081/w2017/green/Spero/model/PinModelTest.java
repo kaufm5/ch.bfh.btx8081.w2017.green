@@ -2,28 +2,28 @@ package ch.bfh.btx8081.w2017.green.Spero.model;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class PinModelTest {
 
+	private PinModel pinmodel;
+
+	@Before
+	public void setup() {
+		this.pinmodel = new PinModel(null);
+	}
+
 	@Test
 	public void testPinModel() {
-		fail("Not yet implemented");
+		this.pinmodel = pinmodel;
+		assertEquals(pinmodel, pinmodel.getPin());
 	}
 
 	@Test
 	public void testCheckPin() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetPin() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetPin() {
-		fail("Not yet implemented");
+		this.pinmodel = pinmodel;
+		assertEquals(pinmodel.getPin(), "1234");
 	}
 
 }
