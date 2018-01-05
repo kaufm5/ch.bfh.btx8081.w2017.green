@@ -11,13 +11,17 @@ public class PinModelTest {
 
 	@Before
 	public void setup() {
-		this.pinmodel = new PinModel(null);
+		this.pinmodel = new PinModel("1234");
 	}
 
 	@Test
 	public void testPinModel() {
 		this.pinmodel = pinmodel;
-		assertEquals(pinmodel, pinmodel.getPin());
+		try {
+	      new PinModel(null);
+	    } catch (Exception e) {
+	      fail(e.getMessage());
+	    }
 	}
 
 	@Test
