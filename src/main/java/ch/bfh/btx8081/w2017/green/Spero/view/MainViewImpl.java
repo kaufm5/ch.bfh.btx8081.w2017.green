@@ -1,10 +1,15 @@
 package ch.bfh.btx8081.w2017.green.Spero.view;
 
+import com.vaadin.icons.VaadinIcons;
+import com.vaadin.server.ThemeResource;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.MenuBar;
+import com.vaadin.ui.MenuBar.MenuItem;
 import com.vaadin.ui.TextArea;
 import com.vaadin.ui.TextField;
+import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.ButtonProvider;
@@ -50,7 +55,35 @@ public class MainViewImpl extends ButtonProvider {
 		menuBox.setComponentAlignment(menuButton, Alignment.MIDDLE_LEFT);
 		menuBox.addStyleName("menu");
 		menuAndContent.addComponent(menuBox);
-
+		
+		MenuBar barmenu = new MenuBar();
+		barmenu.setAutoOpen(true);
+		barmenu.setSizeFull();
+		barmenu.setStyleName("barmenu");
+		menuBox.addComponent(barmenu);
+		MenuItem mainView = barmenu.addItem("", new ThemeResource("menuicons/info.png"),
+				MenuItem -> this.navigateTo(Views.MAIN_VIEW));
+		MenuItem reportView = barmenu.addItem("", new ThemeResource("menuicons/info.png"),
+				MenuItem -> this.navigateTo(Views.REPORT_VIEW));
+		MenuItem settingsView = barmenu.addItem("", new ThemeResource("menuicons/info.png"),
+				MenuItem -> this.navigateTo(Views.SETTINGS_VIEW));
+		MenuItem sosView = barmenu.addItem("", new ThemeResource("menuicons/info.png"),
+				MenuItem -> this.navigateTo(Views.SOS_VIEW));
+		MenuItem diaryView = barmenu.addItem("", new ThemeResource("menuicons/info.png"),
+				MenuItem -> this.navigateTo(Views.DIARY_VIEW));
+		MenuItem changePinView = barmenu.addItem("", new ThemeResource("menuicons/info.png"),
+				MenuItem -> this.navigateTo(Views.CHANGE_PIN_VIEW));
+		MenuItem reminderView = barmenu.addItem("", new ThemeResource("menuicons/info.png"),
+				MenuItem -> this.navigateTo(Views.REMINDER_VIEW));
+		MenuItem forgetPasswordView = barmenu.addItem("", new ThemeResource("menuicons/info.png"),
+				MenuItem -> this.navigateTo(Views.FORGET_PASSWORD_VIEW));
+		MenuItem definitionDepressionView = barmenu.addItem("", new ThemeResource("menuicons/info.png"),
+				MenuItem -> this.navigateTo(Views.DEFINITION_DEPRESSION_VIEW));
+		MenuItem medicationInformationView = barmenu.addItem("", new ThemeResource("menuicons/info.png"),
+				MenuItem -> this.navigateTo(Views.MEDICATION_INFORMATION_VIEW));
+		
+		
+		
 		VerticalLayout content = new VerticalLayout();
 		content.setSizeFull();
 		content.setMargin(true);
@@ -118,8 +151,13 @@ public class MainViewImpl extends ButtonProvider {
 		superButtonBox.setComponentAlignment(sosButton, Alignment.MIDDLE_LEFT);
 		}
 	
+	
 	public void buildChatButton(){
 		superButtonBox.addComponent(chatButton);
 		superButtonBox.setComponentAlignment(chatButton, Alignment.MIDDLE_LEFT);
 	}
+	
+	private void navigateTo(String view) {
+		UI.getCurrent().getNavigator().navigateTo(view);
+}
 }

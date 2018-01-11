@@ -20,7 +20,7 @@ public class PinModelTest {
 		try {
 	      new PinModel(null);
 	    } catch (Exception e) {
-	      fail(e.getMessage());
+	     System.out.println(e);
 	    }
 	}
 

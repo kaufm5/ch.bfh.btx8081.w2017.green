@@ -118,6 +118,7 @@ public class MyUI extends UI {
      defDepressionView = new DefDepressionView(); 
      medInfoView = new MedInfoView(); 
      
+    
    	 navigator.addView("main", mainView);
    	 navigator.addView("report", new ReportView() );
    	 navigator.addView("menu", menuView);
