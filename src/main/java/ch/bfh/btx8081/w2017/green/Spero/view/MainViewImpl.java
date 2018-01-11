@@ -3,6 +3,7 @@ package ch.bfh.btx8081.w2017.green.Spero.view;
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.server.ThemeResource;
 import com.vaadin.ui.Alignment;
+import com.vaadin.ui.Component;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.MenuBar;
@@ -48,40 +49,38 @@ public class MainViewImpl extends ButtonProvider {
 		layout.addComponent(menuAndContent);
 
 		VerticalLayout menuBox = new VerticalLayout();
-		menuBox.setSpacing(true);
+		menuBox.setSizeFull();
 		menuBox.setMargin(true);
-
-		menuBox.addComponent(menuButton);
-		menuBox.setComponentAlignment(menuButton, Alignment.MIDDLE_LEFT);
-		menuBox.addStyleName("menu");
+		menuBox.setSpacing(true);
 		menuAndContent.addComponent(menuBox);
 		
 		MenuBar barmenu = new MenuBar();
 		barmenu.setAutoOpen(true);
-		barmenu.setSizeFull();
 		barmenu.setStyleName("barmenu");
-		menuBox.addComponent(barmenu);
-		MenuItem mainView = barmenu.addItem("", new ThemeResource("menuicons/info.png"),
-				MenuItem -> this.navigateTo(Views.MAIN_VIEW));
-		MenuItem reportView = barmenu.addItem("", new ThemeResource("menuicons/info.png"),
-				MenuItem -> this.navigateTo(Views.REPORT_VIEW));
-		MenuItem settingsView = barmenu.addItem("", new ThemeResource("menuicons/info.png"),
-				MenuItem -> this.navigateTo(Views.SETTINGS_VIEW));
-		MenuItem sosView = barmenu.addItem("", new ThemeResource("menuicons/info.png"),
-				MenuItem -> this.navigateTo(Views.SOS_VIEW));
-		MenuItem diaryView = barmenu.addItem("", new ThemeResource("menuicons/info.png"),
-				MenuItem -> this.navigateTo(Views.DIARY_VIEW));
-		MenuItem changePinView = barmenu.addItem("", new ThemeResource("menuicons/info.png"),
-				MenuItem -> this.navigateTo(Views.CHANGE_PIN_VIEW));
-		MenuItem reminderView = barmenu.addItem("", new ThemeResource("menuicons/info.png"),
-				MenuItem -> this.navigateTo(Views.REMINDER_VIEW));
-		MenuItem forgetPasswordView = barmenu.addItem("", new ThemeResource("menuicons/info.png"),
-				MenuItem -> this.navigateTo(Views.FORGET_PASSWORD_VIEW));
-		MenuItem definitionDepressionView = barmenu.addItem("", new ThemeResource("menuicons/info.png"),
-				MenuItem -> this.navigateTo(Views.DEFINITION_DEPRESSION_VIEW));
-		MenuItem medicationInformationView = barmenu.addItem("", new ThemeResource("menuicons/info.png"),
-				MenuItem -> this.navigateTo(Views.MEDICATION_INFORMATION_VIEW));
+
 		
+		MenuItem mainView = barmenu.addItem("Hauptseite", new ThemeResource("menuicons/info.png"),
+				MenuItem -> this.navigateTo(Views.MAIN_VIEW));
+		MenuItem reportView = barmenu.addItem("Report", new ThemeResource("menuicons/info.png"),
+				MenuItem -> this.navigateTo(Views.REPORT_VIEW));
+		MenuItem settingsView = barmenu.addItem("Einstellungen", new ThemeResource("menuicons/info.png"),
+				MenuItem -> this.navigateTo(Views.SETTINGS_VIEW));
+		MenuItem sosView = barmenu.addItem("SOS", new ThemeResource("menuicons/info.png"),
+				MenuItem -> this.navigateTo(Views.SOS_VIEW));
+		MenuItem diaryView = barmenu.addItem("Tagebuch", new ThemeResource("menuicons/info.png"),
+				MenuItem -> this.navigateTo(Views.DIARY_VIEW));
+		MenuItem changePinView = barmenu.addItem("PIN wechseln", new ThemeResource("menuicons/info.png"),
+				MenuItem -> this.navigateTo(Views.CHANGE_PIN_VIEW));
+		MenuItem reminderView = barmenu.addItem("Erinnerung", new ThemeResource("menuicons/info.png"),
+				MenuItem -> this.navigateTo(Views.REMINDER_VIEW));
+		MenuItem forgetPasswordView = barmenu.addItem("Passwort vergessen", new ThemeResource("menuicons/info.png"),
+				MenuItem -> this.navigateTo(Views.FORGET_PASSWORD_VIEW));
+		MenuItem definitionDepressionView = barmenu.addItem("Definitionen", new ThemeResource("menuicons/info.png"),
+				MenuItem -> this.navigateTo(Views.DEFINITION_DEPRESSION_VIEW));
+		MenuItem medicationInformationView = barmenu.addItem("Infos zu Medikamenten", new ThemeResource("menuicons/info.png"),
+				MenuItem -> this.navigateTo(Views.MEDICATION_INFORMATION_VIEW));
+		menuBox.addComponent(barmenu);
+		menuBox.setComponentAlignment(barmenu, Alignment.MIDDLE_LEFT);
 		
 		
 		VerticalLayout content = new VerticalLayout();
