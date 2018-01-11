@@ -31,7 +31,7 @@ public final class DB {
 	}
 
 	public void persistObject(Object object) {
-		final EntityTransaction entityTransaction = this.em.getTransaction();
+		EntityTransaction entityTransaction = this.em.getTransaction();
 
 		entityTransaction.begin();
 		this.em.persist(object);
@@ -39,7 +39,7 @@ public final class DB {
 	}
 
 	public void removeObject(Object object) {
-		final EntityTransaction entityTransaction = this.em.getTransaction();
+		EntityTransaction entityTransaction = this.em.getTransaction();
 
 		entityTransaction.begin();
 		this.em.remove(object);

@@ -1,38 +1,57 @@
 package ch.bfh.btx8081.w2017.green.Spero.presenter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.vaadin.ui.Button.ClickEvent;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
+import ch.bfh.btx8081.w2017.green.Spero.model.MedicationModel;
+import ch.bfh.btx8081.w2017.green.Spero.persistence.Medication;
 import ch.bfh.btx8081.w2017.green.Spero.view.MedInfoView;
 import ch.bfh.btx8081.w2017.green.Spero.view.Views;
 
 public class MedInfoPresenter implements SperoViewListener{
+
+	/**
+	 * The serial version UID
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private MedInfoView medView;
 	
-private MedInfoView view;
+	private MedicationModel medModel; 
 	
-	public MedInfoPresenter(MedInfoView view) {
-		this.view = view;
-		view.init();
-		view.addListener(this);
+	private List<Medication> medList; 
+
+	public MedInfoPresenter(MedInfoView medView, MedicationModel medModel) {
+		this.medView = medView;
+		this.medModel = medModel;
+		
+		//this.medList = this.medModel.getMediList().getMedicationList();
+		
+		medView.init();
+		medView.addListener(this);
 	}
-// test
+	
+	
 	@Override
 	public void buttonClick(ClickEvent event) {
 		String buttonId = event.getButton().getId();
-		
+
 		switch(buttonId) {
 		case "menuButton":
-			view.getUI().getNavigator().navigateTo(Views.MENU_VIEW);
+			medView.getUI().getNavigator().navigateTo(Views.MENU_VIEW);
 		case "sosButton":
-			view.getUI().getNavigator().navigateTo(Views.SOS_VIEW);
-		    break;
+			medView.getUI().getNavigator().navigateTo(Views.SOS_VIEW);
+			break;
 		case "chatButton":
-			view.getUI().getNavigator().navigateTo(Views.CHAT_VIEW);
-		    break;
+			medView.getUI().getNavigator().navigateTo(Views.CHAT_VIEW);
+			break;
 		case "searchMedication":
 			// 
-		    break;
-	}
+			break;
+		}
 	}
 
 }

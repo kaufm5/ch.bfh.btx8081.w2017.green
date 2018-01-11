@@ -1,3 +1,4 @@
+
 package ch.bfh.btx8081.w2017.green.Spero.persistence;
 
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ public class MedicationList {
 	private int medID;
 	
 	@OneToMany(cascade=CascadeType.PERSIST, fetch=FetchType.EAGER)
-	private List<Medication> medicationList = new ArrayList<>(); 
+	private List<Medication> medicationList = new ArrayList<Medication>(); 
 	
 	
 	public MedicationList() {
