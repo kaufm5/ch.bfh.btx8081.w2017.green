@@ -6,7 +6,7 @@ import java.util.List;
 import com.vaadin.ui.Button.ClickEvent;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
-import ch.bfh.btx8081.w2017.green.Spero.model.MedicationModel;
+import ch.bfh.btx8081.w2017.green.Spero.model.MedInfoModel;
 import ch.bfh.btx8081.w2017.green.Spero.persistence.Medication;
 import ch.bfh.btx8081.w2017.green.Spero.view.MedInfoView;
 import ch.bfh.btx8081.w2017.green.Spero.view.Views;
@@ -20,11 +20,11 @@ public class MedInfoPresenter implements SperoViewListener{
 
 	private MedInfoView medView;
 	
-	private MedicationModel medModel; 
+	private MedInfoModel medModel; 
 	
 	private List<Medication> medList; 
 
-	public MedInfoPresenter(MedInfoView medView, MedicationModel medModel) {
+	public MedInfoPresenter(MedInfoView medView, MedInfoModel medModel) {
 		this.medView = medView;
 		this.medModel = medModel;
 		

@@ -14,7 +14,7 @@ import com.vaadin.ui.VerticalLayout;
 import ch.bfh.btx8081.w2017.green.Spero.model.ChangePinModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.DiaryModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.ForgetPasswordModel;
-import ch.bfh.btx8081.w2017.green.Spero.model.MedicationModel;
+import ch.bfh.btx8081.w2017.green.Spero.model.MedInfoModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.PinModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.ReminderModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.SettingsModel;
@@ -90,7 +90,7 @@ public class MyUI extends UI {
 	ReportView reportView; 
 	DefDepressionView defDepressionView;
 	MedInfoView medInfoView; 
-	MedicationModel medInfoModel;
+	MedInfoModel medInfoModel;
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
