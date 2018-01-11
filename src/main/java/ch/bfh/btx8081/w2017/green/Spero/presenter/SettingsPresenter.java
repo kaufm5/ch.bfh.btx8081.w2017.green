@@ -20,7 +20,7 @@ import ch.bfh.btx8081.w2017.green.Spero.view.Views;
  * @author mirjam
  *
  */
-public class SettingsPresenter extends Observable implements SperoViewListener {
+public class SettingsPresenter implements SperoViewListener {
     
     private final SettingsView settingsView;
     private final SettingsModel settingsModel;
@@ -116,8 +116,6 @@ public class SettingsPresenter extends Observable implements SperoViewListener {
 				defDepView.buildChatButton();
 				medInfView.buildChatButton();
 				reportView.buildChatButton();
-				this.setChanged();
-				this.notifyObservers();
 			} else {
 				System.out.println("Aus");
 			}
