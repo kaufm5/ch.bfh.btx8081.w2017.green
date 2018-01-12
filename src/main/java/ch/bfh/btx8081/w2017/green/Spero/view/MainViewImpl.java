@@ -44,10 +44,8 @@ public class MainViewImpl extends ButtonProvider {
 		
 		String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
 		System.out.println(basepath);
-		// Image as a file resource
-		FileResource resource = new FileResource(new File(basepath + "/WEB-INF/images/Logo.PNG"));
-		
-		// Show the image in the application
+		FileResource resource = new FileResource
+				(new File(basepath + "/WEB-INF/images/Logo.PNG"));
 		Image image = new Image("", resource);
 		titleBarBox.addComponent(image);
 		layout.addComponent(titleBarBox);
