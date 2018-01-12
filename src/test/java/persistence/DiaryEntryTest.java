@@ -31,6 +31,8 @@ public class DiaryEntryTest {
 		
 		diaryEntry.setMoodparam(Mood.gut);
 		assertTrue(diaryEntry.getMoodparam().equals(Mood.gut));
+		
+		
 	}
 
 //	@Test
