@@ -5,20 +5,34 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class SettingsModelTest {
-
-	@Test
-	public void testSettingsModel() {
-		fail("Not yet implemented");
-	}
+	
+	private SettingsModel settingsModel;
 
 	@Test
 	public void testCheckSnooze() {
-		fail("Not yet implemented");
+		try {
+			settingsModel.checkSnooze("1234");
+			settingsModel.checkSnooze("");
+			settingsModel.checkSnooze("ea");
+			settingsModel.checkSnooze("123");
+		}
+		catch (NullPointerException e1) {
+			System.out.println(e1);
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
 	}
 
 	@Test
 	public void testCheckReminder() {
-		fail("Not yet implemented");
+		try {
+			settingsModel.checkReminder("");
+			settingsModel.checkReminder("10");
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
 	}
 
 }

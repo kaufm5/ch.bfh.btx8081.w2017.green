@@ -61,7 +61,7 @@ public class ForgetPasswordModel {
 	 * password to the doctor
 	 * @param doctor used for getting doctors e-mail and name
 	 */
-	//public static void sendEmail(iDoctor doctor) {
+	
 		public static void sendEmail(String mail) 
 		throws IncorrectException {
 			
@@ -77,7 +77,9 @@ public class ForgetPasswordModel {
 		props = new Properties();
 		login = new Properties();
 
-		// reads the file with the login properties
+		/** 
+		 * reads the file with the login properties
+		 */
 //		FileReader in = null;
 //		try {
 //			/// in = new FileReader("C:\\databases\\login.properties");
