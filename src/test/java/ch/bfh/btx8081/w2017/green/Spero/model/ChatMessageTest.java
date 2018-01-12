@@ -24,5 +24,6 @@ public class ChatMessageTest {
 		assertEquals(ChatMessageTest.USER, message.getSenderName());
 		assertEquals(System.currentTimeMillis(), message.getCurrentTimeMillis());
 		assertEquals(ChatMessageTest.MESSAGE, message.getFulltextMessage());
+		
 	}
 }

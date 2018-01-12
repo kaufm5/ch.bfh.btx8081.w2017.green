@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.IncorrectException;
+import ch.bfh.btx8081.w2017.green.Spero.persistence.DB;
 
 /**
  * the changePinModel
@@ -14,6 +15,7 @@ import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.IncorrectException;
  *
  */
 public class ChangePinModel {
+	private static final DB DATABASE_MANAGER = DB.getInstance();
 	
 	private String oldPin;
 	private String newPin1;
@@ -57,8 +59,7 @@ public class ChangePinModel {
      * @param the second field of the newPin from the input of the user
      * @throws IncorrectException
      */
-    public void checkNewPin(String newPin1, String newPin2)
-    	throws IncorrectException {
+    public void checkNewPin(String newPin1, String newPin2) throws IncorrectException {
     	
     	if (!newPin2.equals(newPin1)) {
     		throw new IncorrectException("Die beiden neuen PINs stimmen nicht überein.");
@@ -77,4 +78,16 @@ public class ChangePinModel {
     		throw new IncorrectException("Der PIN darf nur aus Zahlen bestehen.");
     	}
     	}
+    
+    public void persist() {
+    	try {
+    		checkOldPin(oldPin);
+    		checkNewPin(newPin1, newPin2);
+    	} catch (Exception e) {
+    		System.out.println(e);
+    	}
+		ChangePinModel.DATABASE_MANAGER.persistObject(newPin1);
+		;
+	}
+    
     }

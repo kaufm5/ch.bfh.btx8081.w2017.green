@@ -26,6 +26,13 @@ public class SettingsModel {
 		this.chat = chat;
 	}
 
+	/**
+	 * persists the input into the database
+	 * @param username
+	 * @param reminder
+	 * @param snooze
+	 * @param chat
+	 */
 	public void persist(String username, String reminder, String snooze,
 			String chat) {
 		SettingsModel.DATABASE_MANAGER.persistObject(username);

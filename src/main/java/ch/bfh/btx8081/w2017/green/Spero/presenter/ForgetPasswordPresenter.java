@@ -5,6 +5,7 @@ import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.IncorrectException;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 import ch.bfh.btx8081.w2017.green.Spero.model.ForgetPasswordModel;
 import ch.bfh.btx8081.w2017.green.Spero.view.ForgetPasswordView;
+import ch.bfh.btx8081.w2017.green.Spero.view.Views;
 
 public class ForgetPasswordPresenter implements SperoViewListener {
 	
@@ -34,11 +35,8 @@ public class ForgetPasswordPresenter implements SperoViewListener {
 				break;
 			}
 			
-			//forgetPasswordView.getUI().getNavigator().navigateTo(Views.PIN_VIEW);
+			forgetPasswordView.getUI().getNavigator().navigateTo(Views.PIN_VIEW);
 		    break;
-//		case "change":
-//		    settingsView.getUI().getNavigator().navigateTo(Views.CHANGE_PIN_VIEW);
-//		    break;
 	}
 	}
 

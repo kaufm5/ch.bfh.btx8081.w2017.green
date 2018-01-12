@@ -7,20 +7,27 @@ import java.net.Authenticator;
 import java.net.PasswordAuthentication;
 import java.util.Properties;
 
+import org.eclipse.persistence.sessions.Session;
+
 import com.vaadin.shared.ui.ui.Transport;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.IncorrectException;
 
+/**
+ * 
+ * @author mirjam
+ *
+ */
 public class ForgetPasswordModel {
 	
 	public static final String HOST1 = "smtp.bfh.ch";
 	public static final String PORT = "587";
 	
 //	public static void send(final String login, final String password, final String fromEmail, final String toEmail, final String subject, final String message)
-//			throws MessagingException {
+//			{
 //
 //		Properties props = new Properties();
-//		props.put("mail.smtp.host", HOST);
+//		props.put("mail.smtp.host", HOST1);
 //		props.put("mail.smtp.port", PORT);
 //		props.put("mail.smtp.auth", "true");
 //		props.put("mail.smtp.starttls.enable", "true");
@@ -48,19 +55,19 @@ public class ForgetPasswordModel {
 //		msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail, false));
 //		Transport.send(msg);
 //	}
-	
-	private static Properties properties, props, login;
-	//private static Session session;
-	//private static MimeMessage message;
-	private static String content, username, password, decriptedPassword;
-	private final static String HOST2 = "smtp.gmail.com";
-	private final static String TITLE = "Your Password for authentication";
-
-	/**
-	 * Establish a connection to gmail with smtp and sends the email with the
-	 * password to the doctor
-	 * @param doctor used for getting doctors e-mail and name
-	 */
+//	
+//	private static Properties properties, props, login;
+//	//private static Session session;
+//	//private static MimeMessage message;
+//	private static String content, username, password, decriptedPassword;
+//	private final static String HOST2 = "smtp.gmail.com";
+//	private final static String TITLE = "Your Password for authentication";
+//
+//	/**
+//	 * Establish a connection to gmail with smtp and sends the email with the
+//	 * password to the doctor
+//	 * @param doctor used for getting doctors e-mail and name
+//	 */
 	
 		public static void sendEmail(String mail) 
 		throws IncorrectException {
@@ -69,20 +76,22 @@ public class ForgetPasswordModel {
 		
 		if (check == false ) {
 			throw new IncorrectException("Die E-Mail Adresse ist nicht korrekt.");
-		} else {
+		//} else {
 			
-		properties = System.getProperties();
-		properties.setProperty("mail.smtp", HOST2);
-
-		props = new Properties();
-		login = new Properties();
-
-		/** 
-		 * reads the file with the login properties
-		 */
+		//throw new IncorrectException("EMail ist versendet.");	
+			
+//		properties = System.getProperties();
+//		properties.setProperty("mail.smtp", HOST2);
+//
+//		props = new Properties();
+//		login = new Properties();
+//
+//		/** 
+//		 * reads the file with the login properties
+//		 */
 //		FileReader in = null;
 //		try {
-//			/// in = new FileReader("C:\\databases\\login.properties");
+//			in = new FileReader("C:\\databases\\login.properties");
 //			in = new FileReader("login.properties");
 //			login.load(in);
 //		
@@ -92,8 +101,8 @@ public class ForgetPasswordModel {
 //			props.put("mail.smtp.starttls.enable", "true");
 //			props.put("mail.smtp.host", HOST2);
 //			props.put("mail.smtp.port", "587");
-
-			// Get the Session object
+//
+//			// Get the Session object
 //			session = Session.getInstance(props, new javax.mail.Authenticator() {
 //				protected PasswordAuthentication getPasswordAuthentication() {
 //					return new PasswordAuthentication(username, password);
@@ -102,43 +111,36 @@ public class ForgetPasswordModel {
 //			message = new MimeMessage(session);
 //			try {
 //				message.setFrom(new InternetAddress(username));
-//			} catch (MessagingException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
+//			} catch (IncorrectException e) {
+//				System.out.println(e);
 //			}
 //			try {
 //				message.addRecipient(Message.RecipientType.TO, new InternetAddress(doctor.getEmail()));
-//			} catch (MessagingException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
+//			} catch (IncorrectException e) {
+//				System.out.println(e);
 //			}
 //			try {
 //				message.setSubject(TITLE);
-//			} catch (MessagingException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
+//			} catch (IncorrectException e) {
+//				System.out.println(e);
 //			}
 //			decriptedPassword = new PasswordHandler().decryptPassword(doctor.getPassword());
 //			content = "Hello " + doctor.getName() + ",<br><br>Your Password is:<br>" + decriptedPassword
 //					+ "<br><br>Yours sincerely<br>Mia Musterfeld";
 //			try {
 //				message.setContent(content, "text/html");
-//			} catch (MessagingException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
+//			} catch (IncorrectException e) {
+//				System.out.println(e);
 //			}
 //			try {
 //				Transport.send(message);
-//			} catch (MessagingException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
+//			} catch (IncorrectException e) {
+//				System.out.println(e);
 //			}
 //		} catch (FileNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
+//				System.out.println(e);
 //		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
+//			System.out.println(e);
 //		}
 		}
 	}
