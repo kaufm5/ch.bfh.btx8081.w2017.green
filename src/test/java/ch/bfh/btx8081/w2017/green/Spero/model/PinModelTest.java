@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.IncorrectException;
+
 public class PinModelTest {
 
 	private PinModel pinmodel;
@@ -12,16 +14,13 @@ public class PinModelTest {
 	@Before
 	public void setup() {
 		this.pinmodel = new PinModel("1234");
+		this.pinmodel = new PinModel("1111");
 	}
 
-	@Test
-	public void testPinModel() {
+	@Test(expected = IncorrectException.class)
+	public void testPinModel throws IncorrectException() {
 		this.pinmodel = pinmodel;
-		try {
-	      new PinModel(null);
-	    } catch (Exception e) {
-	     System.out.println(e);
-	    }
+	     new PinModel(null);
 	}
 
 	@Test

@@ -69,25 +69,25 @@ public class MainViewImpl extends ButtonProvider {
 		barmenu.setStyleName("barmenu");
 
 		
-		MenuItem mainView = barmenu.addItem("Hauptseite", new ThemeResource("menuicons/info.png"),
+		MenuItem mainView = barmenu.addItem("Hauptseite", (VaadinIcons.STAR),
 				MenuItem -> this.navigateTo(Views.MAIN_VIEW));
 		MenuItem reportView = barmenu.addItem("Report", (VaadinIcons.SPLINE_CHART),
 				MenuItem -> this.navigateTo(Views.REPORT_VIEW));
-		MenuItem settingsView = barmenu.addItem("Einstellungen", new ThemeResource("menuicons/info.png"),
+		MenuItem settingsView = barmenu.addItem("Einstellungen", (VaadinIcons.TOOLS),
 				MenuItem -> this.navigateTo(Views.SETTINGS_VIEW));
-		MenuItem sosView = barmenu.addItem("SOS", new ThemeResource("menuicons/info.png"),
+		MenuItem sosView = barmenu.addItem("SOS", (VaadinIcons.PHONE),
 				MenuItem -> this.navigateTo(Views.SOS_VIEW));
-		MenuItem diaryView = barmenu.addItem("Tagebuch", new ThemeResource("menuicons/info.png"),
+		MenuItem diaryView = barmenu.addItem("Tagebuch", (VaadinIcons.BOOK),
 				MenuItem -> this.navigateTo(Views.DIARY_VIEW));
-		MenuItem changePinView = barmenu.addItem("PIN wechseln", new ThemeResource("menuicons/info.png"),
+		MenuItem changePinView = barmenu.addItem("PIN wechseln", (VaadinIcons.PASSWORD),
 				MenuItem -> this.navigateTo(Views.CHANGE_PIN_VIEW));
-		MenuItem reminderView = barmenu.addItem("Erinnerung", new ThemeResource("menuicons/info.png"),
+		MenuItem reminderView = barmenu.addItem("Erinnerung", (VaadinIcons.ALARM),
 				MenuItem -> this.navigateTo(Views.REMINDER_VIEW));
-		MenuItem forgetPasswordView = barmenu.addItem("Passwort vergessen", new ThemeResource("menuicons/info.png"),
+		MenuItem forgetPasswordView = barmenu.addItem("Passwort vergessen", (VaadinIcons.QUESTION_CIRCLE),
 				MenuItem -> this.navigateTo(Views.FORGET_PASSWORD_VIEW));
-		MenuItem definitionDepressionView = barmenu.addItem("Definitionen", new ThemeResource("menuicons/info.png"),
+		MenuItem definitionDepressionView = barmenu.addItem("Definitionen", (VaadinIcons.BOOKMARK),
 				MenuItem -> this.navigateTo(Views.DEFINITION_DEPRESSION_VIEW));
-		MenuItem medicationInformationView = barmenu.addItem("Infos zu Medikamenten", new ThemeResource("menuicons/info.png"),
+		MenuItem medicationInformationView = barmenu.addItem("Infos zu Medikamenten", (VaadinIcons.TABLET),
 				MenuItem -> this.navigateTo(Views.MEDICATION_INFORMATION_VIEW));
 		menuBox.addComponent(barmenu);
 		menuBox.setComponentAlignment(barmenu, Alignment.MIDDLE_LEFT);
