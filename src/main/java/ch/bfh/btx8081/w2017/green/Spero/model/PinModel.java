@@ -9,7 +9,7 @@ public class PinModel {
     	this.setPin(pin);
     }
     
-    public void checkPin(String pin)
+    public void checkPin()
     		throws IncorrectException {
     	String str = "1234";
     	if (!pin.equals(str)) {

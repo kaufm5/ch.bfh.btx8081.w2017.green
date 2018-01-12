@@ -9,24 +9,16 @@ import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.IncorrectException;
 
 public class PinModelTest {
 
-	private PinModel pinmodel;
-
-	@Before
-	public void setup() {
-		this.pinmodel = new PinModel("1234");
-		this.pinmodel = new PinModel("1111");
-	}
-
 	@Test(expected = IncorrectException.class)
-	public void testPinModel throws IncorrectException() {
-		this.pinmodel = pinmodel;
-	     new PinModel(null);
+	public void testPinModel() throws IncorrectException {
+		PinModel pinModel = new PinModel("1111");
+		pinModel.checkPin();
 	}
 
 	@Test
-	public void testCheckPin() {
-		this.pinmodel = pinmodel;
-		assertEquals(pinmodel.getPin(), "1234");
+	public void testCorrect() throws IncorrectException {
+		PinModel pinModel = new PinModel("1234");
+		pinModel.checkPin();
 	}
 
 }
