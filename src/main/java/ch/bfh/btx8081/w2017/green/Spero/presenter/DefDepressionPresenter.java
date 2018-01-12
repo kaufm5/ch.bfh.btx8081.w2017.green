@@ -30,7 +30,9 @@ public class DefDepressionPresenter implements SperoViewListener{
 	}
 
 	/**
-	 * Method for switching a button id to navigate to a new view via URL 
+	 * Method for handling button clicks to navigate to a new view via URL 
+	 * 
+	 * @param event - the click event 
 	 */
 	@Override
 	public void buttonClick(ClickEvent event) {

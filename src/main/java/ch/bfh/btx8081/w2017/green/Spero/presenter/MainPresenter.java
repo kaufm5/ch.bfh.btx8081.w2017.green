@@ -9,13 +9,27 @@ import ch.bfh.btx8081.w2017.green.Spero.persistence.DiaryEntryList;
 import ch.bfh.btx8081.w2017.green.Spero.view.MainViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.Views;
 
+/**
+ * This class presents all the necessary data to the MainViewImpl 
+ * and handles the clicks of the main view 
+ * 
+ * @author mussi & schmt5
+ */
 public class MainPresenter implements SperoViewListener {
 
+	private static final long serialVersionUID = 1L;
+	
 	private MainViewImpl mainView;
 	private DiaryModel mainModel;
 
 	private Mood moodParam;
 
+	/**
+	 * Class constructor 
+	 * 
+	 * @param mainView - the main view
+	 * @param mainModel - the main model 
+	 */
 	public MainPresenter(MainViewImpl mainView, DiaryModel mainModel) {
 		this.mainView = mainView;
 		this.mainModel = mainModel;
@@ -23,6 +37,11 @@ public class MainPresenter implements SperoViewListener {
 		mainView.addListener(this);
 	}
 
+	/**
+	 * Method for handling button clicks to navigate to a new view via URL 
+	 * 
+	 * @param event - the click event 
+	 */
 	@Override
 	public void buttonClick(ClickEvent event) {
 		String buttonId = event.getButton().getId();
