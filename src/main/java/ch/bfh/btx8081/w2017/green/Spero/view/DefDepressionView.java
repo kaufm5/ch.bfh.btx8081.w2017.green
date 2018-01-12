@@ -8,29 +8,40 @@ import com.vaadin.ui.VerticalLayout;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.ButtonProvider;
 
+/**
+ * This class is the view of the depression definition screen
+ * 
+ * @author mussi
+ */
 public class DefDepressionView extends ButtonProvider {
+
+	private static final long serialVersionUID = 1L;
+
 	private Label title;
 	private TextArea definition;
 	private HorizontalLayout superButtonBox;
-		
+
+	/**
+	 * Class constructor 
+	 */
 	public DefDepressionView() {
-		
+
 		VerticalLayout layout = new VerticalLayout();
 		setCompositionRoot(layout);
-		
+
 		VerticalLayout titleBarBox = new VerticalLayout();
 		titleBarBox.addStyleName("titleBarBox");
 		title = new Label("Spero");
 		title.addStyleName("title");
 		titleBarBox.addComponent(title);
 		layout.addComponent(titleBarBox);
-		
+
 		HorizontalLayout menuAndContent = new HorizontalLayout();
 		menuAndContent.setSizeFull();
 		menuAndContent.setMargin(true);
 		menuAndContent.setSpacing(true);
 		layout.addComponent(menuAndContent);
-		
+
 		VerticalLayout menuBox = new VerticalLayout();
 		menuBox.setSpacing(true);
 		menuBox.setMargin(true);
@@ -38,16 +49,16 @@ public class DefDepressionView extends ButtonProvider {
 		menuBox.setComponentAlignment(menuButton, Alignment.MIDDLE_LEFT);
 		menuBox.addStyleName("menu");
 		menuAndContent.addComponent(menuBox);
-		
+
 		VerticalLayout content = new VerticalLayout();
 		content.setSizeFull();
 		content.setMargin(true);
 		content.setSpacing(true);
 		menuAndContent.addComponent(content);
-		
+
 		menuAndContent.setExpandRatio(menuBox, 1);
 		menuAndContent.setExpandRatio(content, 9);
-		
+
 		HorizontalLayout defintionTextBox = new HorizontalLayout();
 		defintionTextBox.setSizeFull();
 		defintionTextBox.setMargin(true);
@@ -60,7 +71,7 @@ public class DefDepressionView extends ButtonProvider {
 		definition.addStyleName("defitionText");
 		defintionTextBox.addComponent(definition);
 		content.addComponent(defintionTextBox);
-		
+
 		superButtonBox = new HorizontalLayout();
 		superButtonBox.setSizeFull();
 		superButtonBox.setMargin(true);
@@ -69,7 +80,10 @@ public class DefDepressionView extends ButtonProvider {
 		superButtonBox.addComponent(sosButton);
 		superButtonBox.setComponentAlignment(sosButton, Alignment.MIDDLE_LEFT);
 	}
-	
+
+	/**
+	 * Builds the chat button 
+	 */
 	public void buildChatButton(){
 		superButtonBox.addComponent(chatButton);
 		superButtonBox.setComponentAlignment(chatButton, Alignment.MIDDLE_LEFT);
