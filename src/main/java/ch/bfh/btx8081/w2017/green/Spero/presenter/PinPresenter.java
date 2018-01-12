@@ -36,7 +36,7 @@ public class PinPresenter implements SperoViewListener {
 		System.out.println("Der Pin ist: " + code);
 		
 		try {
-			pinModel.checkPin();
+			pinModel.checkPin(code);
 			//pinView.getUI().getNavigator().navigateTo(Views.MAIN_VIEW);
 		} catch (IncorrectException e) {
 			e.printStackTrace();
