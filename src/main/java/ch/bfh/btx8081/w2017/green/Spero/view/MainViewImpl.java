@@ -1,10 +1,15 @@
 package ch.bfh.btx8081.w2017.green.Spero.view;
 
+import java.io.File;
+
 import com.vaadin.icons.VaadinIcons;
+import com.vaadin.server.FileResource;
 import com.vaadin.server.ThemeResource;
+import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.MenuBar;
 import com.vaadin.ui.MenuBar.MenuItem;
@@ -20,7 +25,7 @@ import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.ButtonProvider;
  * @author besio1
  */
 public class MainViewImpl extends ButtonProvider {
-	private Label title;
+	private Image title;
 	public TextField tags;
 	public TextArea diaryText;
 	public TextField diaryTitle;
@@ -36,11 +41,16 @@ public class MainViewImpl extends ButtonProvider {
 		
 		VerticalLayout titleBarBox = new VerticalLayout();
 		titleBarBox.addStyleName("titleBarBox");
-		title = new Label("Spero");
-		title.addStyleName("title");
-		titleBarBox.addComponent(title);
-		layout.addComponent(titleBarBox);
 		
+		String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
+		System.out.println(basepath);
+		// Image as a file resource
+		FileResource resource = new FileResource(new File(basepath + "/WEB-INF/images/Logo.PNG"));
+		
+		// Show the image in the application
+		Image image = new Image("", resource);
+		titleBarBox.addComponent(image);
+		layout.addComponent(titleBarBox);
 
 		HorizontalLayout menuAndContent = new HorizontalLayout();
 		menuAndContent.setSizeFull();
@@ -61,7 +71,7 @@ public class MainViewImpl extends ButtonProvider {
 		
 		MenuItem mainView = barmenu.addItem("Hauptseite", new ThemeResource("menuicons/info.png"),
 				MenuItem -> this.navigateTo(Views.MAIN_VIEW));
-		MenuItem reportView = barmenu.addItem("Report", new ThemeResource("menuicons/info.png"),
+		MenuItem reportView = barmenu.addItem("Report", (VaadinIcons.SPLINE_CHART),
 				MenuItem -> this.navigateTo(Views.REPORT_VIEW));
 		MenuItem settingsView = barmenu.addItem("Einstellungen", new ThemeResource("menuicons/info.png"),
 				MenuItem -> this.navigateTo(Views.SETTINGS_VIEW));
