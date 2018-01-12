@@ -6,9 +6,14 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+/**
+ * The database manager class which represents connection configuration to the database 
+ * and hold the entity manager which interacts with the persistence context
+ */
 public final class DB {
+
 	private static DB INSTANCE;
-	private EntityManager em;
+	private static EntityManager em;
 
 	private static final String PERSISTENCE_UNIT_NAME = "spero2";
 
@@ -20,38 +25,88 @@ public final class DB {
 		return DB.INSTANCE;
 	}
 
+	/**
+	 * Class constructor 
+	 */
 	public DB() {
 		initialize();
 	}
 
 	private void initialize() {
-		this.em = Persistence
+		setEm(Persistence
 				.createEntityManagerFactory(DB.PERSISTENCE_UNIT_NAME)
-				.createEntityManager();
+				.createEntityManager());
 	}
 
+	/**
+	 * Make an instance managed and persistent
+	 * 
+	 * @param object - object instance
+	 */
 	public void persistObject(Object object) {
-		EntityTransaction entityTransaction = this.em.getTransaction();
+		EntityTransaction entityTransaction = getEm().getTransaction();
 
 		entityTransaction.begin();
-		this.em.persist(object);
+		getEm().persist(object);
 		entityTransaction.commit();
 	}
 
+	/**
+	 * Remove the object instance
+	 * 
+	 * @param object - object instance 
+	 */
 	public void removeObject(Object object) {
-		EntityTransaction entityTransaction = this.em.getTransaction();
+		EntityTransaction entityTransaction = getEm().getTransaction();
 
 		entityTransaction.begin();
-		this.em.remove(object);
+		getEm().remove(object);
 		entityTransaction.commit();
 	}
 
+	/**
+	 * Returns a list of the entity
+	 * 
+	 * @param entity
+	 * @return a list of the entity
+	 */
 	public List<?> getSperoLists(String entity) {
-		return this.em.createNamedQuery(entity).getResultList();
+		return getEm().createNamedQuery(entity).getResultList();
 	}
 
+	/**
+	 * Return the resource-level EntityTransaction object
+	 * The EntityTransaction instance may be used serially to begin and commit multiple transactions
+	 * 
+	 * @return EntityTransaction instance
+	 */
 	public EntityTransaction getTransaction() {
-		return this.em.getTransaction();
+		return getEm().getTransaction();
+	}
+
+	/**
+	 * Close an application-managed entity manager
+	 */
+	public static void close() { 
+		getEm().close(); 
+	}
+
+	/**
+	 * Gets the entity manager
+	 *  
+	 * @return the entity manager 
+	 */
+	public static EntityManager getEm() {
+		return em;
+	}
+
+	/**
+	 * Sets the entity manager 
+	 * 
+	 * @param em - the entity manager 
+	 */
+	public static void setEm(EntityManager em) {
+		DB.em = em;
 	}
 
 }
