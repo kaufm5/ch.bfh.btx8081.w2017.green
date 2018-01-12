@@ -9,17 +9,17 @@ import ch.bfh.btx8081.w2017.green.Spero.persistence.MedicationList;
  * @author mussi
  *
  */
-public class MedInfoModel {
+public class MedicationModel {
 	private static final DB DATABASE_MANAGER = DB.getInstance();
 
 	private MedicationList mediList;
 
-	public MedInfoModel() {
+	public MedicationModel() {
 		this.takeListFromDB();
 	}
 
 	public void takeListFromDB() {
-		if (MedInfoModel.DATABASE_MANAGER.getSperoLists("MedicationList")
+		if (MedicationModel.DATABASE_MANAGER.getSperoLists("MedicationList")
 				.size() == 0) {
 			this.mediList = new MedicationList();
 			mediList.createMedicationList("Aspirin", "Für Kopfschmerzen");
@@ -31,7 +31,7 @@ public class MedInfoModel {
 			DATABASE_MANAGER.persistObject(mediList);
 		} 
 		else {
-			this.mediList = (MedicationList) MedInfoModel.DATABASE_MANAGER
+			this.mediList = (MedicationList) MedicationModel.DATABASE_MANAGER
 					.getSperoLists("MedicationList").get(0);
 		}
 	}

@@ -15,6 +15,7 @@ public class Medication implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int medicationID;
+	
 	private String medName; 
 	private String medDescription; 
 

@@ -14,7 +14,7 @@ import com.vaadin.ui.VerticalLayout;
 import ch.bfh.btx8081.w2017.green.Spero.model.ChangePinModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.DiaryModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.ForgetPasswordModel;
-import ch.bfh.btx8081.w2017.green.Spero.model.MedInfoModel;
+import ch.bfh.btx8081.w2017.green.Spero.model.MedicationModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.PinModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.ReminderModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.SettingsModel;
@@ -27,7 +27,7 @@ import ch.bfh.btx8081.w2017.green.Spero.presenter.DiaryPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.ForgetPasswordPresenter;
 //import ch.bfh.btx8081.w2017.green.Spero.presenter.DiaryEntryPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.MainPresenter;
-import ch.bfh.btx8081.w2017.green.Spero.presenter.MedInfoPresenter;
+import ch.bfh.btx8081.w2017.green.Spero.presenter.MedicationPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.MenuPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.PinPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.ReportPresenter;
@@ -90,7 +90,7 @@ public class MyUI extends UI {
 	ReportView reportView; 
 	DefDepressionView defDepressionView;
 	MedInfoView medInfoView; 
-	MedInfoModel medInfoModel;
+	MedicationModel medInfoModel;
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
@@ -149,7 +149,7 @@ public class MyUI extends UI {
    	 new ForgetPasswordPresenter(forgetPasswordView, forgetPasswordModel);
    	 new ReportPresenter(reportView); 
    	 new DefDepressionPresenter(defDepressionView); 
-   	 new MedInfoPresenter(medInfoView, medInfoModel); 
+   	 new MedicationPresenter(medInfoView, medInfoModel); 
    	 
     }
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
