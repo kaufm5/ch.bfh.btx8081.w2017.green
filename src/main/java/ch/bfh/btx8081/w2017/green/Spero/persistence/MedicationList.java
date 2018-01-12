@@ -16,22 +16,23 @@ import javax.persistence.OneToMany;
 @Entity
 @NamedQuery(name = "MedicationList", query = "select m from MedicationList m")
 public class MedicationList {
-	
+
 	@Id 
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int medID;
-	
+
 	@OneToMany(cascade=CascadeType.PERSIST, fetch=FetchType.EAGER)
 	private List<Medication> medicationList = new ArrayList<Medication>(); 
-	
-	
+
+
 	public MedicationList() {
-		
+
 	}
-	
+
 	public void createMedicationList(String medName, String medDescription) { 
-		Medication med = new Medication(medName, medDescription); 
+		Medication med = new Medication(medName, medDescription);
 		medicationList.add(med); 
+		
 	}
 
 	public int getMedID() {
@@ -49,7 +50,7 @@ public class MedicationList {
 	public void setMedicationList(List<Medication> medicationList) {
 		this.medicationList = medicationList;
 	}
-	
-	
+
+
 
 }

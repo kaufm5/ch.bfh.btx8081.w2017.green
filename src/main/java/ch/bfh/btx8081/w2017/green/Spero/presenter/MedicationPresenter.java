@@ -15,21 +15,21 @@ public class MedicationPresenter implements SperoViewListener{
 	private static final long serialVersionUID = 1L;
 
 	private MedInfoView medView;
-	
+
 	private MedicationModel medModel; 
-	
-	private List<Medication> medList; 
+
+	//private List<Medication> medList; 
 
 	public MedicationPresenter(MedInfoView medView, MedicationModel medModel) {
 		this.medView = medView;
 		this.medModel = medModel;
-		
-		//this.medList = this.medModel.getMediList().getMedicationList();
-		
+
+		//		this.medList = this.medModel.getMediList().getMedicationList();
+
 		medView.init();
 		medView.addListener(this);
 	}
-	
+
 	@Override
 	public void buttonClick(ClickEvent event) {
 		String buttonId = event.getButton().getId();

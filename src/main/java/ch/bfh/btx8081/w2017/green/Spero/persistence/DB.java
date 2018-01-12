@@ -48,6 +48,7 @@ public final class DB {
 
 		entityTransaction.begin();
 		getEm().persist(object);
+		getEm().flush();
 		entityTransaction.commit();
 	}
 

@@ -1,6 +1,10 @@
 package ch.bfh.btx8081.w2017.green.Spero.model;
 
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+
 import ch.bfh.btx8081.w2017.green.Spero.persistence.DB;
+import ch.bfh.btx8081.w2017.green.Spero.persistence.Medication;
 import ch.bfh.btx8081.w2017.green.Spero.persistence.MedicationList;
 
 /**
@@ -25,14 +29,12 @@ public class MedicationModel {
 			mediList.createMedicationList("Aspirin", "Für Kopfschmerzen");
 			mediList.createMedicationList("Panadol", "Für Dünnschiss");
 
-			//			Medication medi = new Medication("Aspirin", "Gegen Kopfschmerzen");
-			//			mediList.getMedicationList().add(medi);
-
 			DATABASE_MANAGER.persistObject(mediList);
 		} 
 		else {
 			this.mediList = (MedicationList) MedicationModel.DATABASE_MANAGER
 					.getSperoLists("MedicationList").get(0);
+
 		}
 	}
 
