@@ -1,6 +1,5 @@
 package ch.bfh.btx8081.w2017.green.Spero.presenter;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.vaadin.ui.Button.ClickEvent;
@@ -13,9 +12,6 @@ import ch.bfh.btx8081.w2017.green.Spero.view.Views;
 
 public class MedInfoPresenter implements SperoViewListener{
 
-	/**
-	 * The serial version UID
-	 */
 	private static final long serialVersionUID = 1L;
 
 	private MedInfoView medView;
