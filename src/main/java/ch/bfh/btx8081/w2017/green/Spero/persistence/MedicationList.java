@@ -28,13 +28,13 @@ public class MedicationList {
 	public MedicationList() {
 
 	}
-
-	public void createMedicationList(String medName, String medDescription) { 
+	
+	public void createMedication(String medName, String medDescription) { 
 		Medication med = new Medication(medName, medDescription);
 		medicationList.add(med); 
 		
 	}
-
+	
 	public int getMedID() {
 		return medID;
 	}

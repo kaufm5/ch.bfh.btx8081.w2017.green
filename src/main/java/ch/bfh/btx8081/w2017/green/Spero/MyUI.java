@@ -40,7 +40,7 @@ import ch.bfh.btx8081.w2017.green.Spero.view.DefDepressionView;
 import ch.bfh.btx8081.w2017.green.Spero.view.DiaryViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.ForgetPasswordView;
 import ch.bfh.btx8081.w2017.green.Spero.view.MainViewImpl;
-import ch.bfh.btx8081.w2017.green.Spero.view.MedInfoView;
+import ch.bfh.btx8081.w2017.green.Spero.view.MedicationView;
 import ch.bfh.btx8081.w2017.green.Spero.view.MenuView;
 import ch.bfh.btx8081.w2017.green.Spero.view.PinView;
 import ch.bfh.btx8081.w2017.green.Spero.view.ReminderView;
@@ -89,7 +89,7 @@ public class MyUI extends UI {
 	ForgetPasswordModel forgetPasswordModel;
 	ReportView reportView; 
 	DefDepressionView defDepressionView;
-	MedInfoView medInfoView; 
+	MedicationView medInfoView; 
 	MedicationModel medInfoModel;
 
     @Override
@@ -118,7 +118,7 @@ public class MyUI extends UI {
      forgetPasswordModel = new ForgetPasswordModel();
      reportView = new ReportView(); 
      defDepressionView = new DefDepressionView(); 
-     medInfoView = new MedInfoView(); 
+     medInfoView = new MedicationView(); 
      medInfoModel = new MedicationModel(); 
      
     

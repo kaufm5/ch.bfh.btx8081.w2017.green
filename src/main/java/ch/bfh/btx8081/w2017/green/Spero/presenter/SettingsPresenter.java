@@ -9,7 +9,7 @@ import ch.bfh.btx8081.w2017.green.Spero.model.SettingsModel;
 import ch.bfh.btx8081.w2017.green.Spero.view.ChangePinView;
 import ch.bfh.btx8081.w2017.green.Spero.view.DefDepressionView;
 import ch.bfh.btx8081.w2017.green.Spero.view.MainViewImpl;
-import ch.bfh.btx8081.w2017.green.Spero.view.MedInfoView;
+import ch.bfh.btx8081.w2017.green.Spero.view.MedicationView;
 import ch.bfh.btx8081.w2017.green.Spero.view.MenuView;
 import ch.bfh.btx8081.w2017.green.Spero.view.ReportView;
 import ch.bfh.btx8081.w2017.green.Spero.view.SettingsView;
@@ -28,7 +28,7 @@ public class SettingsPresenter implements SperoViewListener {
     private final MenuView menuView;
     private final MainViewImpl mainView;
     private final DefDepressionView defDepView;
-    private final MedInfoView medInfView;
+    private final MedicationView medInfView;
     private final ReportView reportView;
 
     /**
@@ -43,7 +43,7 @@ public class SettingsPresenter implements SperoViewListener {
      * @param reportView
      */
     public SettingsPresenter(SettingsView settingsView, SettingsModel settingsModel, ChangePinView changePinView,
-    		MenuView menuView, MainViewImpl mainView, DefDepressionView defDepView, MedInfoView medInfView,
+    		MenuView menuView, MainViewImpl mainView, DefDepressionView defDepView, MedicationView medInfView,
     		ReportView reportView) {
 		this.settingsView = settingsView;
 		this.settingsModel = settingsModel;
