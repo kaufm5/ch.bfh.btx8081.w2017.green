@@ -26,10 +26,13 @@ public class MedicationModel {
 			this.mediList = new MedicationList();
 			
 			mediList.createMedication("Aspirin", "Für Kopfschmerzen");
-			mediList.createMedication("Panadol", "Für Kopfschmerzen");
-			mediList.createMedication("Biotin", "Für Kopfschmerzen");
-	
-			DATABASE_MANAGER.persistObject(mediList);
+			mediList.createMedication("Panadol", "Für Inflammationen und schmerminderung");
+			mediList.createMedication("Agomelatin", "ist ein Antidepressivum und wirkt indem es die Signalübertragung der melatonergen MT1- und MT2-Rezeptoren stimuliert und die serotonergen 5HT2C-Rezeptoren hemmt, auf diese Weise soll der circadiane Rhythmus resynchronisiert werden können");
+			mediList.createMedication("Alutan", "Wirkstoff: Citalopram \r\n Wirkung auf Organismus als: Antidepressivum\r\n Medikament ist zugelassen und wird verkauft in der Schweiz (?).\r\n Indikation: Einsatz bei Depression, depressiven Störungen");
+			mediList.createMedication("Amioxid", "Wirkstoff: Amitriptylinoxid (das Dihydrat von Amitriptylinoxid ist pharmakodynamisch das Arzneimittel Amitriptylin); das Medikament gehört zur Wirkstoffgruppe der trizyklischen Antidepressiva.\r\n Wirkung als: Antidepressivum.\r\n Medikament (gehört zu den Psychopharmaka) ist zugelassen und wird verkauft in Deutschland.\r\n \r\n Indikation: Einsatz bei Depression, depressiven Störungen.");
+			mediList.createMedication("Cipralex", "Wirkstoff Escitalopram; Wirkstoffgruppe: Antidepressiva \r\n Wirkweise auf das Nervensystem / die Psyche: antidepressiv \r\n Arzneimittel ist zugelassen in Österreich, der Schweiz und in Deutschland.\r\n \r\n Medikament ist angezeigt bei Depression und verschiedenen Angststörungen.");
+			mediList.createMedication("Deprilept", "Wirkstoff : Maprotilin \r\n Wirkung auf die Psyche als: Antidepressivum \r\n Medikament ist zugelassen und wird verkauft in Deutschland.\r\n Indikation, Anwendung bei: Depressionen.");
+			mediList.createMedication("Dutonin", "Wirkstoff, Wirkstoffgruppe: Nefazodon \r\n Wirkung auf den Organismus als: Antidepressivum / Antidepressiva\r\n Arzneimittel ist zugelassen in Österreich. (Nicht mehr auf dem Markt)\r\n \r\n Mögliche Nebenwirkungen: Erfahrungen mit Dutonin in Langzeitanwendung sind noch sehr beschränkt. Erkenntnisse bis jetzt: \r\n \r\n Häufig bei Dutonin : Schläfrigkeit, Brechreiz, Schwindel, Mundtrockenheit, verschwommenes Sehen, andere Sehstörungen. ");
 		} 
 		else {
 			this.mediList = (MedicationList) MedicationModel.DATABASE_MANAGER

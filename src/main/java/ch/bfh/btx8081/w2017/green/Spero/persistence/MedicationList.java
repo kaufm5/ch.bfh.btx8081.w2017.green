@@ -16,7 +16,7 @@ import javax.persistence.OneToMany;
 @Entity
 @NamedQuery(name = "MedicationList", query = "select m from MedicationList m")
 public class MedicationList {
-
+	
 	@Id 
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int medID;
@@ -32,7 +32,8 @@ public class MedicationList {
 	public void createMedication(String medName, String medDescription) { 
 		Medication med = new Medication(medName, medDescription);
 		medicationList.add(med); 
-		
+	
+		DB.getInstance().persistObject(this);
 	}
 	
 	public int getMedID() {

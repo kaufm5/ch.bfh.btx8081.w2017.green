@@ -67,7 +67,7 @@ public class MedicationViewImpl extends ButtonProvider {
 		menuAndContent.setExpandRatio(content, 9);
 		
 		HorizontalLayout searchLabel = new HorizontalLayout(); 
-		searchDescription = new Label("Write medication name \n for example: Aspirin, Panadol..."); 
+		searchDescription = new Label("Write medication name for example: Agomelatin, Alutan, Amioxid,  Cipralex, Deprilept, Dutonin"); 
 
 		content.addComponent(searchDescription);
 		content.addComponent(searchLabel);

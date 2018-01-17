@@ -2,6 +2,7 @@ package ch.bfh.btx8081.w2017.green.Spero.persistence;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,6 +18,8 @@ public class Medication implements Serializable {
 	private int medicationID;
 	
 	private String medName; 
+	
+	@Column(columnDefinition = "text")
 	private String medDescription; 
 
 	public Medication() {
