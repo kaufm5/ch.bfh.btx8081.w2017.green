@@ -18,7 +18,7 @@ import ch.bfh.btx8081.w2017.green.Spero.persistence.DB;
  *
  */
 public class ChangePinModel {
-	private static final DB DATABASE_MANAGER = DB.getInstance();
+	//private static final DB DATABASE_MANAGER = DB.getInstance();
 	
 	private String oldPin;
 	private String newPin1;
