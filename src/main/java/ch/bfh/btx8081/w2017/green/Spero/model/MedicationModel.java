@@ -1,30 +1,36 @@
 package ch.bfh.btx8081.w2017.green.Spero.model;
 
-import com.vaadin.ui.Panel;
-
 import ch.bfh.btx8081.w2017.green.Spero.persistence.DB;
 import ch.bfh.btx8081.w2017.green.Spero.persistence.Medication;
 import ch.bfh.btx8081.w2017.green.Spero.persistence.MedicationList;
 
 /**
- * This is the medication information model which holds a list of the medication in the database
+ * This is the medication model which holds a list of the medication and its description in the database
  * 
  * @author mussi
  *
  */
 public class MedicationModel {
+
 	private static final DB DATABASE_MANAGER = DB.getInstance();
 
 	private MedicationList mediList;
 
+	/**
+	 * Class constructor 
+	 */
 	public MedicationModel() {
 		this.takeListFromDB();
 	}
 
+	/**
+	 * A method which takes the medication list from the database 
+	 */
 	public void takeListFromDB() {
+
 		if (MedicationModel.DATABASE_MANAGER.getSperoLists("MedicationList").size() == 0) {
 			this.mediList = new MedicationList();
-			
+
 			mediList.createMedication("Aspirin", "Für Kopfschmerzen");
 			mediList.createMedication("Panadol", "Für Inflammationen und schmerminderung");
 			mediList.createMedication("Agomelatin", "ist ein Antidepressivum und wirkt indem es die Signalübertragung der melatonergen MT1- und MT2-Rezeptoren stimuliert und die serotonergen 5HT2C-Rezeptoren hemmt, auf diese Weise soll der circadiane Rhythmus resynchronisiert werden können");
@@ -40,18 +46,34 @@ public class MedicationModel {
 		}
 	}
 
+	/**
+	 * Gets the medication list 
+	 * 
+	 * @return medication list 
+	 */
 	public MedicationList getMediList() {
 		return mediList;
 	}
 
+	/**
+	 * Sets the medication list 
+	 * 
+	 * @param mediList - the medication list 
+	 */
 	public void setMediList(MedicationList mediList) {
 		this.mediList = mediList;
 	}
 
+	/**
+	 * A method which searches the medication by its name from the medication list  
+	 * 
+	 * @param search - the searched medication name  
+	 * @return medication name and medication description 
+	 */
 	public Medication getMedicationByName(String search) {
-		
+
 		for(Medication med : this.mediList.getMedicationList()) {
-			
+
 			if(med.getMedName().equals(search)) {
 				return med;
 			}

@@ -1,21 +1,20 @@
 package ch.bfh.btx8081.w2017.green.Spero.presenter;
 
-import java.util.List;
-
 import com.vaadin.ui.Button.ClickEvent;
-import com.vaadin.ui.Component;
-import com.vaadin.ui.Panel;
 
-import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.Mood;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 import ch.bfh.btx8081.w2017.green.Spero.model.MedicationModel;
-import ch.bfh.btx8081.w2017.green.Spero.persistence.DiaryEntry;
-import ch.bfh.btx8081.w2017.green.Spero.persistence.DiaryEntryList;
 import ch.bfh.btx8081.w2017.green.Spero.persistence.Medication;
-import ch.bfh.btx8081.w2017.green.Spero.persistence.MedicationList;
 import ch.bfh.btx8081.w2017.green.Spero.view.MedicationViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.Views;
 
+/**
+ * This class presents all the necessary data to the MedicationViewImpl 
+ * and handles the click events of the medication view 
+ * 
+ * @author mussi
+ *
+ */
 public class MedicationPresenter implements SperoViewListener{
 
 	private static final long serialVersionUID = 1L;
@@ -24,18 +23,25 @@ public class MedicationPresenter implements SperoViewListener{
 
 	private MedicationModel medModel; 
 
-	//private List<Medication> medList; 
-
+	/**
+	 * The class constructor 
+	 * 
+	 * @param medView - the medication view 
+	 * @param medModel - the medication model 
+	 */
 	public MedicationPresenter(MedicationViewImpl medView, MedicationModel medModel) {
 		this.medView = medView;
 		this.medModel = medModel;
-
-		//		this.medList = this.medModel.getMediList().getMedicationList();
 
 		medView.init();
 		medView.addListener(this);
 	}
 
+	/**
+	 * Method for handling button clicks to navigate to a new view via URL 
+	 * 
+	 * @param event - the click event 
+	 */
 	@Override
 	public void buttonClick(ClickEvent event) {
 		String buttonId = event.getButton().getId();

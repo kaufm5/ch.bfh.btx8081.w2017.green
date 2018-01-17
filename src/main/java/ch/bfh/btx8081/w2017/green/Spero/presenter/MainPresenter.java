@@ -11,7 +11,7 @@ import ch.bfh.btx8081.w2017.green.Spero.view.Views;
 
 /**
  * This class presents all the necessary data to the MainViewImpl 
- * and handles the clicks of the main view 
+ * and handles the click events of the main view 
  * 
  * @author mussi & schmt5
  */
