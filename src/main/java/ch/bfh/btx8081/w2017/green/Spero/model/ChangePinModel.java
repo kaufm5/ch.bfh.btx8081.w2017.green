@@ -8,7 +8,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
-import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.IncorrectException;
+import ch.bfh.btx8081.w2017.green.Spero.exceptionHandling.IncorrectException;
 import ch.bfh.btx8081.w2017.green.Spero.persistence.DB;
 
 /**

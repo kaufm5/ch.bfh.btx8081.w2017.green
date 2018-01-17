@@ -1,4 +1,4 @@
-package ch.bfh.btx8081.w2017.green.Spero.interfaceEnum;
+package ch.bfh.btx8081.w2017.green.Spero.exceptionHandling;
 
 /**
  * the IncorrectException class

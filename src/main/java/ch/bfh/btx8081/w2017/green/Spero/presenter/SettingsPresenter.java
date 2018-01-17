@@ -1,7 +1,8 @@
 package ch.bfh.btx8081.w2017.green.Spero.presenter;
 
 import com.vaadin.ui.Button.ClickEvent;
-import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.IncorrectException;
+
+import ch.bfh.btx8081.w2017.green.Spero.exceptionHandling.IncorrectException;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 import ch.bfh.btx8081.w2017.green.Spero.model.SettingsModel;
 import ch.bfh.btx8081.w2017.green.Spero.view.ChangePinView;
