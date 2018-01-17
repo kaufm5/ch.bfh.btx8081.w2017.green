@@ -8,7 +8,15 @@ import com.vaadin.ui.VerticalLayout;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.ButtonProvider;
 
+/**
+ * the changePinView class
+ * creates the view for changePin
+ * @author mirjam
+ *
+ */
 public class ChangePinView extends ButtonProvider {
+	
+	private static final long serialVersionUID = 1L;
 	private Label changePin;
 	private Label oldPinLabel;
 	private PasswordField oldPinPasswordField;
@@ -17,10 +25,12 @@ public class ChangePinView extends ButtonProvider {
 	private Label newPin2Label;
 	private PasswordField newPin2PasswordField;	
 	private HorizontalLayout superButtonBox;
-	
 	public Label pinException;
-		
-public ChangePinView() {
+	
+	/**
+	 * creates the changePinView
+	 */
+	public ChangePinView() {
     	
     	final VerticalLayout layout = new VerticalLayout();
     	setCompositionRoot(layout);
@@ -39,7 +49,6 @@ public ChangePinView() {
 		VerticalLayout menuBox = new VerticalLayout();
 		menuBox.setSpacing(true);
 		menuBox.setMargin(true);
-		//set id für Button 
 
 		menuBox.addComponent(menuButton);
 		menuBox.setComponentAlignment(menuButton, Alignment.MIDDLE_LEFT);
@@ -64,7 +73,6 @@ public ChangePinView() {
     	oldPin.addComponent(this.oldPinLabel);
     	
     	this.oldPinPasswordField = new PasswordField();
-    	//oldPinPasswordField.setPlaceholder("Alter PIN");
     	oldPin.addComponent(this.oldPinPasswordField);
     	
     	changePinItems.addComponent(oldPin);
@@ -76,7 +84,6 @@ public ChangePinView() {
     	newPin1.addComponent(this.newPin1Label);
     	
     	this.newPin1PasswordField = new PasswordField();
-    	//newPin1PasswordField.setPlaceholder("Neuer PIN");
     	newPin1.addComponent(this.newPin1PasswordField);
     	
     	changePinItems.addComponent(newPin1);
@@ -88,7 +95,6 @@ public ChangePinView() {
     	newPin2.addComponent(this.newPin2Label);
     	
     	this.newPin2PasswordField = new PasswordField();
-    	//newPin2PasswordField.setPlaceholder("PIN Bestätigung");
     	newPin2.addComponent(this.newPin2PasswordField);
     	
     	changePinItems.addComponent(newPin2);
@@ -105,20 +111,35 @@ public ChangePinView() {
     	superButtonBox = new HorizontalLayout ();
 		content.addComponent(superButtonBox);
 		superButtonBox.addComponent(sosButton);
-}
+		}
 
+		/**
+		 * gets the old PIN
+		 * @return the value of the old PIN
+		 */
 		public String getOldPin() {
 			return oldPinPasswordField.getValue();
 		}
 		
+		/**
+		 * gets the new PIN 1
+		 * @return the value of the new PIN 1
+		 */
 		public String getNewPin1() {
 			return newPin1PasswordField.getValue();
 		}
 		
+		/**
+		 * gets the new PIN 2
+		 * @return the value of the new PIN 2
+		 */
 		public String getNewPin2() {
 			return newPin2PasswordField.getValue();
 		}
 		
+		/**
+		 * shows the chat button in the view, if the user turns the chat on in the settings
+		 */
 		public void buildChatButton(){
 			superButtonBox.addComponent(chatButton);
 		}
