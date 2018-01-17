@@ -50,7 +50,6 @@ public class MedicationPresenter implements SperoViewListener{
 			medView.getUI().getNavigator().navigateTo(Views.CHAT_VIEW);
 			break;
 		case "searchMedication":
-			
 			String search = medView.getText().getValue();
 			Medication med = this.medModel.getMedicationByName(search);	
 			this.medView.buildMedPanel(med); 

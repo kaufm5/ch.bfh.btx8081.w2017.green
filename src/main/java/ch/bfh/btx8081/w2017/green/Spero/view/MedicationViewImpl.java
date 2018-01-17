@@ -1,36 +1,31 @@
 package ch.bfh.btx8081.w2017.green.Spero.view;
 
-import javax.swing.plaf.metal.MetalBorders.TextFieldBorder;
-
-import org.vaadin.addons.searchbox.SearchBox;
-import org.vaadin.addons.searchbox.event.SearchListener;
-
-import com.vaadin.event.ContextClickEvent.ContextClickListener;
 import com.vaadin.icons.VaadinIcons;
-import com.vaadin.server.Sizeable.Unit;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Panel;
+import com.vaadin.ui.TextArea;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.ButtonProvider;
-import ch.bfh.btx8081.w2017.green.Spero.model.MedicationModel;
-import ch.bfh.btx8081.w2017.green.Spero.persistence.DB;
 import ch.bfh.btx8081.w2017.green.Spero.persistence.Medication;
-import ch.bfh.btx8081.w2017.green.Spero.persistence.MedicationList;
+
 
 public class MedicationViewImpl extends ButtonProvider {
 
+	private static final long serialVersionUID = 1L;
+	
 	private TextField text; 
+	private TextArea medInfo; 
 	private Button searchButton; 
-	private Label title; 
+	private Label title, searchDescription; 
 	private HorizontalLayout superButtonBox;
 	private Panel panel; 
 	private VerticalLayout layout; 
-	private VerticalLayout contentLayout; 
+	private VerticalLayout contentLayout, content; 
 
 	public MedicationViewImpl() {
 
@@ -42,7 +37,7 @@ public class MedicationViewImpl extends ButtonProvider {
 		
 		VerticalLayout titleBarBox = new VerticalLayout();
 		titleBarBox.addStyleName("titleBarBox");
-		title = new Label("Spero");
+		title = new Label("Medication Description");
 		title.addStyleName("title");
 		titleBarBox.addComponent(title);
 		layout.addComponent(titleBarBox);
@@ -61,8 +56,8 @@ public class MedicationViewImpl extends ButtonProvider {
 		menuBox.setComponentAlignment(menuButton, Alignment.MIDDLE_LEFT);
 		menuBox.addStyleName("menu");
 		menuAndContent.addComponent(menuBox);
-
-		VerticalLayout content = new VerticalLayout();
+		
+		content = new VerticalLayout();
 		content.setSizeFull();
 		content.setMargin(true);
 		content.setSpacing(true);
@@ -70,7 +65,14 @@ public class MedicationViewImpl extends ButtonProvider {
 
 		menuAndContent.setExpandRatio(menuBox, 1);
 		menuAndContent.setExpandRatio(content, 9);
+		
+		HorizontalLayout searchLabel = new HorizontalLayout(); 
+		searchDescription = new Label("Write medication name \n for example: Aspirin, Panadol..."); 
 
+		content.addComponent(searchDescription);
+		content.addComponent(searchLabel);
+		searchLabel.addComponent(searchDescription);
+		
 		HorizontalLayout searchBox = new HorizontalLayout(); 
 		text = new TextField(); 
 		text.setPlaceholder("medication name");
@@ -81,9 +83,8 @@ public class MedicationViewImpl extends ButtonProvider {
 		searchButton.addClickListener(this); 
 
 		content.addComponent(searchBox);
-		content.addComponent(searchBox);
 		searchBox.addComponents(text, searchButton);
-
+		
 		superButtonBox = new HorizontalLayout();
 		superButtonBox.setSizeFull();
 		superButtonBox.setMargin(true);
@@ -115,28 +116,9 @@ public class MedicationViewImpl extends ButtonProvider {
 
 		contentLayout.addComponent(name);
 		contentLayout.addComponent(description);
-
+		
 		panel.setContent(contentLayout);
-		layout.addComponent(panel);
+		content.addComponent(panel);
 	}
-
-	//	public String searchMedication(String value) { 
-	//
-	//		if (value.equals(search.getPlaceholder())) { 
-	//
-	//			panel = new Panel(value); 
-	//			panel.setHeight(100.0f, Unit.PERCENTAGE);
-	//
-	//			VerticalLayout contentLayout = new VerticalLayout();
-	//			contentLayout.setWidth(500, Unit.PIXELS);
-	//			contentLayout.setSpacing(false);
-	//
-	//			panel.setContent(contentLayout);
-	//			layout.addComponent(panel);
-	//		}
-	//		Medication med = new Medication(); 
-	//		return searchMedication(med.getMedName() + med.getMedDescription());
-	//	}
-
 
 }
