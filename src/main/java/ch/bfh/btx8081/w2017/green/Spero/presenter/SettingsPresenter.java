@@ -20,9 +20,6 @@ import ch.bfh.btx8081.w2017.green.Spero.view.Views;
  */
 public class SettingsPresenter implements SperoViewListener {
     
-    /**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private final SettingsView settingsView;
     private final SettingsModel settingsModel;
@@ -34,7 +31,7 @@ public class SettingsPresenter implements SperoViewListener {
     private final ReportViewImpl reportView;
 
     /**
-     * 
+     * builds the settingsPresenter with all the view classes
      * @param settingsView
      * @param settingsModel
      * @param changePinView
@@ -67,21 +64,18 @@ public class SettingsPresenter implements SperoViewListener {
 	final String buttonId = event.getButton().getId();
 
 	switch (buttonId) {
-	/**
-	 * if the user clicks the menu button, the menu view opens
-	 */
+	
+	 // if the user clicks the menu button, the menu view opens
 	case "menuButton":
 		settingsView.getUI().getNavigator().navigateTo(Views.MENU_VIEW);
 	    break;
-	/**
-	 * if the user clicks the change button, the change PIN view opens    
-	 */
+	
+	 // if the user clicks the change button, the change PIN view opens    
 	case "change":
 	    settingsView.getUI().getNavigator().navigateTo(Views.CHANGE_PIN_VIEW);
 	    break;
-	/**
-	 * checks if no field is empty and then goes back to the menu view    
-	 */
+	
+	 // checks if no field is empty and then goes back to the menu view    
 	case "ok":
 		
 		String reminderValue = settingsView.getReminderValue();
@@ -124,15 +118,13 @@ public class SettingsPresenter implements SperoViewListener {
 			
 		settingsView.getUI().getNavigator().navigateTo(Views.MENU_VIEW);
 	    break;
-	/**
-	 * if the user clicks the sos button, the sos view opens    
-	 */
+	
+	 // if the user clicks the sos button, the sos view opens    
 	case "sos":
 		settingsView.getUI().getNavigator().navigateTo(Views.SOS_VIEW);
 	    break;
-	/**
-	 * if the user clicks the chat button, the chat view opens    
-	 */
+	
+	 // if the user clicks the chat button, the chat view opens    
 	case "chat":
 		settingsView.getUI().getNavigator().navigateTo(Views.CHAT_VIEW);
 	    break;
