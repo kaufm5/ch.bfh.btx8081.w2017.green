@@ -9,13 +9,13 @@ import com.vaadin.ui.VerticalLayout;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.ButtonProvider;
 
-public class MedicationView extends ButtonProvider {
+public class MedicationViewImpl extends ButtonProvider {
 
 	private SearchBox search; 
 	private Label title; 
 	private HorizontalLayout superButtonBox;
 
-	public MedicationView() {
+	public MedicationViewImpl() {
 
 		VerticalLayout layout = new VerticalLayout();
 		setCompositionRoot(layout);

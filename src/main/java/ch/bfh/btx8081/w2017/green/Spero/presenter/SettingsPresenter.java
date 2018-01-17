@@ -5,11 +5,11 @@ import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.IncorrectException;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 import ch.bfh.btx8081.w2017.green.Spero.model.SettingsModel;
 import ch.bfh.btx8081.w2017.green.Spero.view.ChangePinView;
-import ch.bfh.btx8081.w2017.green.Spero.view.DefDepressionView;
+import ch.bfh.btx8081.w2017.green.Spero.view.DefDepressionViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.MainViewImpl;
-import ch.bfh.btx8081.w2017.green.Spero.view.MedicationView;
+import ch.bfh.btx8081.w2017.green.Spero.view.MedicationViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.MenuView;
-import ch.bfh.btx8081.w2017.green.Spero.view.ReportView;
+import ch.bfh.btx8081.w2017.green.Spero.view.ReportViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.SettingsView;
 import ch.bfh.btx8081.w2017.green.Spero.view.Views;
 
@@ -29,9 +29,9 @@ public class SettingsPresenter implements SperoViewListener {
     private final ChangePinView changePinView;
     private final MenuView menuView;
     private final MainViewImpl mainView;
-    private final DefDepressionView defDepView;
-    private final MedicationView medInfView;
-    private final ReportView reportView;
+    private final DefDepressionViewImpl defDepView;
+    private final MedicationViewImpl medInfView;
+    private final ReportViewImpl reportView;
 
     /**
      * 
@@ -45,8 +45,8 @@ public class SettingsPresenter implements SperoViewListener {
      * @param reportView
      */
     public SettingsPresenter(SettingsView settingsView, SettingsModel settingsModel, ChangePinView changePinView,
-    		MenuView menuView, MainViewImpl mainView, DefDepressionView defDepView, MedicationView medInfView,
-    		ReportView reportView) {
+    		MenuView menuView, MainViewImpl mainView, DefDepressionViewImpl defDepView, MedicationViewImpl medInfView,
+    		ReportViewImpl reportView) {
 		this.settingsView = settingsView;
 		this.settingsModel = settingsModel;
 		this.changePinView = changePinView;

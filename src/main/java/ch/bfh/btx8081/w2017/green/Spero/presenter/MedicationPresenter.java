@@ -7,20 +7,20 @@ import com.vaadin.ui.Button.ClickEvent;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 import ch.bfh.btx8081.w2017.green.Spero.model.MedicationModel;
 import ch.bfh.btx8081.w2017.green.Spero.persistence.Medication;
-import ch.bfh.btx8081.w2017.green.Spero.view.MedicationView;
+import ch.bfh.btx8081.w2017.green.Spero.view.MedicationViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.Views;
 
 public class MedicationPresenter implements SperoViewListener{
 
 	private static final long serialVersionUID = 1L;
 
-	private MedicationView medView;
+	private MedicationViewImpl medView;
 
 	private MedicationModel medModel; 
 
 	//private List<Medication> medList; 
 
-	public MedicationPresenter(MedicationView medView, MedicationModel medModel) {
+	public MedicationPresenter(MedicationViewImpl medView, MedicationModel medModel) {
 		this.medView = medView;
 		this.medModel = medModel;
 

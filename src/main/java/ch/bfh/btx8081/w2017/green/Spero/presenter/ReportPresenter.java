@@ -3,7 +3,7 @@ package ch.bfh.btx8081.w2017.green.Spero.presenter;
 import com.vaadin.ui.Button.ClickEvent;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
-import ch.bfh.btx8081.w2017.green.Spero.view.ReportView;
+import ch.bfh.btx8081.w2017.green.Spero.view.ReportViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.Views;
 
 /**
@@ -16,14 +16,14 @@ public class ReportPresenter implements SperoViewListener{
 
 	private static final long serialVersionUID = 1L;
 
-	private ReportView view;
+	private ReportViewImpl view;
 
 	/**
 	 * Class constructor
 	 * 
 	 * @param view - the report view 
 	 */
-	public ReportPresenter(ReportView view) {
+	public ReportPresenter(ReportViewImpl view) {
 		this.view = view;
 		view.init();
 		view.addListener(this);

@@ -8,13 +8,13 @@ import com.vaadin.ui.VerticalLayout;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.ButtonProvider;
 
-public class ReportView extends ButtonProvider {
+public class ReportViewImpl extends ButtonProvider {
 
 	private Label reportTitle; 
 	private ComboBox choice; 
 	private HorizontalLayout superButtonBox;
 	
-	public ReportView() { 
+	public ReportViewImpl() { 
 		VerticalLayout layout = new VerticalLayout();
 		setCompositionRoot(layout);
 

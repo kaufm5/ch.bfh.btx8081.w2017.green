@@ -36,15 +36,15 @@ import ch.bfh.btx8081.w2017.green.Spero.presenter.SettingsPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.SosPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.view.ChangePinView;
 import ch.bfh.btx8081.w2017.green.Spero.view.ChatView;
-import ch.bfh.btx8081.w2017.green.Spero.view.DefDepressionView;
+import ch.bfh.btx8081.w2017.green.Spero.view.DefDepressionViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.DiaryViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.ForgetPasswordView;
 import ch.bfh.btx8081.w2017.green.Spero.view.MainViewImpl;
-import ch.bfh.btx8081.w2017.green.Spero.view.MedicationView;
+import ch.bfh.btx8081.w2017.green.Spero.view.MedicationViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.MenuView;
 import ch.bfh.btx8081.w2017.green.Spero.view.PinView;
 import ch.bfh.btx8081.w2017.green.Spero.view.ReminderView;
-import ch.bfh.btx8081.w2017.green.Spero.view.ReportView;
+import ch.bfh.btx8081.w2017.green.Spero.view.ReportViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.SettingsView;
 import ch.bfh.btx8081.w2017.green.Spero.view.SosView;
 
@@ -87,9 +87,9 @@ public class MyUI extends UI {
 	ReminderModel reminderModel;
 	ForgetPasswordView forgetPasswordView;
 	ForgetPasswordModel forgetPasswordModel;
-	ReportView reportView; 
-	DefDepressionView defDepressionView;
-	MedicationView medInfoView; 
+	ReportViewImpl reportView; 
+	DefDepressionViewImpl defDepressionView;
+	MedicationViewImpl medInfoView; 
 	MedicationModel medInfoModel;
 
     @Override
@@ -116,14 +116,14 @@ public class MyUI extends UI {
      reminderModel = new ReminderModel();
      forgetPasswordView = new ForgetPasswordView();
      forgetPasswordModel = new ForgetPasswordModel();
-     reportView = new ReportView(); 
-     defDepressionView = new DefDepressionView(); 
-     medInfoView = new MedicationView(); 
+     reportView = new ReportViewImpl(); 
+     defDepressionView = new DefDepressionViewImpl(); 
+     medInfoView = new MedicationViewImpl(); 
      medInfoModel = new MedicationModel(); 
      
     
    	 navigator.addView("main", mainView);
-   	 navigator.addView("report", new ReportView() );
+   	 navigator.addView("report", new ReportViewImpl() );
    	 navigator.addView("menu", menuView);
    	 navigator.addView("sos", sosView);
    	 navigator.addView("chat", chatView);

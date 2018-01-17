@@ -13,7 +13,7 @@ import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.ButtonProvider;
  * 
  * @author mussi
  */
-public class DefDepressionView extends ButtonProvider {
+public class DefDepressionViewImpl extends ButtonProvider {
 
 	private static final long serialVersionUID = 1L;
 
@@ -24,7 +24,7 @@ public class DefDepressionView extends ButtonProvider {
 	/**
 	 * Class constructor 
 	 */
-	public DefDepressionView() {
+	public DefDepressionViewImpl() {
 
 		VerticalLayout layout = new VerticalLayout();
 		setCompositionRoot(layout);

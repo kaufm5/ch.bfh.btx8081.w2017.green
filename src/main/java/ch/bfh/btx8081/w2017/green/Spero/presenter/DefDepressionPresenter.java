@@ -3,7 +3,7 @@ package ch.bfh.btx8081.w2017.green.Spero.presenter;
 import com.vaadin.ui.Button.ClickEvent;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
-import ch.bfh.btx8081.w2017.green.Spero.view.DefDepressionView;
+import ch.bfh.btx8081.w2017.green.Spero.view.DefDepressionViewImpl;
 import ch.bfh.btx8081.w2017.green.Spero.view.Views;
 
 /**
@@ -16,14 +16,14 @@ public class DefDepressionPresenter implements SperoViewListener{
 
 	private static final long serialVersionUID = 1L;
 
-	private DefDepressionView view;
+	private DefDepressionViewImpl view;
 
 	/**
 	 * Class constructor 
 	 * 
 	 * @param view - the view it should present 
 	 */
-	public DefDepressionPresenter(DefDepressionView view) {
+	public DefDepressionPresenter(DefDepressionViewImpl view) {
 		this.view = view;
 		view.init();
 		view.addListener(this);
