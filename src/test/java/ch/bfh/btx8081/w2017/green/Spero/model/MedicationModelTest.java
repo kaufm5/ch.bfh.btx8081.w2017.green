@@ -7,22 +7,17 @@ import org.junit.Test;
 public class MedicationModelTest {
 
 	@Test
-	public void testMedInfoModel() {
+	public void testMedicationModel() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testPersist() {
+	public void testTakeListFromDB() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testGetMedicationList() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetMedicationList() {
+	public void testGetMedicationByName() {
 		fail("Not yet implemented");
 	}
 
