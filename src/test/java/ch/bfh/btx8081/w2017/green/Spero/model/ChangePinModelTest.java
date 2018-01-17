@@ -5,8 +5,17 @@ import org.junit.Test;
 import ch.bfh.btx8081.w2017.green.Spero.model.ChangePinModel;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.IncorrectException;
 
+/**
+ * tests the ChangePinModel class
+ * @author mirjam
+ *
+ */
 public class ChangePinModelTest {
 
+	/**
+	 * tests if an exception is thrown
+	 * @throws IncorrectException
+	 */
 	@Test(expected = IncorrectException.class)
 	public void testCheckExceptions() throws IncorrectException {
 		ChangePinModel changePinModel1 = new ChangePinModel("1235","23","23");
@@ -20,6 +29,10 @@ public class ChangePinModelTest {
 		changePinModel3.checkNewPin("abcd", "abcd");
 	}
 
+	/**
+	 * tests if no exception is thrown
+	 * @throws IncorrectException
+	 */
 	@Test
 	public void testCorrect() throws IncorrectException {
 		ChangePinModel changePinModel = new ChangePinModel("1234", "2345", "2345");
