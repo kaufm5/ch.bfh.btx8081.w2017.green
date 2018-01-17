@@ -4,7 +4,7 @@ import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.IncorrectException;
 import ch.bfh.btx8081.w2017.green.Spero.persistence.DB;
 
 public class SettingsModel {
-	private static final DB DATABASE_MANAGER = DB.getInstance();
+	//private static final DB DATABASE_MANAGER = DB.getInstance();
 
 	private String username;
 	private String reminder;
@@ -33,13 +33,13 @@ public class SettingsModel {
 	 * @param snooze
 	 * @param chat
 	 */
-	public void persist(String username, String reminder, String snooze,
-			String chat) {
-		SettingsModel.DATABASE_MANAGER.persistObject(username);
-		SettingsModel.DATABASE_MANAGER.persistObject(reminder);
-		SettingsModel.DATABASE_MANAGER.persistObject(snooze);
-		;
-	}
+//	public void persist(String username, String reminder, String snooze,
+//			String chat) {
+//		SettingsModel.DATABASE_MANAGER.persistObject(username);
+//		SettingsModel.DATABASE_MANAGER.persistObject(reminder);
+//		SettingsModel.DATABASE_MANAGER.persistObject(snooze);
+//		;
+//	}
 
 	/**
      * checks that the snooze time is not empty
