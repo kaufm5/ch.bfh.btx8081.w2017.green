@@ -1,9 +1,12 @@
 package ch.bfh.btx8081.w2017.green.Spero.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.Scanner;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.IncorrectException;
 import ch.bfh.btx8081.w2017.green.Spero.persistence.DB;
@@ -79,15 +82,29 @@ public class ChangePinModel {
     	}
     	}
     
-    public void persist() {
+    /**
+     * saves the pin in setting.properties
+     */
+    public void savePin(String[] args) throws Exception {
     	try {
     		checkOldPin(oldPin);
     		checkNewPin(newPin1, newPin2);
     	} catch (Exception e) {
     		System.out.println(e);
     	}
-		ChangePinModel.DATABASE_MANAGER.persistObject(newPin1);
-		;
+	
+    	//ChangePinModel.DATABASE_MANAGER.persistObject(newPin1);
+		//;
+		
+    	File inFile = new File("setting.properties");
+    	Scanner input = new Scanner(inFile);
+    	
+//		try (ObjectInputStream in = new ObjectInputStream (new FileInputStream(args[0]))) {
+//			Message msg = (Message) in.readObject();
+//			String text = msg.getText();
+//			System.out.println();	
+//			} catch (FileNotFoundException e) {}
+		//}
 	}
     
     }

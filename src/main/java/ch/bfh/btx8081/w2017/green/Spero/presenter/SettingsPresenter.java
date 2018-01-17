@@ -1,7 +1,5 @@
 package ch.bfh.btx8081.w2017.green.Spero.presenter;
 
-import java.util.Observable;
-
 import com.vaadin.ui.Button.ClickEvent;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.IncorrectException;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
@@ -22,7 +20,11 @@ import ch.bfh.btx8081.w2017.green.Spero.view.Views;
  */
 public class SettingsPresenter implements SperoViewListener {
     
-    private final SettingsView settingsView;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private final SettingsView settingsView;
     private final SettingsModel settingsModel;
     private final ChangePinView changePinView;
     private final MenuView menuView;
