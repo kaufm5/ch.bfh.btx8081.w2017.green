@@ -7,11 +7,6 @@ import org.junit.Test;
 
 public class ForgetPasswordModelTest {
 
-//	@Test
-//	public void testSendEmail() {
-//		fail("Not yet implemented");
-//	}
-
 	@Test
 	public void testCheckEmail() {
 		
@@ -19,7 +14,6 @@ public class ForgetPasswordModelTest {
 		assertFalse(ForgetPasswordModel.checkEmail("jaksdf@gmailcom"));
 		assertFalse(ForgetPasswordModel.checkEmail("@gmail.com"));
 		assertFalse(ForgetPasswordModel.checkEmail("jaksdf@gmail."));
-		//assertFalse(ForgetPasswordModel.checkEmail("jaksdf@gmail.c"));
 		assertFalse(ForgetPasswordModel.checkEmail("jaksdf@.com"));
 		assertTrue(ForgetPasswordModel.checkEmail("jaksdf@gmail.com"));
 			
