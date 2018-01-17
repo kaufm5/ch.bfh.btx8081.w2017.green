@@ -1,6 +1,9 @@
 package ch.bfh.btx8081.w2017.green.Spero.model;
 
+import com.vaadin.ui.Panel;
+
 import ch.bfh.btx8081.w2017.green.Spero.persistence.DB;
+import ch.bfh.btx8081.w2017.green.Spero.persistence.Medication;
 import ch.bfh.btx8081.w2017.green.Spero.persistence.MedicationList;
 
 /**
@@ -31,7 +34,6 @@ public class MedicationModel {
 		else {
 			this.mediList = (MedicationList) MedicationModel.DATABASE_MANAGER
 					.getSperoLists("MedicationList").get(0);
-
 		}
 	}
 
@@ -41,6 +43,17 @@ public class MedicationModel {
 
 	public void setMediList(MedicationList mediList) {
 		this.mediList = mediList;
+	}
+
+	public Medication getMedicationByName(String search) {
+		
+		for(Medication med : this.mediList.getMedicationList()) {
+			
+			if(med.getMedName().equals(search)) {
+				return med;
+			}
+		}
+		return null;
 	}
 
 }
