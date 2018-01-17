@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class MedInfoModelTest {
+public class MedicationModelTest {
 
 	@Test
 	public void testMedInfoModel() {
