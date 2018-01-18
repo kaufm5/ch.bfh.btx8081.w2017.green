@@ -8,19 +8,23 @@ import com.vaadin.ui.VerticalLayout;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.ButtonProvider;
 
+/**
+ * This class is the view of the diary entries report screen
+ * 
+ * @author mussi
+ *
+ */
 public class ReportViewImpl extends ButtonProvider {
+	private static final long serialVersionUID = 1L;
 
 	private Label reportTitle; 
-	private ComboBox choice; 
+	private ComboBox<String> choice; 
 	private HorizontalLayout superButtonBox;
-	
+
 	public ReportViewImpl() { 
 		VerticalLayout layout = new VerticalLayout();
 		setCompositionRoot(layout);
 
-		// gnuplot 
-		//graphviz
-		
 		VerticalLayout titleBarBox = new VerticalLayout(); 
 		reportTitle = new Label("Statistik");
 		titleBarBox.addComponent(reportTitle);
@@ -38,7 +42,7 @@ public class ReportViewImpl extends ButtonProvider {
 
 		menuAndContent.setExpandRatio(menuBox, 1);
 		menuAndContent.setExpandRatio(content, 9);
-		
+
 		HorizontalLayout comboBox = new HorizontalLayout(); 
 
 		choice = new ComboBox<String>("Month"); 
@@ -46,7 +50,7 @@ public class ReportViewImpl extends ButtonProvider {
 		content.addComponent(comboBox);
 		choice.setItems("Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August",
 				"September", "Oktober", "November", "Dezember");
-		
+
 		superButtonBox = new HorizontalLayout();
 		superButtonBox.setSizeFull();
 		superButtonBox.setMargin(true);
@@ -54,9 +58,12 @@ public class ReportViewImpl extends ButtonProvider {
 		content.addComponent(superButtonBox);
 		superButtonBox.addComponent(sosButton);
 		superButtonBox.setComponentAlignment(sosButton, Alignment.MIDDLE_LEFT);
-		
-	}
 
+	}
+	
+	/**
+	 * Builds the chat button 
+	 */
 	public void buildChatButton(){
 		superButtonBox.addComponent(chatButton);
 		superButtonBox.setComponentAlignment(chatButton, Alignment.MIDDLE_LEFT);
