@@ -75,7 +75,9 @@ public class MainPresenter implements SperoViewListener {
 			moodParam = Mood.schlecht;
 			break;
 		case "confirmButton":
-
+			
+			// if no MoodParam was selectet, there will be an error when we want to display the DiaryEntrys
+			// because of that, a MoodParam is necessary
 			if (moodParam == null) {
 				try {
 					// Notification with default settings for a warning
@@ -83,25 +85,22 @@ public class MainPresenter implements SperoViewListener {
 					    "Please select a Mood",
 					    "",
 					    Notification.TYPE_WARNING_MESSAGE);
-
-					
-					
-					// Customize it
 					notif.setDelayMsec(2000);
-
-					// Show it in the page
 					notif.show(Page.getCurrent());
-					
 					throw new MoodParamNotFoundException("");
+					
 				} catch (MoodParamNotFoundException e) {
-					e.printStackTrace();
+					e.getMessage();
 				}
 			} else {
 				DiaryEntryList list = mainModel.getDiaryList();
 				list.createDiaryEntry(mainView.diaryTitle.getValue(), mainView.diaryText.getValue(), moodParam);
-
+				
+				// clear the TextFields
 				mainView.diaryTitle.clear();
 				mainView.diaryText.clear();
+				
+				// Navigate to the DiaryViewImpl
 				mainView.getUI().getNavigator().navigateTo(Views.DIARY_VIEW);
 				break;
 			}
