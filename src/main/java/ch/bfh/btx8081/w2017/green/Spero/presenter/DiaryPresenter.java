@@ -52,27 +52,33 @@ public class DiaryPresenter implements SperoViewListener {
 		case "newButton":
 			diaryView.getUI().getNavigator().navigateTo(Views.MAIN_VIEW);
 			break;
-			
+		
+		// In the default the buttonId has to be a buttonId of a delete button in a panel.
+		// Because this buttonId is the Primary Key of the specific DiaryEntry as well. We can Parse the buttonId to a Integer.
+		// The Primary Key can be used to search the DiaryEntry, which should be deletet. 	
 		default:
 			int diaryID = Integer.parseInt(buttonId);
 			DiaryEntryList list2 = diaryModel.getDiaryList();
 			list2.deleteDiaryEntry(diaryID);
 			
-			
+			// We need to relod the page to set the changes. 
 			Page.getCurrent().reload();
 			
 			Notification.show("Eintrag wurde gelöscht",
 	                  "",
 	                  Notification.Type.HUMANIZED_MESSAGE);
-			
-			
 			break;
 		}
 	}
 	
+	// This Method is calling, when the refresh button was clicked
+	// Just DiaryEntry, which are not displayed yet, will be created. 
 	private void refresh() {
 		
 		DiaryEntryList list = diaryModel.getDiaryList();
+		
+		// We will addEntryToView as long as the numberOfAddedEntry is less than the size of the DiaryList.
+		// Are allready two DiaryEntry displayed (0,1). It will start with the third DiaryEntry (2)
 		while(numberOfAddedEntry < list.getDiaryList().size()) {
 			DiaryEntry diaryEntry = list.getDiaryList().get(numberOfAddedEntry);
 			String title = diaryEntry.getTitle();
