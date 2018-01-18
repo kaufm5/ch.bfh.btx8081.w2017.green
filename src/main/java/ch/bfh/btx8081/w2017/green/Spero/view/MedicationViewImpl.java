@@ -59,6 +59,8 @@ public class MedicationViewImpl extends ButtonProvider {
 
 		menuBox.addComponent(menuButton);
 		menuBox.setComponentAlignment(menuButton, Alignment.MIDDLE_LEFT);
+		menuButton.setId("menuButton");
+		menuButton.addClickListener(this); 
 		menuBox.addStyleName("menu");
 		menuAndContent.addComponent(menuBox);
 
@@ -94,9 +96,12 @@ public class MedicationViewImpl extends ButtonProvider {
 		superButtonBox.setSizeFull();
 		superButtonBox.setMargin(true);
 		superButtonBox.setSpacing(true);
+		sosButton.setId("sosButton");
+		sosButton.addClickListener(this); 
 		content.addComponent(superButtonBox);
 		superButtonBox.addComponent(sosButton);
 		superButtonBox.setComponentAlignment(sosButton, Alignment.MIDDLE_LEFT);
+		
 	}
 
 	/**

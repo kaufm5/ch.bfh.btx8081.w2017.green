@@ -18,14 +18,11 @@ import ch.bfh.btx8081.w2017.green.Spero.model.MedicationModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.PinModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.ReminderModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.SettingsModel;
-import ch.bfh.btx8081.w2017.green.Spero.persistence.DB;
-import ch.bfh.btx8081.w2017.green.Spero.persistence.DiaryEntry;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.ChangePinPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.ChatPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.DefDepressionPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.DiaryPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.ForgetPasswordPresenter;
-//import ch.bfh.btx8081.w2017.green.Spero.presenter.DiaryEntryPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.MainPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.MedicationPresenter;
 import ch.bfh.btx8081.w2017.green.Spero.presenter.MenuPresenter;
@@ -58,6 +55,7 @@ import ch.bfh.btx8081.w2017.green.Spero.view.SosView;
  */
 @Theme("mytheme")
 public class MyUI extends UI {
+	private static final long serialVersionUID = 1L;
 	
 	Navigator navigator; 
 	String code;
@@ -67,7 +65,6 @@ public class MyUI extends UI {
 	String reminder;
 	String snooze;
 	String chat;
-	//String time ="";
 	
 	MainViewImpl mainView;
 	
@@ -156,6 +153,7 @@ public class MyUI extends UI {
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
     @VaadinServletConfiguration(ui = MyUI.class, productionMode = false)
     public static class MyUIServlet extends VaadinServlet {
+		private static final long serialVersionUID = 1L;
     }
     
     
