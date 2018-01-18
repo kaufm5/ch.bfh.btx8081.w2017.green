@@ -6,8 +6,14 @@ import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 import ch.bfh.btx8081.w2017.green.Spero.view.MenuView;
 import ch.bfh.btx8081.w2017.green.Spero.view.Views;
 
+/**
+ * 
+ * @author mirjam
+ *
+ */
 public class MenuPresenter implements SperoViewListener {
-	
+
+	private static final long serialVersionUID = 1L;
 	private MenuView menuView;
 	
 	public MenuPresenter(MenuView menuView) {
