@@ -15,7 +15,7 @@ import ch.bfh.btx8081.w2017.green.Spero.exceptionHandling.MedicationNotFoundExce
  */
 public class MedicationModelTest {
 	MedicationModel model; 
-	
+
 	/**
 	 * Initializes the medication model 
 	 */
@@ -23,9 +23,9 @@ public class MedicationModelTest {
 	public void setup() { 
 		this.model = new MedicationModel();
 	}
-	
+
 	/**
-	 * Tests the GetMedicationByName method 
+	 * Tests the getMedicationByName method 
 	 * 
 	 * @throws MedicationNotFoundException - if medication name not found 
 	 */
@@ -33,7 +33,17 @@ public class MedicationModelTest {
 	public void testGetMedicationByName() throws MedicationNotFoundException {
 		assertEquals("Aspirin", model.getMedicationByName("Aspirin").getMedName());
 	}
-	
+
+	/**
+	 * Tests the getMedicationByName method with null 
+	 * 
+	 * @throws MedicationNotFoundException - if no name is inputted 
+	 */
+	@Test (expected = MedicationNotFoundException.class)
+	public void testGetMedicationWithNull() throws MedicationNotFoundException {
+		model.getMedicationByName(null);
+	}
+
 	/**
 	 * Tests if an exception is thrown
 	 * 
