@@ -1,9 +1,6 @@
 package ch.bfh.btx8081.w2017.green.Spero.view;
 
-import com.vaadin.event.Action;
-import com.vaadin.event.ShortcutAction;
 import com.vaadin.event.ShortcutAction.KeyCode;
-import com.vaadin.event.ShortcutListener;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.PasswordField;
@@ -56,11 +53,9 @@ public class PinView extends ButtonProvider {
     	
     	this.pinException = new Label("");
     	pinException.setId("pinValue");
-    	//this.pin.addShortcutListener(new ShortcutListener("enter", ShortcutAction.KeyCode.ENTER, null));
-    	//Action action_ok = new ShortcutAction("Default key", ShortcutAction.KeyCode.ENTER, null);
-    	this.ok.setClickShortcut(KeyCode.ENTER);
-    	//this.pin.addShortcutListener(new ShortcutListener(this.pin, KeyCode.ENTER, null));
+    	
     	pinItems.addComponent(this.pinException);
+    	this.ok.setClickShortcut(KeyCode.ENTER);
        	pinItems.addComponent(this.ok);
     	pinItems.addComponent(this.forgotten);
     	content.addComponent(pinItems);

@@ -1,5 +1,6 @@
 package ch.bfh.btx8081.w2017.green.Spero.view;
 
+import com.vaadin.event.ShortcutAction.KeyCode;
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
@@ -69,6 +70,7 @@ public class ForgetPasswordView extends ButtonProvider {
     	this.mailException = new Label("");
     	mailException.setId("pinValue");
     	forgetPasswordItems.addComponent(this.mailException);
+    	this.ok.setClickShortcut(KeyCode.ENTER);
        	forgetPasswordItems.addComponent(this.ok);
     	
     	content.addComponent(forgetPasswordItems);
