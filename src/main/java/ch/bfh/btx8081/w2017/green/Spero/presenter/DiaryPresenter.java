@@ -65,6 +65,7 @@ public class DiaryPresenter implements SperoViewListener {
 	                  "",
 	                  Notification.Type.HUMANIZED_MESSAGE);
 			
+			
 			break;
 		}
 	}
