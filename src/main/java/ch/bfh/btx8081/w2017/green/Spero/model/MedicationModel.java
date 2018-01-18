@@ -70,6 +70,7 @@ public class MedicationModel {
 	 * 
 	 * @param search - the searched medication name  
 	 * @return medication name and medication description 
+	 * @throws MedicationNotFoundException - if the medication is not found 
 	 */
 	public Medication getMedicationByName(String search) throws MedicationNotFoundException {
 
