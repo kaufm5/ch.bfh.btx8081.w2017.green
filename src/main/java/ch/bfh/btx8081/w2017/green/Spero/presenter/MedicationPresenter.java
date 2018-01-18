@@ -50,7 +50,7 @@ public class MedicationPresenter implements SperoViewListener{
 		switch(buttonId) {
 		case "menuButton":
 			medView.getUI().getNavigator().navigateTo(Views.MENU_VIEW);
-		case "sosButton":
+		case "sos":
 			medView.getUI().getNavigator().navigateTo(Views.SOS_VIEW);
 			break;
 		case "chatButton":

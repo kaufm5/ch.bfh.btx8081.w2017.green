@@ -53,7 +53,7 @@ public class MainPresenter implements SperoViewListener {
 		case "chatButton":
 			mainView.getUI().getNavigator().navigateTo(Views.CHAT_VIEW);
 			break;
-		case "sosButton":
+		case "sos":
 			mainView.getUI().getNavigator().navigateTo(Views.SOS_VIEW);
 			break;
 		case "smileGut":

@@ -42,7 +42,7 @@ public class DiaryPresenter implements SperoViewListener {
 			diaryView.getUI().getNavigator().navigateTo(Views.MENU_VIEW);
 			break;
 			
-		case "sosButton":
+		case "sos":
 			diaryView.getUI().getNavigator().navigateTo(Views.SOS_VIEW);
 			break;
 	
