@@ -7,12 +7,22 @@ import com.vaadin.ui.VerticalLayout;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.ButtonProvider;
 
+/**
+ * this class provides the PinView
+ * this view is shown first, when the user opens the application
+ * @author mirjam
+ *
+ */
 public class PinView extends ButtonProvider {
 	
+	private static final long serialVersionUID = 1L;
 	private final Label hallo;
 	private final PasswordField pin;
 	public final Label pinException;
 	
+	/**
+	 * creates the PinView
+	 */
     public PinView() {
     	
     	final VerticalLayout layout = new VerticalLayout();
@@ -36,8 +46,8 @@ public class PinView extends ButtonProvider {
 
     	final VerticalLayout pinItems = new VerticalLayout();
 
+    	//PIN
     	this.pin = new PasswordField("PIN");
-    	//this.pin.setId("pin");
     	pinItems.addComponent(this.pin);
     	
     	this.pinException = new Label("");
@@ -48,6 +58,10 @@ public class PinView extends ButtonProvider {
     	content.addComponent(pinItems);
     }
     
+    /**
+     * gets the value of the PIN
+     * @return value of the PIN
+     */
     public String getPin() {
     	return pin.getValue();
     }

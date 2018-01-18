@@ -8,7 +8,6 @@ import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.ButtonProvider;
-import ch.bfh.btx8081.w2017.green.Spero.presenter.SettingsPresenter;
 
 /**
  * This class provieds the settings view
@@ -16,6 +15,8 @@ import ch.bfh.btx8081.w2017.green.Spero.presenter.SettingsPresenter;
  *
  */
 public class SettingsView extends ButtonProvider {
+	
+	private static final long serialVersionUID = 1L;
 	private final Label settings;
 	private final Label username;
 	private final TextField name;

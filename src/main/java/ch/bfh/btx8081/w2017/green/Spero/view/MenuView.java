@@ -6,15 +6,24 @@ import com.vaadin.ui.VerticalLayout;
 
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.ButtonProvider;
 
+/**
+ * creates the menuView
+ * with this view, it is possible, to access all other views
+ * @author mirjam
+ *
+ */
 public class MenuView extends ButtonProvider {
 	
+	private static final long serialVersionUID = 1L;
 	private Label menu;
 	private HorizontalLayout superButtonBox;
-		
+	
+	/**
+	 * creates the menuView
+	 */
 	public MenuView() {
 		VerticalLayout layout = new VerticalLayout();
 		setCompositionRoot(layout);
-		// test
 		VerticalLayout titleBarBox = new VerticalLayout(); 
 		titleBarBox.addStyleName("titleBox");
 		menu = new Label("Menü");
@@ -31,6 +40,7 @@ public class MenuView extends ButtonProvider {
 		
 		contentLayout.setExpandRatio(content, 9);
 		
+		//menuItems
 		VerticalLayout menuItems = new VerticalLayout();
 		menuItems.addComponent(gefuehlslage);
 		menuItems.addComponent(diary);
@@ -46,6 +56,9 @@ public class MenuView extends ButtonProvider {
 		superButtonBox.addComponents(sosButton);
 	}
 	
+	/**
+	 * builds the chat Button if the chat is on in the settings
+	 */
 	public void buildChatButton(){
 		superButtonBox.addComponent(chatButton);
 	}

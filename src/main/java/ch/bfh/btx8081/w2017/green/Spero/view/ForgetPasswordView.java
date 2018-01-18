@@ -55,6 +55,7 @@ public class ForgetPasswordView extends ButtonProvider {
     	
     	final HorizontalLayout mailLayout = new HorizontalLayout();
 
+    	//eMail
     	this.mail = new Label("E-mail: ");
     	mailLayout.addComponent(mail);
     	
@@ -64,6 +65,7 @@ public class ForgetPasswordView extends ButtonProvider {
     	
     	forgetPasswordItems.addComponent(mailLayout);
     	
+    	//mailException
     	this.mailException = new Label("");
     	mailException.setId("pinValue");
     	forgetPasswordItems.addComponent(this.mailException);

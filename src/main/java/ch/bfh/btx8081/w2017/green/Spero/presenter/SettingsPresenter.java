@@ -33,6 +33,7 @@ public class SettingsPresenter implements SperoViewListener {
 
     /**
      * builds the settingsPresenter with all the view classes
+     * so that the chat Button can be activated or deleted in every view
      * @param settingsView
      * @param settingsModel
      * @param changePinView
@@ -103,6 +104,7 @@ public class SettingsPresenter implements SperoViewListener {
 			System.out.println("Reminder ist Aus");
 		}
 		
+		//builds the chat button in every view
 		String chatValue = settingsView.getChatValue();
 			if (!chatValue.equals("Aus")){
 				System.out.println("Ein");
