@@ -1,5 +1,6 @@
 package ch.bfh.btx8081.w2017.green.Spero.model;
 
+import ch.bfh.btx8081.w2017.green.Spero.exceptionHandling.MedicationNotFoundException;
 import ch.bfh.btx8081.w2017.green.Spero.persistence.DB;
 import ch.bfh.btx8081.w2017.green.Spero.persistence.Medication;
 import ch.bfh.btx8081.w2017.green.Spero.persistence.MedicationList;
@@ -70,7 +71,7 @@ public class MedicationModel {
 	 * @param search - the searched medication name  
 	 * @return medication name and medication description 
 	 */
-	public Medication getMedicationByName(String search) {
+	public Medication getMedicationByName(String search) throws MedicationNotFoundException {
 
 		for(Medication med : this.mediList.getMedicationList()) {
 
@@ -78,7 +79,6 @@ public class MedicationModel {
 				return med;
 			}
 		}
-		return null;
+		throw new MedicationNotFoundException("Medication not found"); 
 	}
-
 }

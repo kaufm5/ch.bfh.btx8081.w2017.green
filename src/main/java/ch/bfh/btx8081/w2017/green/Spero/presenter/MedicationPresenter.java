@@ -2,6 +2,7 @@ package ch.bfh.btx8081.w2017.green.Spero.presenter;
 
 import com.vaadin.ui.Button.ClickEvent;
 
+import ch.bfh.btx8081.w2017.green.Spero.exceptionHandling.MedicationNotFoundException;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 import ch.bfh.btx8081.w2017.green.Spero.model.MedicationModel;
 import ch.bfh.btx8081.w2017.green.Spero.persistence.Medication;
@@ -57,8 +58,13 @@ public class MedicationPresenter implements SperoViewListener{
 			break;
 		case "searchMedication":
 			String search = medView.getText().getValue();
-			Medication med = this.medModel.getMedicationByName(search);	
-			this.medView.buildMedPanel(med); 
+			try {
+				Medication med = this.medModel.getMedicationByName(search);
+				this.medView.buildMedPanel(med); 
+
+			} catch (MedicationNotFoundException e) {
+				e.printException();
+			}	
 			break;
 		}
 	}
