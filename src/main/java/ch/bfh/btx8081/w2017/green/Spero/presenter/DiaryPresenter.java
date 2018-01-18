@@ -46,7 +46,7 @@ public class DiaryPresenter implements SperoViewListener {
 			diaryView.getUI().getNavigator().navigateTo(Views.SOS_VIEW);
 			break;
 	
-		case "chatButton":
+		case "chat":
 			diaryView.getUI().getNavigator().navigateTo(Views.CHAT_VIEW);
 			break;
 		case "newButton":

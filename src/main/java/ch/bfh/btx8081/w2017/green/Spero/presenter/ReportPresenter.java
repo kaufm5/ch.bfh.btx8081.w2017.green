@@ -44,7 +44,7 @@ public class ReportPresenter implements SperoViewListener{
 		case "sos":
 			view.getUI().getNavigator().navigateTo(Views.SOS_VIEW);
 			break;
-		case "chatButton":
+		case "chat":
 			view.getUI().getNavigator().navigateTo(Views.CHAT_VIEW);
 			break;
 		}

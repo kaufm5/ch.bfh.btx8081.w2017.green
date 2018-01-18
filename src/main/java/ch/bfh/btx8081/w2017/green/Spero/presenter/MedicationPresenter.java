@@ -54,7 +54,7 @@ public class MedicationPresenter implements SperoViewListener{
 		case "sos":
 			medView.getUI().getNavigator().navigateTo(Views.SOS_VIEW);
 			break;
-		case "chatButton":
+		case "chat":
 			medView.getUI().getNavigator().navigateTo(Views.CHAT_VIEW);
 			break;
 		case "searchMedication":

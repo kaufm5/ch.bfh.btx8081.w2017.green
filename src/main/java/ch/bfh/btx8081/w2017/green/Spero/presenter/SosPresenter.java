@@ -23,7 +23,7 @@ public class SosPresenter implements SperoViewListener {
 		case "menuButton":
 			sosView.getUI().getNavigator().navigateTo(Views.MENU_VIEW);
 			break;
-		case "chatButton":
+		case "chat":
 			sosView.getUI().getNavigator().navigateTo(Views.CHAT_VIEW);
 			break;
 	}
