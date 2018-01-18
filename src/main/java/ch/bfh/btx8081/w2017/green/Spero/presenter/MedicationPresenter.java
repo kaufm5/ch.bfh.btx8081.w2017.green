@@ -1,6 +1,7 @@
 package ch.bfh.btx8081.w2017.green.Spero.presenter;
 
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Notification;
 
 import ch.bfh.btx8081.w2017.green.Spero.exceptionHandling.MedicationNotFoundException;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
@@ -63,6 +64,9 @@ public class MedicationPresenter implements SperoViewListener{
 				this.medView.buildMedPanel(med); 
 
 			} catch (MedicationNotFoundException e) {
+				Notification.show("Medication not found",
+		                  "",
+		                  Notification.Type.HUMANIZED_MESSAGE);
 				e.printException();
 			}	
 			break;
