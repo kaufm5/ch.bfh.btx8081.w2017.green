@@ -1,5 +1,6 @@
 package ch.bfh.btx8081.w2017.green.Spero.view;
 
+import com.vaadin.event.ShortcutAction.KeyCode;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
@@ -10,7 +11,7 @@ import com.vaadin.ui.VerticalLayout;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.ButtonProvider;
 
 /**
- * This class provieds the settings view
+ * This class provides the settings view
  * @author mirjam
  *
  */
@@ -123,7 +124,6 @@ public class SettingsView extends ButtonProvider {
     	
     	einAusChat = new RadioButtonGroup<>();
     	einAusChat.setItems("Ein", "Aus");
-    	//einAusChat.
     	einAusChat.setId("chat");
     	chat.addComponent(einAusChat);
     	
@@ -131,7 +131,8 @@ public class SettingsView extends ButtonProvider {
     	
     	//settings Exception
     	this.settingsException = new Label("");
-    	settingsItems.addComponent(settingsException);    	
+    	settingsItems.addComponent(settingsException);  
+    	this.ok.setClickShortcut(KeyCode.ENTER);
     	settingsItems.addComponent(ok);
     	
     	content.addComponent(settingsItems);
