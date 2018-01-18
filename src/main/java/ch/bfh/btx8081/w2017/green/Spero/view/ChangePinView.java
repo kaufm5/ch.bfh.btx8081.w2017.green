@@ -1,5 +1,6 @@
 package ch.bfh.btx8081.w2017.green.Spero.view;
 
+import com.vaadin.event.ShortcutAction.KeyCode;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
@@ -104,6 +105,7 @@ public class ChangePinView extends ButtonProvider {
     	changePinItems.addComponent(this.pinException);
     	
     	//confirm changes
+    	this.ok.setClickShortcut(KeyCode.ENTER);
     	changePinItems.addComponent(this.ok);
     	
     	content.addComponent(changePinItems);

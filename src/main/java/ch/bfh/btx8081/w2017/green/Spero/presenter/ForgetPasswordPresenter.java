@@ -58,6 +58,7 @@ public class ForgetPasswordPresenter implements SperoViewListener {
 		// if the user clicks the back button, the PIN View is shown
 		case "back":
 			forgetPasswordView.getUI().getNavigator().navigateTo(Views.PIN_VIEW);
+			break;
 	}
 	}
 

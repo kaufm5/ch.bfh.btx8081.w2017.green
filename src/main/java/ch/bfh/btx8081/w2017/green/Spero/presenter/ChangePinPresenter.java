@@ -36,14 +36,6 @@ public class ChangePinPresenter implements SperoViewListener {
 			try {
 				changePinModel.checkOldPin(oldPin);
 				changePinModel.checkNewPin(newPin1, newPin2);
-//				try {
-//		    		Integer.parseInt(newPin1.substring(0));
-//		    	}
-//		    	catch (Exception e) {
-//		    		System.out.println("nur Zahlen");
-//		    		changePinView.pinException.setValue("nur Zahlen");
-//		    		break;
-//		    	}
 			} catch (IncorrectException e) {
 				e.printStackTrace();
 				changePinView.pinException.setValue(e.getMessage());
