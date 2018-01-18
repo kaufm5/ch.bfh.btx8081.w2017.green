@@ -1,11 +1,12 @@
 package ch.bfh.btx8081.w2017.green.Spero.model;
 
 import ch.bfh.btx8081.w2017.green.Spero.exceptionHandling.IncorrectException;
-import ch.bfh.btx8081.w2017.green.Spero.persistence.DB;
 
+/**
+ * provides the settings model
+ */
 public class SettingsModel {
-	//private static final DB DATABASE_MANAGER = DB.getInstance();
-
+	
 	private String username;
 	private String reminder;
 	private String snooze;
@@ -25,21 +26,6 @@ public class SettingsModel {
 		this.snooze = snooze;
 		this.chat = chat;
 	}
-
-	/**
-	 * persists the input into the database
-	 * @param username
-	 * @param reminder
-	 * @param snooze
-	 * @param chat
-	 */
-//	public void persist(String username, String reminder, String snooze,
-//			String chat) {
-//		SettingsModel.DATABASE_MANAGER.persistObject(username);
-//		SettingsModel.DATABASE_MANAGER.persistObject(reminder);
-//		SettingsModel.DATABASE_MANAGER.persistObject(snooze);
-//		;
-//	}
 
 	/**
      * checks that the snooze time is not empty

@@ -19,6 +19,11 @@ public class MenuPresenter implements SperoViewListener {
 	private MenuView menuView;
 	private MenuModel menuModel;
 	
+	/**
+	 * creates the menuPresenter
+	 * @param menuView
+	 * @param menuModel
+	 */
 	public MenuPresenter(MenuView menuView, MenuModel menuModel) {
 		this.menuView = menuView;
 		this.menuModel = menuModel;
@@ -26,7 +31,9 @@ public class MenuPresenter implements SperoViewListener {
 		menuView.addListener(this);
 	}
 
-	
+	/**
+	 * handles the events from the MenuView class
+	 */
 	@Override
 	public void buttonClick(ClickEvent event) {
 		String buttonId = event.getButton().getId();
@@ -62,16 +69,22 @@ public class MenuPresenter implements SperoViewListener {
 		case "depErk":
 			menuView.getUI().getNavigator().navigateTo(Views.DEFINITION_DEPRESSION_VIEW);
 		    break;
+		    
+		//opens the settingsView if the user clicks the settings button    
 		case "settings":
 			menuView.getUI().getNavigator().navigateTo(Views.SETTINGS_VIEW);
 		    break;
+		    
+		//opens the sosView if the user clicks the sos button
 		case "sos":
 			menuView.getUI().getNavigator().navigateTo(Views.SOS_VIEW);
 		    break;
+		    
+		//opens the chatView if the user clicks the chat button    
 		case "chat":
 			menuView.getUI().getNavigator().navigateTo(Views.CHAT_VIEW);
 		    break;
-	}
+		}
 	}
 
 }

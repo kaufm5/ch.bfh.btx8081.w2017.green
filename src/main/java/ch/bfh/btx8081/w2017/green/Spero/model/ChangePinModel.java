@@ -1,15 +1,6 @@
 package ch.bfh.btx8081.w2017.green.Spero.model;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.util.Scanner;
-
 import ch.bfh.btx8081.w2017.green.Spero.exceptionHandling.IncorrectException;
-import ch.bfh.btx8081.w2017.green.Spero.persistence.DB;
 
 /**
  * the changePinModel
@@ -18,7 +9,6 @@ import ch.bfh.btx8081.w2017.green.Spero.persistence.DB;
  *
  */
 public class ChangePinModel {
-	//private static final DB DATABASE_MANAGER = DB.getInstance();
 	
 	private String oldPin;
 	private String newPin1;
@@ -81,30 +71,5 @@ public class ChangePinModel {
     		throw new IncorrectException("Der PIN darf nur aus Zahlen bestehen.");
     	}
     	}
-    
-    /**
-     * saves the pin in setting.properties
-     */
-    public void savePin(String[] args) throws Exception {
-    	try {
-    		checkOldPin(oldPin);
-    		checkNewPin(newPin1, newPin2);
-    	} catch (Exception e) {
-    		System.out.println(e);
-    	}
-	
-    	//ChangePinModel.DATABASE_MANAGER.persistObject(newPin1);
-		//;
-		
-    	File inFile = new File("setting.properties");
-    	Scanner input = new Scanner(inFile);
-    	
-//		try (ObjectInputStream in = new ObjectInputStream (new FileInputStream(args[0]))) {
-//			Message msg = (Message) in.readObject();
-//			String text = msg.getText();
-//			System.out.println();	
-//			} catch (FileNotFoundException e) {}
-		//}
-	}
     
     }

@@ -2,7 +2,6 @@ package ch.bfh.btx8081.w2017.green.Spero.presenter;
 
 import com.vaadin.ui.Button.ClickEvent;
 
-import ch.bfh.btx8081.w2017.green.Spero.exceptionHandling.IncorrectException;
 import ch.bfh.btx8081.w2017.green.Spero.interfaceEnum.SperoViewListener;
 import ch.bfh.btx8081.w2017.green.Spero.model.ForgetPasswordModel;
 import ch.bfh.btx8081.w2017.green.Spero.view.ForgetPasswordView;
@@ -42,7 +41,7 @@ public class ForgetPasswordPresenter implements SperoViewListener {
 		switch (buttonId) {
 		
 		/*checks the mail address if the user clicks the ok button
-		* if the mail address is correcty, the new PIN is shown
+		* if the mail address is correctly, the new PIN is shown
 		*/
 		case "ok":
 			String mail = forgetPasswordView.getEmail();
