@@ -28,7 +28,7 @@ public final class DB {
 	/**
 	 * Class constructor 
 	 */
-	public DB() {
+	private DB() {
 		initialize();
 	}
 
