@@ -34,6 +34,7 @@ public class ForgetPasswordView extends ButtonProvider {
 
     	final VerticalLayout titleBarBox = new VerticalLayout();
     	this.back = new Button(VaadinIcons.ARROW_LEFT);
+    	this.back.addClickListener(this);
     	back.setId("back");
     	titleBarBox.addComponent(this.back);
     	
