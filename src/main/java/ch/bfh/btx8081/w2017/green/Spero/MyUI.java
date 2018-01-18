@@ -67,6 +67,7 @@ public class MyUI extends UI {
 	String snooze;
 	String chat;
 	
+	//all classes
 	MainViewImpl mainView;
 	DiaryModel modelDiaryEntry;
 	MenuView menuView;
@@ -90,6 +91,9 @@ public class MyUI extends UI {
 	MedicationViewImpl medInfoView; 
 	MedicationModel medInfoModel;
 
+	/**
+	 * the init method in vaadin
+	 */
     @Override
     protected void init(VaadinRequest vaadinRequest) {
    	 final VerticalLayout layout = new VerticalLayout();
@@ -97,9 +101,9 @@ public class MyUI extends UI {
    	 ComponentContainerViewDisplay viewDisplay = new ComponentContainerViewDisplay(layout); 
    	 navigator = new Navigator(UI.getCurrent(), viewDisplay);
    	 
+   	 //all classes
    	 pinView = new PinView();
    	 mainView = new MainViewImpl();
-     
      modelDiaryEntry = new DiaryModel();
      menuView = new MenuView();
      menuModel = new MenuModel();
@@ -120,7 +124,7 @@ public class MyUI extends UI {
      medInfoView = new MedicationViewImpl(); 
      medInfoModel = new MedicationModel(); 
      
-    
+     //add Views to the navigator
    	 navigator.addView("main", mainView);
    	 navigator.addView("report", new ReportViewImpl() );
    	 navigator.addView("menu", menuView);
@@ -136,6 +140,7 @@ public class MyUI extends UI {
    	 navigator.addView("defDepression", defDepressionView);
    	 navigator.addView("medInfoView", medInfoView);
    	 
+   	 //creates all presenters
    	 new MainPresenter(mainView, modelDiaryEntry);
    	 new MenuPresenter(menuView, menuModel);
    	 new SosPresenter(sosView);
