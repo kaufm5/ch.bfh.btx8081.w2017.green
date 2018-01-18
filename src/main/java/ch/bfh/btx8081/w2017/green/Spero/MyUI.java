@@ -15,6 +15,7 @@ import ch.bfh.btx8081.w2017.green.Spero.model.ChangePinModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.DiaryModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.ForgetPasswordModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.MedicationModel;
+import ch.bfh.btx8081.w2017.green.Spero.model.MenuModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.PinModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.ReminderModel;
 import ch.bfh.btx8081.w2017.green.Spero.model.SettingsModel;
@@ -67,9 +68,9 @@ public class MyUI extends UI {
 	String chat;
 	
 	MainViewImpl mainView;
-	
 	DiaryModel modelDiaryEntry;
 	MenuView menuView;
+	MenuModel menuModel;
 	SosView sosView;
 	ChatView chatView;
 	DiaryViewImpl diaryView;
@@ -101,6 +102,7 @@ public class MyUI extends UI {
      
      modelDiaryEntry = new DiaryModel();
      menuView = new MenuView();
+     menuModel = new MenuModel();
      sosView = new SosView();
      chatView = new ChatView();
      diaryView = new DiaryViewImpl();
@@ -135,7 +137,7 @@ public class MyUI extends UI {
    	 navigator.addView("medInfoView", medInfoView);
    	 
    	 new MainPresenter(mainView, modelDiaryEntry);
-   	 new MenuPresenter(menuView);
+   	 new MenuPresenter(menuView, menuModel);
    	 new SosPresenter(sosView);
    	 new ChatPresenter(chatView);
    	 new DiaryPresenter(modelDiaryEntry, diaryView);
