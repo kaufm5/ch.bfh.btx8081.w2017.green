@@ -84,6 +84,8 @@ public class MainPresenter implements SperoViewListener {
 					    "",
 					    Notification.TYPE_WARNING_MESSAGE);
 
+					
+					
 					// Customize it
 					notif.setDelayMsec(2000);
 
