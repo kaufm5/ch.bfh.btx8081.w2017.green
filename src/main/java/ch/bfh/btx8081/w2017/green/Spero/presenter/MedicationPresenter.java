@@ -64,9 +64,7 @@ public class MedicationPresenter implements SperoViewListener{
 				this.medView.buildMedPanel(med); 
 
 			} catch (MedicationNotFoundException e) {
-				Notification.show("Medication not found",
-		                  "",
-		                  Notification.Type.HUMANIZED_MESSAGE);
+				Notification.show("Medication not found", "", Notification.Type.HUMANIZED_MESSAGE);
 				e.printException();
 			}	
 			break;
