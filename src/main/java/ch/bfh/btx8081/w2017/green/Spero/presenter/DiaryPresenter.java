@@ -58,11 +58,12 @@ public class DiaryPresenter implements SperoViewListener {
 			DiaryEntryList list2 = diaryModel.getDiaryList();
 			list2.deleteDiaryEntry(diaryID);
 			
+			
 			Page.getCurrent().reload();
+			
 			Notification.show("Eintrag wurde gelöscht",
 	                  "",
 	                  Notification.Type.HUMANIZED_MESSAGE);
-			this.refresh();
 			
 			break;
 		}
