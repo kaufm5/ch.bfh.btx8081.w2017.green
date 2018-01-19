@@ -17,6 +17,8 @@ public class ReportPresenter implements SperoViewListener{
 	private static final long serialVersionUID = 1L;
 
 	private ReportViewImpl view;
+	
+	private int[] yearDummyData = new int[] { 2, 1, 2, 3, 6, 4, 3, 3, 4, 3, 1, 6 };
 
 	/**
 	 * Class constructor
@@ -26,6 +28,7 @@ public class ReportPresenter implements SperoViewListener{
 	public ReportPresenter(ReportViewImpl view) {
 		this.view = view;
 		view.init();
+		view.chartDataShow("year", yearDummyData);
 		view.addListener(this);
 	}
 
